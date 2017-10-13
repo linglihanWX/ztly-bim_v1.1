@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>场景管理</title>
+    <head>
+        <link rel="shortcut icon" href="../../../common/img/FD_favicon.ico">
+        <link rel="stylesheet" type="text/css" href="../../../common/js/jquery-easyui-1.4.5/themes/default/easyui.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../common/js/jquery-easyui-1.4.5/themes/icon.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../common/css/FreeDoBase.css"/>
+        <link rel="stylesheet" type="text/css" href="../../../common/css/reset.css"/>
+        <link rel="stylesheet" href="../../../common/IconFont/iconfont.css">
+        <link href="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/Widgets/widgets.css"
+              rel="stylesheet">
+        <script src="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/FreeDo.js"></script>
+        <script src="https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script>
+        <script src="../../../common/js/jquery-3.2.1.min.js"></script>
+        <script src="http://gbim360.com:9999/projects/FreedoGBIM360/1.2.0-beta.170808/API/FreedoX.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../../common/css/common.css"/>
+       <link rel="stylesheet" href="../../../../webgl/compass/css/compass.css">
+    	<script src="../../../../webgl/compass/js/Compass.js"></script>
+        <link rel="stylesheet" type="text/css" href="pm.css"/>
+    </head>
+<body class="easyui-layout" data-options="fit:true">
+
+<div id="treeWrapDiv" data-options="region:'west'" style="width: 200px;">
+    <div id="pmTree"></div>
+    <div id="treeModal"></div>
+</div>
+
+<div id="earthWrapDiv" data-options="region:'center'">
+    <div id="earth" style="width:100%;height:100%;"></div>
+</div>
+
+<div id="pmTreeContextMenu" class="easyui-menu" style="width: 120px;">
+    <div id="addPm">
+        <span>新增</span>
+        <div style="width:100px;">
+            <div id="addPmBranch">新增分支节点</div>
+            <div id="addPmModel">新增模型节点</div>
+        </div>
+    </div>
+    <div id="editCurrentPm">编辑(当前)</div>
+    <div id="deleteCurrentPM">删除(当前)</div>
+    <div class="menu-sep"></div>
+    <div id="copyCurrentPm">复制</div>
+    <div id="pastCurrentPm">粘贴</div>
+    <div class="menu-sep"></div>
+    <div id="editCheckedPm" class="nodeChecked">编辑(勾选)</div>
+    <div id="deleteCheckedPm" class="nodeChecked">删除(勾选)</div>
+</div>
+
+<!-- 新增分支节点 -->
+<div id="addPmBranchDialog">
+    <p>
+        <label for="pmBranchPosition">插入位置:</label>
+        <select id="pmBranchPosition" class="form-text">
+            <option value="1">平级</option>
+            <option value="2">下级</option>
+        </select>
+    </p>
+    <p>
+        <label for="pmBranchName">节点名称:</label>
+        <input id="pmBranchName" class="form-text"/>
+    </p>
+</div>
+
+<!-- 新增模型节点 -->
+<div id="addPmModelDialog">
+    <table id="addPmModelTable" style="width: 500px; margin: 0 auto; padding-top: 5px;">
+        <tbody>
+        <tr>
+            <td class="attName">插入位置:</td>
+            <td class="attValue">
+                <select name="pmModelPosition" class="form-text model-att">
+                    <option value="1">平级</option>
+                    <option value="2">下级</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="attName">模型:</td>
+            <td class="attValue">
+                <select name="filePath" class="form-text model-att">
+                    <option value="bridge/dun-zhu-shang/dun-zhu-shang.gltf">上部墩柱</option>
+                    <option value="bridge/dun-zhu-xia/dun-zhu-xia.gltf">下部墩柱</option>
+                    <option value="bridge/chengtai/chengtai.gltf">承台</option>
+                    <option value="bridge/T-liang-low/T-liang-low.gltf">桥梁</option>
+                    <option value="bridge/zhuang-zhu01/zhuang-zhu01.gltf">桩</option>
+                    <option value="highway/one/chedao-XLSSBSGXLQHNTAC-13CSMC.gltf">第一层</option>
+                    <option value="highway/two/CLSSBSGXLQHNTAC-20CXMC.gltf">第二层</option>
+                    <option value="highway/three/CLSLQSSATB-30.gltf">第三层</option>
+                    <option value="highway/four/SBSGXRLQTBSSFC.gltf">第四层</option>
+                    <option value="highway/five/5SNWDSSJC.gltf">第五层</option>
+                    <option value="highway/six/TZDJC.gltf">第六层</option>
+                    <option value="highway/seven/4SNWDSSDJC.gltf">第七层</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td class="attName">名称:</td>
+            <td class="attValue"><input name="name" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">经度<sup>○</sup>:</td>
+            <td class="attValue"><input name="lon" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">纬度<sup>○</sup>:</td>
+            <td class="attValue"><input name="lat" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">高度<sup>○</sup>:</td>
+            <td class="attValue"><input name="height" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">方向角<sup>○</sup>:</td>
+            <td class="attValue"><input name="course" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">俯仰角<sup>○</sup>:</td>
+            <td class="attValue"><input name="alpha" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">滚转角<sup>○</sup>:</td>
+            <td class="attValue"><input name="roll" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">X轴缩放</td>
+            <td class="attValue"><input name="scaleX" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">Y轴缩放</td>
+            <td class="attValue"><input name="scaleY" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="attName">Z轴缩放</td>
+            <td class="attValue"><input name="scaleZ" class="form-text model-att" type="text"/></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<!-- 删除当前节点 -->
+<div id="deleteCurrentPmDialog">
+    <h3>是否删除当前节点?</h3>
+</div>
+
+<!-- 编辑当前模型节点Dialog -->
+<div id="editCurrentPmModelDialog">
+    <div style="width:100%;height:100%;">
+        <table id="editCurrentPmTable" style="width:500px;margin:0 auto;padding-top:5px;">
+            <thead></thead>
+            <tbody>
+            <tr>
+                <td class="">名称:</td>
+                <td colspan="6"><input name="name" class="form-text" type="text"/></td>
+            </tr>
+            <tr>
+                <td class="">文件:</td>
+                <td colspan="5"><input name="filePath" style="width:100%;" class="form-text" readonly type="text"/></td>
+            </tr>
+            <tr>
+                <td class="">经度<sup>○</sup>:</td>
+                <td><input name="lon" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="">纬度<sup>○</sup>:</td>
+                <td><input name="lat" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="">高度<sup>○</sup>:</td>
+                <td><input name="height" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="">方向角<sup>○</sup>:</td>
+                <td><input name="course" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="">俯仰角<sup>○</sup>:</td>
+                <td><input name="alpha" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="">滚度角<sup>○</sup>:</td>
+                <td><input name="roll" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="">X轴缩放:</td>
+                <td><input name="scaleX" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="">Y轴缩放:</td>
+                <td><input name="scaleY" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="">Z轴缩放:</td>
+                <td><input name="scaleZ" class="form-text model-att" type="text"/></td>
+                <td>
+                    <button class="btn btn-default minus"><span>-</span></button>
+                </td>
+                <td>
+                    <button class="btn btn-default add"><span>+</span></button>
+                </td>
+                <td>步长:</td>
+                <td><input class="form-text delat" type="text" value="1"/></td>
+                <td></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- 编辑当前选中的分支节点 -->
+<div id="editCurrentPmBranchDialog">
+    <table id="editCurrentPmBranchTable" style="width:460px;margin:0 auto;padding-top:5px;">
+        <tbody>
+        <tr>
+            <td class="">名称:</td>
+            <td colspan="4" class="name"><input name="name" class="form-text" type="text"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="">经度<sup>○</sup>:</td>
+            <td>
+                <button class="btn btn-default minus"><span>-</span></button>
+            </td>
+            <td>
+                <button class="btn btn-default add"><span>+</span></button>
+            </td>
+            <td>步长:</td>
+            <td><input name="lon" class="form-text delat" type="text" value="0.00001"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="">纬度<sup>○</sup>:</td>
+            <td>
+                <button class="btn btn-default minus"><span>-</span></button>
+            </td>
+            <td>
+                <button class="btn btn-default add"><span>+</span></button>
+            </td>
+            <td>步长:</td>
+            <td><input name="lat" class="form-text delat" type="text" value="0.00001"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="">高度<sup>○</sup>:</td>
+            <td>
+                <button class="btn btn-default minus"><span>-</span></button>
+            </td>
+            <td>
+                <button class="btn btn-default add"><span>+</span></button>
+            </td>
+            <td>步长:</td>
+            <td><input name="height" class="form-text delat" type="text" value="0.00001"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="">方向角<sup>○</sup>:</td>
+            <td>
+                <button class="btn btn-default minus"><span>-</span></button>
+            </td>
+            <td>
+                <button class="btn btn-default add"><span>+</span></button>
+            </td>
+            <td>步长:</td>
+            <td><input name="course" class="form-text delat" type="text" value="1"/></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- 删除当前勾选节点 -->
+<div id="deleteCheckedPmsDialog">
+    <h3>是否删除当前勾选节点?</h3>
+</div>
+
+
+<!-- 编辑当前已勾选 -->
+<div id="editCheckedPmDialog">
+    <table id="editCheckedPmTable" style="width:460px;margin:0 auto;padding-top:5px;">
+        <tbody>
+        <tr>
+            <td class="">经度<sup>○</sup>:</td>
+            <td>
+                <button class="btn btn-default minus"><span>-</span></button>
+            </td>
+            <td>
+                <button class="btn btn-default add"><span>+</span></button>
+            </td>
+            <td>步长:</td>
+            <td><input name="lon" class="form-text delat" type="text" value="0.00001"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="">纬度<sup>○</sup>:</td>
+            <td>
+                <button class="btn btn-default minus"><span>-</span></button>
+            </td>
+            <td>
+                <button class="btn btn-default add"><span>+</span></button>
+            </td>
+            <td>步长:</td>
+            <td><input name="lat" class="form-text delat" type="text" value="0.00001"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="">高度<sup>○</sup>:</td>
+            <td>
+                <button class="btn btn-default minus"><span>-</span></button>
+            </td>
+            <td>
+                <button class="btn btn-default add"><span>+</span></button>
+            </td>
+            <td>步长:</td>
+            <td><input name="height" class="form-text delat" type="text" value="0.00001"/></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td class="">方向角<sup>○</sup>:</td>
+            <td>
+                <button class="btn btn-default minus"><span>-</span></button>
+            </td>
+            <td>
+                <button class="btn btn-default add"><span>+</span></button>
+            </td>
+            <td>步长:</td>
+            <td><input name="course" class="form-text delat" type="text" value="1"/></td>
+            <td></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<div id="ajaxModal">
+    <div class="wrap-wait">
+        <div>请求处理中，请稍等 <img src="../../../common/img/wait.gif" style="display:inline-block;width:20px;height:20px;"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="../../../common/js/jquery-easyui-1.4.5/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../common/js/jquery-easyui-1.4.5/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../../common/js/FreeDoTool.js"></script>
+<script type="text/javascript" src="FreeDoPm.js"></script>
+<script type="text/javascript" src="pm.js"></script>
+</body>
+</html>

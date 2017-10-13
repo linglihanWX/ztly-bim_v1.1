@@ -1,0 +1,35 @@
+[
+  {
+    "id": 0,
+    "pId": -1,
+    "name": "项目目录"
+  },
+  {
+    "id": 1,
+    "pId": 0,
+    "name": "勘查设计",
+    "isParent":true
+  },
+  {
+    "id": 2,
+    "pId": 1,
+    "name": "前端设计"
+  },
+  {
+    "id": 3,
+    "pId": 1,
+    "name": "后端设计"
+  },
+  {
+    "id": 4,
+    "pId": 0,
+    "name": "文档方案",
+    "isParent":true
+  },
+  {
+    "id": 5,
+    "pId": 0,
+    "name": "设计院审核内容",
+    "isParent":true
+  }
+]

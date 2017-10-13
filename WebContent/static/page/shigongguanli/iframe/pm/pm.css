@@ -1,0 +1,57 @@
+table td{padding:0px;}
+
+#editCurrentPmTable tr td:nth-of-type(1){width:80px;text-align:right;padding-right:10px;}
+#editCurrentPmTable tr td:nth-of-type(2){width:140px;}
+#editCurrentPmTable tr td:nth-of-type(3){width:40px;text-align:center;}
+#editCurrentPmTable tr td:nth-of-type(4){width:40px;text-align:center;}
+#editCurrentPmTable tr td:nth-of-type(5){width:40px;text-align:center;}
+#editCurrentPmTable tr td:nth-of-type(6){width:140px;}
+#editCurrentPmTable tr td span{display:inline-block;width:10px;}
+
+#addPmBranchDialog p{text-align:center;font-size:14px;height:40px;}
+#addPmBranchDialog select{width:220px;margin-left:15px;height:35px;}
+#addPmBranchDialog input{width:220px;margin-left:15px;}
+
+
+#addPmModelDialog .attName{width:120px;text-align:right;}
+#addPmModelDialog .attValue{width:300px;padding-left:10px;}
+#addPmModelDialog select{width:220px;height:35px;}
+#addPmModelDialog input{width:220px;}
+
+
+#editCurrentPmBranchTable tr td:nth-of-type(1){width:100px;text-align:right;padding-right:10px;}
+#editCurrentPmBranchTable tr td:nth-of-type(2){width:50px;text-align:center;}
+#editCurrentPmBranchTable tr td:nth-of-type(3){width:50px;text-align:center;}
+#editCurrentPmBranchTable tr td:nth-of-type(4){width:50px;text-align:center;}
+#editCurrentPmBranchTable tr td:nth-of-type(5){width:120px;text-align:center;}
+#editCurrentPmBranchTable tr .name{text-align:left!important;}
+#editCurrentPmBranchTable tr .name input{width:200px;margin-left:10px;}
+#editCurrentPmBranchTable tr td{padding-top:5px;}
+
+/* 树遮罩 */
+#treeModal{width:100%;height:100%;position:absolute;top:0;left:0;z-index:10000;display:none;background-color:#c0c0c0;filter:alpha(Opacity=30);-moz-opacity:0.3;opacity: 0.3;}
+
+/* ajax遮罩 */
+#ajaxModal{width:100%;height:100%;position:absolute;top:0;left:0;z-index:10000;display:none;background-color:#c0c0c0;filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8;}
+#ajaxModal .wrap-wait{width:100%;height:100%;display:flex;align-items:center;}
+#ajaxModal div{color:#eae9eb;font-size:18px;width:200px;height:100px;margin:0 auto;}
+
+#pmTreeContextMenu,#addPmBranchDialog,#addPmModelDialog,#editCurrentPmModelDialog,#editCurrentPmBranchDialog,#editCheckedPmDialog,#deleteCheckedPmsDialog,#deleteCurrentPmDialog{
+	display:none;
+}
+
+#header .headerRight .search i {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    font-weight: bold;
+    color: #0082c9;
+    vertical-align: top;
+    text-align: center;
+    font-size: 23px;
+    
+}
+
+.cesium-viewer-toolbar {
+    display: none!important;
+    }

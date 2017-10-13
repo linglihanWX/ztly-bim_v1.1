@@ -1,0 +1,54 @@
+@charset "utf-8";
+
+#header .showInfo {
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    font-size: 0;
+}
+
+#header .showInfo button {
+    width: 80px;
+    height: 30px;
+    border: none;
+    margin-right: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    background-color: #223d76;
+        cursor: pointer;
+    
+}
+
+.active {
+    font-weight: bold;
+    background-color: rgba(96, 151, 191, 1) !important
+}
+
+#content {
+    width: 100%;
+    height: calc(100% - 70px);
+}
+#content #left{
+	width:200px!important;
+}
+.msgInfo {
+display: none;
+    position: absolute;
+    width: 250px;
+    height: 210px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius:5px;
+    text-align: center;
+	line-height:40px;
+	z-index:1;
+	background:url(../../../common/img/bubble.png) no-repeat;
+}
+#right{
+	position:relative!important;
+}
+.cesium-viewer-toolbar {
+display: none!important;
+}

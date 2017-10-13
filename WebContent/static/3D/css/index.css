@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+html, body, #ViewerContainer{
+	width: 100%;
+	height: 100%;
+	margin: 0%;
+	padding: 0%;
+}
+
+#left {
+	position: relative;
+	float: left;
+	width: 200px;
+	height: 100%;
+	background-color: #d2eefd;
+	border-right: 2px solid #0082c9;
+	overflow-y: auto;
+}
+
+#left .easyui-panel {
+	border: none;
+	width: auto;
+	height: 100%;
+	background-color: #d2eefd;
+	overflow-y: auto;
+}
+#right {
+	overflow: hidden;
+	height: 100%;
+}
+
+/*修改3D区域的模块*/
+#content #right .cesium-viewer-bottom {
+	display: none;
+}

@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+html,
+body {
+    overflow-y: hidden;
+}
+#left{
+    width: 100%;
+    height: 100%;
+}
+.panel.datagrid{
+    width: 100%!important;
+    height: 100%;
+}
+
+#treeGridThree{
+    display: none;
+}
+.panel-header, .panel-body {
+    border-width: 0;
+}
+
+.datagrid-footer-inner {
+ border-width: 0;
+}
+
+.allWidth{
+     width: 100%!important;
+ }
+.datagrid-wrap,.panel-body ,.panel-body-noheader, datagrid-view{
+    height: 100%!important;
+}
+
+#content{
+    margin: 0;
+    padding: 0;
+}
+.breadcrumb{
+    margin: 0;
+}
+#sidebar-left{
+     width: 10%;
+    height: 100%;
+ }
+#content {
+    width: 90%;
+    margin-left: 10%!important;
+}
+#DataTables_Table_0{
+    width: 100%;
+    margin: 0;
+}
+
+#DataTables_Table_0 thead>tr>th{
+    text-align: center;
+    vertical-align: middle;
+}
+#DataTables_Table_0_wrapper>.row-fluid:first-of-type{
+    margin-top: 10px;
+}
+
+.box-content{
+    padding:0;
+}
+.lists a{
+    margin-left:10px;
+}
+.breadcrumb .lists a:hover {
+    color: red;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+}
+.activeList{
+    color:red;
+    font-weight: bold;
+}
+#DataTables_Table_0 tbody>tr>td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+#treeGridThree_wrapper  .row-fluid{
+    display: none;
+}
+
+#tree{
+    float: left;
+    width: 13%;
+    height: 88%;
+    overflow-x:auto;
+    padding:5px 0 0  0;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+
+#init{
+    float: right;
+    width: 87%;
+    height: 100%;
+}
+
+
+.on{
+    background: red;
+}
+
+.table td {
+    padding: 8px 0;
+    font-size: 12px;
+}
+
+
+
+.container-fluid-full{
+    height:calc(100% - 50.4px);
+}
+.container-fluid-full>.row-fluid{
+    position: relative;
+    height: 100%;
+}
+#content{
+    min-height: 10%!important;
+    height: 100%
+}
+
+.row-fluid.sortable.ui-sortable{
+    height: 100%;
+}
+a.brand span {
+    font-size: 24px!important;
+}
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}

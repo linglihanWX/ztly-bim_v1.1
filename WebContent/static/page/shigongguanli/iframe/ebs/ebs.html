@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度管理</title>
+    <link rel="shortcut icon" href="../../../common/img/FD_favicon.ico">
+    <link rel="stylesheet" href="../../../common/css/reset.css">
+    <link rel="stylesheet" href="IconFont/iconfont.css">
+    <link rel="stylesheet" href="../../../common/css/easyui.css">
+    <link rel="stylesheet" href="../../../common/css/icon.css">
+    <link href="http://gbim360.com:9999/projects/FreedoHolo3DForWeb/BasicAPI/1.3.0.170907/Freedo/Widgets/widgets.css" rel="stylesheet">
+    <script src="http://gbim360.com:9999/projects/FreedoHolo3DForWeb/BasicAPI/1.3.0.170907/Freedo/Freedo.js"></script>
+    <script src="https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="http://gbim360.com:9999/projects/FreedoHolo3DForWeb/1.3.1.170914/API/FreedoX.js"></script>
+    <script src="../../../common/js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="../../../../webgl/compass/css/compass.css">
+    <script src="../../../../webgl/compass/js/Compass.js"></script>
+    <link rel="stylesheet" href="ebs.css">
+
+</head>
+<body>
+
+<div class="header" id="header">
+        <p class="showInfo">
+            <button class="active project" disabled="disabled">工程分解</button>
+            <button class="planManage" disabled="disabled">计划管理</button>
+            <button class="write" disabled="disabled">进度填报</button>
+            <button class="progressScene" disabled="disabled">进度形象化</button>
+        </p>
+
+        <div class="toggleInfo btn-wrapper" >   
+            <div class="btn on on-original twoD checkSpan">2D</div>
+            <div class="btn off off-original threeD">3D</div>
+        </div>
+        <div class="toggleProgress" >
+                <div class="plan">计划</div>
+                <div class="real">实际</div>
+                <div class="compare">对照</div>
+        </div>
+
+    </div>
+</div>
+
+<div id="content" class="content">
+    <div id="left" class="left">
+
+        <!--计划管理-->
+        <table id="treeGrid" style="width:100%;height:100%"></table>
+
+        <!--右击显示菜单-->
+        <div id="menu" class="easyui-menu" style="width: 120px;">
+            <div id="addNode" data-options="iconCls:'icon-add'">添加</div>
+            <div id="editNode" data-options="iconCls:'icon-edit'">编辑</div>
+            <div id="removeNode" data-options="iconCls:'icon-remove'">删除</div>
+            <div id="downCopy" data-options="iconCls:'icon-edit'">复制</div>
+        </div>
+    </div>
+
+    <div id="right" class="right">
+           
+        <div class="model" id="model">
+
+            <!-- 计划进度播放开始 -->
+            <div class="planPlay">
+                <div class="control">
+                    <i class="iconfont icon-kuaitui cutSpeed"></i> <i
+                        class="iconfont icon-start playOrStop"></i> <i
+                        class="iconfont icon-kuaijin addSpeed"></i>
+                </div>
+                <div class="progress">
+                    <div class="bar">
+                        <span class="slider"></span> <span class="tip"></span>
+                    </div>
+                    <span class="startTime fd-planStart"></span> <span
+                        class="endTime fd-planEnd"></span>
+                </div>
+            </div>
+            <!-- 计划进度播放结束 -->
+
+            <!-- 实际进度播放开始 -->
+            <div class="realityPlay">
+                <div class="control">
+                    <i class="iconfont icon-kuaitui cutSpeed"></i>
+                    <i class="iconfont icon-start playOrStop"></i>
+                    <i class="iconfont icon-kuaijin addSpeed"></i>
+                </div>
+                <div class="progress">
+                    <div class="bar">
+                        <span class="realSlider"></span> <span class="realTip"></span>
+                    </div>
+                    <span class="startTime fd-realStart "></span>
+                    <span class="endTime fd-realEnd"></span>
+                </div>
+            </div>
+            <!-- 实际进度播放结束 -->
+
+            <!-- 计划进度修改  3D -->
+            <div class="detailInfo projectCut">
+                <ul>
+                    <li><span>工程量单位</span><input type="text"/></li>
+                    <li><span>数量</span><input type="number"/></li>
+                    <li><span>总量</span><input type="number"/></li>
+                    <li><span>开始里程(米)</span><input type="number"/></li>
+                    <li><span>结束里程(米)</span><input type="number"/></li>
+                    <li><span>对应模型</span><input type="text" disabled/></li>
+                </ul>
+                <button class="sureChange">确认</button>
+            </div>
+
+            <!-- 计划进度修改  3D -->
+            <div class="detailInfo planTimeInfo">
+                <ul>
+                    <li><span>计划开始日期</span><input type="date" /></li>
+                    <li><span>计划结束日期</span><input type="date" /></li>
+                </ul>
+                <button class="surePlanChange">确认</button>
+            </div>
+
+            <!-- 实际进度修改  3D -->
+            <div class="detailInfo realityTimeInfo">
+                <ul>
+                    <li><span>实际开始日期</span><input type="date" /></li>
+                    <li><span>实际结束日期</span><input type="date" /></li>
+                </ul>
+                <button class="sureRealChange" >确认</button>
+            </div>
+        </div>
+        <div class="compareRealPlan">计划</div>
+    </div>
+
+    <div id="compareModel">
+        <div class="compareRealPlan">实际</div>
+    </div>
+</div>
+
+<div id="dialog" class="dialog">
+    <div>
+        <p>您确认删除该文件吗？</p>
+        <button id="yes">确认</button>
+        <button id="no">取消</button>
+    </div>
+</div>
+<div id="quit" class="dialog">
+    <div>
+        <p>您确认继续改操作吗？</p>
+        <button id="quitYes">确认</button>
+        <button id="quitNo">取消</button>
+    </div>
+</div>
+
+
+<!-- 工程分解添加功能 -->
+<div id="nodeModel">
+    <div class="jdModel" id="addModel">
+        <div class="change">
+            <span>选择级别 :</span>
+            <select id="changeLevel">
+                    <option value="">请选择级别</option>
+                <option value="平级">平级</option>
+                <option value="下级">下级</option>
+            </select>
+        </div>
+        <div class="change">
+            <span>对应类型 :</span>
+            <select id="changeMold">
+                <option>请选择模型</option>
+            </select>
+        </div>
+        <div class="text">
+            <span>名称 :</span> <input type="text" id="text">
+        </div>
+        <div class="projectUnit">
+            <span>工程量单位 :</span> <input type="text" id="projectUnit">
+        </div>
+        <div class="count">
+            <span>数量 :</span> <input type="number" id="count" class="numMath" min="0">
+        </div>
+
+        <div class="total">
+            <span>总量 :</span> <input type="number" id="total" class="numMath" min="0">
+        </div>
+
+        <div class="startMeter">
+            <span>开始里程(米) :</span> <input type="number" id="startMeter" class="numMath" min="0">
+        </div>
+
+        <div class="endMeter">
+            <span>结束里程(米) :</span> <input type="number" id="endMeter" class="numMath" min="0">
+        </div>
+        <div class="btn">
+            <input type="button" id="addSure" value="确定">
+            <input type="button" id="addCancel" class="cancel" value="取消">
+        </div>
+
+
+    </div>
+    <div class="jdModel" id="changeInfo">
+
+        <div class="change">
+            <span>对应类型 :</span> <select id="changeInfoMold">
+            <option>请选择模型</option>
+        </select>
+        </div>
+        <div class="text">
+            <span>名称 :</span> <input type="text" id="changeText">
+        </div>
+        <div class="projectUnit">
+            <span>工程量单位 :</span> <input type="text" id="changeProjectUnit">
+        </div>
+        <div class="count">
+            <span>数量 :</span> <input type="number" id="changeCount" class="numMath" min="0">
+        </div>
+
+        <div class="total">
+            <span>总量 :</span> <input type="number" id="changeTotal" class="numMath" min="0">
+        </div>
+
+        <div class="startMeter">
+            <span>开始里程(米) :</span> <input type="number" id="changeStartMeter" class="numMath" min="0">
+        </div>
+
+        <div class="endMeter">
+            <span>结束里程(米) :</span> <input type="number" id="changeEndMeter" class="numMath" min="0">
+        </div>
+        <div class="btn">
+            <input type="button" id="changeSure" value="确定">
+            <input type="button" id="changeCancel" class="cancel" value="取消">
+        </div>
+    </div>
+    <div class="jdModel" id="planChange">
+        <div class="text">
+            <span>名称 :</span> <input type="text" id="planText" disabled>
+        </div>
+        <div class="projectUnit">
+            <span>计划开始日期 :</span> <input type="date" id="planST">
+        </div>
+        <div class="count">
+            <span>计划结束日期 :</span> <input type="date" id="planET" class="numMath" >
+        </div>
+
+        <div class="total">
+            <span>木工(人) :</span> <input type="number" id="planMen" class="numMath" min="0">
+        </div>
+
+        <div class="startMter">
+            <span>重型卡车(辆) :</span> <input type="number" id="planCar" class="numMath" min="0">
+        </div>
+        <div class="btn">
+            <input type="button" id="planSure" value="确定">
+            <input type="button" id="planCancel" class="cancel" value="取消">
+        </div>
+
+
+    </div>
+    <div class="jdModel" id="realChange">
+        <div class="text">
+            <span>名称 :</span> <input type="text" id="realText" disabled>
+        </div>
+        <div class="projectUnit">
+            <span>实际开始日期 :</span> <input type="date" id="realST">
+        </div>
+        <div class="count">
+            <span>实际结束日期 :</span> <input type="date" id="realET" class="numMath" >
+        </div>
+
+        <div class="total">
+            <span>木工(人) :</span> <input type="number" id="realMen" class="numMath" min="0">
+        </div>
+
+        <div class="startMter">
+            <span>重型卡车(辆) :</span> <input type="number" id="realCar" class="numMath" min="0">
+        </div>
+        <div class="btn">
+            <input type="button" id="realSure" value="确定">
+            <input type="button" id="realCancel" class="cancel" value="取消">
+        </div>
+    </div>
+</div>
+
+<!-- 对比进度播放开始 -->
+<div class="comparePlay">
+        <div class="control">
+            <i class="iconfont icon-kuaitui cutSpeed"></i>
+            <i class="iconfont icon-start playOrStop"></i>
+            <i class="iconfont icon-kuaijin addSpeed"></i>
+        </div>
+        <div class="progress">
+            <div class="bar">
+                <span class="compareSlider"></span> <span class="compareTip"></span>
+            </div>
+            <span class="startTime compareS"></span>
+            <span class="endTime compareE"></span>
+        </div>
+    </div>
+    <!-- 对比进度播放结束 -->
+
+</body>
+<script src="../../../common/js/FreeDoTool.js"></script>
+<script src="EBSviewer.js"></script>
+<script src="../../../common/js/jquery.easyui.min.js"></script>
+<script src="edit.js"></script>
+<script src="ebs.js"></script>
+</html>

@@ -1,0 +1,138 @@
+@charset "utf-8";
+.FreeDo-LabelManager {
+    z-index:100;
+    border-radius: 5px;
+    -webkit-transition: width ease-in-out 0.25s;
+    -moz-transition: width ease-in-out 0.25s;
+    transition: width ease-in-out 0.25s;
+    background: rgba(48, 51, 54, 0.8);
+    border: 1px solid #444;
+    color: #edffff;
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    width: 165px;
+    height: 500px;
+    padding: 4px 1px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    overflow: hidden;
+}
+.FreeDo-LabelManager-titlebar {
+
+}
+.FreeDo-LabelManager-titlebar-title {
+    margin-left: 10px;
+    text-align: left;
+    font-size: 10pt;
+    display: inline;
+}
+.FreeDo-LabelManager-titlebar-menu {
+    margin-right: 5px;
+    text-align: right;
+    font-size: 10pt;
+    float: right;
+    display: inline;
+}
+.FreeDo-LabelManager-tablecontainer {
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
+    height: 460px;
+    margin-top: 10px;
+    padding:0 10px 0 5px;
+}
+.FreeDo-LabelManager-tablecontainer::-webkit-scrollbar {
+    width: 6px;
+}
+.FreeDo-LabelManager-tablecontainer::-webkit-scrollbar-track {
+    background-color: rgba(214, 210, 210, 0.3);
+    border-radius: 6px;
+} /* 滚动条的滑轨背景颜色 */
+
+.FreeDo-LabelManager-tablecontainer::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 6px;
+} /* 滑块颜色 */
+
+.FreeDo-LabelManager-tablecontainer::-webkit-scrollbar-button {
+    background-color: #fff;
+    height:0px;
+} /* 滑轨两头的监听按钮颜色 */
+
+.FreeDo-LabelManager-tablecontainer::-webkit-scrollbar-corner {
+    background-color: #ccc;
+} /* 横向滚动条和纵向滚动条相交处尖角的颜色 */
+.FreeDo-LabelManager-table {
+    width:100%;
+}
+.FreeDo-LabelManager-row {
+
+}
+.FreeDo-LabelManager-row td{
+    height:30px;
+}
+.FreeDo-LabelManager-col1 {
+    
+}
+.FreeDo-LabelManager-col2 {
+
+}
+.FreeDo-LabelManager-col3 {
+
+}
+.FreeDo-LabelManager-item-name {
+    width: 85px;
+    height: 20px;
+    border:1px solid #ccc;
+    background-color: #fff;
+    color:#000;
+    text-align: center;
+}
+.FreeDo-LabelManager-item-name:read-only {
+    border:1px solid rgba(0,0,0,0);
+    background-color: rgba(0,0,0,0);
+    color:#a9a9a9;
+}
+.FreeDo-LabelManager-item-locate {
+    /*width: 25px;*/
+    /*height: 20px;*/
+    display:block;
+    border:0 none;
+    width:24px;
+    height:24px;
+    background: url(../images/table-icons.png) no-repeat;
+    background-position: 2px 0px;
+}
+.FreeDo-LabelManager-item-locate:hover{
+    background-position: -48px 0px;
+}
+.FreeDo-LabelManager a.FreeDo-LabelManager-item-delete {
+    /*width: 20px;*/
+    /*height: 20px;*/
+    display:block;
+    width:24px;
+    height:24px;
+    background: url(../images/table-icons.png) no-repeat;
+    background-position: 2px -50px;
+}
+.FreeDo-LabelManager a.FreeDo-LabelManager-item-delete:hover{
+    background-position: -48px -50px;
+}
+.FreeDo-LabelManager a {
+    background-color: #ffccff;
+    color: #000000;
+    text-decoration: none;
+}
+a.FreeDo-LabelManager-menu-close{
+    display:block;
+    width:24px;
+    height:24px;
+    background: url(../images/table-icons.png) no-repeat;
+    background-position: 2px -100px;
+}
+a.FreeDo-LabelManager-menu-close:hover{
+    background-position: -48px -100px;
+}

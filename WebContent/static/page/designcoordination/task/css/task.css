@@ -1,0 +1,283 @@
+@charset "utf-8";
+html,
+body {
+    overflow-y: hidden;
+}
+
+#left {
+    width: 100%;
+    height: 100%;
+}
+
+.panel.datagrid {
+    width: 100%!important;
+    height: 100%;
+}
+
+#treeGridThree {
+    display: none;
+}
+
+.panel-header,
+.panel-body {
+    border-width: 0;
+}
+
+.datagrid-footer-inner {
+    border-width: 0;
+}
+
+.allWidth {
+    width: 100%!important;
+}
+
+.datagrid-wrap,
+.panel-body,
+.panel-body-noheader,
+.datagrid-view {
+    height: 100%!important;
+}
+
+#content {
+    margin: 0;
+    padding: 0;
+    min-height: 0!important;
+    height: 100%;
+    width: 90%;
+    margin-left: 10% !important;
+}
+
+.breadcrumb {
+    margin: 0;
+}
+
+#sidebar-left {
+    width: 10%;
+}
+
+#DataTables_Table_0 {
+    width: 100%;
+    margin: 0;
+}
+
+#DataTables_Table_0 thead>tr>th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#DataTables_Table_0_wrapper>.row-fluid:first-of-type {
+    margin-top: 10px;
+}
+
+.box-content {
+    padding: 0;
+}
+
+.lists a {
+    margin-left: 10px;
+}
+
+.breadcrumb .lists a:hover {
+    color: red;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+}
+
+.activeList {
+    color: red;
+    font-weight: bold;
+}
+
+#DataTables_Table_0 tbody>tr>td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.breadcrumb li:last-of-type {
+    line-height: 20px;
+}
+
+.breadcrumb li:last-of-type span {
+    vertical-align: top;
+}
+
+#treeGridThree_wrapper .row-fluid {
+    display: none;
+}
+
+#tree {
+    float: left;
+    width: 15%;
+    height: 100%;
+    overflow-x: auto;
+    padding: 5px 0 0 0;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.on {
+    background: red;
+}
+
+.table td {
+    padding: 8px 0;
+    font-size: 12px;
+}
+
+.box {
+    display: inline-block;
+    width: 84%!important;
+    border: none;
+}
+
+.container-fluid-full {
+    height: calc(100% - 50.4px);
+}
+
+.container-fluid-full>.row-fluid {
+    position: relative;
+    height: 100%;
+}
+
+#content {}
+
+.row-fluid.sortable.ui-sortable {
+    height: 100%;
+}
+
+td img {
+    width: 20px;
+}
+
+.box-content tbody tr td,
+.box-content thead tr td {
+    text-align: center;
+}
+
+#DataTables_Table_0_info {
+    display: none;
+}
+
+
+/*会员*/
+
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}
+
+a.brand span {
+    font-size: 24px!important;
+}
+
+
+/*标准按钮部分*/
+
+.btnStandard {
+    margin-left: 50px;
+}
+
+.btnStandard input {
+    width: 60px;
+    height: 27px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+}
+
+input.btnActive {
+    background-color: #50bfff;
+    color: #fff;
+}
+
+
+/* 新建任务 */
+
+#newTask {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 300px;
+    margin: -150px 0 0 -300px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    z-index: 9999;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+    background-color: #fff;
+}
+
+#newTask textarea {
+    margin: 10px 0;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#newTask p:first-of-type {
+    border-bottom: 1px solid #ccc;
+    font-size: 22px;
+    padding-bottom: 5px;
+}
+
+#newTask p:nth-of-type(2),
+#newTask p:nth-of-type(3) {
+    float: left;
+    margin-top: 10px;
+    width: 50%;
+}
+
+#newTask p:nth-of-type(2) span,
+#newTask p:nth-of-type(3) span {
+    vertical-align: middle
+}
+
+#newTask  select {
+    padding: 0;
+    margin: 0;
+    width: 130px;
+}
+
+#newTask p:last-of-type {
+    clear: both;
+    text-align: right;
+    padding: 10px;
+}
+
+#newTask p:last-of-type button {
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #20a0ff;
+    color: #fff;
+    border: 1px solid #ccc;
+    margin-right:20px; 
+    outline:none;
+}
+
+#newTask p:last-of-type button:last-of-type {
+    background-color: #ccc;
+}
+#newTask ul li{
+    width: 50%;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+}
+
+#newTask ul li span {
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+#newTask ul li i {
+    color: grey;
+}

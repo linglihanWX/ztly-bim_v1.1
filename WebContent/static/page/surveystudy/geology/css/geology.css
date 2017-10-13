@@ -1,0 +1,14 @@
+.msgInfo {
+   	display: none;
+    position: absolute;
+    width: 250px;
+    height: 180px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius:5px;
+    text-align: center;
+	line-height: 25px;
+	padding:15px;
+	z-index:1;
+	background:url(../../../common/img/bubble.png) no-repeat;	
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myapp.WebGl.mapper.DrillingColumnChaData">
+
+  	<resultMap id="DrillingColumnChaDataBaseMap" type="com.myapp.WegGl.dto.DrillingColumnCha">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="groupid" property="groupId" jdbcType="INTEGER" />
+		<result column="text" property="text" jdbcType="VARCHAR" />
+		<result column="date" property="date" jdbcType="DATE" />
+		<result column="lon" property="lon" jdbcType="DOUBLE" />
+		<result column="lat" property="lat" jdbcType="DOUBLE" />
+		<result column="height" property="height" jdbcType="DOUBLE" />
+		<result column="parentid" property="parentId" jdbcType="INTEGER" />
+		<result column="layerh1" property="layerh1" jdbcType="DOUBLE" />
+		<result column="layerh2" property="layerh2" jdbcType="DOUBLE" />
+		<result column="layerh3" property="layerh3" jdbcType="DOUBLE" />
+		<result column="layerh4" property="layerh4" jdbcType="DOUBLE" />
+		<result column="layerh5" property="layerh5" jdbcType="DOUBLE" />
+		<result column="layerh6" property="layerh6" jdbcType="DOUBLE" />
+		<result column="layerh7" property="layerh7" jdbcType="DOUBLE" />
+		<result column="layerh8" property="layerh8" jdbcType="DOUBLE" />
+		<result column="layerh9" property="layerh9" jdbcType="DOUBLE" />
+		<result column="layerh10" property="layerh10" jdbcType="DOUBLE" />
+		<result column="layerh11" property="layerh11" jdbcType="DOUBLE" />
+		<result column="layerh12" property="layerh12" jdbcType="DOUBLE" />
+		<result column="layerh13" property="layerh13" jdbcType="DOUBLE" />
+		<result column="layerh14" property="layerh14" jdbcType="DOUBLE" />
+		<result column="layerh15" property="layerh15" jdbcType="DOUBLE" />
+		<result column="layerh16" property="layerh16" jdbcType="DOUBLE" />
+		<result column="layerh17" property="layerh17" jdbcType="DOUBLE" />
+		<result column="layerh18" property="layerh18" jdbcType="DOUBLE" />
+		<result column="layerh19" property="layerh19" jdbcType="DOUBLE" />
+		<result column="layerh20" property="layerh20" jdbcType="DOUBLE" />
+		<result column="layerq1" property="layerq1" jdbcType="DOUBLE" />
+		<result column="layerq2" property="layerq2" jdbcType="DOUBLE" />
+		<result column="layerq3" property="layerq3" jdbcType="DOUBLE" />
+		<result column="layerq4" property="layerq4" jdbcType="DOUBLE" />
+		<result column="layerq5" property="layerq5" jdbcType="DOUBLE" />
+		<result column="layerq6" property="layerq6" jdbcType="DOUBLE" />
+		<result column="layerq7" property="layerq7" jdbcType="DOUBLE" />
+		<result column="layerq8" property="layerq8" jdbcType="DOUBLE" />
+		<result column="layerq9" property="layerq9" jdbcType="DOUBLE" />
+		<result column="layerq10" property="layerq10" jdbcType="DOUBLE" />
+		<result column="layerq11" property="layerq11" jdbcType="DOUBLE" />
+		<result column="layerq12" property="layerq12" jdbcType="DOUBLE" />
+		<result column="layerq13" property="layerq13" jdbcType="DOUBLE" />
+		<result column="layerq14" property="layerq14" jdbcType="DOUBLE" />
+		<result column="layerq15" property="layerq15" jdbcType="DOUBLE" />
+		<result column="layerq16" property="layerq16" jdbcType="DOUBLE" />
+		<result column="layerq17" property="layerq17" jdbcType="DOUBLE" />
+		<result column="layerq18" property="layerq18" jdbcType="DOUBLE" />
+		<result column="layerq19" property="layerq19" jdbcType="DOUBLE" />
+		<result column="layerq20" property="layerq20" jdbcType="DOUBLE" />
+		<result column="state" property="state" jdbcType="VARCHAR" />
+		<result column="leaf" property="leaf" jdbcType="INTEGER" />	
+	</resultMap>
+	<insert id="insertDrillingColumnCha" parameterType="com.myapp.WegGl.dto.DrillingColumnCha">
+		<!-- insert into t_drillingcolumn_6 (ID,GROUPID,NAME,DATE,LON,LAT,HEIGHT)
+		values(uuid(),#{groupID},#{name},#{date},#{lon},#{lat},#{height}
+		) -->
+	</insert>
+
+	<delete id="deleteByPrimaryId" parameterType="int">
+		<!-- delete from t_drillingcolumn_6
+		where ID = #{ID,jdbcType=VARCHAR} -->
+	</delete>
+
+	<update id="updateDrillingColumnCha" parameterType="com.myapp.WegGl.dto.DrillingColumnCha">
+		<!-- update t_drillingcolumn_6
+		<set>
+			<if test="groupID != null">
+				GROUPID = #{groupID,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				NAME = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="date != null">
+				DATE = #{date,jdbcType=DATE},
+			</if>
+			<if test="lon != null">
+				LON = #{lon,jdbcType=DOUBLE},
+			</if>
+			<if test="lat != null">
+				LAT = #{lat,jdbcType=DOUBLE},
+			</if>
+			<if test="height != null">
+				HEIGHT = #{height,jdbcType=DOUBLE},
+			</if>
+		</set>
+		where ID = #{ID,jdbcType=VARCHAR} -->
+	</update>
+
+	<select id="selectByPrimaryId" resultMap="DrillingColumnChaDataBaseMap"
+		parameterType="int">
+		<!-- select * from t_drillingcolumn_6
+		where ID = #{ID,jdbcType=VARCHAR} -->
+		
+	</select>
+	
+	<select id="selsectAll" resultMap="DrillingColumnChaDataBaseMap" >
+		select * from t_drillingcolumn_7 
+	</select>
+
+</mapper>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.myapp.WebGl.mapper.PmData">
+  <resultMap id="PmBaseMap" type="com.myapp.WegGl.dto.Pm">
+    <id property="nodeId" column="node_id" jdbcType="INTEGER"/>
+    <result property="fatherNodeId" column="father_node_id" jdbcType="INTEGER"/>
+    <result property="name" column="name" jdbcType="VARCHAR"/>
+    <result property="type" column="type" jdbcType="INTEGER"/>
+    <result property="parameter" column="parameter" jdbcType="VARCHAR"/>
+    <result property="projectId" column="project_id" jdbcType="INTEGER"/>
+     <result property="leaf" column="leaf" jdbcType="INTEGER"/>
+  </resultMap>
+  
+  
+  <sql id="Pm_Column_List" >
+    node_id,father_node_id,name,type,parameter,project_id,leaf
+  </sql>
+  
+   <insert id="insert" parameterType="com.myapp.WegGl.dto.Pm" keyProperty="nodeId">
+	    insert into t_pm (node_id,father_node_id,name,type,parameter,project_id,leaf) values
+	    (#{nodeId},#{fatherNodeId,jdbcType=INTEGER},#{name,jdbcType=VARCHAR},#{type,jdbcType=INTEGER},
+	     #{parameter,jdbcType=VARCHAR},#{projectId,jdbcType=INTEGER},#{leaf})
+   </insert>
+   
+   <delete id="deleteByPrimaryId" parameterType="java.lang.Integer">
+   		delete from t_pm where node_id=#{id,jdbcType=INTEGER}
+   </delete>
+  
+  <update id="updateModel" parameterType="com.myapp.WegGl.dto.Pm">
+  	 update t_pm set father_node_id=#{fatherNodeId,jdbcType=INTEGER},name=#{name},type=#{type},parameter=#{parameter} where node_id=#{nodeId,jdbcType=INTEGER}
+  </update>
+  
+  
+   <select id="selectByPrimaryId" resultMap="PmBaseMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Pm_Column_List" />
+    from t_pm
+    where node_id = #{nodeId,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectAll" resultMap="PmBaseMap">
+    select 
+    <include refid="Pm_Column_List" />
+    from t_pm
+  </select>
+  
+  <select id="selectByEbsId" resultMap="PmBaseMap" parameterType="java.lang.Integer" >
+  	select p.node_id,p.father_node_id,p.name,p.type,p.parameter,p.project_id
+  	from t_pm p inner join t_ebs e on p.node_id=e.model_id
+  	where e.node_id=#{nodeId,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByFatherNodeId" resultMap="PmBaseMap" parameterType="java.lang.Integer">
+  	select <include refid="Pm_Column_List" />
+  	from t_pm
+  	where father_node_id=#{fatherNodeId,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectBytype" resultMap="PmBaseMap" parameterType="java.lang.Integer">
+  	select
+  	<include refid="Pm_Column_List"/>
+  	from t_pm where type=#{type,jdbcType=INTEGER}
+  </select>
+  
+  <select id="selectByProjectId" resultMap="PmBaseMap" parameterType="java.lang.Integer">
+  	select
+  	<include refid="Pm_Column_List"/>
+  	from t_pm where project_id=#{projectId,jdbcType=INTEGER}
+  </select>
+</mapper>

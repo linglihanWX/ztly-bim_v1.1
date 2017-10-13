@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>施工阶段</title>
+    <link rel="shortcut icon" href="../../common/img/FD_favicon.ico">
+    <link rel="stylesheet" href="../../common/css/reset.css">
+    <link rel="stylesheet" href="../../common/IconFont/iconfont.css">
+    <link rel="stylesheet" href="../../common/css/easyui.css">
+    <link rel="stylesheet" href="./css/workshow.css">
+    <link rel="stylesheet" href="../../../webgl/compass/css/compass.css">
+
+
+    <link rel="stylesheet" href="./css/workSynthesizeShow.css">
+	<link rel="stylesheet" href="../../common/js/jquery-easyui-1.4.5/themes/icon.css">
+	<link href="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/Widgets/widgets.css" rel="stylesheet">
+	<script type="text/javascript" src="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/FreeDo.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script>
+	<script type="text/javascript" src="http://gbim360.com:9999/projects/FreedoGBIM360/1.2.0-beta.170808/API/FreedoX.js"></script>
+	<script type="text/javascript" src="../../common/js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../../common/js/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../../common/js/jquery-easyui-1.4.5/locale/easyui-lang-zh_CN.js"></script>	
+	<script type="text/javascript" src="../../../webgl/compass/js/Compass.js"></script>
+</head>
+<body>
+
+<div class="header" id="header">
+    <div class="headerMiddle">
+        
+        <p class="showInfo">
+            <button class="active zy" id="zy">质量查询</button>
+            <button class="jd" id="jd">安全查询</button>
+            <button class="aq" id="aq">进度查询</button>
+            <button class="dz" id="dz">成本查询</button>
+            <button class="my" id="my">脚本漫游</button>
+        </p>
+    </div>
+</div>
+
+<div id="content" class="content">
+    <div id="left" class="left">
+        <ul id="tree"></ul>
+        <ul id="js"></ul>
+    </div>
+    <div id="right"></div>
+    <ul class="msgInfo zy">
+        <h1 class="information"></h1>
+    </ul>
+    <ul class="msgInfo jd">
+        <h1 class="information"></h1>
+    </ul>
+    <ul class="msgInfo aq">
+        <h1 class="information"></h1>
+    </ul>
+    <ul class="msgInfo dz">
+        <h1 class="information"></h1>
+    </ul>
+</div>
+</body>
+<script src="../../../webgl/manyou/js/FDPAction_Camera.js"></script>
+<script src="../../../webgl/manyou/js/FDPCameraRoute.js"></script>
+<script src="../../../webgl/manyou/js/FDPScript.js"></script>
+<script src="../../common/js/FreeDoToolLC.js"></script>
+<script src="../../common/js/edit.js"></script>
+<script src="./js/FreeDoPm.js"></script>
+<script src="./js/workSynthesizeShow.js"></script>
+</html>

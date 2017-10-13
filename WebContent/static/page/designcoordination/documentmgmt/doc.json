@@ -1,0 +1,31 @@
+[
+  {
+    "id": 0,
+    "pId": -1,
+    "name": "文档"
+  },
+  {
+    "id": 1,
+    "pId": 0,
+    "name": "土建",
+    "doc": "<tr><td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>S-1-01-010.PDF</td><td>V2.1</td><td>821.27 kb</td><td>2017/03/04 17:36:25</td><td>土建系统</td><td><a href='download?filename=S-1-01-010.PDF'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>S-1-03-011.PDF</td><td>V2.2</td><td>865.01 kb</td><td>2017/07/12 12:36:25</td><td>土建系统</td><td><a href='download?filename=S-1-03-011.PDF'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>S-1-03-012.PDF</td><td>V2.3</td><td>899.36 kb</td><td>2017/08/29 06:36:25</td><td>土建系统</td><td><a href='download?filename=S-1-03-012.PDF'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>S-1-05-013.PDF</td><td>V2.3</td><td>912.86 kb</td><td>2017/09/23 22:12:05</td><td>土建系统</td><td><a href='download?filename=S-1-05-013.PDF'>下载</a></td></tr>"
+  },
+  {
+    "id": 2,
+    "pId": 0,
+    "name": "机电",
+    "doc": "<tr><td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>G-2-00-010.PDF</td><td>V1.1</td><td>465.38 kb</td><td>2017/01/13 09:36:25</td><td>机电系统</td><td><a href='download?filename=G-2-00-010.PDF'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>G-2-01-011.PDF</td><td>V1.2</td><td>512.69 kb</td><td>22017/04/29 14:24:56</td><td>机电系统</td><td><a href='download?filename=G-2-01-011.PDF'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>G-2-02-012.PDF</td><td>V1.3</td><td>635.27 kb</td><td>2017/07/04 13:15:39</td><td>机电系统</td><td><a href='download?filename=G-2-02-012.PDF'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>G-2-03-013.PDF</td><td>V1.4</td><td>721.13 kb</td><td>2017/09/19 22:10:11.</td><td>机电系统</td><td><a href='download?filename=G-2-03-013.PDF'>下载</a></td></tr>"
+  },
+  {
+    "id": 3,
+    "pId": 0,
+    "name": "给排水",
+    "doc": "<tr><td><img src='static/page/designcoordination/documentmgmt/img/txt.jpg' alt=''>P-3-00-010.txt</td><td>V1.1.1</td><td>635.27 kb</td><td>2017/01/15 11:23:36</td><td>给排水系统</td><td><a href='download?filename=P-3-00-010.txt'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/txt.jpg' alt=''>P-3-01-011.txt</td><td>V1.1.2</td><td>512.69 kb</td><td>2017/03/27 16:36:45</td><td>给排水系统</td><td><a href='download?filename=P-3-01-011.txt'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/txt.jpg' alt=''>P-3-02-012.txt</td><td>V1.2.1</td><td>635.27 kb</td><td>017/05/31 23:56:26</td><td>给排水系统</td><td><a href='download?filename=P-3-02-012.txt'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/txt.jpg' alt=''>P-3-03-013.txt</td><td>V1.2.1</td><td>635.27 kb</td><td>017/05/31 23:56:26</td><td>给排水系统</td><td><a href='download?filename=P-3-03-013.txt'>下载</a></td></tr>"
+  },
+  {
+    "id": 4,
+    "pId": 0,
+    "name": "通风",
+    "doc": "<tr><td><img src='static/page/designcoordination/documentmgmt/img/doc.jpg' alt=''>T-4-10-010.doc</td><td>V1.1.1</td><td>721.13 kb</td><td>2017/04/29 23:56:26</td><td>通风系统</td><td><a href='download?filename=T-4-10-010.doc'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/doc.jpg' alt=''>T-4-10-011.doc</td><td>V1.1.2</td><td>465.38 kb</td><td>2017/08/01 11:23:36</td><td>通风系统</td><td><a href='download?filename=T-4-10-011.doc'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/doc.jpg' alt=''>T-4-10-012.doc</td><td>V1.2.1</td><td>635.27 kb</td><td>2017/09/22 13:15:39</td><td>通风系统</td><td><a href='download?filename=T-4-10-012.doc'>下载</a></td></tr><tr><td><img src='static/page/designcoordination/documentmgmt/img/doc.jpg' alt=''>T-4-10-013.doc</td><td>V1.2.1</td><td>635.27 kb</td><td>2017/09/22 13:15:39</td><td>通风系统</td><td><a href='download?filename=T-4-10-013.doc'>下载</a></td></tr>"
+  }
+]

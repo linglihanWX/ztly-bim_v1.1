@@ -1,0 +1,296 @@
+@charset "utf-8";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-y:hidden;
+}
+a {
+    color:#fff;
+}
+
+#header {
+	width: 100%;
+    height: 40px;
+    background-color: rgb(140, 164, 182);
+}
+
+#header .headerLeft {
+	padding: 0 10px;
+    box-sizing: border-box;
+    float: left;
+    width: 200px;
+    height: 100%;
+}
+
+#header .headerLeft p {
+    height: 40px;
+    box-sizing: border-box;
+    line-height: 105px;
+    font-size: 14px;
+    color: #fff;
+}
+
+#header .headerLeft p i {
+    margin-right: 5px;
+}
+
+#header .headerLeft p:last-child i {
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+#header .headerMiddle {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: calc(100% - 500px);
+    color: #fff;
+    line-height:40px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+#header .headerMiddle>span {
+    font-size: 24px;
+}
+
+#header .headerMiddle .tool {
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+}
+
+#header .headerMiddle .tool i {
+    margin-right: 5px;
+}
+
+#header .headerRight {
+    float: right;
+    width: 300px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#header .headerRight .info {
+    width: 100%;
+    height: 35px;
+    font-size: 0;
+}
+
+#header .headerRight .info .message, #header .headerRight .info .email {
+    display: inline-block;
+    position: relative;
+    width: 56px;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+#header .headerRight .info .message {
+    background-color: #882e64;
+}
+
+#header .headerRight .info .email {
+    background-color: #2f8a64;
+}
+
+#header .headerRight .info .message i, #header .headerRight .info .email i
+{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+#header .headerRight .info .email i {
+    font-size: 24px;
+}
+
+#header .headerRight .info .tipNum {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #d05b44;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+#header .headerRight .info .email span {
+    background-color: #83b16e;
+}
+
+#header .headerRight .info .user {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#header .headerRight .info .user img:first-child {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #62a9d0;
+    margin: 0 5px
+}
+
+#header .headerRight .info .user .userName {
+    display: inline-block;
+    height: 100%;
+    width: 105px;
+    vertical-align: top;
+    font-size: 12px;
+    padding: 3px;
+    box-sizing: border-box;
+    color: #fff;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+#header .headerRight .info .user i {
+    position: absolute;
+    right: -10px;
+    top: 13px;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#header .headerRight .search {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    padding: 5px 10px 5px 0;
+    box-sizing: border-box;
+}
+
+#header .headerRight .search #search {
+    width: 230px;
+    height: 27px;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: #fff;
+    text-indent: 25px;
+    font-size: 14px;
+}
+
+#header .headerRight .search>i {
+    position: absolute;
+    left:2px;
+    top: 7px;
+    font-weight: bold;
+    color: #0082c9;
+    vertical-align: top;
+    text-align: center;
+    font-size: 23px;
+    
+}
+
+#header .headerRight .search input[type=button] {
+    position: absolute;
+    right: 18px;
+    top: 5px;
+    width: 50px;
+    height: 29px;
+    border: none;
+    outline: none;
+    background-color: #4CAE4C;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.search p{
+	display: none;
+    position: absolute;
+    right: 68px;
+    top: 6px;
+    width: auto;
+    height: 27px;
+    font-size: 12px;
+    line-height: 27px;
+    color: #ccc;
+    font-size: 0;
+    text-align: right; 
+}
+.search p i{
+	 font-size: 20px;
+	 color:#777777;
+	 background-color: #D8D8D8;
+	 margin-right:3px;
+}
+.search p span{
+    display: inline-block;
+    width: auto;
+    height: 27px;
+    font-size: 12px;
+    text-align: center; 
+    margin-right: 5px; 
+    vertical-align: top
+}
+
+#content {
+    width: 100%;
+    height:calc(100% - 70px);
+}
+
+#content #left {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 97%;
+    background-color: #d2eefd;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+#content #right {
+    overflow:hidden;
+    height: 100%;
+    
+}
+/*修改3D区域的模块*/
+#right .cesium-viewer-bottom,
+.cesium-viewer-toolbar {
+    display: none!important;
+}
+#menu{
+	display:none;
+}
+
+#tree{
+	 position: relative;
+	 z-index: 1;
+}
+
+
+/*select 标签*/
+.select{
+	width:100%;
+	height:25px;
+	font-size:13px;
+	text-indent: 5px;
+}
+
+.panel-body{
+	overflow:hidden;
+}
+a.brand span {
+    font-size: 24px!important;
+}
+
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}

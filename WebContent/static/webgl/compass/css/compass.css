@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+.compassDiv {
+	width: 120px;
+	height: 120px;
+	border-radius:60px;
+	border: 3px solid rgba(255,255,0,0.4);
+	text-align: center;
+	position: absolute;
+	right:2px;
+	top:7px;
+	box-sizing: border-box;
+	padding: 0px;
+}
+.compassPicDiv{
+	width: 64px;
+	height: 64px;
+	background: url('../img/compass.png') no-repeat center center;
+	margin: 25px auto;
+	border-radius: 32px;
+	box-sizing: border-box;
+}
+.nesw td{
+	width:40px;
+	color: rgba(255,255,255,0.7);
+}
+.nesw td span{
+	cursor: pointer;
+}
+.nesw td:HOVER{
+	color:white;
+	font-weight: bold;
+}
+.compassPicDiv:HOVER {
+	border: 2px solid rgba(255,255,0,0.4);
+	background: url('../img/home.png') no-repeat center center;
+}
+.compassPicDiv:ACTIVE {
+	border-width: 0px;
+	background-color: rgba(255,0,0,0.4);
+}

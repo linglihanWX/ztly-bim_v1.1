@@ -1,0 +1,580 @@
+@charset "utf-8";
+
+html,
+body {
+    /*overflow-y: hidden;*/
+}
+a:hover{
+    text-decoration: none;
+}
+#left{
+    width: 100%;
+    height: 100%;
+}
+.panel.datagrid{
+    width: 100%!important;
+    height: 100%;
+}
+.panel-header, .panel-body {
+    border-width: 0;
+}
+
+.datagrid-footer-inner {
+ border-width: 0;
+}
+
+.allWidth{
+     width: 100%!important;
+ }
+.datagrid-wrap,.panel-body ,.panel-body-noheader, datagrid-view{
+    height: 100%!important;
+}
+
+#content{
+    margin: 0;
+    padding: 0;
+}
+.breadcrumb{
+    margin: 0;
+}
+#sidebar-left{
+    width: 7%;
+}
+#content {
+    width: 93%;
+    margin-left: 7% !important;
+}
+#DataTables_Table_0{
+    width: 100%;
+    margin: 0;
+}
+#DataTables_Table_0_wrapper .row-fluid{
+    display: none;
+}
+#DataTables_Table_0 thead>tr>th{
+    text-align: center;
+    vertical-align: middle;
+}
+.box-content{
+    padding:0;
+}
+
+.lists a{
+    margin-left:10px;
+}
+.breadcrumb .lists a:hover {
+    color: red;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+}
+.activeList{
+    color:red;
+    font-weight: bold;
+}
+#DataTables_Table_0 tbody>tr>td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*按钮部分*/
+#div1{
+    margin-top: 3px;
+    display: inline-block;
+    width: 35px;
+    height: 15px;
+    border-radius: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+#div2{
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+    box-sizing: border-box;
+}
+.open1{
+    background: rgba(0,184,0,0.8);
+}
+.open2{
+    top: -1px;
+    right: 0;
+}
+.close1{
+    background: rgba(255,255,255,0.4);
+    border:1px solid rgba(0,0,0,0.15);
+    border-left: transparent;
+}
+.close2{
+    left: 0;
+    top: -2px;
+    border:1px solid rgba(0,0,0,0.1);
+}
+
+.breadcrumb li:last-of-type{
+    line-height: 20px;
+}
+.breadcrumb li:last-of-type span{
+    vertical-align: top;
+}
+.ztree,#addSence{
+    width: 100%;
+    height: 100%;
+    overflow-x:auto;
+    padding:5px 0 0  0;
+    box-sizing: border-box;
+}
+
+#addSence{
+    display: none;
+    padding: 0;
+}
+
+.row-fluid {
+    position: relative;
+    height: 100%;
+}
+#init{
+    float: right;
+    height: 100%;
+    width: 100%;
+}
+.toggleText{
+    display: inline-block;
+    width: 40px;
+    border:1px solid #000;
+    cursor: pointer;
+}
+.on {
+    background: red;
+}
+
+.table td {
+    padding: 8px 0;
+    font-size: 12px;
+}
+.box{
+    position: absolute;
+    left: 0;
+    top: 0;
+    border:none;
+    height:100%;
+}
+.box-content{
+    height: 100%;
+    opacity: .8;
+    background: #ccc !important;
+    overflow-y:auto;
+}
+.nav li{
+    cursor:pointer;
+}
+
+.changWidth{
+    width: 14%!important;
+}
+
+.minTree{
+    width: 0!important;
+}
+
+/*场景*/
+#addSence ul{
+    list-style: none;
+}
+
+#addSence > p{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background-color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+#addSence > p:nth-of-type(2){
+    background-color: transparent;
+}
+#addSence ul{
+    margin: 0;
+}
+#addSence>ul>li:first-of-type{
+    border-top: 1px solid #000;
+}
+#addSence>ul>li{
+    position: relative;
+    width: 100%;
+    min-height: 35px;
+    line-height: 35px;
+    background-color: #fff;
+    text-indent: 10px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #000;
+}
+#addSence i{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+    line-height: 35px;
+}
+
+#addSence>ul>li li{
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+    text-indent: 30px;
+    border-top: 1px solid #000;
+}
+#addSence>ul>li li:nth-of-type(odd){
+    background-color: #fff;
+}
+#addSence>ul>li li i{
+    right: 48px;
+}
+#addSence>ul>li li:last-of-type{
+    text-align: center;
+    text-indent: 0;
+}
+
+.container-fluid-full{
+    height:calc(100% - 50.4px);
+}
+.container-fluid-full>.row-fluid{
+    position: relative;
+    height: 100%;
+}
+#content{
+    min-height: 0!important;
+    height: 100%
+}
+
+.row-fluid.sortable.ui-sortable{
+    height: 100%;
+}
+
+/*备注列表*/
+#bInfo{
+    display: none;
+    padding: 0 3px;
+    overflow-y: auto;
+}
+#bInfo>p:first-of-type{
+    position: relative;
+    width: 100%;
+    padding: 5px 0;
+    text-align: center;
+}
+#bInfo p:first-of-type input{
+    width: 90%;
+
+    border: 1px solid #000;
+}
+#bInfo p:first-of-type i{
+    position: absolute;
+    right: 2%;
+    top: 8px;
+    font-size: 25px;
+}
+#bInfo ul li{
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#bInfo ul li img{
+    height: 150px;
+    width: 100%;
+}
+#bInfo ul li p{
+    width: 100%;
+    font-size: 12px;
+    text-align: left;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/*属性部分*/
+#attrInfo{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 210px;
+    height: 100%;
+    overflow-y: auto;
+    background-color: #fff;
+}
+.attrList{
+    width: 100%;
+    height: 40px;
+    font-size: 0;
+}
+.attrList li{
+    display: inline-block;
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+    text-align: center;
+    line-height: 30px;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.attrList li:nth-of-type(2){
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.attrText div{
+    width: 100%;
+}
+.attrText div:nth-of-type(2),
+.attrText div:nth-of-type(3){
+    display: none;
+}
+.selectList{
+    background-color: #a29c9c;
+}
+
+
+/*批注部分*/
+#edit{
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    width: 600px;
+    height: 270px;
+    padding: 10px;
+    margin:0 0 0 -300px;
+    border-radius: 10px;
+    background-color: #fff;
+}
+#edit textarea{
+    margin:10px 0;
+    width: 100%;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+#edit p:first-of-type span{
+    float: right;
+}
+#edit p:last-of-type{
+    text-align: right;
+}
+#edit p:last-of-type button{
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ccc;
+}
+
+#edit p:last-of-type button:last-of-type{
+    background-color: #169bd5;
+}
+#edit ul li i{
+    color: grey;
+}
+
+#dailog{
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 210px;
+    height: 100%;
+    padding: 0 5px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+#dailog>p{
+    width: 100%;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border-bottom: 1px solid #ccc;
+}
+
+.dialogContent ul{
+    height: 100%;
+    overflow-y:auto; 
+}
+.dialogContent li{
+    margin: 7px 0;
+}
+.dialogContent li p span{
+    font-size: 12px;
+}
+.dialogContent li p .sendTime{
+    margin-left: 20px;
+}
+.dialogContent li p:last-of-type{
+    text-indent: 20px;
+    font-size: 12px;
+}
+.sendInfo{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+.sendInfo textarea{
+    width: 100%;
+    height: 150px;
+    resize:none;
+}
+.sendInfo div{
+    margin-top: 10px;
+}
+.sendInfo div p{
+    display: inline-block;
+}
+.sendInfo div p i{
+    margin-right: 10px;
+    font-size: 18px;
+}
+.sendInfo div p i:first-of-type{
+    font-size: 20px;
+}
+.sendInfo div button{
+    width: 60px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #169bd5;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    float: right;
+}
+
+
+#menu{
+    display: none;
+    position: absolute;
+    width: 100px;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+}
+#menu li{
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    color: #000;
+    background-color: #fff;
+    text-indent: 10px;
+}
+
+#menu li:not(:last-of-type){
+    border-bottom: 1px solid #ccc;
+}
+/*会员*/
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}
+
+a.brand span {
+    font-size: 24px!important;
+}
+.breadcrumb>a i{
+    margin-left: 10px;
+}
+#edit ul li span{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+}
+/* tree 的右击菜单*/
+#rMenu{
+    display: none;
+    border: 1px solid #000;
+    width: 100px;
+    z-index:999999;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+#rMenu a{
+    text-indent: 5px;
+    display: block;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+}
+#rMenu a:first-of-type{
+    border-bottom: 1px solid #000;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+#rMenu a:last-of-type{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#rMenu a:hover{
+    background-color: #ccc;
+}
+#showDraw{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: -250px 0 0 -300px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+#showDraw p{
+    margin: 10px 0 ;
+}
+#showDraw p input{
+    vertical-align: top;
+    margin-left: 20px;
+}
+#showDraw img{
+    width: 100%;
+    height: 350px;
+}
+
+.downLoad{
+    float: right;
+
+}
+
+/*标准按钮部分*/
+.btnStandard {
+    margin-left: 50px;
+}
+.btnStandard input{
+    width: 60px;
+    height: 27px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+}
+input.btnActive{
+    background-color: #50bfff;
+    color:#fff;
+}

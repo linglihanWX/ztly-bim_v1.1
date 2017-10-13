@@ -1,0 +1,596 @@
+@charset "utf-8";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-y:hidden;
+}
+a {
+    color:#fff;
+}
+
+#header {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    background-color:rgb(140, 164, 182);
+}
+
+#content {
+    width: 100%;
+    height:calc(100% - 40px);
+}
+
+#content #left {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: #d2eefd;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#content #right {
+    overflow:hidden;
+    height: 100%;
+
+}
+/*修改3D区域的模块*/
+#right .cesium-viewer-bottom,
+.cesium-viewer-toolbar {
+    display: none!important;
+}
+#menu{
+    display:none;
+}
+
+#tree{
+    position: relative;
+    z-index: 1;
+}
+
+.panel-body{
+    overflow:hidden;
+}
+
+
+#header .showInfo {
+    position: absolute;
+    bottom: 5px;
+    left: 30px;
+    font-size: 0;
+}
+
+#header .showInfo button {
+    width: 75px;
+    height: 30px;
+    border: none;
+    margin-right: 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    background-color: #223d76;
+    cursor: pointer;
+}
+
+.active {
+    font-weight: bold;
+    background-color: #6097bf !important
+}
+
+#header .toggleInfo,
+#header .toggleProgress {
+    position: absolute;
+    left: 360px;
+    bottom: 0;
+    cursor: pointer;
+}
+#header .toggleProgress{
+    font-size: 0;
+}
+
+
+#header .compare,
+#header .plan,
+#header .real {
+    display: inline-block;
+    width: 45px;
+    height: 24px;
+    background-color: #eee;
+    color: #ccc;
+    margin-left: 5px;
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 24px;
+    cursor: pointer;
+    text-align: center;
+}
+
+#header .plan{
+    left: 320px;
+}
+#header .real{
+    left: 340px;
+}
+
+.checkSpan {
+    color: #fff !important;
+    background-color: #6097bf!important;
+    font-weight: bold;
+}
+
+#header .toggleProgress {
+    display: none;
+}
+
+#content #left {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: #d2eefd;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#content #right {
+    display: none;
+    position: relative;
+}
+
+#content #right .model {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#content #right .model .detailInfo {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 400px;
+    border: 1px solid #000;
+}
+
+#content #right .model .detailInfo ul li {
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+#content #right .model .detailInfo ul li {
+    border-bottom: 1px solid #000;
+}
+
+#content #right .model .detailInfo ul li span {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 29px;
+    box-sizing: border-box;
+    vertical-align: top;
+    border-right: 1px solid #000;
+    background-color: rgba(221, 221, 221, 0.67);
+}
+
+#content #right .model .detailInfo ul li input {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 29px;
+    box-sizing: border-box;
+    vertical-align: top;
+    border: none;
+    background-color: #fff;
+}
+
+#content #right .model .detailInfo ul li input:last-of-type {
+    font-size: 12px;
+}
+
+#content #right .model .detailInfo button {
+    width: 100%;
+    height: 30px;
+    background-color: cadetblue;
+    border: none;
+    outline: none;
+}
+
+
+/*播放按钮部分*/
+
+.realityPlay,
+.planPlay,
+.comparePlay {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 2;
+    width: 750px;
+    height: 70px;
+    margin-left: -375px;
+    box-sizing: border-box;
+    background-color: #000;
+    opacity: .6;
+}
+
+#content #right .control,
+.comparePlay .control {
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+    line-height: 70px;
+    float: left;
+    text-align: center;
+}
+
+#content #right .control i,
+.comparePlay .control i {
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#content #right .progress,
+.comparePlay .progress {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: 620px;
+    padding-top: 10px;
+    box-sizing: border-box;
+}
+
+#content #right .progress .startTime,
+#content #right .progress .endTime,
+.comparePlay .startTime,
+.comparePlay .endTime {
+    position: absolute;
+    top: 45px;
+    width: 60px;
+    height: 25px;
+    font-size: 10px;
+    color: #fff;
+    line-height: 25px;
+    box-sizing: border-box;
+}
+
+#content #right .progress .startTime,
+.comparePlay .startTime {
+    left: -30px;
+}
+
+#content #right .progress .endTime,
+.comparePlay .endTime {
+    right: -30px;
+}
+
+#singleEdit,
+#manyEdit,
+.editStr {
+    display: none !important;
+}
+
+#treeGrid .datagrid-body {
+    overflow-x: hidden;
+}
+
+
+/*删除模态框 Start*/
+
+.dialog {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+}
+
+.dialog>div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 200px;
+    border: 1px solid #ccc;
+    color: #000;
+    box-sizing: border-box;
+    margin: -100px 0 0 -200px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 9999;
+    background-color: #e8e5c0;
+}
+
+.dialog>div>p {
+    font-size: 18px;
+    margin-top: 60px;
+    text-align: center;
+}
+
+.dialog>div>button {
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: darkgray;
+    margin: 50px 20px 0 20px;
+}
+
+.closeDialog {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    z-index: 9999;
+}
+
+
+/*删除模态框 End*/
+
+#addModel,
+#changeInfo {
+    display: none;
+}
+
+.jdModel {
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: cornflowerblue;
+    box-sizing: border-box;
+    padding: 10px 5px;
+    z-index: 1;
+}
+
+.jdModel .panel .panel-body {
+    background-color: cornflowerblue;
+}
+
+.jdModel>div,
+.jdModel .change {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 5px;
+}
+
+.jdModel>div>span,
+.jdModel .change span {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: right;
+    margin: 0 5px;
+}
+
+.jdModel .change select {
+    width: 200px;
+    height: 30px;
+    font-size: 11px;
+}
+
+.jdModel input[type="file"] {
+    width: 74px;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+}
+
+.jdModel>div>input[type="number"],
+.jdModel>div>input[type="text"],
+.jdModel>div>input[type="date"] {
+    display: inline-block;
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    text-indent: 5px;
+    box-sizing: border-box;
+}
+
+.jdModel .btn {
+    padding-left: 110px;
+    margin-top: 30px;
+}
+
+.jdModel .btn>input[type="button"] {
+    height: 30px;
+    width: 70px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    background-color: #d9dfe8;
+}
+
+.jdModel .btn>input[type="button"]:nth-child(2) {
+    margin-left: 60px;
+}
+
+.btn input {
+    color: #000;
+}
+
+.panel.window {
+    visibility: hidden;
+}
+
+.datagrid-cell span:first-of-type {
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.datagrid-header-row td {
+    height: 30px;
+}
+
+.datagrid-row td {
+    height: 30px;
+}
+
+.datagrid-cell {
+    font-size: 13px;
+}
+
+.tree-title {
+    font-size: 13px;
+}
+
+.toggleInfo {
+    display: none;
+}
+
+.bar,
+.comparePlay .bar {
+    margin-top: 20px;
+    position: relative;
+    width: 620px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.slider,
+.realSlider,
+.compareSlider {
+    position: absolute;
+    left: 0;
+    top: -5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.tip,
+.realTip,
+.compareTip {
+    display: block;
+    position: absolute;
+    left: -25px;
+    top: -25px;
+    width: 70px;
+    height: 16px;
+    color: #fff;
+    font-size: 12px;
+}
+
+
+/*2D-3D切换按钮 标签*/
+
+.btn-wrapper {
+    width: 60px;
+    height: 25px;
+    background-color: #eee;
+    margin-left: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin-bottom:7px;
+}
+
+.btn-wrapper .off {
+    position: relative;
+    float: right;
+    width: 50%;
+    height: 27px;
+    text-align: center;
+    line-height: 27px;
+    color: #ccc;
+    border-radius: 5px;
+    transition: transform 0.5s;
+}
+
+.btn-wrapper .off-original {
+    transform: translate(0px, -1px);
+}
+
+.btn-wrapper .off-original:after {
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    font-size: 12px;
+    color:  #CAC7C7;
+}
+
+.btn-wrapper .off-change {
+    transform: translate(-18px, -1px);
+}
+
+.btn-wrapper .on {
+    float: left;
+    position: relative;
+    width: 50%;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 5px;
+    z-index: 2;
+    color: #6d6d6d;
+    transition: transform 0.5s;
+}
+
+.btn-wrapper .on-change {
+    transform: translate(24px, -3px);
+}
+
+.btn-wrapper .on-change:after {
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    color: #fff;
+    font-size: 12px;
+}
+
+
+/* 对照 */
+
+#compareModel {
+    display: none;
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background: #e8e8e8;
+    float: right;
+    border-left: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.compareRealPlan {
+    display: none;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    /*border: 1px solid rgba(39, 172, 191, 0.49);*/
+    /*background: rgba(39, 172, 191, 0.49);*/
+    /*border: 1px solid #fff;*/
+    /*background: #fff;*/
+    border-radius: 5px;
+    color:#fff;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 2;
+}

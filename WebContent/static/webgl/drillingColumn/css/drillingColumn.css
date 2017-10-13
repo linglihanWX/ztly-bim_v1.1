@@ -1,0 +1,528 @@
+@charset "utf-8";
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-y:hidden;
+}
+a {
+    color:#fff;
+}
+
+#header {
+	width: 100%;
+    height: 70px;
+    background-color: #0082c9;
+}
+
+#header .headerLeft {
+	padding: 0 10px;
+    box-sizing: border-box;
+    float: left;
+    width: 200px;
+    height: 100%;
+}
+
+#header .headerLeft p {
+    height: 70px;
+    box-sizing: border-box;
+    line-height: 105px;
+    font-size: 14px;
+    color: #fff;
+}
+
+#header .headerLeft p i {
+    margin-right: 5px;
+}
+
+#header .headerLeft p:last-child i {
+    display: inline-block;
+    font-size: 10px;
+    margin-left: 5px;
+}
+
+#header .headerMiddle {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    width: calc(100% - 500px);
+    color: #fff;
+    padding-top: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}
+/*按钮样式*/
+#header .showInfo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    float: left;
+    font-size: 0;
+}
+
+#header .showInfo button {
+    width: 80px;
+    height: 30px;
+    border: none;
+    margin-right: 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    background-color: #223d76;
+    cursor: pointer;
+}
+
+#header .showInfo .active {
+    font-weight: bold;
+    background-color: #6097bf !important
+}
+
+#header  .toggleInfo, #header  .toggleProgress {
+    position: absolute;
+    left: 360px;
+    bottom: 0;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
+    color: #000;
+    background-color: #e8e8e8;
+    cursor: pointer;
+}
+
+#header  .toggleInfo span, #header  .toggleProgress span {
+    color: #000;
+    font-size: 12px;
+}
+
+.checkSpan {
+    color: blue !important;
+    font-weight: bold;
+}
+
+#header  .toggleInfo:hover, #header  .toggleProgress:hover {
+    background-color: #ccc;
+}
+
+#header  .toggleProgress {
+    display: none;
+}
+/*2D-3D切换按钮*/
+.btn-wrapper{
+    display: inline-block;
+    width: 40px;
+    height: 18px;    
+    
+}
+.btn-wrapper .btn-change{
+   width: 40px;
+   height: 18px;
+   background-color: #eee;
+   border-radius: 4px;
+   font-size: 12px;
+   margin: 4px 0 0 10px;
+}
+.btn-wrapper .off{
+    position: relative;
+    float: right;
+    width: 16px;
+    height: 20px;
+    color: #ccc;
+    transition: transform 0.5s;
+    
+}
+.btn-wrapper .off-original{
+    transform: translate(0px, -1px);
+}
+.btn-wrapper .off-original:after{
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    content: "3D";
+    font-size: 12px;
+    color: #ccc;
+}
+.btn-wrapper .off-change{
+    transform: translate(-18px, -1px);
+}
+.btn-wrapper .off-change:after{
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    content: "2D";
+    font-size: 12px;
+    color: #ccc;
+}
+.btn-wrapper .on{
+    float: left;
+    position: relative;
+    width: 22px;
+    height: 22px;
+    background-color: #6097bf;
+    border-radius: 6px;
+    border: 1px solid #3c6786;
+    z-index: 2;
+    color: #fff;
+    transition: transform 0.5s;
+
+}
+.btn-wrapper .on-original{
+    transform: translate(-10px,-3px);
+}
+.btn-wrapper .on-original:after{
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    content: "2D";
+    color: #fff;
+    font-size: 12px;
+}
+.btn-wrapper .on-change{
+    transform: translate(24px,-3px);
+}
+.btn-wrapper .on-change:after{
+    position: absolute;
+    left: 3px;
+    top: 2px;
+    content: "3D";
+    color: #fff;
+    font-size: 12px;
+}
+/**/
+
+#header .headerMiddle>span {
+    font-size: 24px;
+}
+
+#header .headerMiddle .tool {
+    position: absolute;
+    right: 20px;
+    bottom: 5px;
+}
+
+#header .headerMiddle .tool i {
+    margin-right: 5px;
+}
+
+#header .headerRight {
+    float: right;
+    width: 300px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#header .headerRight .info {
+    width: 100%;
+    height: 35px;
+    font-size: 0;
+}
+
+#header .headerRight .info .message, #header .headerRight .info .email {
+    display: inline-block;
+    position: relative;
+    width: 56px;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+#header .headerRight .info .message {
+    background-color: #882e64;
+}
+
+#header .headerRight .info .email {
+    background-color: #2f8a64;
+}
+
+#header .headerRight .info .message i, #header .headerRight .info .email i
+{
+    font-size: 20px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+#header .headerRight .info .email i {
+    font-size: 24px;
+}
+
+#header .headerRight .info .tipNum {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    text-align: center;
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #d05b44;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+#header .headerRight .info .email span {
+    background-color: #83b16e;
+}
+
+#header .headerRight .info .user {
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#header .headerRight .info .user img:first-child {
+    width: 35px;
+    height: 35px;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #62a9d0;
+    margin: 0 5px
+}
+
+#header .headerRight .info .user .userName {
+    display: inline-block;
+    height: 100%;
+    width: 105px;
+    vertical-align: top;
+    font-size: 12px;
+    padding: 3px;
+    box-sizing: border-box;
+    color: #fff;
+    word-wrap: break-word;
+    cursor: pointer;
+}
+
+#header .headerRight .info .user i {
+    position: absolute;
+    right: -10px;
+    top: 13px;
+    font-size: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#header .headerRight .search {
+    position: relative;
+    width: 100%;
+    height: 35px;
+    padding: 5px 10px 5px 0;
+    box-sizing: border-box;
+}
+
+#header .headerRight .search #search {
+    width: 230px;
+    height: 27px;
+    border: 1px solid #ccc;
+    outline: none;
+    background-color: #fff;
+    text-indent: 25px;
+    font-size: 14px;
+}
+
+#header .headerRight .search>i {
+    position: absolute;
+    left:2px;
+    top: 7px;
+    font-weight: bold;
+    color: #0082c9;
+    vertical-align: top;
+    text-align: center;
+    font-size: 23px;
+    
+}
+
+#header .headerRight .search input[type=button] {
+    position: absolute;
+    right: 18px;
+    top: 5px;
+    width: 50px;
+    height: 29px;
+    border: none;
+    outline: none;
+    background-color: #4CAE4C;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.search p{
+	display: none;
+    position: absolute;
+    right: 68px;
+    top: 6px;
+    width: auto;
+    height: 27px;
+    font-size: 12px;
+    line-height: 27px;
+    color: #ccc;
+    font-size: 0;
+    text-align: right; 
+}
+.search p i{
+	 font-size: 20px;
+	 color:#777777;
+	 background-color: #D8D8D8;
+	 margin-right:3px;
+}
+.search p span{
+    display: inline-block;
+    width: auto;
+    height: 27px;
+    font-size: 12px;
+    text-align: center; 
+    margin-right: 5px; 
+    vertical-align: top
+}
+
+#content {
+    width: 100%;
+    height:calc(100% - 70px);
+}
+
+#content #left {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 100%;
+    background-color: #d2eefd;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+#content #right {
+    overflow:hidden;
+    height: 100%;
+    
+}
+/*修改3D区域的模块*/
+#right .cesium-viewer-bottom,
+.cesium-viewer-toolbar {
+    display: none!important;
+}
+#menu{
+	display:none;
+}
+
+#tree{
+	 position: relative;
+	 z-index: 1;
+}
+
+
+/*select 标签*/
+.select{
+	width:100%;
+	height:25px;
+	font-size:13px;
+	text-indent: 5px;
+}
+
+.panel-body{
+	overflow:hidden;
+}
+
+
+/*--------------------------------------------------------------------------------------  */
+#content #left {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background-color: #d2eefd;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#content #right {
+    display: none;
+    position: relative;
+}
+
+#content #right .model {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.jdModel .form-group{
+	overflow: hidden;
+}
+
+.jdModel>.layer>.form-group{
+	float: left;
+	width: 50%;
+}
+.jdModel .form-group>div{
+	float: left;
+}
+.jdModel .change{
+	margin-top: 0;
+}
+.jdModel .change select {
+    width: 160px;
+    height: 30px;
+    font-size:11px;
+}
+.jdModel>.form-group>div>input[type="number"], 
+.jdModel>.form-group>div>input[type="text"],
+.jdModel>.form-group>div>input[type="date"]{
+    display: inline-block;
+    height: 30px;
+    width: 160px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    text-indent: 5px;
+    box-sizing: border-box;
+    /*margin-top: 5px;*/
+}
+.jdModel .form-group>div>span{
+    display: inline-block;
+    width: 48px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: right;
+    margin: 0 5px;
+}
+.jdModel .form-group>.attribute>span{
+	display: inline-block;
+    width: 46px;
+    height: 30px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: right;
+    margin: 0 5px;
+}
+.jdModel .form-group>.attribute>input[type="text"],
+.jdModel .form-group>.attribute>input[type="number"]{
+	display: inline-block;
+    height: 30px;
+    width: 80px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    text-indent: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+.msgInfo {
+   	display: none;
+    position: absolute;
+    width: 250px;
+    height: 180px;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius:5px;
+    text-align: center;
+	line-height: 50px;
+	padding:15px;
+	z-index:1;
+	background:url(../../../page/common/css/images/bubble.png) no-repeat;
+	
+}

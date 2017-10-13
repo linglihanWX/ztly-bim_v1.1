@@ -1,0 +1,101 @@
+html,
+body {
+    overflow-y: auto;
+}
+p {
+    margin: 0;
+}
+
+.navbar{
+height:52px;
+}
+.container-fluid-full{
+background-color: #fff;
+}
+#content {
+    width: 100%!important;
+    margin-left: 0!important;
+    min-height: 0!important;
+
+}
+.breadcrumb {
+    margin: -28px -28px 0 -28px;
+}
+.listProject{
+    height: auto;
+    width: auto;
+}
+.listProject li {
+    position: relative;
+    width: 300px;
+    height: auto;
+    float: left;
+    margin: 30px 0 0 30px;
+    overflow: hidden;
+}
+
+.listProject li a p {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+.listProject li a img{
+    width: 300px;
+    height: 180px;
+}
+.listProject li a>p:first-of-type {
+    text-align: center;
+    background: #CCEEFF;
+}
+
+.listProject li a>p:first-of-type i {
+    float: left;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+}
+
+.listProject li div {
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    width: 100%;
+    height: 60px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    border-top: 1px solid #fff;
+    background: #000;
+    opacity: 0.6;
+    transition: all 1s;
+}
+
+.listProject li div>p {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    color: #fff;
+}
+
+.listProject li:hover div {
+    bottom: 0;
+}
+a.brand span {
+    font-size: 24px!important;
+}
+
+/*会员*/
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}
+
+footer{
+display: none;
+}
+.lists{
+    margin-left: 20px;
+}
