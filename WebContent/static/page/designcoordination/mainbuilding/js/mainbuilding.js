@@ -135,7 +135,7 @@ $(function () {
     });
 
 
-    $("#drawing").click(function () {
+    $("#drawing, .cad").click(function () {
        $("#showDraw").show();
     });
     $(".downLoad").click(function () {
@@ -309,43 +309,43 @@ $(function () {
      	$("#shuxingmingcheng").text(nodes[0].name);
         $("#menu").hide();
     });
-    $("#beizhu1").click(function() {
+    $("#beizhu2,#zhongdiangc1").click(function() {
     	myviewer.camera.setView({
-    	    destination : new FreeDo.Cartesian3(-2193839.740510777,4377741.797144751,4073240.4175661653),
+    	    destination : new FreeDo.Cartesian3(-2302807.2510784627,4394523.4082239475,3994793.8235483123),
     	    orientation: {
-    	        heading : 3.59017715623866, // east, default value is 0.0 (north)
-    	        pitch : 0.3065491220824681,    // default value (looking down)
-    	        roll : 6.281680763878374                             // default value
+    	        heading : 5.044992016222395, // east, default value is 0.0 (north)
+    	        pitch : 0.3215754362635588,    // default value (looking down)
+    	        roll : 6.27991529153284                           // default value
     	    }
     	});
 	});
-    $("#beizhu2,#zhongdiangc4,#zhongdiangc1").click(function() {
+    $("#zhongdiangc4").click(function() {
     	myviewer.camera.setView({
-    	    destination : new FreeDo.Cartesian3(-2193740.224183728,4377947.211256893,4073125.4370609527),
+    	    destination : new FreeDo.Cartesian3(-2302753.6374329086,4394540.72511198,3994807.819974779),
     	    orientation: {
-    	        heading : 0.037330708480451946, // east, default value is 0.0 (north)
-    	        pitch : -0.41495893261159056,    // default value (looking down)
-    	        roll : 0.0001349555797887092                            // default value
+    	        heading : 1.8806118873166024, // east, default value is 0.0 (north)
+    	        pitch : -0.0003627369162537697,    // default value (looking down)
+    	        roll : 0.0031271705413082884                          // default value
     	    }
     	});
 	});
 	 $("#beizhu3,#zhongdiangc3").click(function() {
 		 myviewer.camera.setView({
-	    	    destination : new FreeDo.Cartesian3(-2193723.810108507,4377892.310680099,4073196.4243841753),
+	    	    destination : new FreeDo.Cartesian3(-2302763.1005514893,4394545.018772202,3994823.558034995),
 	    	    orientation: {
-	    	        heading : 1.7579696132457583, // east, default value is 0.0 (north)
-	    	        pitch : -0.19079301569977014,    // default value (looking down)
-	    	        roll : 0.003306186475537487                             // default value
+	    	        heading : 2.335654016192078, // east, default value is 0.0 (north)
+	    	        pitch : -0.49131390869990543,    // default value (looking down)
+	    	        roll : 0.002683491504127389                             // default value
 	    	    }
 	    	});
 	});
-	 $("#zhongdiangc2").click(function() {
+	 $("#zhongdiangc2,#beizhu1").click(function() {
 		 myviewer.camera.setView({
-			 	destination : new FreeDo.Cartesian3(-2193765.8412362905, 4377825.066559737, 4073529.786256399),
+			 	destination : new FreeDo.Cartesian3(-2302778.173648511, 4394538.465561863, 3994819.182138035),
 				orientation: {
-					heading : 3.151511565477606,
-					pitch : -0.7010380643181917,
-					roll : 6.283142068984704
+					heading : 2.24259938397626,
+					pitch : -0.4041352216647416,
+					roll : 0.002792796281812393
 				}
 	    	});
 	});

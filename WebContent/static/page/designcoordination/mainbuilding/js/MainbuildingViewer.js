@@ -147,8 +147,12 @@ MainBuildingViewer.init = function (earthId) {
 			});*/
 		myviewer = this.viewer;
 		modelTile.readyPromise.then(function() {
-			moveModel(modelTile,-80,20,0,15,0,0,1,1,1);
+			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
 		});
+		
+		$("#shuchuceshi").click(function() {
+			console.log(myviewer.camera);
+		})
 	}
 }
 

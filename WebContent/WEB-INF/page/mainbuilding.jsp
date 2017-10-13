@@ -151,6 +151,7 @@
 					<li class="lists">
 						<a href="#" class="activeList">方案审查</a>
 						<a href="${ctx}/toDesign">仿真设计</a>
+						<button id="shuchuceshi">ceshi</button>
 					</li>
 					<li>
 						<div id="div1" class="close1">
@@ -173,10 +174,10 @@
 								<ul>
 									<li>重点工程<i class="iconfont icon-delete8e"></i>
 										<ul>
-											<li id="zhongdiangc1">发电机组设备 <i class="iconfont icon-planefill"></i></li>
-											<li id="zhongdiangc2">排烟组设备 <i class="iconfont icon-planefill"></i></li>
-											<li id="zhongdiangc3">循环水设备 <i class="iconfont icon-planefill"></i></li>
-											<li id="zhongdiangc4">供电设备 <i class="iconfont icon-planefill"></i></li>
+											<li id="zhongdiangc1">电梯设备 <i class="iconfont icon-planefill"></i></li>
+											<li id="zhongdiangc2">安检设备 <i class="iconfont icon-planefill"></i></li>
+											<li id="zhongdiangc3">闸机设备 <i class="iconfont icon-planefill"></i></li>
+											<li id="zhongdiangc4">直升电梯设备 <i class="iconfont icon-planefill"></i></li>
 											<li><button>+ 新建视点</button></li>
 										</ul>
 									</li>
@@ -193,16 +194,16 @@
 								<p><input type="search" placeholder="快速搜索备注"><i class="iconfont icon-search"></i></p>
 								<ul>
 									<li id="beizhu1">
-										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/shangxiashuiguandaowenti.png" alt="">
-										<p>上水管道与下水管道间隔太近，容易造成水源污染。</p>
+										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/anjianshebei.png" alt="">
+										<p>安检设备皮带断裂。</p>
 									</li>
 									<li id="beizhu2">
-										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/dianligaodubugou.png" alt="">
-										<p>高压变压器高度不够，容易造成水淹没。</p>
+										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/diantishebei.png" alt="">
+										<p>楼梯倾斜度过大。</p>
 									</li>
 									<li id="beizhu3">
-										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/guandaopaibubujun.png" alt="">
-										<p>管道排布不均匀，后期维护困难。</p>
+										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/zhajishebei.png" alt="">
+										<p>闸机设备间距过大。</p>
 									</li>
 								</ul>
 							</div>
@@ -241,7 +242,7 @@
 					</div>
 					<div id="showDraw">
 					      <p>出图</p >
-					      <img src="${ctx }/static/page/designcoordination/mainbuilding/img/drawing1.png" alt="">
+					      <img src="${ctx }/static/page/designcoordination/mainbuilding/img/zhantingpingmiantu.png" alt="">
 					      <p>
 					         <input type="checkbox" name="">图例
 					         <input type="checkbox" name="">图签
