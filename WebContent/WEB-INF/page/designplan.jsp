@@ -25,7 +25,7 @@
 	<link id="base-style-responsive" href="${ctx }/static/page/common/css/style-responsive.css" rel="stylesheet">
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/common.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/reset.css">
-	<link rel="stylesheet" href="${ctx }/static/page/common/Iconfont/iconfont.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/IconFont/iconfont.css">
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
@@ -293,7 +293,7 @@
 	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
 	<!-- end: JavaScript-->
-	<script src="${ctx }/static/page/designcoordination/designplan/css/design.css"></script>
+	<script src="${ctx }/static/page/designcoordination/designplan/js/design.js"></script>
 
 </body>
 

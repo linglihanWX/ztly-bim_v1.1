@@ -41,6 +41,10 @@ p {
     height: 30px;
     font-size: 18px;
 }
+.listProject li a>img{
+	width:300px;
+	height:180px;
+}
 
 .listProject li .des {
     position: absolute;
@@ -104,7 +108,7 @@ p {
     border: 1px solid #000;
     text-align: center;
     height: 230px;
-    padding: 60px 0;
+    padding: 47px 0;
 }
 
 .first-list i {
@@ -436,7 +440,7 @@ a.brand span {
     position: relative;
     width: 100%;
     height: 200px;
-    background-image: url('../img/1.png');
+    background-image: url('../img/workflow.png');
     -webkit-background-size:cover;
     background-size:cover;
 }
