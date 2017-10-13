@@ -1,12 +1,8 @@
 $(function () {
-    var h = $(".container-fluid-full").height();
-    var h1 = $("#content .breadcrumb").height();
-    $("#tree").height(h - h1 - 27);
-    $("tbody tr td:last-of-type button").each(function () {
-        $(this).click(function () {
-            console.log($(this).index());
-        })
-    });
+    var h = $("body").height();
+    var h1 = $(".navbar").height();
+    $(".container-fluid-full").height(h - h1);
+    
     $.ajax({
         url: "static/page/designcoordination/designplan/designplan.json",
         type: "get",
@@ -31,5 +27,5 @@ $(function () {
             };
             zTreeObj = $.fn.zTree.init($("#tree"), setting, data);
         }
-    });
+    })
 });

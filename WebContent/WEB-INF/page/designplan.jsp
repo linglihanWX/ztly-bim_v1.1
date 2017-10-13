@@ -9,7 +9,7 @@
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>BIM设计</title>
+	<title>BIM方案设计</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -19,20 +19,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- end: Mobile Specific -->
 
-	<!-- start: CSS -->
 	<link id="bootstrap-style" href="${ctx }/static/page/common/css/bootstrap.min.css" rel="stylesheet">
 	<link href="${ctx }/static/page/common/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="${ctx }/static/page/common/css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="${ctx }/static/page/common/css/style-responsive.css" rel="stylesheet">
-
-	<!-- end: CSS -->
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/common.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/reset.css">
-	<link rel="stylesheet" href="${ctx }/static/page/common/IconFont/iconfont.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/Iconfont/iconfont.css">
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
-
 	<link rel="stylesheet" href="${ctx }/static/page/designcoordination/designplan/css/design.css">
 </head>
 
@@ -46,7 +42,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</a>
-				<a class="brand" href="${ctx}/toIndex"><span>BIM全生命周期管理平台</span></a>
+				<a class="brand" href="${ctx }/toIndex"><span>BIM全生命周期管理平台</span></a>
 
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
@@ -80,7 +76,7 @@
 									<span>账户设置</span>
 								</li>
 								<li><a href="#"><i class="halflings-icon user"></i> 文件</a></li>
-								<li><a href="${ctx }/loginPage"><i class="halflings-icon off"></i>退出登录ut</a></li>
+								<li><a href="${ctx }/loginPage"><i class="halflings-icon off"></i>退出登录</a></li>
 							</ul>
 						</li>
 						<!-- end: User Dropdown -->
@@ -133,12 +129,12 @@
 				<ul class="breadcrumb">
 					<i class="iconfont icon-hxzfont08"></i>
 					<li class="lists">
-						<a href="${ctx}/toTask">任务</a>
-						<a href="${ctx}/toDesign" class="activeList">BIM方案设计</a>
-						<a href="${ctx}/toDocument">文档管理</a>
+						<a href="${ctx }/toTask">任务</a>
+						<a href="${ctx }/toDesign" class="activeList">BIM方案设计</a>
+						<a href="${ctx }/toDocument">文档管理</a>
 						<a href="#">项目信息</a>
 						<a href="${ctx }/toDesignShow">3D综合展示</a>
-						<a href="${ctx}/toShuziyijiao">数字移交</a>
+						<a href="${ctx }/toShuziyijiao">数字移交</a>
 					</li>
 				</ul>
 				<div id="tree" class="ztree"></div>
@@ -156,55 +152,132 @@
 								</li>
 								<li>
 									<a href="${ctx }/toMainbuilding">
-										<p> <i class="iconfont icon-gongcheng"></i> 雄安电厂建筑结构</p>
+										<p> <i class="iconfont icon-gongcheng"></i> 集美区雄安电厂</p>
 										<img src="${ctx }/static/page/designcoordination/designplan/img/changquzhengti.png" alt="">
 										<div class="des">
-											<p>负责人员：杨强</p>
-											<p>设计单位：六院</p>
-											<p>合同金额：600W</p>
+											<p><span>负责人员 :</span>杨强</p>
+											<p><span>设计单位 :</span>六院</p>
+											<p><span>合同金额 :</span>600W</p>
+											<span class="check">审核中</span>
 										</div>
 									</a>
+									<div class="history">
+										<a href="">更新模型</a>
+										<a href="">删除模型</a>
+										<a href="">版本对比</a>
+									</div>
 								</li>
 								<li>
 									<a href="${ctx }/toMainbuilding">
-										<p> <i class="iconfont icon-gongcheng"></i> 雄安电厂给水系统</p>
-										<img src="${ctx }/static/page/designcoordination/designplan/img/jipaishui.png" alt="">
-										<div class="des">
-											<p>负责人员：杨强</p>
-											<p>设计单位：六院</p>
-											<p>合同金额：600W</p>
-										</div>
-									</a>
-								</li>
-								<li>
-									<a href="${ctx }/toMainbuilding">
-										<p> <i class="iconfont icon-gongcheng"></i> 雄安电厂发电机电力传输系统</p>
+										<p> <i class="iconfont icon-gongcheng"></i> 集美区雄安电厂</p>
 										<img src="${ctx }/static/page/designcoordination/designplan/img/gongdian.png" alt="">
 										<div class="des">
-											<p>负责人员：杨强</p>
-											<p>设计单位：六院</p>
-											<p>合同金额：600W</p>
+											<p><span>负责人员 :</span>杨强</p>
+											<p><span>设计单位 :</span>六院</p>
+											<p><span>合同金额 :</span>600W</p>
 										</div>
 									</a>
+									<div class="history">
+										<a href="">更新模型</a>
+										<a href="">删除模型</a>
+										<a href="">版本对比</a>
+									</div>
 								</li>
 								<li>
 									<a href="${ctx }/toMainbuilding">
-										<p> <i class="iconfont icon-gongcheng"></i> 雄安电厂燃气机房设备</p>
-										<img src="${ctx }/static/page/designcoordination/designplan/img/tongfeng.png" alt="">
+										<p> <i class="iconfont icon-gongcheng"></i> 集美区雄安电厂</p>
+										<img src="${ctx }/static/page/designcoordination/designplan/img/jipaishui.png" alt="">
 										<div class="des">
-											<p>负责人员：杨强</p>
-											<p>设计单位：六院</p>
-											<p>合同金额：600W</p>
+											<p><span>负责人员 :</span>杨强</p>
+											<p><span>设计单位 :</span>六院</p>
+											<p><span>合同金额 :</span>600W</p>
 										</div>
 									</a>
+									<div class="history">
+										<a href="">更新模型</a>
+										<a href="">删除模型</a>
+										<a href="">版本对比</a>
+									</div>
+								</li>
+								<li>
+									<a href="${ctx }/toMainbuilding">
+										<p> <i class="iconfont icon-gongcheng"></i> 集美区雄安电厂</p>
+										<img src="${ctx }/static/page/designcoordination/designplan/img/tongfeng.png" alt="">
+										<div class="des">
+											<p><span>负责人员 :</span>杨强</p>
+											<p><span>设计单位 :</span>六院</p>
+											<p><span>合同金额 :</span>600W</p>
+										</div>
+									</a>
+									<div class="history">
+										<a href="">更新模型</a>
+										<a href="">删除模型</a>
+										<a href="">版本对比</a>
+									</div>
 								</li>
 							</ul>
+						</div>
+
+						<div class="different">
+							<p>电厂主体建筑-审批详细 <span class="gb">关闭</span></p>
+							<div class="box span12">
+								<div class="box-header">
+									<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>审批流程</h2>
+									<div class="box-icon">
+										<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+										<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+										<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
+									</div>
+								</div>
+								<div class="box-content">
+									<table class="table table-bordered table-striped table-condensed">
+										<thead>
+										<tr>
+											<th>节点</th>
+											<th>审批人</th>
+											<th>审批时间</th>
+											<th>审批内容</th>
+											<th>审批意见</th>
+										</tr>
+										</thead>
+										<tbody>
+										<tr>
+											<td>1</td>
+											<td class="center">1</td>
+											<td class="center">1</td>
+											<td class="center">1</td>
+											<td class="center">1</td>
+										</tr>
+										<tr>
+											<td>1</td>
+											<td class="center">1</td>
+											<td class="center">1</td>
+											<td class="center">1</td>
+											<td class="center">1</td>
+										</tr>
+										</tbody>
+									</table>
+
+								</div>
+							</div><!--/span-->
+							<p>审批进度</p>
+							当前节点：<i></i>
+							<div class="lct">
+								<span title="申请人：张冲&#10;申请时间：2017/10/10 08:06:56 &#10;">开始</span>
+								<span title="审批人：石勇&#10;审批时间：2017/10/12 09:31:47 &#10;审批状态：审批通过">小组负责人</span>
+								<span title="审批人：李寒冰 &#10;审批时间：2017/10/13 14:28:34 &#10;审批状态：审批中">专业负责人</span>
+								<span>部门负责人</span>
+								<span title="审批人：黄理建&#10;审批时间：无 &#10;审批状态：未审批">项目负责人</span>
+								<span>结束</span>
+							</div>
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 	<!-- start: JavaScript-->
 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
@@ -219,7 +292,8 @@
 	<script src="${ctx }/static/page/common/js/jquery.raty.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
-	<script src="${ctx }/static/page/designcoordination/designplan/js/design.js"></script>
+	<!-- end: JavaScript-->
+	<script src="${ctx }/static/page/designcoordination/designplan/css/design.css"></script>
 
 </body>
 
