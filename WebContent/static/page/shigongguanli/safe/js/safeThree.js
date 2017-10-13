@@ -27,15 +27,13 @@ $(function () {
     $("#return").click(function () {
         window.location.href = "toSafe";
     });
-    //SafeThreeViewer.init("right");
+    SafeThreeViewer.init("right");
     
     $(".table tbody tr").each(function(){
     	$(this).click(function(){
     		console.log($(this).children().eq(2).text());
     	});
     });
-    var myChart = $("#main");
-    myChart.on('click', function (params) {
-        console.log(params);
-    });
+
+    
 });
