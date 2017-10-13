@@ -87,7 +87,7 @@ MainBuildingViewer.init = function (earthId) {
 		this.cam = [116.00013, 38.998999999999999999999999, 80.75962432438108];
 		new Compass(this.viewer);
 		
-		/*this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
+		this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
 			url: "http://{s}.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
 			subdomains:['t7','t6','t5','t4','t3','t2','t1','t0'],
 			maximumLevel: 18,
@@ -100,7 +100,7 @@ MainBuildingViewer.init = function (earthId) {
 			format: "image/png",
 			tileMatrixSetID: "tianditu",
 			show: true
-		}));*/
+		}));
 		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
@@ -146,6 +146,9 @@ MainBuildingViewer.init = function (earthId) {
 			    },
 			});*/
 		myviewer = this.viewer;
+		modelTile.readyPromise.then(function() {
+			moveModel(modelTile,-80,20,0,15,0,0,1,1,1);
+		});
 	}
 }
 

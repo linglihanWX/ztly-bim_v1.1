@@ -38,6 +38,7 @@
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<script src="${ctx }/static/page/designcoordination/mainbuilding/js/MainbuildingViewer.js"></script>
+	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 
