@@ -164,6 +164,7 @@
 						<a href="#">施工日志</a>
 						<a href="#">项目信息</a>
 						<a href="${ctx}/toWorkShow">3D综合展示</a>
+						<a onclick="showcamera()" href="javascript:void(0)">记录位置</a>
 					</li>
 					<li>
 						<div id="div1" class="open1">
@@ -285,6 +286,17 @@
 			</div>
 		</div>
 	</div>
+	<script type="text/javascript">
+		function showcamera(){
+			var x = myviewer.camera.position.x;
+			var y = myviewer.camera.position.y;
+			var z = myviewer.camera.position.z;
+			var heading=myviewer.camera.heading;
+			var pitch=myviewer.camera.pitch;
+			var roll=myviewer.camera.roll;
+			console.log("x:"+x+" y:"+y+" z:"+" heading:"+heading+" pitch:"+pitch+" roll:"+roll);
+		}
+	</script>
 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.ui.touch-punch.js"></script>
@@ -315,6 +327,7 @@
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/safe/js/safeThree.js"></script>
 	<script src="${ctx }/static/page/common/js/pie.js"></script>
+	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 </body>
 
 </html>
