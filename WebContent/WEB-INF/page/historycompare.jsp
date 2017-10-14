@@ -29,7 +29,8 @@
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/reset.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/IconFont/iconfont.css">
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
-
+    <link href="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/Widgets/widgets.css" rel="stylesheet">
+    <script src="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/FreeDo.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/designcoordination/historycompare/css/hCompare.css">
@@ -139,21 +140,22 @@
 						<a href="${ctx }/toDesignShow">3D综合展示</a>
 						<a href="${ctx }/toShuziyijiao">数字移交</a>
 					</li>
+					<li style="margin-left:20px;">
+					<input id="shijiaotongbu" type="checkbox">视角同步
+					<input id="gaoliangchayi" type="checkbox">高亮差异</li>
 				</ul>
 				<div id="tree" class="ztree"></div>
 				<div class="row-fluid sortable">
-					<iframe src="" frameborder="1"></iframe>
-					<iframe src="" frameborder="1"></iframe>
-					<iframe src="" frameborder="1"></iframe>
-					<p class="sel">
-						<input type="checkbox">视角同步
-						<input type="checkbox">高亮差异
-						<select name="" id="">
+					
+						<select name="" class="sel">
 							<option value="">版本一</option>
 							<option value="">版本二</option>
 							<option value="">版本三</option>
 						</select>
-					</p>
+					
+					<iframe id="desiframe" src="${ctx }/static/page/iframe/design_mainbuilding_VC/page/desVerPage.html" frameborder="1"></iframe>
+					<iframe id="nowiframe" src="${ctx }/static/page/iframe/design_mainbuilding_VC/page/nowVerPage.html" frameborder="1"></iframe>
+					<iframe id="compreiframe" src="${ctx }/static/page/iframe/design_mainbuilding_VC/page/comprehensivePage.html" frameborder="1"></iframe>
 				</div>
 			</div>
 		</div>

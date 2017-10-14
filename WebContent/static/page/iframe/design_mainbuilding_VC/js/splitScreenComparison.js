@@ -12,13 +12,13 @@ function initViewer (freedocontainer) {
          imageryProvider : FreeDo.createTileMapServiceImageryProvider({
              url : FreeDo.buildModuleUrl('Assets/Textures/NaturalEarthII')
          }),
-         /*imageryProvider:new FreeDo.WebMapTileServiceImageryProvider({
+         imageryProvider:new FreeDo.WebMapTileServiceImageryProvider({
  	        url: "http://{s}.tianditu.com/img_c/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=c&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
  	        credit: new FreeDo.Credit("天地图全球影像服务"),
  	        subdomains: ['t0', 't1', 't2', 't3', 't4', 't5', 't6', 't7'],
  	        tilingScheme: new FreeDo.GeographicTilingScheme(),
  	        tileMatrixLabels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'],
- 	    }),*/
+ 	    }),
 	 });
 	 viewer._cesiumWidget._creditContainer.style.display = "none";
 	/* viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
@@ -37,7 +37,7 @@ function initViewer (freedocontainer) {
 		    format: "image/png",
 		    tileMatrixSetID: "tianditu",
 		}));*/
-	 modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
+	 modelTile = viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
 	 viewer.camera.flyTo({

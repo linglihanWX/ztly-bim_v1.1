@@ -33,5 +33,35 @@ $(function () {
             zTreeObj = $.fn.zTree.init($("#tree"), setting, data);
 
         }
-    })
+    });
+    $("#shijiaotongbu").change(function() { 
+    	var desmyviewer = $('#desiframe')[0].contentWindow.myviewer;
+    	 if( $("#shijiaotongbu").attr('checked')){
+    		 desmyviewer.camera.changed.addEventListener(cameraSynchronization);
+    	 }else{
+    		 desmyviewer.camera.changed.removeEventListener(cameraSynchronization);
+    	 }
+    });
+    
 });
+cameraSynchronization = function() {
+	var desmyviewer = $('#desiframe')[0].contentWindow.myviewer;
+	var nowmyviewer = $('#nowiframe')[0].contentWindow.myviewer;
+	var compremyviewer = $('#compreiframe')[0].contentWindow.myviewer;
+	nowmyviewer.camera.setView({
+		    destination : new FreeDo.Cartesian3(desmyviewer.camera.position.x,desmyviewer.camera.position.y,desmyviewer.camera.position.z),
+		    orientation: {
+		        heading : desmyviewer.camera.heading, // east, default value is 0.0 (north)
+		        pitch : desmyviewer.camera.pitch,    // default value (looking down)
+		        roll : desmyviewer.camera.roll                            // default value
+		    }
+		});
+	compremyviewer.camera.setView({
+	    destination : new FreeDo.Cartesian3(desmyviewer.camera.position.x,desmyviewer.camera.position.y,desmyviewer.camera.position.z),
+	    orientation: {
+	        heading : desmyviewer.camera.heading, // east, default value is 0.0 (north)
+	        pitch : desmyviewer.camera.pitch,    // default value (looking down)
+	        roll : desmyviewer.camera.roll                            // default value
+	    }
+	});
+}
