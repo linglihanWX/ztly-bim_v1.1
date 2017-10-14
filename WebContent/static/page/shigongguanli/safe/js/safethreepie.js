@@ -9,13 +9,8 @@ option = {
 	      x : 'left',
 	      data:['一级','二级','三级']
 	     },
-	     toolbox: {
-	      show : true,
-	      feature : {
-	       saveAsImage : {show: true}
-	      }
-	     },
 	     calculable : false,   //拖拽
+	     color:['rgb(255,0,0)','rgb(255,193,37)','rgb(255,255,0)'],
 	     series : [
 	      {
 	       name:'隐患等级',
@@ -23,9 +18,9 @@ option = {
 	       radius : '55%',
 	       center: ['50%', '60%'],
 	       data:[
-	        {value:335, name:'一级'},
-	        {value:310, name:'二级'},
-	        {value:234, name:'三级'}
+	        {value:3, name:'一级'},
+	        {value:1, name:'二级'},
+	        {value:1, name:'三级'}
 	       ]
 	      }
 	     ]
@@ -37,13 +32,26 @@ myChart.on('click', function (param) {
 	var name = param.data.name;
 	switch (name) {
 	case "一级":
-		SafeThreeViewer.fly(-2303582.1501736064,4395212.488089469,3994904.9078458804,0.000015300268030316033,-1.1714332598210255,0.000647469364324138);
+		SafeThreeViewer.hideAll();
+		SafeThreeViewer.fly(-2302805.7179202065,4394550.636266597,3994807.1100653852,5.1722860874155225,-0.41903254632706655,6.279962258671201);
+		jianpiaokou1.show = true;
+		jianpiaokou2.show = true;
+		jianpiaokou3.show = true;
+		SafeThreeViewer.changeColorById([["${component} === \'" + "e1d4b546-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('red')"],["${component} === \'" + "e1cff9f0-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('red')"],["${component} === \'" + "e153ec20-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('red')"],["true","color('white')"]]);
 		break;
 	case "二级":
-		SafeThreeViewer.fly(-2302948.9132162365,4395283.653594713,3995191.6935669584,0.000015300265065576468,-1.1714331781457097,0.0006474693675393439);
+		SafeThreeViewer.hideAll();
+		SafeThreeViewer.fly(-2302751.488420187,4394561.224820432,3994810.7027898175,1.5061458879606562,-0.08043731837410029,0.003287499144919437);
+		zhizhu.show=true;
+		//e1de51d2-afe3-11e7-46c2-5ebc1b3c3ce2
+		SafeThreeViewer.changeColorById([["${component} === \'" + "e1de51d2-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('orange')"],["true","color('white')"]]);
 		break;
 	case "三级":
-		SafeThreeViewer.fly(-2303355.424155074,4395038.979879779,3995226.5162490937,0.00001530026471119328,-1.1714331682311019,0.0006474693679248134);
+		SafeThreeViewer.hideAll();
+		SafeThreeViewer.fly(-2302771.988696689,4394547.20615652,3994814.236560558,1.8033561138995244,-0.5027766982710213,0.0036447729001718443);
+		dianti.show=true;
+		//e1990b72-afe3-11e7-46c2-5ebc1b3c3ce2
+		SafeThreeViewer.changeColorById([["${component} === \'" + "e1990b72-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('yellow')"],["true","color('white')"]]);
 		break;
 
 	default:

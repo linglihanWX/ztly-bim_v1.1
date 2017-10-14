@@ -10,10 +10,7 @@ option = {
 	      data:['一级','二级','三级']
 	     },
 	     toolbox: {
-	      show : true,
-	      feature : {
-	       saveAsImage : {show: true}
-	      }
+	      show : true
 	     },
 	     calculable : false,   //拖拽
 	     series : [
@@ -22,10 +19,11 @@ option = {
 	       type:'pie',     //这里指定类型
 	       radius : '55%',
 	       center: ['50%', '60%'],
+	       color:['rgb(255,0,0)','rgb(255,193,37)','rgb(255,255,0)'],
 	       data:[
-	        {value:335, name:'一级'},
-	        {value:310, name:'二级'},
-	        {value:234, name:'三级'}
+	        {value:3, name:'一级'},
+	        {value:1, name:'二级'},
+	        {value:1, name:'三级'}
 	       ]
 	      }
 	     ]

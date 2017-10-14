@@ -41,8 +41,6 @@
 	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/safe/css/safeThree.css">
 
-
-
 </head>
 
 <body>
@@ -197,9 +195,33 @@
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">7号 施工支洞</td>
+										<td class="center">1号 检票口</td>
 										<td class="center">易燃物品堆放</td>
 										<td class="center">一级</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td class="center">2号 检票口</td>
+										<td class="center">易燃物品堆放</td>
+										<td class="center">一级</td>
+									</tr>
+									<tr>
+										<td>3</td>
+										<td class="center">3号 检票口</td>
+										<td class="center">易燃物品堆放</td>
+										<td class="center">一级</td>
+									</tr>
+									<tr>
+										<td>4</td>
+										<td class="center">1号 支柱</td>
+										<td class="center">支柱裂纹</td>
+										<td class="center">二级</td>
+									</tr>
+									<tr>
+										<td>5</td>
+										<td class="center">1号 电梯</td>
+										<td class="center">电梯漏电</td>
+										<td class="center">三级</td>
 									</tr>
 
 									</tbody>

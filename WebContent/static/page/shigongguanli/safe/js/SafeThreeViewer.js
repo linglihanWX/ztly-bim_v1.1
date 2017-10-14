@@ -13,6 +13,13 @@ var ceshistate = false;
 var modelTile=null;
 var myviewer = null;
 window.obj = {};
+var jianpiaokou1 = {};
+var jianpiaokou1 = {};
+var jianpiaokou1 = {};
+var zhizhu = {};
+var dianti = {};
+var anjian = {}
+var entitesarray=[];
 SafeThreeViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
     this.fatherId = fatherId;
@@ -101,6 +108,8 @@ SafeThreeViewer.init = function (earthId) {
 			tileMatrixSetID: "tianditu",
 			show: true
 		}));
+		this.viewer.scene.globe.depthTestAgainstTerrain = true;
+
 		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
@@ -108,19 +117,120 @@ SafeThreeViewer.init = function (earthId) {
 	/*	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
 			url: 'http://gbim360.com:9999/chenchunmei/PModel/170905_GHP/GHP'
 		}));*/
+		jianpiaokou1 = this.viewer.entities.add( {  
+		    name : '图标',  
+		    position : new FreeDo.Cartesian3.fromDegrees(117.6549657186326, 39.028695707158185, 18.132962020111965),  
+	        show : false,
+		    label : { //文字标签  
+		        text : '序号：1\nWBS名称：1号 检票口\n存在隐患：易燃物品堆放\n隐患等级：一级',  
+		        font : '17px sans-serif', 
+		        style : FreeDo.LabelStyle.FILL,  
+		        fillColor:FreeDo.Color.BLACK,
+		        verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+		        pixelOffset : new FreeDo.Cartesian2( 0, -9 ) ,  //偏移量 
+				backgroundColor:FreeDo.Color.RED,
+				showBackground:true
+		    },
+		 
+		} );  
+		jianpiaokou2 = this.viewer.entities.add( {  
+			name : '图标',  
+			position : new FreeDo.Cartesian3.fromDegrees(117.65485736335727, 39.0288385898898, 18.38655418030589),  
+			show : false,
+			label : { //文字标签  
+				text : '序号：2\nWBS名称：2号 检票口\n存在隐患：易燃物品堆放\n隐患等级：一级',  
+				font : '17px sans-serif',  
+				style : FreeDo.LabelStyle.FILL,  
+				fillColor:FreeDo.Color.BLACK,
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -9 ) ,  //偏移量 
+				backgroundColor:FreeDo.Color.RED,
+				showBackground:true
+			},
+			
+		} );  
+		jianpiaokou3 = this.viewer.entities.add( {  
+			name : '图标',  
+			position : new FreeDo.Cartesian3.fromDegrees(117.65457686483425, 39.02889521820999, 18.618923689085566), 
+			show : false,
+			label : { //文字标签  
+				text : '序号：3\nWBS名称：3号 检票口\n存在隐患：易燃物品堆放\n隐患等级：一级',  
+				font : '17px sans-serif', 
+				style : FreeDo.LabelStyle.FILL,  
+				fillColor:FreeDo.Color.BLACK,
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -9 ) ,  //偏移量 
+				backgroundColor:FreeDo.Color.RED,
+				showBackground:true
+			},
+			
+		} );  
+		zhizhu = this.viewer.entities.add( {  
+			name : '图标',  
+			position : new FreeDo.Cartesian3.fromDegrees(117.65469785633918, 39.02877723478264, 18.868876746473855),  
+			show : false,
+			label : { //文字标签  
+				text : '序号：4\nWBS名称：1号 支柱\n存在隐患：支柱裂纹\n隐患等级：二级',  
+				font : '17px sans-serif', 
+				style : FreeDo.LabelStyle.FILL,  
+				fillColor:FreeDo.Color.BLACK,
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -9 ) ,  //偏移量 
+				backgroundColor:FreeDo.Color.ORANGE,
+				showBackground:true
+			},
+			
+		} );  
+		dianti = this.viewer.entities.add( {  
+			name : '图标',  
+			position : new FreeDo.Cartesian3.fromDegrees(117.65492075292256, 39.028788237667136, 18.524780241824177), 
+			show : false,
+			label : { //文字标签  
+				text : '序号：5\nWBS名称：1号 电梯\n存在隐患：电梯漏电\n隐患等级：三级',  
+				font : '17px sans-serif',  
+				style : FreeDo.LabelStyle.FILL,  
+				fillColor:FreeDo.Color.BLACK,
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -9 ) ,  //偏移量 
+				backgroundColor:FreeDo.Color.YELLOW,
+				showBackground:true
+			},
+			
+		} ); 
+		anjian = this.viewer.entities.add( {  
+			name : '图标',  
+			position : new FreeDo.Cartesian3.fromDegrees(117.65502555728834, 39.02881290009245, 19.155497368460313), 
+			show : false,
+			label : { //文字标签  
+				text : '序号：1\n整改编号：JRXM-JCHC\n整改情况：整改中\n整改日期：2016-09-09',  
+				font : '17px sans-serif',  
+				style : FreeDo.LabelStyle.FILL,  
+				fillColor:FreeDo.Color.BLACK,
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -9 ) ,  //偏移量 
+				backgroundColor:FreeDo.Color.BLUE,
+				showBackground:true
+			},
+			
+		} ); 
+		entitesarray.push(jianpiaokou1);
+		entitesarray.push(jianpiaokou2);
+		entitesarray.push(jianpiaokou3);
+		entitesarray.push(zhizhu);
+		entitesarray.push(dianti);
+		entitesarray.push(anjian);
 		/*var lon = 116.61110999999998;
 		var lat = 39.94217000000001;*/
 		var lon = 117.6610063067;
 		var lat = 39.0296251212;
 		
-		//var  cartesian  =  FreeDo.Cartesian3.fromDegrees(116.61560999999998,39.94417000000001,850);
 		var  cartesian  =   new FreeDo.Cartesian3.fromDegrees(118.4799594564051, 24.663425907467902,500);
 		this.viewer.camera.flyTo({
-			destination :new FreeDo.Cartesian3(-2303190.1885760543,4395138.739032204,3994995.2792255776),
+			destination :new FreeDo.Cartesian3(-2302833.762201284,4394746.398731597,3994809.016901712),
 			orientation: {
-				heading : 0.000004136064356785596,
-				pitch : -1.171440805600418,
-				roll : 0.0006527658379926748
+				heading : 0.26411536311211936,
+				pitch : -0.8723260495776195,
+				roll : 0.0013380152154160996
 			}
 		});
 
@@ -225,27 +335,59 @@ $(".showModel").click(function () {
     $("#menu").hide();
 });*/
 
-SafeThreeViewer.showHideModelsById =function(uid){
+SafeThreeViewer.changeColorById =function(uid){
 
 	var showhide = new FreeDo.FreeDoPModelStyle({
-	    show: {
+	    color: {
 	      conditions:uid                        		
-	
 	    }
 	  });
 	modelTile.style = showhide;
 }
 
-SafeThreeViewer.fly = function(x,y,z,heading,pitch,roll){
-	myviewer.camera.flyTo({
+SafeThreeViewer.fly = function(x,y,z,heading,pitch,roll,labelleft,labeltop){
+	myviewer.camera.setView({
 		destination :new FreeDo.Cartesian3(x,y,z),
 		orientation: {
 			heading : heading,
 			pitch : pitch,
 			roll : roll
-		}
+		}/*,
+		complete:function(){
+			$("#showmsg").css({
+				"left" : labelleft,
+				"top" : labeltop,
+				"z-index" : 1
+			}).show();
+		}*/
 	})
 }
+SafeThreeViewer.initLeftDown = function(viewer) {
+	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler.setInputAction(function(movement){
+		/*var picked = viewer.scene.pick(movement.position);
+		var pick = new FreeDo.Cartesian2(movement.position.x,movement.position.y);
+		var cartesian = viewer.camera.pickEllipsoid(pick,viewer.scene.globe.ellipsoid);*/
+        var cartesian = new FreeDo.Cartesian3(-2302786.784515869,4394540.396317855,3994816.9435913595);
+		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
+		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180,cartographic.height];
+		//var id = picked.getProperty('component');
+		console.log(point);	
+	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+	
+
+}
+SafeThreeViewer.initWheel = function(viewer) {
+	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler.setInputAction(function(movement){
+		
+	}, FreeDo.ScreenSpaceEventType.WHEEL);
+}
+SafeThreeViewer.hideAll = function(){
+	for ( var i in entitesarray) {
+		entitesarray[i].show = false;
+	}
+};
 	/**
 	 * [initModels初始化场景中的模型]
 	 * @return {[type]} [description]
