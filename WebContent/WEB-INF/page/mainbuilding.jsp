@@ -151,7 +151,6 @@
 					<li class="lists">
 						<a href="#" class="activeList">方案审查</a>
 						<a href="${ctx}/toDesign">仿真设计</a>
-						<button id="shuchuceshi">ceshi</button>
 					</li>
 					<li>
 						<div id="div1" class="close1">
