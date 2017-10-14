@@ -138,7 +138,13 @@
 							<a href="#">项目信息</a>
 							<a href="${ctx }/toDesignShow">3D综合展示</a>
 							<a href="${ctx}/toShuziyijiao">数字移交</a>
-						</li>
+					</li>
+					<li class="btnStandard">
+						<input type="button" value="上传" class="btnActive">
+						<input type="button" value="修改">
+						<input type="button" value="查看">
+						<input type="button" value="审批">
+					</li>
 				</ul>
 
 				<div id="tree" class="ztree"></div>
@@ -163,6 +169,7 @@
 										<th>修改时间</th>
 										<th>关联模型</th>
 										<th>操作</th>
+										<th>状态</th>
 									</tr>
 								
 								</thead>
@@ -173,7 +180,7 @@
 										<td>821.27 kb</td>
 										<td>2017/03/04 17:36:25</td>
 										<td>土建系统</td>
-										<td><a href='download?filename=S-1-01-010.PDF'>下载</a></td>
+										<td><button class='xz'>下载</button><button class='yl'>预览</button></td><td>已提交</td>
 									</tr>
 									<tr>
 										<td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>S-1-03-011.PDF</td>
@@ -181,7 +188,7 @@
 										<td>865.01 kb</td>
 										<td>2017/07/12 12:36:25</td>
 										<td>土建系统</td>
-										<td><a href='download?filename=S-1-03-011.PDF'>下载</a></td>
+										<td><button class='xz'>下载</button><button class='yl'>预览</button></td><td>已提交</td>
 									</tr>
 									<tr>
 										<td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>S-1-03-012.PDF</td>
@@ -189,7 +196,7 @@
 										<td>899.36 kb</td>
 										<td>2017/08/29 06:36:25</td>
 										<td>土建系统</td>
-										<td><a href='download?filename=S-1-03-012.PDF'>下载</a></td>
+										<td><button class='xz'>下载</button><button class='yl'>预览</button></td><td>已提交</td>
 									</tr>
 									<tr>
 										<td><img src='static/page/designcoordination/documentmgmt/img/pdf.jpg' alt=''>S-1-05-013.PDF</td>
@@ -197,7 +204,7 @@
 										<td>912.86 kb</td>
 										<td>2017/09/23 22:12:05</td>
 										<td>土建系统</td>
-										<td><a href='download?filename=S-1-05-013.PDF'>下载</a></td>
+										<td><button class='xz'>下载</button><button class='yl'>预览</button></td><td>已提交</td>
 									</tr>
 								</tbody>
 							</table>

@@ -278,6 +278,9 @@
 							</div>
 						</div>
 					</div>
+						<div class="msgInfo" id="showmsg">
+        					<h1 id="information"></h1>
+   						</div>
 					<div id="right">
 
 					</div>

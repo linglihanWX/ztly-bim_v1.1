@@ -202,3 +202,24 @@ a.brand span {
 #data_info{
 	display: none;
 }
+.xz{
+    margin-right: 10px;
+}
+/*标准按钮部分*/
+.btnStandard {
+    margin-left: 50px;
+}
+.btnStandard input{
+    width: 60px;
+    height: 27px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    background-color: #ccc;
+}
+input.btnActive{
+    background-color: #50bfff;
+    color:#fff;
+}

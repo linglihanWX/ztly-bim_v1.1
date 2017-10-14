@@ -25,6 +25,7 @@ $(function () {
                 		}
                 		$("tbody tr").remove();
                 		$("tbody").append(treeNode.doc);
+                		todownload();
                 	}
                 }
             };
@@ -32,10 +33,24 @@ $(function () {
             zTreeObj.expandAll(true);
             var node = zTreeObj.getNodeByParam("id", 1, null);
             zTreeObj.selectNode(node);
-            
+            todownload();
         }
 	    
     });
-
+    $(".btnStandard input").each(function () {
+        $(this).click(function () {
+            $(this).addClass("btnActive").siblings().removeClass("btnActive");
+        })
+    });
+   
 
 });
+function todownload(){
+	$(".xz").each(function(){
+     	$(this).click(function(){
+     		console.log(this);
+     		var filename = $(this).parents("tr").children().eq(0).text();
+     		window.location.href = "download?filename="+filename;
+     	})
+     });
+}
