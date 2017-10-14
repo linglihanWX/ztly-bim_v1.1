@@ -253,7 +253,7 @@
 					
 					<div id="edit">
 						<p>具体描述: <span>备注类型:设计问题</span></p>
-						<textarea >什么什么管和 支架间隔要加大。 业主需要从这里能过去飞机的。 预留出飞机翅膀的空间 。什么什么管和 支架间隔要加大。 业主需要从这里能过去飞机的。 预留出飞机翅膀的空间 。什么什么管和 支架间隔要加大。 业主需要从这里能过去飞机的。 预留出飞机翅膀的空间 。
+						<textarea >楼梯倾斜度调小。 倾斜度过大，地铁人员过大时，大量人员攀登时危险，容易引起踩踏事件 。
 						</textarea>
 						<ul>
 							<li><span>创始人：</span>杨强</li>
@@ -279,19 +279,19 @@
 							<ul>
 								<li>
 									<p><span>杨强</span> <span class="sendTime">2017/09/29 11:06:36</span></p>
-									<p>飞渡可以创造你的未来！</p>
+									<p>倾斜角度过大，问题严重</p>
 								</li>
 								<li>
 									<p><span>张凡茂</span> <span class="sendTime">2017/09/29 11:07:49</span></p>
-									<p>这是必然。</p>
+									<p>好的，立即重新设计，需要大概调整到多少度。</p>
 								</li>
 								<li>
-									<p><span>梁策</span> <span class="sendTime">2017/09/29 11:08:10</span></p>
-									<p>大家一起努力.</p>
+									<p><span>杨强</span> <span class="sendTime">2017/09/29 11:08:10</span></p>
+									<p>正在调整</p>
 								</li>
 								<li>
 									<p><span>朱永荃</span> <span class="sendTime">2017/09/29 11:10:35</span></p>
-									<p>加油！</p>
+									<p>调整完毕</p>
 								</li>
 							</ul>
 						</div>
