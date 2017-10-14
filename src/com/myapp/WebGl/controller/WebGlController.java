@@ -118,6 +118,11 @@ public class WebGlController {
 		
 		return "designplan";
 	}
+	@RequestMapping("toHistoryCompare")
+	public String toHistoryComparePage(HttpServletRequest req) {
+		
+		return "historycompare";
+	}
 	//跳转到文档管理页面
 	@RequestMapping("toDocument")
 	public String toDocumentPage(HttpServletRequest req) {

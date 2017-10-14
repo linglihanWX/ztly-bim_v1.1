@@ -626,3 +626,47 @@ input.btnActive{
     background-color: #50bfff;
     color:#fff;
 }
+.layer{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width:400px;
+    height: 30px;
+    padding-top: 5px;
+    margin-left: -200px;
+    text-align: center;
+}
+
+.layer span{
+    display: inline-block;
+    width: 60px;
+    height: 27px;
+    line-height: 27px;
+    font-size: 12px;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+    border: 1px solid #000;
+    background-color: #fff;
+    color:#000;
+    box-sizing: border-box;
+}
+.layer span:hover{
+    background-color: #50bfff;
+    color:#fff;
+    border: none;
+}
+.layer ul{
+    display: none;
+    position: absolute;
+    top: 33px;
+    left: 18px;
+    padding: 5px;
+    border-radius: 3px;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+}
+.layer ul li>input{
+    vertical-align: top;
+}

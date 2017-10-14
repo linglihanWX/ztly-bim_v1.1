@@ -31,7 +31,18 @@ $(function () {
     
     $(".table tbody tr").each(function(){
     	$(this).click(function(){
-    		console.log($(this).children().eq(2).text());
+    		 var content = $(this).children().eq(1).text();
+    		 switch (content) {
+			case "7号 施工支洞":
+				SafeThreeViewer.fly(-2302789.5125290914,4394545.504466071,3994804.1390350373,4.948180033446017,-0.32296400433020844,6.27981803250796);
+				break;
+			case "JRXM-JCHC":
+				SafeThreeViewer.fly(-2302806.194824654,4394525.992556809,3994793.2206845,5.485799808530759,-0.31219178800460123,6.2807147262061065);
+				break;
+
+			default:
+				break;
+			}
     	});
     });
 

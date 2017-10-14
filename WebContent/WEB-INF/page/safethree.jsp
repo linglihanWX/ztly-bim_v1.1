@@ -294,7 +294,7 @@
 			var heading=myviewer.camera.heading;
 			var pitch=myviewer.camera.pitch;
 			var roll=myviewer.camera.roll;
-			console.log("x:"+x+" y:"+y+" z:"+" heading:"+heading+" pitch:"+pitch+" roll:"+roll);
+			console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);
 		}
 	</script>
 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
@@ -326,7 +326,7 @@
 	<script src="${ctx }/static/page/common/js/counter.js"></script>
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/safe/js/safeThree.js"></script>
-	<script src="${ctx }/static/page/common/js/pie.js"></script>
+	<script src="${ctx }/static/page/shigongguanli/safe/js/safethreepie.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 </body>
 

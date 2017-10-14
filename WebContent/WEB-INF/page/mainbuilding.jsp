@@ -253,6 +253,23 @@
   							<img src="${ctx }/static/page/designcoordination/mainbuilding/img/zhantingpingmiantu.png" alt="" >
    							<span>关闭</span>
 					</div>
+					<div class="layer">
+						<p>
+							<span>图层</span>
+							<span>纵断面</span>
+							<span>直线测量</span>
+							<span>预选中</span>
+							<span>角度测量</span>
+						</p>
+						<ul>
+							<li><input type="checkbox">水系</li>
+							<li><input type="checkbox">道路</li>
+							<li><input type="checkbox">村庄</li>
+							<li><input type="checkbox">医院</li>
+							<li><input type="checkbox">消防局</li>
+							<li><input type="checkbox">警察局</li>
+						</ul>
+					</div>
 					
 					<div id="edit">
 						<p>具体描述: <span>备注类型:设计问题</span></p>
@@ -318,7 +335,7 @@
 	   <li class="cad">CAD设计图</li>
 	</ul>
 	<div id="rMenu">
-		<a href="#">生成施工图</a>
+		<a href="#">算量</a>
 		<a href="#">深化设计</a>
 	</div>
 	<script src="${ctx}/static/page/designcoordination/mainbuilding/js/mainbuilding.js"></script>

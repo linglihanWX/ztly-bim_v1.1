@@ -363,4 +363,15 @@ $(function () {
 	     $(".bgImg").hide();
 	     $("#showDraw").show();
 	 });
+	 $(".layer span:first-of-type").hover(function () {
+	        $(".layer ul").stop().slideDown("fast")
+	    },function () {
+	        $(".layer ul").hover(function () {
+	            $(this).stop().slideDown("fast");
+	            return false;
+	        },function () {
+	            $(this).stop().slideUp("fast");
+	        });
+	        $(".layer ul").stop().slideUp("fast");
+	    })
 });

@@ -577,7 +577,7 @@
 	<script src="${ctx }/static/page/common/js/retina.js"></script>
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/safe/js/safe.js"></script>
-	<script src="${ctx }/static/page/common/js/pie.js"></script>
+	<script src="${ctx }/static/page/shigongguanli/safe/js/safepie.js"></script>
 </body>
 
 </html>

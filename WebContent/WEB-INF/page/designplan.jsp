@@ -164,7 +164,7 @@
 									<div class="history">
 										<a href="">更新模型</a>
 										<a href="">删除模型</a>
-										<a href="">版本对比</a>
+										<a href="${ctx }/toHistoryCompare">版本对比</a>
 									</div>
 								</li>
 								<li>
@@ -180,7 +180,7 @@
 									<div class="history">
 										<a href="">更新模型</a>
 										<a href="">删除模型</a>
-										<a href="">版本对比</a>
+										<a href="${ctx }/toHistoryCompare">版本对比</a>
 									</div>
 								</li>
 								<li>
@@ -196,7 +196,7 @@
 									<div class="history">
 										<a href="">更新模型</a>
 										<a href="">删除模型</a>
-										<a href="">版本对比</a>
+										<a href="${ctx }/toHistoryCompare">版本对比</a>
 									</div>
 								</li>
 								<li>
@@ -212,7 +212,7 @@
 									<div class="history">
 										<a href="">更新模型</a>
 										<a href="">删除模型</a>
-										<a href="">版本对比</a>
+										<a href="${ctx }/toHistoryCompare">版本对比</a>
 									</div>
 								</li>
 							</ul>
