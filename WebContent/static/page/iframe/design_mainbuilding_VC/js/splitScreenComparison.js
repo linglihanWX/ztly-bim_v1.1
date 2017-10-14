@@ -2,13 +2,13 @@ function initViewer (freedocontainer) {
 	 var viewer = new FreeDo.Viewer(freedocontainer, {
          animation:false, //动画控制，默认true
          baseLayerPicker:false,//地图切换控件(底图以及地形图)是否显示,默认显示true
-         fullscreenButton:true,//全屏按钮,默认显示true
+         fullscreenButton:false,//全屏按钮,默认显示true
          geocoder:false,//地名查找,默认true
          timeline:false,//时间线,默认true
          vrButton:false,//双屏模式,默认不显示false
-         homeButton:true,//主页按钮，默认true
+         homeButton:false,//主页按钮，默认true
          infoBox:false,//点击要素之后显示的信息,默认true
-         selectionIndicator:true,//选中元素显示,默认true
+         selectionIndicator:false,//选中元素显示,默认true
          imageryProvider : FreeDo.createTileMapServiceImageryProvider({
              url : FreeDo.buildModuleUrl('Assets/Textures/NaturalEarthII')
          }),
@@ -37,7 +37,7 @@ function initViewer (freedocontainer) {
 		    format: "image/png",
 		    tileMatrixSetID: "tianditu",
 		}));*/
-	 modelTile = viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
+	 window.modelTile = viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
 	 viewer.camera.flyTo({
@@ -47,9 +47,6 @@ function initViewer (freedocontainer) {
 				pitch : -1.171440805600418,
 				roll : 0.0006527658379926748
 			}
-		});
-	 modelTile.readyPromise.then(function() {
-			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
 		});
 	return viewer;
 }
