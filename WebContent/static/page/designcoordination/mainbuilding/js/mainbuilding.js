@@ -349,4 +349,18 @@ $(function () {
 				}
 	    	});
 	});
+//   出图点击后出现的对话框关闭
+	 $(".hClose").click(function () {
+	     $("#showDraw").hide();
+	 });
+
+	 $("#showDraw img").click(function () {
+	     $(".bgImg").show();
+	     $("#showDraw").hide();
+	 });
+
+	 $(".bgImg span").click(function () {
+	     $(".bgImg").hide();
+	     $("#showDraw").show();
+	 });
 });

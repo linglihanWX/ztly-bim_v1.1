@@ -37,6 +37,9 @@ a:hover{
 .breadcrumb{
     margin: 0;
 }
+.breadcrumb>a i{
+    margin-left: 10px;
+}
 #sidebar-left{
     width: 7%;
 }
@@ -119,6 +122,7 @@ a:hover{
     vertical-align: top;
 }
 .ztree,#addSence{
+    position: relative;
     width: 100%;
     height: 100%;
     overflow-x:auto;
@@ -384,10 +388,15 @@ a:hover{
 #edit p:last-of-type button:last-of-type{
     background-color: #169bd5;
 }
+#edit ul li span{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    margin-right: 10px;
+}
 #edit ul li i{
     color: grey;
 }
-
 #dailog{
     display: none;
     position: absolute;
@@ -492,15 +501,7 @@ a:hover{
 a.brand span {
     font-size: 24px!important;
 }
-.breadcrumb>a i{
-    margin-left: 10px;
-}
-#edit ul li span{
-    display: inline-block;
-    width: 80px;
-    text-align: right;
-    margin-right: 10px;
-}
+
 /* tree 的右击菜单*/
 #rMenu{
     display: none;
@@ -531,6 +532,7 @@ a.brand span {
 #rMenu a:hover{
     background-color: #ccc;
 }
+
 #showDraw{
     display: none;
     position: absolute;
@@ -541,11 +543,13 @@ a.brand span {
     padding: 10px;
     box-sizing: border-box;
     margin: -250px 0 0 -300px;
-    border: 1px solid #000;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
     background-color: #fff;
+    border-radius: 5px;
+
 }
 #showDraw p{
-    margin: 10px 0 ;
+    margin:0 0 10px 0 ;
 }
 #showDraw p input{
     vertical-align: top;
@@ -554,6 +558,7 @@ a.brand span {
 #showDraw img{
     width: 100%;
     height: 350px;
+    margin-bottom: 10px;
 }
 
 .downLoad{
@@ -575,6 +580,49 @@ a.brand span {
     margin-right: 10px;
 }
 input.btnActive{
+    background-color: #50bfff;
+    color:#fff;
+}
+
+.hClose{
+    float: right;
+    width: 40px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.bgImg{
+    display: none;
+    position: absolute;
+    z-index: 51;
+    left: 50%;
+    top: 50%;
+    width: 800px;
+    height: 600px;
+    margin: -300px 0 0 -400px;
+}
+.bgImg span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+/*标准按钮部分*/
+
+.downLoad{
+    width: 60px;
+    height: 27px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
     background-color: #50bfff;
     color:#fff;
 }

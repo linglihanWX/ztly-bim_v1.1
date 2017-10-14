@@ -241,7 +241,7 @@
 						</div>
 					</div>
 					<div id="showDraw">
-					      <p>出图</p >
+					      <p>出图<span class="hClose">关闭</span></p >
 					      <img src="${ctx }/static/page/designcoordination/mainbuilding/img/zhantingpingmiantu.png" alt="">
 					      <p>
 					         <input type="checkbox" name="">图例
@@ -250,6 +250,10 @@
 					      </p>
 					      <button class="downLoad">下载</button>
 					 </div>
+					 <div class="bgImg">
+  							<img src="${ctx }/static/page/designcoordination/mainbuilding/img/zhantingpingmiantu.png" alt="" >
+   							<span>关闭</span>
+					</div>
 					
 					<div id="edit">
 						<p>具体描述: <span>备注类型:设计问题</span></p>
