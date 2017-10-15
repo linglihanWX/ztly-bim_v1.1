@@ -281,3 +281,12 @@ input.btnActive {
 #newTask ul li i {
     color: grey;
 }
+td img{
+    margin: 0 10px;
+    transition:all 0.5s;
+    cursor:pointer;
+}
+
+td img:hover{
+	transform:scale(1.2);
+}
