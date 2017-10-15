@@ -152,8 +152,8 @@
 								</li>
 								<li>
 									<a href="${ctx }/toMainbuilding">
-										<p> <i class="iconfont icon-gongcheng"></i> 集美区雄安电厂</p>
-										<img src="${ctx }/static/page/designcoordination/designplan/img/changquzhengti.png" alt="">
+										<p> <i class="iconfont icon-gongcheng"></i>安检设备</p>
+										<img src="${ctx }/static/page/designcoordination/designplan/img/anjianshebei.png" alt="">
 										<div class="des">
 											<p><span>负责人员 :</span>杨强</p>
 											<p><span>设计单位 :</span>六院</p>
@@ -169,8 +169,8 @@
 								</li>
 								<li>
 									<a href="${ctx }/toMainbuilding">
-										<p> <i class="iconfont icon-gongcheng"></i> 集美区雄安电厂</p>
-										<img src="${ctx }/static/page/designcoordination/designplan/img/gongdian.png" alt="">
+										<p> <i class="iconfont icon-gongcheng"></i>电梯设备</p>
+										<img src="${ctx }/static/page/designcoordination/designplan/img/diantishebei.png" alt="">
 										<div class="des">
 											<p><span>负责人员 :</span>杨强</p>
 											<p><span>设计单位 :</span>六院</p>
@@ -185,8 +185,8 @@
 								</li>
 								<li>
 									<a href="${ctx }/toMainbuilding">
-										<p> <i class="iconfont icon-gongcheng"></i> 集美区雄安电厂</p>
-										<img src="${ctx }/static/page/designcoordination/designplan/img/jipaishui.png" alt="">
+										<p> <i class="iconfont icon-gongcheng"></i>检票设备</p>
+										<img src="${ctx }/static/page/designcoordination/designplan/img/zhajishebei.png" alt="">
 										<div class="des">
 											<p><span>负责人员 :</span>杨强</p>
 											<p><span>设计单位 :</span>六院</p>
@@ -201,8 +201,8 @@
 								</li>
 								<li>
 									<a href="${ctx }/toMainbuilding">
-										<p> <i class="iconfont icon-gongcheng"></i> 集美区雄安电厂</p>
-										<img src="${ctx }/static/page/designcoordination/designplan/img/tongfeng.png" alt="">
+										<p> <i class="iconfont icon-gongcheng"></i>服务中心</p>
+										<img src="${ctx }/static/page/designcoordination/designplan/img/server.png" alt="">
 										<div class="des">
 											<p><span>负责人员 :</span>杨强</p>
 											<p><span>设计单位 :</span>六院</p>
