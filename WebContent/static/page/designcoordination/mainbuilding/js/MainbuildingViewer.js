@@ -87,7 +87,7 @@ MainBuildingViewer.init = function (earthId) {
 		this.cam = [116.00013, 38.998999999999999999999999, 80.75962432438108];
 		new Compass(this.viewer);
 		
-		this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
+	/*	this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
 			url: "http://{s}.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
 			subdomains:['t7','t6','t5','t4','t3','t2','t1','t0'],
 			maximumLevel: 18,
@@ -100,21 +100,14 @@ MainBuildingViewer.init = function (earthId) {
 			format: "image/png",
 			tileMatrixSetID: "tianditu",
 			show: true
-		}));
+		}));*/
 		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
 		
-	/*	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
-			url: 'http://gbim360.com:9999/chenchunmei/PModel/170905_GHP/GHP'
-		}));*/
-		/*var lon = 116.61110999999998;
-		var lat = 39.94217000000001;*/
 		var lon = 117.6610063067;
 		var lat = 39.0296251212;
 		
-		//var  cartesian  =  FreeDo.Cartesian3.fromDegrees(116.61560999999998,39.94417000000001,850);
-		var  cartesian  =   new FreeDo.Cartesian3.fromDegrees(118.4799594564051, 24.663425907467902,500);
 		this.viewer.camera.flyTo({
 			destination :new FreeDo.Cartesian3(-2303190.1885760543,4395138.739032204,3994995.2792255776),
 			orientation: {
@@ -123,16 +116,15 @@ MainBuildingViewer.init = function (earthId) {
 				roll : 0.0006527658379926748
 			}
 		});
-
 		ceshistate =true;
 		MainBuildingViewer.right(window.merightclick);
 		var imageMaterial = new FreeDo.ImageMaterialProperty ({
-			image : "./static/page/designcoordination/mainbuilding/img/drawing1.png",
+			image : "./static/page/designcoordination/mainbuilding/img/tuzhi/jiegoupingmiantu1.png",
 			repeat : new FreeDo.Cartesian2(1.0, 1.0),
 			transparent : true,
 		});
 		
-/*		var imageEntity = this.viewer.entities.add({
+		var imageEntity = this.viewer.entities.add({
 				show:true,
 			    rectangle : {
 			        coordinates : FreeDo.Rectangle.fromDegrees(lon, lat, lon+0.0078, lat+0.00333),
@@ -144,11 +136,20 @@ MainBuildingViewer.init = function (earthId) {
 			        stRotation : FreeDo.Math.toRadians(180),
 			        material : imageMaterial,
 			    },
-			});*/
+			});
 		myviewer = this.viewer;
 		modelTile.readyPromise.then(function() {
 			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
 		});
+		
+		$("#zongduanmian").click(function() {
+			lon+=0.001;
+			imageEntity.rectangle.coordinates = FreeDo.Rectangle.fromDegrees(lon, lat, lon+0.0078, lat+0.00333);
+		});
+		$("#zhixianceliang").click(function() {
+			lat+=0.001;
+			imageEntity.rectangle.coordinates = FreeDo.Rectangle.fromDegrees(lon, lat, lon+0.0078, lat+0.00333);
+		})
 	}
 }
 
@@ -203,23 +204,6 @@ MainBuildingViewer.right = function (callback) {
          }
     }, selectComponentEventType);
 }
-
-MainBuildingViewer.showAllModelTile = function() {
-	/*for(i in catchModelTile){
-		catchModelTile[i].show=true;
-	}
-	catchModelTile=null;*/
-}
-/*$(".hideModel").click(function () {
-	if(catchModelTile){
-		catchModelTile.show= false;
-	}
-	$("#menu").hide();
-});
-$(".showModel").click(function () {
-    console.log(2);
-    $("#menu").hide();
-});*/
 
 MainBuildingViewer.showHideModelsById =function(uid){
 

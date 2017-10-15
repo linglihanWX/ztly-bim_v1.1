@@ -256,8 +256,8 @@
 					<div class="layer">
 						<p>
 							<span>图层</span>
-							<span>纵断面</span>
-							<span>直线测量</span>
+							<span id="zongduanmian">纵断面</span>
+							<span id="zhixianceliang">直线测量</span>
 							<span>预选中</span>
 							<span>角度测量</span>
 						</p>

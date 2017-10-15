@@ -13,8 +13,6 @@ $(function () {
         type: "get",
         dataType:"json",
         success: function (data) {
-        	
-        	
             var zTreeObj;
             var setting = {
             	check:{
