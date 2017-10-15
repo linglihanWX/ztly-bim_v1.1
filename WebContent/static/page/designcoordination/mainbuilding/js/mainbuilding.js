@@ -28,7 +28,66 @@ $(function () {
                     }
                 },
                 callback:{
-                	onCheck:function(){
+                	onCheck:function(event, treeId, treeNode){
+                		var uid = treeNode.uId;
+                		switch (uid) {
+						case "e0b429b2-afe3-11e7-46c2-5ebc1b3c3ce2":
+							if(treeNode.checked){
+								imageEntity1.show = true;
+							}else{
+								imageEntity1.show = false;
+							}
+							break;
+						case "e13e8f61-afe3-11e7-46c2-5ebc1b3c3ce2":
+							if(treeNode.checked){
+								imageEntity2.show = true;
+							}else{
+								imageEntity2.show = false;
+							}
+							break;
+						case "e13e8f64-afe3-11e7-46c2-5ebc1b3c3ce2":
+							if(treeNode.checked){
+								imageEntity3.show = true;
+							}else{
+								imageEntity3.show = false;
+							}
+							break;
+						case "e0b429b1-afe3-11e7-46c2-5ebc1b3c3ce2":
+							if(treeNode.checked){
+								imageEntity1.show = true;
+							}else{
+								imageEntity1.show = false;
+							}
+							break;
+						case "e13e8f60-afe3-11e7-46c2-5ebc1b3c3ce2":
+							if(treeNode.checked){
+								imageEntity2.show = true;
+							}else{
+								imageEntity2.show = false;
+							}
+							break;
+						case "e13e8f63-afe3-11e7-46c2-5ebc1b3c3ce2":
+							if(treeNode.checked){
+								imageEntity3.show = true;
+							}else{
+								imageEntity3.show = false;
+							}
+							break;
+						case "e0b429b0-afe3-11e7-46c2-5ebc1b3c3ce2":
+							if(treeNode.checked){
+								imageEntity1.show = true;
+								imageEntity2.show = true;
+								imageEntity3.show = true;
+							}else{
+								imageEntity1.show = false;
+								imageEntity2.show = false;
+								imageEntity3.show = false;
+							}
+							break;
+
+						default:
+							break;
+						}
                 		var nodes = treeObj.getCheckedNodes(false);
                 		var models =[];
                 		for(i in nodes){
@@ -53,29 +112,31 @@ $(function () {
             $("#div1").removeClass("open1").addClass("close1");
             $(".twoThree").html("2D");
             $(".row-fluid .span12").width(100 + "%");
-            myviewer.camera.flyTo({
-    			destination : FreeDo.Cartesian3.fromDegrees(116.61560999999998,39.94417000000001,850),
+            myviewer.camera.setView({
+            	destination :new FreeDo.Cartesian3(-2302923.868697135,4394881.466502352,3995119.1300424132),
     			orientation: {
-    				heading : 3.151511565477606,
+    				heading : 3.4103115877496184,
     				pitch : FreeDo.Math.toRadians(-90),
-    				roll : 6.283142068984704
+    				roll : 3.1249876427485663
     			}
     		});
-            myviewer.entities.show = true;
+            
             
         } else {
             $("#div1").removeClass("close1").addClass("open1");
             $(".twoThree").html("3D");
             $(".row-fluid .span12").width(13 + "%");
-            myviewer.camera.flyTo({
-    			destination : new FreeDo.Cartesian3(-2193765.8412362905, 4377825.066559737, 4073529.786256399),
+            myviewer.camera.setView({
+    			destination : new FreeDo.Cartesian3(-2302845.3100776505,4394938.847917727,3994690.0880676378),
     			orientation: {
-    				heading : 3.151511565477606,
-    				pitch : -0.7010380643181917,
-    				roll : 6.283142068984704
+    				heading : 0.2536280253880907,
+    				pitch : -0.5766105792503788,
+    				roll : 0.0009860831680850168
     			}
     		});
-            myviewer.entities.show = false;
+            imageEntity1.show = false;
+            imageEntity2.show = false;
+            imageEntity3.show = false;
         }
 
         if ($("#div2").hasClass("open2")) {

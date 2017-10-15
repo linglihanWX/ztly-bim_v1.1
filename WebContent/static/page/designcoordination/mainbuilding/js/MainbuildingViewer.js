@@ -13,7 +13,9 @@ var ceshistate = false;
 var modelTile=null;
 var myviewer = null;
 var tuceng =[];
-
+var imageEntity1 = {};
+var imageEntity2 = {};
+var imageEntity3 = {};
 window.obj = {};
 MainBuildingViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
@@ -120,38 +122,80 @@ MainBuildingViewer.init = function (earthId) {
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
 		
-		var lon = 117.6610063067;
-		var lat = 39.0296251212;
-		
+
+		//3D视角
+		//-2302845.900566225,4394819.795728763,3994766.603806111,0.2482012574227772,-0.781820133327709,0.001139172205375516
 		this.viewer.camera.setView({
-			destination :new FreeDo.Cartesian3(-2303190.1885760543,4395138.739032204,3994995.2792255776),
+			destination :new FreeDo.Cartesian3(-2302923.868697135,4394881.466502352,3995119.1300424132),
 			orientation: {
-				heading : 0.000004136064356785596,
-				pitch : -1.171440805600418,
-				roll : 0.0006527658379926748
+				heading : 3.4103115877496184,
+				pitch : -1.5214432671817395,
+				roll : 3.1249876427485663
 			}
 		});
 		ceshistate =true;
 		MainBuildingViewer.right(window.merightclick);
-		var imageMaterial = new FreeDo.ImageMaterialProperty ({
+		var imageMaterial1 = new FreeDo.ImageMaterialProperty ({
 			image : "./static/page/designcoordination/mainbuilding/img/tuzhi/jiegoupingmiantu1.png",
 			repeat : new FreeDo.Cartesian2(1.0, 1.0),
 			transparent : true,
 		});
-		
-		var imageEntity = this.viewer.entities.add({
+		var imageMaterial2 = new FreeDo.ImageMaterialProperty ({
+			image : "./static/page/designcoordination/mainbuilding/img/tuzhi/shebeipingmiantu1.png",
+			repeat : new FreeDo.Cartesian2(1.0, 1.0),
+			transparent : true,
+		});
+		var imageMaterial3 = new FreeDo.ImageMaterialProperty ({
+			image : "./static/page/designcoordination/mainbuilding/img/tuzhi/zhantingpingmiantu1.png",
+			repeat : new FreeDo.Cartesian2(1.0, 1.0),
+			transparent : true,
+		});
+		var lon1 = 117.65387630669996;
+		var lat1 = 39.02828312119988;
+		imageEntity1 = this.viewer.entities.add({
 				show:true,
 			    rectangle : {
-			        coordinates : FreeDo.Rectangle.fromDegrees(lon, lat, lon+0.0078, lat+0.00333),
+			        coordinates : FreeDo.Rectangle.fromDegrees(lon1, lat1, lon1+0.0020, lat1+0.0009),
 			        outline : true,
 			        outlineColor : FreeDo.Color.WHITE,
 			        outlineWidth : 4,
 			        height : 20,
-			        rotation : FreeDo.Math.toRadians(0),
-			        stRotation : FreeDo.Math.toRadians(180),
-			        material : imageMaterial,
+			        rotation : FreeDo.Math.toRadians(168),
+			        stRotation : FreeDo.Math.toRadians(168+180),
+			        material : imageMaterial1,
 			    },
 			});
+		var lon2 = 117.65387630669996;
+		var lat2 = 39.02828312119988;
+		imageEntity2 = this.viewer.entities.add({
+			show:true,
+			rectangle : {
+				coordinates : FreeDo.Rectangle.fromDegrees(lon2, lat2, lon2+0.0020, lat2+0.0009),
+				outline : true,
+				outlineColor : FreeDo.Color.WHITE,
+				outlineWidth : 4,
+				height : 20,
+				rotation : FreeDo.Math.toRadians(168),
+				stRotation : FreeDo.Math.toRadians(168+180),
+				material : imageMaterial2,
+			},
+		});
+		var lon3 = 117.65357630669989;
+		var lat3 = 39.028213121199855;
+		imageEntity3 = this.viewer.entities.add({
+			show:true,
+			rectangle : {
+				coordinates : FreeDo.Rectangle.fromDegrees(lon3, lat3, lon3+0.0025, lat3+0.0012),
+				outline : true,
+				outlineColor : FreeDo.Color.WHITE,
+				outlineWidth : 4,
+				height : 20,
+				rotation : FreeDo.Math.toRadians(168),
+				stRotation : FreeDo.Math.toRadians(168+180),
+				material : imageMaterial3,
+			},
+		});
+		
 		var hospital1 = this.viewer.entities.add( {  
 		    name : '医院1',  
 		    position : FreeDo.Cartesian3.fromDegrees( 117.65406261508599,39.0299073545233,15 ),  
@@ -292,7 +336,7 @@ MainBuildingViewer.init = function (earthId) {
 		} );
 		var road1 = this.viewer.entities.add( {  
 			name : '道路1',  
-			position : FreeDo.Cartesian3.fromDegrees(117.65366853103967, 39.02932398272103,15 ),  
+			position : FreeDo.Cartesian3.fromDegrees(117.6601106774757, 39.0278397440452,15 ),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
