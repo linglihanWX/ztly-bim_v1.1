@@ -41,10 +41,6 @@ p {
     height: 30px;
     font-size: 18px;
 }
-.listProject li a>img{
-	width:300px;
-	height:180px;
-}
 
 .listProject li .des {
     position: absolute;
@@ -108,7 +104,7 @@ p {
     border: 1px solid #000;
     text-align: center;
     height: 230px;
-    padding: 48px 0;
+    padding: 60px 0;
 }
 
 .first-list i {
@@ -398,12 +394,11 @@ a.brand span {
     height: 500px;
     padding: 10px;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: rgba(245,240,240,1);
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
     border-radius: 5px;
     z-index: 50;
     margin: -250px 0 0 -300px;
-    background:rgba(245,240,240,1);
 }
 
 .different>p:first-of-type{
@@ -417,17 +412,20 @@ a.brand span {
     height: 100%;
     font-size: 16px;
     color: #000;
-    cursor:pointer;
+    cursor: pointer;
 }
-
 .different>i{
     position: relative;
     top: 3px;
     display: inline-block;
     width: 30px;
     height: 15px;
-    background-color: yellow;
-    border: 1px solid #000;
+    background-color: blue;
+    margin-right: 20px;
+}
+.different>i:last-of-type{
+
+    background-color: green;
 }
 .different>p:nth-of-type(2){
     clear: both;
@@ -435,78 +433,165 @@ a.brand span {
     padding-bottom: 5px;
     border-bottom: 1px solid #000;
 }
-
 .different th, .different td{
-	text-align:center;
+    text-align:center;
 }
+
 .different .box{
     width: 100%!important;
     margin: 0;
 }
-.lct{
+
+.lct,.lct1,.lct2{
     position: relative;
     width: 100%;
     height: 200px;
-    background-image: url('../img/workflow.png');
-    -webkit-background-size:cover;
-    background-size:cover;
+    background-size:580px 200px;
 }
-.lct>span{
-    position: absolute;
-    text-align: center;
-    font-size: 12px;
-    transition: all 0.5s;
-    border-radius: 5px;
+.lct{
+    background-image: url('../img/lc.png');
 }
-/*.lct>span:hover{*/
-    /*transform: scale(1.1);*/
-/*}*/
+.lct1{
+     background-image: url('../img/lc1.png');
+ }
+.lct2{
+    background-image: url('../img/lc2.png');
+}
+.lct>span,
+.lct1>span,
+.lct2>span{
+     position: absolute;
+     text-align: center;
+     font-size: 12px;
+     border-radius: 5px;
+ }
 .lct>span:first-of-type{
-    top: 83px;
+    top: 73px;
     left: 18px;
-    width: 66px;
-    height: 30px;
-    line-height:30px;
-    background-color: green;
+    width: 69px;
+    height: 47px;
+    border: 2px solid green;
 }
 
 .lct>span:nth-of-type(2){
-    top: 81px;
-    left: 130px;
-    width: 66px;
-    height: 37px;
-    line-height: 37px;
-    background-color: green;
+    top: 62px;
+    left: 121px;
+    width: 81px;
+    height: 70px;
+    border: 2px solid green;
 }
 
 .lct>span:nth-of-type(3){
-    top: 38px;
-    left: 247px;
-    width: 65px;
-    height: 32px;
-    line-height: 30px;
-    background-color: yellow;
+    top: 61px;
+    left: 230px;
+    width: 98px;
+    height: 75px;
+    border: 2px solid blue;
 }
 .lct>span:nth-of-type(4){
-    top: 128px;
-    left: 248px;
-    width: 62px;
-    height: 30px;
-    line-height: 30px;
+    top: 62px;
+    left: 363px;
+    width: 88px;
+    height: 67px;
 }
 .lct>span:nth-of-type(5){
-    top: 84px;
-    left: 363px;
-    width: 64px;
-    height: 36px;
-    text-align: center;
-    line-height: 36px;
+    top: 73px;
+    left: 470px;
+    width: 68px;
+    height: 49px;
 }
 
-.lct>span:nth-of-type(6){
-    top: 87px;
-    left: 475px;
-    width: 65px;
-    height: 30px;
-    line-height: 30px;
+/*two*/
+
+.lct1>span:first-of-type{
+    top: 78px;
+    left: 47px;
+    width: 62px;
+    height: 34px;
+    border: 2px solid green;
 }
+
+.lct1>span:nth-of-type(2){
+     top: 129px;
+    left: 138px;
+    width: 79px;
+    height: 44px;
+}
+
+.lct1>span:nth-of-type(3){
+    top: 28px;
+    left: 248px;
+    width: 93px;
+    height: 45px;
+    border: 2px solid green;
+
+}
+.lct1>span:nth-of-type(4){
+    top: 128px;
+    left: 296px;
+    width: 78px;
+    height: 45px;
+}
+.lct1>span:nth-of-type(5){
+    top: 79px;
+    left: 475px;
+    width: 64px;
+    height: 34px;;
+    border: 2px solid green;
+}
+
+/*three*/
+
+.lct2>span:first-of-type{
+    top: 106px;
+    left: 24px;
+    width: 52px;
+    height: 34px;
+    border: 2px solid green;
+}
+
+.lct2>span:nth-of-type(2){
+    top: 107px;
+    left: 100px;
+    width: 69px;
+    height: 34px;
+    border: 2px solid blue;
+}
+
+.lct2>span:nth-of-type(3){
+    top: 20px;
+    left: 223px;
+    width: 91px;
+    height: 55px;
+
+}
+.lct2>span:nth-of-type(4){
+    top: 106px;
+    left: 190px;
+    width: 64px;
+    height: 35px;
+}
+.lct2>span:nth-of-type(5){
+    top: 106px;
+    left: 285px;
+    width: 64px;
+    height: 35px;
+}
+.lct2>span:nth-of-type(6){
+    top: 105px;
+    left: 381px;
+    width: 85px;
+    height: 34px;
+}
+.lct2>span:nth-of-type(7){
+    top: 106px;
+    left: 500px;
+    width: 52px;
+    height: 34px;
+}
+
+.listProject img{
+	width:300px;
+	height:201px;
+}
+

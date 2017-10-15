@@ -115,7 +115,7 @@
 								</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="${ctx }/toSpacemgmt">
 									<i class="iconfont icon-Refresh"></i>
 									<span class="hidden-tablet">运维管理</span>
 								</a>
