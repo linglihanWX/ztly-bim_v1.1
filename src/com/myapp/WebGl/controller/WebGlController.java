@@ -177,6 +177,11 @@ public class WebGlController {
 	public String toWorkShowPage(HttpServletRequest req) {
 		return "workshow";
 	}
+	/*-----------------------运维管理模块页面跳转-------------------------*/
+	@RequestMapping("toSpacemgmt")
+	public String toSpacemgmtPage(HttpServletRequest req) {
+		return "spacemgmt";
+	}
 	/*----------------------------文件下载----------------------------*/
 	@RequestMapping("download")
 	public ResponseEntity<byte[]> downloadFile(HttpServletRequest request,@RequestParam("filename") String filename,Model model){

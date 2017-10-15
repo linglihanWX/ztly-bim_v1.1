@@ -1,0 +1,225 @@
+@charset "utf-8";
+
+html,
+body {
+    overflow-y: hidden;
+}
+#left{
+    width: 100%;
+    height: 100%;
+}
+.panel.datagrid{
+    width: 100%!important;
+    height: 100%;
+}
+
+#treeGridThree{
+    display: none;
+}
+.panel-header, .panel-body {
+    border-width: 0;
+}
+
+.datagrid-footer-inner {
+ border-width: 0;
+}
+
+.allWidth{
+     width: 100%!important;
+ }
+.datagrid-wrap,.panel-body ,.panel-body-noheader, datagrid-view{
+    height: 100%!important;
+}
+
+#content{
+    margin: 0;
+    padding: 0;
+}
+.breadcrumb{
+    margin: 0;
+}
+#sidebar-left{
+    width: 10%;
+}
+#content {
+    width: 90%;
+    margin-left: 10% !important;
+}
+#DataTables_Table_0{
+    width: 100%;
+    margin: 0;
+}
+
+#DataTables_Table_0 thead>tr>th{
+    text-align: center;
+    vertical-align: middle;
+}
+#DataTables_Table_0_wrapper>.row-fluid:first-of-type{
+    margin-top: 10px;
+}
+
+.box-content{
+    padding:0;
+}
+
+
+.lists a{
+    margin-left:10px;
+}
+.breadcrumb .lists a:hover {
+    color: red;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+}
+.activeList{
+    color:red;
+    font-weight: bold;
+}
+#DataTables_Table_0 tbody>tr>td{
+    text-align: center;
+    vertical-align: middle;
+}
+
+/*按钮部分*/
+#div1{
+    margin-top: 3px;
+    display: inline-block;
+    width: 35px;
+    height: 15px;
+    border-radius: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+#div2{
+
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+    box-sizing: border-box;
+}
+.open1{
+    background: rgba(0,184,0,0.8);
+}
+.open2{
+    top: -1px;
+    right: 0;
+}
+.close1{
+    background: rgba(255,255,255,0.4);
+    border:1px solid rgba(0,0,0,0.15);
+    border-left: transparent;
+}
+.close2{
+    left: 0;
+    top: -2px;
+    border:1px solid rgba(0,0,0,0.1);
+}
+
+.breadcrumb li:last-of-type{
+    line-height: 20px;
+}
+.breadcrumb li:last-of-type span{
+    vertical-align: top;
+}
+
+.changWidth{
+    width: 10%!important;
+}
+#treeGridThree_wrapper  .row-fluid{
+    display: none;
+}
+
+#tree{
+    float: left;
+    width: 15%;
+    height: 100%;
+    overflow-x:auto;
+    padding:5px 0 0  0;
+    border: 1px  solid #ccc;
+    box-sizing: border-box;
+}
+
+
+.toggleText{
+    display: inline-block;
+    width: 40px;
+    border:1px solid #000;
+    cursor: pointer;
+}
+
+.on{
+    background: red;
+}
+
+.table td {
+    padding: 8px 0;
+    font-size: 12px;
+}
+
+.box{
+    display: inline-block;
+    width: 84%!important;
+    border:none;
+}
+
+
+.container-fluid-full{
+    height:calc(100% - 50.4px);
+}
+.container-fluid-full>.row-fluid{
+    position: relative;
+    height: 100%;
+}
+#content{
+    min-height: 0!important;
+    height: 100%
+}
+
+.row-fluid.sortable.ui-sortable{
+    height: 100%;
+}
+
+td img{
+    width: 20px;
+}
+.box-content tbody tr td,#data thead tr td{
+    text-align: center;
+}
+#DataTables_Table_0_info{
+    display: none;
+}
+
+/*会员*/
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}
+
+a.brand span {
+    font-size: 24px!important;
+}
+#data_info{
+	display: none;
+}
+.xz{
+    margin-right: 10px;
+}
+/*标准按钮部分*/
+.btnStandard {
+    margin-left: 50px;
+}
+.btnStandard input{
+    width: 60px;
+    height: 27px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    background-color: #ccc;
+}
+input.btnActive{
+    background-color: #50bfff;
+    color:#fff;
+}

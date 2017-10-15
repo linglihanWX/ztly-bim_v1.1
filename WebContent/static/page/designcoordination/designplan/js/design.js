@@ -32,12 +32,36 @@ $(function () {
             console.log($(this).index());
         })
     });
-    $(".check").click(function () {
-        $(".different").show();
-      
+   
+    
+$(".check").eq(0).click(function () {
+        $(".different").eq(2).show();
         return false;
+});
+$(".check").eq(1).click(function () {
+    $(".different").eq(1).show();
+    return false;
+});
+$(".check").eq(2).click(function () {
+    $(".different").eq(0).show();
+    return false;
+});
+$(".check").eq(3).click(function () {
+	$(".different").eq(2).show();
+	return false;
+});
+
+$(".gb").eq(0).click(function () {
+        $(".different").eq(0).hide();
     });
-    $(".gb").click(function () {
-        $(".different").hide();
-    });
+$(".gb").eq(1).click(function () {
+    $(".different").eq(1).hide();
+});
+$(".gb").eq(2).click(function () {
+    $(".different").eq(2).hide();
+});
+$(".gb").eq(3).click(function () {
+	$(".different").eq(2).hide();
+});
+
 });
