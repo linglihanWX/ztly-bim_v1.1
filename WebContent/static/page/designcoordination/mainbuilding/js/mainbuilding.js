@@ -7,6 +7,7 @@ $(function () {
     $("#content .row-fluid").height(h2 - h3);
     $(".dialogContent").height(h2-250);
 	MainBuildingViewer.init("earth");
+	MainBuildingViewer.initLeftClick(myviewer);
 	var treeObj = {};
     $.ajax({
         url: "getTangguData",

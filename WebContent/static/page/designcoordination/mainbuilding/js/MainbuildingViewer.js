@@ -78,7 +78,20 @@ MainBuildingViewer.init = function (earthId) {
 		this.project = project;
 		
 		this.viewer = this.project.getViewer();
-		
+		this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
+			url: "http://{s}.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
+			subdomains:['t7','t6','t5','t4','t3','t2','t1','t0'],
+			maximumLevel: 18,
+			show: true
+		}));
+		/*this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
+			url: "http://t0.tianditu.com/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg",
+			layer: "tdtAnnoLayer_biaoji",
+			style: "default",
+			format: "image/png",
+			tileMatrixSetID: "tianditu",
+			show: true
+		}));*/
 		
 		// cx 添加
 		this.flag = true;
@@ -108,7 +121,7 @@ MainBuildingViewer.init = function (earthId) {
 		var lon = 117.6610063067;
 		var lat = 39.0296251212;
 		
-		this.viewer.camera.flyTo({
+		this.viewer.camera.setView({
 			destination :new FreeDo.Cartesian3(-2303190.1885760543,4395138.739032204,3994995.2792255776),
 			orientation: {
 				heading : 0.000004136064356785596,
@@ -137,6 +150,282 @@ MainBuildingViewer.init = function (earthId) {
 			        material : imageMaterial,
 			    },
 			});
+		var hospital1 = this.viewer.entities.add( {  
+		    name : '医院1',  
+		    position : FreeDo.Cartesian3.fromDegrees( 117.65406261508599,39.0299073545233,15 ),  
+		    point : { //点  
+		        pixelSize : 5,  
+		        color : FreeDo.Color.RED,  
+		        outlineColor : FreeDo.Color.WHITE,  
+		        outlineWidth : 2  
+		    },  
+		    label : { //文字标签  
+		        text : '天津医科大学总医院',  
+		        font : '14pt monospace',  
+		        style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+		        outlineWidth : 2,  
+		        verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+		        pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+		    },  
+		    billboard : { //图标  
+		        image : "static/page/designcoordination/mainbuilding/img/tuceng/hispital.svg",  
+		        width : 50,  
+		        height : 50  
+		    },  
+		} );
+		var hospital2 = this.viewer.entities.add( {  
+			name : '医院2',  
+			position : FreeDo.Cartesian3.fromDegrees( 117.6524968652495,39.02839132165448,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '天津海河医院',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/hispital.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var police1 = this.viewer.entities.add( {  
+			name : '警察局1',  
+			position : FreeDo.Cartesian3.fromDegrees( 117.65575555770128, 39.03009236445744,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '天津西车站派出所',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/police.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var police2 = this.viewer.entities.add( {  
+			name : '警察局2',  
+			position : FreeDo.Cartesian3.fromDegrees( 117.65346121985428, 39.02767696856126,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '天津下瓦房派出所',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/police.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var fire1 = this.viewer.entities.add( {  
+			name : '消防局1',  
+			position : FreeDo.Cartesian3.fromDegrees(117.65530601763803, 39.02779377137312,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '天津市公安消防局',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/firecontrol.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var fire2 = this.viewer.entities.add( {  
+			name : '消防局2',  
+			position : FreeDo.Cartesian3.fromDegrees(117.65808325960933, 39.030095945865426,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '天津市保税区公安消防支队',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/firecontrol.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var road1 = this.viewer.entities.add( {  
+			name : '道路1',  
+			position : FreeDo.Cartesian3.fromDegrees(117.65366853103967, 39.02932398272103,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '解放北路东方华尔街',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/road.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var road2 = this.viewer.entities.add( {  
+			name : '道路2',  
+			position : FreeDo.Cartesian3.fromDegrees(117.65717660285547, 39.029622371574646,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '估衣街',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/road.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var village1 = this.viewer.entities.add( {  
+			name : '村庄1',  
+			position : FreeDo.Cartesian3.fromDegrees(117.65982044133891, 39.028640350185064,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '西井峪村',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/village.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var village2 = this.viewer.entities.add( {  
+			name : '村庄2',  
+			position : FreeDo.Cartesian3.fromDegrees(117.65559299621263, 39.02942625528345,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '崔庄村',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/village.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var water1 = this.viewer.entities.add( {  
+			name : '水系1',  
+			position : FreeDo.Cartesian3.fromDegrees(117.65443147101222, 39.02762212630358,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '北运河',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/river.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
+		var village2 = this.viewer.entities.add( {  
+			name : '水系2',  
+			position : FreeDo.Cartesian3.fromDegrees(117.65066204707234, 39.02692651335879,15 ),  
+			point : { //点  
+				pixelSize : 5,  
+				color : FreeDo.Color.RED,  
+				outlineColor : FreeDo.Color.WHITE,  
+				outlineWidth : 2  
+			},  
+			label : { //文字标签  
+				text : '海河',  
+				font : '14pt monospace',  
+				style : FreeDo.LabelStyle.FILL_AND_OUTLINE,  
+				outlineWidth : 2,  
+				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
+				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
+			},  
+			billboard : { //图标  
+				image : "static/page/designcoordination/mainbuilding/img/tuceng/river.svg",  
+				width : 50,  
+				height : 50  
+			},  
+		} );
 		myviewer = this.viewer;
 		modelTile.readyPromise.then(function() {
 			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
@@ -214,6 +503,18 @@ MainBuildingViewer.showHideModelsById =function(uid){
 	    }
 	  });
 	modelTile.style = showhide;
+}
+MainBuildingViewer.initLeftClick = function(viewer) {
+	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler.setInputAction(function(movement){
+		var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
+		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
+		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
+		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
+		console.log(point);
+	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+	
+
 }
 /**
  * [initModels初始化场景中的模型]
