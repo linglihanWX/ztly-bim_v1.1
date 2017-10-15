@@ -105,8 +105,8 @@
 				<ul class="listProject">
 					<li>
 						<a href="${ctx }/toWater">
-							<p> <i class="iconfont icon-gongcheng"></i> 成都天府广场</p>
-							<img src="${ctx }/static/page/index/img/chengdutianfuguangchang.png" alt="">
+							<p> <i class="iconfont icon-gongcheng"></i> 塘沽地铁站</p>
+							<img src="${ctx }/static/page/index/img/tanggu.png" alt="">
 							<div class="des">
 								<p>负责人员 : 杨强</p>
 								<p>设计单位 : 六院</p>
