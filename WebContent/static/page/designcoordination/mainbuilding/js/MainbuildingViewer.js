@@ -12,6 +12,8 @@ var firstReal = true;
 var ceshistate = false;
 var modelTile=null;
 var myviewer = null;
+var tuceng =[];
+
 window.obj = {};
 MainBuildingViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
@@ -380,7 +382,7 @@ MainBuildingViewer.init = function (earthId) {
 				height : 50  
 			},  
 		} );
-		var water1 = this.viewer.entities.add( {  
+		var river1 = this.viewer.entities.add( {  
 			name : '水系1',  
 			position : FreeDo.Cartesian3.fromDegrees(117.65443147101222, 39.02762212630358,15 ),  
 			point : { //点  
@@ -403,7 +405,7 @@ MainBuildingViewer.init = function (earthId) {
 				height : 50  
 			},  
 		} );
-		var village2 = this.viewer.entities.add( {  
+		var river2 = this.viewer.entities.add( {  
 			name : '水系2',  
 			position : FreeDo.Cartesian3.fromDegrees(117.65066204707234, 39.02692651335879,15 ),  
 			point : { //点  
@@ -426,6 +428,18 @@ MainBuildingViewer.init = function (earthId) {
 				height : 50  
 			},  
 		} );
+		tuceng.push(hospital1);
+		tuceng.push(hospital2);
+		tuceng.push(police1);
+		tuceng.push(police2);
+		tuceng.push(fire1);
+		tuceng.push(fire2);
+		tuceng.push(road1);
+		tuceng.push(road2);
+		tuceng.push(river1);
+		tuceng.push(river2);
+		tuceng.push(village1);
+		tuceng.push(village2);
 		myviewer = this.viewer;
 		modelTile.readyPromise.then(function() {
 			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);

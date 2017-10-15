@@ -262,12 +262,12 @@
 							<span>角度测量</span>
 						</p>
 						<ul>
-							<li><input type="checkbox">水系</li>
-							<li><input type="checkbox">道路</li>
-							<li><input type="checkbox">村庄</li>
-							<li><input type="checkbox">医院</li>
-							<li><input type="checkbox">消防局</li>
-							<li><input type="checkbox">警察局</li>
+							<li><input id="river" type="checkbox" checked="true">水系</li>
+							<li><input id="road" type="checkbox" checked="true">道路</li>
+							<li><input id="village" type="checkbox" checked="true">村庄</li>
+							<li><input id="hospital" type="checkbox" checked="true">医院</li>
+							<li><input id="firecontrol" type="checkbox" checked="true">消防局</li>
+							<li><input id="police" type="checkbox" checked="true">警察局</li>
 						</ul>
 					</div>
 					

@@ -379,5 +379,73 @@ $(function () {
 	    $(".slList").click(function() {
 	        $("#sl").show();
 	    });
-	    
+	   //图层的显隐
+	    $("#hospital").change(function(){
+	    	if($("#hospital").attr('checked')){
+	    		tuceng[0].show = false;
+	    		tuceng[1].show = false;
+	    		$("#hospital").attr('checked',null);
+	    	}else{
+	    		tuceng[0].show = true;
+	    		tuceng[1].show = true;
+	    		$("#hospital").attr('checked','checked');
+	    	}
+	    	
+	    });
+	    $("#police").change(function(){
+	    	if($("#police").attr('checked')){
+	    		tuceng[2].show = false;
+	    		tuceng[3].show = false;
+	    		$("#police").attr('checked',null);
+	    	}else{
+	    		tuceng[2].show = true;
+	    		tuceng[3].show = true;
+	    		$("#police").attr('checked','checked');
+	    	}
+	    });
+	    $("#firecontrol").change(function(){
+	    	if($("#firecontrol").attr('checked')){
+	    		tuceng[4].show = false;
+	    		tuceng[5].show = false;
+	    		$("#firecontrol").attr('checked',null);
+	    	}else{
+	    		tuceng[4].show = true;
+	    		tuceng[5].show = true;
+	    		$("#firecontrol").attr('checked','checked');
+	    	}
+	    });
+	    $("#road").change(function(){
+	    	if($("#road").attr('checked')){
+	    		tuceng[6].show = false;
+	    		tuceng[7].show = false;
+	    		$("#road").attr('checked',null);
+	    	}else{
+	    		tuceng[6].show = true;
+	    		tuceng[7].show = true;
+	    		$("#road").attr('checked','checked');
+	    	}
+	    });
+	    $("#river").change(function(){
+	    	if($("#river").attr('checked')){
+	    		tuceng[8].show = false;
+	    		tuceng[9].show = false;
+	    		$("#river").attr('checked',null);
+	    	}else{
+	    		tuceng[8].show = true;
+	    		tuceng[9].show = true;
+	    		$("#river").attr('checked','checked');
+	    	}
+	    });
+	    $("#village").change(function(){
+	    	if($("#village").attr('checked')){
+	    		tuceng[10].show = false;
+	    		tuceng[11].show = false;
+	    		$("#village").attr('checked',null);
+	    	}else{
+	    		tuceng[10].show = true;
+	    		tuceng[11].show = true;
+	    		$("#village").attr('checked','checked');
+	    	}
+	    });
+
 });
