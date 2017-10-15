@@ -193,15 +193,15 @@
 								<p><input type="search" placeholder="快速搜索备注"><i class="iconfont icon-search"></i></p>
 								<ul>
 									<li id="beizhu1">
-										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/anjianshebei.png" alt="">
+										<img src="${ctx }/static/page/designcoordination/designplan/img/anjianshebei.png" alt="">
 										<p>安检设备皮带断裂。</p>
 									</li>
 									<li id="beizhu2">
-										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/diantishebei.png" alt="">
+										<img src="${ctx }/static/page/designcoordination/designplan/img/diantishebei.png" alt="">
 										<p>楼梯倾斜度过大。</p>
 									</li>
 									<li id="beizhu3">
-										<img src="${ctx }/static/page/designcoordination/mainbuilding/img/zhajishebei.png" alt="">
+										<img src="${ctx }/static/page/designcoordination/designplan/img/zhajishebei.png" alt="">
 										<p>闸机设备间距过大。</p>
 									</li>
 								</ul>
