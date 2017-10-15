@@ -22,6 +22,9 @@ a.brand span {
     padding-left: 0;
 }
 
+#content>.row-fluid{
+	padding:0 15px;
+}
 #left{
     float: left;
     width: 31%;
@@ -58,7 +61,7 @@ a.brand span {
 }
 
 #right{
-    width: 68%;
+    width: 69%;
     height: 100%;
     float: right;
 }

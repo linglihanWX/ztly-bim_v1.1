@@ -108,7 +108,7 @@ p {
     border: 1px solid #000;
     text-align: center;
     height: 230px;
-    padding: 47px 0;
+    padding: 48px 0;
 }
 
 .first-list i {
@@ -403,6 +403,7 @@ a.brand span {
     border-radius: 5px;
     z-index: 50;
     margin: -250px 0 0 -300px;
+    background:rgba(245,240,240,1);
 }
 
 .different>p:first-of-type{
@@ -416,10 +417,9 @@ a.brand span {
     height: 100%;
     font-size: 16px;
     color: #000;
+    cursor:pointer;
 }
-.different>p:first-of-type span:hover{
-    background-color: red;
-}
+
 .different>i{
     position: relative;
     top: 3px;
@@ -436,6 +436,13 @@ a.brand span {
     border-bottom: 1px solid #000;
 }
 
+.different th, .different td{
+	text-align:center;
+}
+.different .box{
+    width: 100%!important;
+    margin: 0;
+}
 .lct{
     position: relative;
     width: 100%;

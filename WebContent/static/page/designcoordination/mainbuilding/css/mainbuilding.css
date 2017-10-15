@@ -160,8 +160,8 @@ a:hover{
 }
 .box{
     position: absolute;
-    left: 0;
-    top: 0;
+   /*  left: 0;
+    top: 0; */
     border:none;
     height:100%;
 }
@@ -669,4 +669,16 @@ input.btnActive{
 }
 .layer ul li>input{
     vertical-align: top;
+}
+#sl{
+    display: none;
+    position: absolute;
+    right: 0!important;
+    bottom: 0!important;
+    width: 400px;
+    height: auto;
+    background-color: #fff;
+}
+#sl th, #sl td{
+    text-align: center;
 }

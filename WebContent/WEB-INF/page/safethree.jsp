@@ -162,7 +162,6 @@
 						<a href="#">施工日志</a>
 						<a href="#">项目信息</a>
 						<a href="${ctx}/toWorkShow">3D综合展示</a>
-						<a onclick="showcamera()" href="javascript:void(0)">记录位置</a>
 					</li>
 					<li>
 						<div id="div1" class="open1">
@@ -179,7 +178,6 @@
 								<div class="box-icon">
 									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
 								</div>
 							</div>
 							<div class="box-content">
@@ -247,7 +245,6 @@
 								<div class="box-icon">
 									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
 								</div>
 							</div>
 							<div class="box-content">
@@ -311,17 +308,7 @@
 			</div>
 		</div>
 	</div>
-	<script type="text/javascript">
-		function showcamera(){
-			var x = myviewer.camera.position.x;
-			var y = myviewer.camera.position.y;
-			var z = myviewer.camera.position.z;
-			var heading=myviewer.camera.heading;
-			var pitch=myviewer.camera.pitch;
-			var roll=myviewer.camera.roll;
-			console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);
-		}
-	</script>
+
 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.ui.touch-punch.js"></script>

@@ -241,20 +241,20 @@
 										</tr>
 										</thead>
 										<tbody>
-										<tr>
-											<td>1</td>
-											<td class="center">1</td>
-											<td class="center">1</td>
-											<td class="center">1</td>
-											<td class="center">1</td>
-										</tr>
-										<tr>
-											<td>1</td>
-											<td class="center">1</td>
-											<td class="center">1</td>
-											<td class="center">1</td>
-											<td class="center">1</td>
-										</tr>
+											<tr>
+												<td>1</td>
+												<td class="center">小组组长</td>
+												<td class="center">2017/10/12</td>
+												<td class="center">这次修改的很恰当。</td>
+												<td class="center">通过</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td class="center">专业负责人</td>
+												<td class="center">2017/10/13</td>
+												<td class="center"></td>
+												<td class="center">审批中</td>
+											</tr>
 										</tbody>
 									</table>
 
