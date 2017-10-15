@@ -335,9 +335,70 @@
 	   <li class="cad">CAD设计图</li>
 	</ul>
 	<div id="rMenu">
-		<a href="#">算量</a>
-		<a href="#">深化设计</a>
+		<ul>
+    <li class="slList">算量</li>
+    <li>深化设计</li>
+</ul>
 	</div>
+	<div class="box span6" id="sl">
+        <div class="box-header">
+            <h2><i class="halflings-icon white align-justify"></i><span class="break"></span>算量数据</h2>
+            <div class="box-icon">
+                <a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+                <a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+                <a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>
+            </div>
+        </div>
+        <div class="box-content">
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>编码</th>
+                    <th>类别</th>
+                    <th>名称</th>
+                    <th>单位</th>
+                    <th>表达式</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>0311130303</td>
+                    <td>项</td>
+                    <td>塑料管</td>
+                    <td>CD+CGCD</td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>0311130303</td>
+                    <td>项</td>
+                    <td>塑料管</td>
+                    <td>CD+CGCD</td>
+                    <td>m</td>
+                </tr> <tr>
+                    <td>0311130303</td>
+                    <td>项</td>
+                    <td>塑料管</td>
+                    <td>CD+CGCD</td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>0311130303</td>
+                    <td>项</td>
+                    <td>塑料管</td>
+                    <td>CD+CGCD</td>
+                    <td>m</td>
+                </tr>
+                <tr>
+                    <td>0311130303</td>
+                    <td>项</td>
+                    <td>塑料管</td>
+                    <td>CD+CGCD</td>
+                    <td>m</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+</div>
 	<script src="${ctx}/static/page/designcoordination/mainbuilding/js/mainbuilding.js"></script>
 
 </body>

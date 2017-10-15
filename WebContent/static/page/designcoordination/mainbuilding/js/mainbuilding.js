@@ -371,5 +371,12 @@ $(function () {
 	            $(this).stop().slideUp("fast");
 	        });
 	        $(".layer ul").stop().slideUp("fast");
-	    })
+	    });
+	  $(".btn-close").click(function() {
+	        $("#sl").hide();
+	    });
+	    $(".slList").click(function() {
+	        $("#sl").show();
+	    });
+	    
 });
