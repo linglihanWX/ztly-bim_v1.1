@@ -40,12 +40,12 @@ function initViewer (freedocontainer) {
 	 window.modelTile = viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
-	 viewer.camera.flyTo({
-			destination :new FreeDo.Cartesian3(-2303190.1885760543,4395138.739032204,3994995.2792255776),
+	 viewer.camera.setView({
+			destination :new FreeDo.Cartesian3(-2302727.6410077475,4394555.373412278,3994829.517802942),
 			orientation: {
-				heading : 0.000004136064356785596,
-				pitch : -1.171440805600418,
-				roll : 0.0006527658379926748
+				heading : 2.207607620221795,
+				pitch : 0.005409650478886308,
+				roll : 0.0026399525242846167
 			}
 		});
 	return viewer;
