@@ -333,7 +333,7 @@
 	                        <li>救援伤员应急演练</li>
 	                        <li>突发事故应急演练</li>
 	                    </ul>
-	                    <video src="${ctx }/static/page/designcoordination/mainbuilding/viedo/jiuyuanshipin.webm" controls></video>
+	                    <video src="${ctx }/static/page/designcoordination/mainbuilding/video/jiuyuanshipin.webm" controls></video>
 	                    <span>关闭</span>
                 </div>
 				</div>
