@@ -120,7 +120,9 @@ $(function () {
     				roll : 3.1249876427485663
     			}
     		});
-            
+            imageEntity1.show = true;
+            imageEntity2.show = true;
+            imageEntity3.show = true;
             
         } else {
             $("#div1").removeClass("close1").addClass("open1");
@@ -227,6 +229,9 @@ $(function () {
     // 备注里面列表点击
     $("#bInfo ul li").each(function () {
         $(this).click(function () {
+        	imageEntity1.show = false;
+            imageEntity2.show = false;
+            imageEntity3.show = false;
             $("#attrInfo").hide();
             if($("#dailog").css("display")!='none' || $("#edit").css("display")!='none'){
                 $("#dailog").hide();
