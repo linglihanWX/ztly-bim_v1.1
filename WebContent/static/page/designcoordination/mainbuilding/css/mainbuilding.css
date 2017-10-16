@@ -512,26 +512,76 @@ a.brand span {
     box-sizing: border-box;
     background-color: #fff;
 }
-#rMenu a{
+18:54:00
+您邀请了程翔 、梁测加入讨论组
+试试QQ电话吧，沟通更便捷。
+18:54:11
+狂奔的蜗牛 2017/10/15 18:54:11
+
+19:07:24
+程翔  2017/10/15 19:07:24
+
+19:21:18
+梁测 2017/10/15 19:21:18
+
+19:37:31
+程翔  2017/10/15 19:37:31
+<td><img src="img/doc/rightHand.svg" alt="">指派 <img src="img/doc/right.svg" alt="">完成</td>
+程翔  2017/10/15 19:37:42
+td img{
+    margin: 0 10px;
+}
+程翔  2017/10/15 19:37:50
+
+19:36:46
+程翔  2017/10/15 19:36:46
+
+21:01:10
+狂奔的蜗牛 2017/10/15 21:01:10
+jiegoupingmiantu1.png    shebeipingmiantu1.png
+var lon = 117.65387630669996;
+		var lat = 39.02828312119988;
+FreeDo.Rectangle.fromDegrees(lon, lat, lon+0.0020, lat+0.0009),
+FreeDo.Math.toRadians(168),
+FreeDo.Math.toRadians(168+180),
+
+
+zhantingpingmiantu1.png
+var lon = 117.65357630669989;
+		var lat = 39.028213121199855;
+FreeDo.Rectangle.fromDegrees(lon, lat, lon+0.0025, lat+0.0012),
+23:10:54
+程翔  2017/10/15 23:10:54
+#rMenu{
+    display: none;
+    border: 1px solid #000;
+    width: 100px;
+    z-index:999999;
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+#rMenu ul li{
     text-indent: 5px;
     display: block;
     width: 100%;
-    height: 30px;
-    line-height: 30px;
+    height: 25px;
+    line-height: 25px;
 }
-#rMenu a:first-of-type{
+#rMenu  ul li:first-of-type{
     border-bottom: 1px solid #000;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
-#rMenu a:last-of-type{
+#rMenu  ul li:last-of-type{
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
 
-#rMenu a:hover{
+#rMenu  ul li:hover{
     background-color: #ccc;
 }
+
 
 #showDraw{
     display: none;
@@ -681,4 +731,55 @@ input.btnActive{
 }
 #sl th, #sl td{
     text-align: center;
+}
+
+#video{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 932px;
+    height: 488px;
+    margin: -244px  0 0 -466px;
+    border: 1px solid #ccc;
+}
+#video .videoInfo{
+    float: left;
+    width: 200px;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    box-sizing: border-box;
+    border-right: 1px solid #ccc;
+}
+#video .videoInfo li{
+    height: 35px;
+    width: 100%;
+    line-height: 35px;
+    text-indent: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+#video .videoInfo li.vActive{
+    background-color: #0B90C4;
+}
+
+#video video{
+    float: right;
+    overflow: hidden;
+    /*width: 600px;*/
+    /*height: 400px;*/
+    /*box-sizing: border-box;*/
+}
+#video span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+
+    cursor: pointer;
+    background-color: #ffd164;
 }

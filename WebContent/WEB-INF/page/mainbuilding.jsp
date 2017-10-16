@@ -159,7 +159,8 @@
 						<span class="twoThree">2D</span>
 					</li>
 					<li class="btnStandard">
-   						<input type="button" name="" id="drawing" value="出图" class="btnActive">
+   						<input type="button" name="" id="drawing" value="出图" >
+   						<input type="button" name="" id="roam" value="应急预案" >
 					</li>
 				</ul>
 			
@@ -325,6 +326,16 @@
 							</div>
 						</div>
 					</div>
+					 <div id="video">
+	                    <ul class="videoInfo">
+	                        <li>脚本列表</li>
+	                        <li class="vActive">失火抢险应急演练</li>
+	                        <li>救援伤员应急演练</li>
+	                        <li>突发事故应急演练</li>
+	                    </ul>
+	                    <video src="${ctx }/static/page/designcoordination/mainbuilding/viedo/jiuyuanshipin.webm" controls></video>
+	                    <span>关闭</span>
+                </div>
 				</div>
 			</div>
 		</div>

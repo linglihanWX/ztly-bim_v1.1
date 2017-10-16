@@ -409,7 +409,7 @@ $(function () {
 				}
 	    	});
 	});
-//   出图点击后出现的对话框关闭
+/*//   出图点击后出现的对话框关闭
 	 $(".hClose").click(function () {
 	     $("#showDraw").hide();
 	 });
@@ -422,7 +422,7 @@ $(function () {
 	 $(".bgImg span").click(function () {
 	     $(".bgImg").hide();
 	     $("#showDraw").show();
-	 });
+	 });*/
 	 $(".layer span:first-of-type").hover(function () {
 	        $(".layer ul").stop().slideDown("fast")
 	    },function () {
@@ -604,4 +604,44 @@ $(function () {
 			console.log("roll: "+roll);
 	    });
 
+	    $(".hClose").click(function () {
+	        $("#showDraw").hide();
+	        $("#drawing").removeClass("btnActive");
+	    });
+	    $("#video span").click(function () {
+	        $("#video").hide();
+	        $("#roam").removeClass("btnActive");
+	    });
+
+
+	    $("#showDraw img").click(function () {
+	        $(".bgImg").show();
+	        $("#showDraw").hide();
+	    });
+
+	    $(".bgImg span").click(function () {
+	        $(".bgImg").hide();
+	        $("#showDraw").show();
+	    });
+
+	    $("#drawing").click(function () {
+	        $(this).addClass("btnActive").siblings().removeClass("btnActive");
+	        $("#showDraw").show();
+	        $("#video").hide();
+	    });
+	    $("#roam").click(function () {
+	        $(this).addClass("btnActive").siblings().removeClass("btnActive");
+	        $("#showDraw").hide();
+	        $("#video").show();
+	        $(".bgImg").hide();
+	    });
+	    $(".downLoad").click(function () {
+	        $("#showDraw").hide();
+	    });
+
+	    $("#video .videoInfo li:not(:first-of-type)").each(function () {
+	        $(this).click(function () {
+	            $(this).addClass("vActive").siblings().removeClass("vActive");
+	        })
+	    })
 });
