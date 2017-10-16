@@ -350,12 +350,19 @@ MainBuildingViewer.init = function (earthId) {
 				outlineWidth : 2,  
 				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
 				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
-			},  
-			billboard : { //图标  
+			},
+			polygon : {  
+		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([117.63662864704408, 39.033380118374026,  
+		        	117.6365077006233, 39.033038577053276,  
+		        	117.67849476615538, 39.02343517603854,  
+		        	117.67866509405319, 39.023752841924214]),  
+		        material : 	FreeDo.Color.BLANCHEDALMOND.withAlpha(0.8)
+		    }
+			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/road.svg",  
 				width : 50,  
 				height : 50  
-			},  
+			},*/  
 		} );
 		var road2 = this.viewer.entities.add( {  
 			name : '道路2',  
@@ -373,16 +380,23 @@ MainBuildingViewer.init = function (earthId) {
 				outlineWidth : 2,  
 				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
 				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
-			},  
-			billboard : { //图标  
+			}, 
+			polygon : {  
+		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([117.65974723500142,39.0371200384198,  
+		        	117.66011027202251,39.0370471463995,  
+		        	117.65481825563658,39.022534013171935,  
+		        	117.6543818169068,39.02263156515081]),  
+		        material : 	FreeDo.Color.BLANCHEDALMOND.withAlpha(0.8)
+		    }
+			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/road.svg",  
 				width : 50,  
 				height : 50  
-			},  
+			},*/  
 		} );
 		var village1 = this.viewer.entities.add( {  
 			name : '村庄1',  
-			position : FreeDo.Cartesian3.fromDegrees(117.65982044133891, 39.028640350185064,15 ),  
+			position : FreeDo.Cartesian3.fromDegrees(117.67026677659791, 39.032003373898725,15 ),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
@@ -396,16 +410,24 @@ MainBuildingViewer.init = function (earthId) {
 				outlineWidth : 2,  
 				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
 				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
-			},  
-			billboard : { //图标  
+			}, 
+			polygon : {  
+		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([117.66034681966288, 39.03696093054726,  
+		        	117.67636015797348, 39.037001994608055,  
+		        	117.683610430754, 39.0348536651218,  
+		        	117.67875832785094, 39.023853904183326,
+		        	117.6572953921832, 39.02884930425908]),  
+		        material : 	FreeDo.Color.AQUAMARINE.withAlpha(0.8)
+		    }  
+			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/village.svg",  
 				width : 50,  
 				height : 50  
-			},  
+			}, */ 
 		} );
 		var village2 = this.viewer.entities.add( {  
 			name : '村庄2',  
-			position : FreeDo.Cartesian3.fromDegrees(117.65559299621263, 39.02942625528345,15 ),  
+			position : FreeDo.Cartesian3.fromDegrees(117.64511517639922, 39.037866096987834,15),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
@@ -420,11 +442,22 @@ MainBuildingViewer.init = function (earthId) {
 				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
 				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
 			},  
-			billboard : { //图标  
+			polygon : {  
+		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([117.65993478164839, 39.03817311220826,
+		        	117.65850840699085, 39.04107067581256,
+		        	117.64055101073738, 39.04503444119745,
+		        	117.63106129257102, 39.04540355836992,
+		        	117.62705854783655, 39.04096019521865,
+		        	117.62673707271034, 39.03587500050924,
+		        	117.65659980243063, 39.02900451182315]),  
+		        material : 	FreeDo.Color.AQUAMARINE.withAlpha(0.8)
+		    }
+			 
+			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/village.svg",  
 				width : 50,  
 				height : 50  
-			},  
+			}*/
 		} );
 		var river1 = this.viewer.entities.add( {  
 			name : '水系1',  
@@ -443,11 +476,18 @@ MainBuildingViewer.init = function (earthId) {
 				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
 				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
 			},  
-			billboard : { //图标  
+			polygon : {  
+		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([117.65426048471235, 39.02870213501727,
+		        	117.65387304269305, 39.02762545585438,
+		        	117.6549677160827, 39.027383805363705,
+		        	117.65550142448942, 39.02840709005166]),  
+		        material : 	FreeDo.Color.DEEPSKYBLUE.withAlpha(0.8)
+		    }
+			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/river.svg",  
 				width : 50,  
 				height : 50  
-			},  
+			}, */ 
 		} );
 		var river2 = this.viewer.entities.add( {  
 			name : '水系2',  
@@ -466,11 +506,22 @@ MainBuildingViewer.init = function (earthId) {
 				verticalOrigin : FreeDo.VerticalOrigin.BOTTOM, //垂直方向以底部来计算标签的位置  
 				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
 			},  
-			billboard : { //图标  
+			polygon : {  
+		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([117.65066927457492, 39.02795259702767,
+		        	117.65147178875964, 39.02776766347203,
+		        	117.6505447513961, 39.025518921564206,
+		        	117.64983000414954, 39.025622293822636,
+		        	117.6496401353364, 39.02545125718353,
+		        	117.64809849977627, 39.02572863893886,
+		        	117.64835503758722, 39.02636789492214,
+		        	117.64976244099792, 39.025852710459255]),  
+		        material : 	FreeDo.Color.DEEPSKYBLUE.withAlpha(0.8)
+		    }
+/*			billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/river.svg",  
 				width : 50,  
 				height : 50  
-			},  
+			},*/  
 		} );
 		tuceng.push(hospital1);
 		tuceng.push(hospital2);

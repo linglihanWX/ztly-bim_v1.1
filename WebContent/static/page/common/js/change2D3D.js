@@ -9,6 +9,7 @@ $(function () {
             $(".row-fluid .span12").width(100 + "%");
             $(".box-header").show();
             $("#DataTables_Table_0_wrapper .row-fluid").show();
+            $(".msgInfo").hide();
         } else {
             $("#div1").removeClass("close1").addClass("open1");
             $(".twoThree").html("3D");
