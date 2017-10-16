@@ -508,5 +508,100 @@ $(function () {
 	    		$("#village").attr('checked','checked');
 	    	}
 	    });
+	    $("#zhongdiangc5").click(function(){
+			
+	    	imageEntity1.show =false;
+	    	imageEntity2.show =false;
+	    	imageEntity3.show =false;
+	    	
+	    	var camera = myviewer.scene.camera;
+	    	    camera.flyTo({
+	    	        destination : FreeDo.Cartesian3.fromDegrees(117.65405942250071,39.029023270356156,20.494140101978815),
+	    	        orientation : {
+                        heading : 1.8185673070150337,
+                        pitch : 0.053943264486221665
+                    },
+	    	        complete : function() {
+	    	            setTimeout(function() {
+	    	                camera.flyTo({
+	    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65509880838155,39.028810674298704,19.434674298037013),
+	    	                    orientation : {
+	    	                        heading : 1.818577100826488,
+	    	                        pitch : 0.053955749331485725
+	    	                    },
+	    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
+	    	                    complete:function(){
+	    	                    	setTimeout(function() {
+	    		    	                camera.flyTo({
+	    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65526169720657,39.028633748813,19.331618208693417),
+	    		    	                    orientation : {
+	    		    	                        heading : 4.7923476950288935,
+	    		    	                        pitch : -0.14869812836828622
+	    		    	                    },
+	    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
+	    		    	                    complete:function(){
+	    		    	                    
+	    		    		    	                    	setTimeout(function() {
+	    		    		    		    	                camera.flyTo({
+	    		    		    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65421983509961,39.02882783018097,20.968283549670737),
+	    		    		    		    	                    orientation : {
+	    		    		    		    	                        heading : 4.915122487467713,
+	    		    		    		    	                        pitch : -0.07063326983480422
+	    		    		    		    	                    },
+	    		    		    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
+	    		    		    		    	                    complete:function(){
+	    		    		    		    	                    	setTimeout(function() {
+	    		    		    		    		    	                camera.flyTo({
+	    		    		    		    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.6540893864963,39.028947377694394,19.76988295801556),
+	    		    		    		    		    	                    orientation : {
+	    		    		    		    		    	                        heading : 1.7697966659565516,
+	    		    		    		    		    	                        pitch : -0.32763506713608836
+	    		    		    		    		    	                    },
+	    		    		    		    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
+	    		    		    		    		    	                    complete:function(){
+	    		    		    		    		    	                    	setTimeout(function() {
+	    		    		    		    		    		    	                camera.flyTo({
+	    		    		    		    		    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65455488058195,39.02883922096968,7.286856173232269),
+	    		    		    		    		    		    	                    orientation : {
+	    		    		    		    		    		    	                        heading : 1.490582523872253,
+	    		    		    		    		    		    	                        pitch : -0.055054191404708686
+	    		    		    		    		    		    	                    },
+	    		    		    		    		    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
+	    		    		    		    		    		    	                    complete:function(){
+	    		    		    		    		    		    	                    	
+	    		    		    		    		    		    	                    }
+	    		    		    		    		    		    	                });
+	    		    		    		    		    		    	            }, 200);
+	    		    		    		    		    	                    }
+	    		    		    		    		    	                });
+	    		    		    		    		    	            }, 200);
+	    		    		    		    	                    }
+	    		    		    		    	                });
+	    		    		    		    	            }, 200);
+	    		    		    	                    }
+	    		    		    	                });
+	    		    	            }, 200);
+	    	                    }
+	    	                });
+	    	            }, 1000);
+	    	        }
+	    	    });
+
+	    });
+	    $("#jilu").click(function(){
+	    	var x = myviewer.camera.position.x;
+			var y = myviewer.camera.position.y;
+			var z = myviewer.camera.position.z;
+			var cartesian = new FreeDo.Cartesian3(x,y,z);
+			var cartographic = myviewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
+			var point=[cartographic.longitude/Math.PI*180,cartographic.latitude/Math.PI * 180,cartographic.height];
+			var heading = myviewer.camera.heading;
+			var pitch = myviewer.camera.pitch;
+			var roll = myviewer.camera.roll;
+			console.log("point: "+point);
+			console.log("heading: "+heading);
+			console.log("pitch: "+pitch);
+			console.log("roll: "+roll);
+	    });
 
 });
