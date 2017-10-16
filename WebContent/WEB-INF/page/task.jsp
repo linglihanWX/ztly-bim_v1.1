@@ -142,12 +142,13 @@
 						<input type="button" name="" id="gbk" value="任务列表" class="btnActive">
 						<input type="button" name="" id="waterOrEle" value="新建任务">
 						<input type="button" name="" id="railway" value="任务分配">
+						<input type="button" name="" id="myFlow" value="我的任务">
 					</li>
 				</ul>
 				<div id="tree" class="ztree"></div>
 				<div class="row-fluid sortable">
 
-					<div class="box span12">
+					<div class="box span12" id="workData">
 						<div class="box-header" data-original-title>
 							<h2><i class="iconfont icon-hxzfont08"></i><span class="break"></span>数据</h2>
 							<div class="box-icon">
@@ -190,6 +191,50 @@
 							</table>
 						</div>
 					</div>
+					<div class="box span12" id="workFlow">
+						<div class="box-header" data-original-title>
+							<h2><i class="iconfont icon-hxzfont08"></i><span class="break"></span>数据123</h2>
+							<div class="box-icon">
+								<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+								<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+								<!-- <a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a> -->
+							</div>
+						</div>
+						<div class="box-content">
+							<table class="table table-striped table-bordered bootstrap-datatable datatable">
+								<thead>
+								<tr>
+									<th>序号</th>
+									<th>任务描述</th>
+									<th>操作</th>
+								</tr>
+								</thead>
+								<tbody>
+								<tr>
+									<td>01</td>
+									<td>树的创建</td>
+									<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">完成</td>
+								</tr>
+								<tr>
+									<td>02</td>
+									<td>树的创建</td>
+									<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">完成</td>
+								</tr>
+								<tr>
+									<td>03</td>
+									<td>树的创建</td>
+									<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">完成</td>
+								</tr>
+								<tr>
+									<td>04</td>
+									<td>树的创建</td>
+									<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">完成</td>
+								</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					
 				</div>
 			</div>
 		</div>

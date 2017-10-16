@@ -290,3 +290,11 @@ td img{
 td img:hover{
 	transform:scale(1.2);
 }
+
+#workFlow{
+    display: none;
+    margin: 0 !important;
+}
+#workFlow th, #workFlow td{
+    text-align: center;
+}
