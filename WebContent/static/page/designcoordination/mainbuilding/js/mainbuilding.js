@@ -508,7 +508,7 @@ $(function () {
 	    		$("#village").attr('checked','checked');
 	    	}
 	    });
-	    $("#zhongdiangc5").click(function(){
+$("#zhongdiangc5").click(function(){
 			
 	    	imageEntity1.show =false;
 	    	imageEntity2.show =false;
@@ -529,6 +529,7 @@ $(function () {
 	    	                        heading : 1.818577100826488,
 	    	                        pitch : 0.053955749331485725
 	    	                    },
+	    	                    duration:10,
 	    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
 	    	                    complete:function(){
 	    	                    	setTimeout(function() {
@@ -548,6 +549,7 @@ $(function () {
 	    		    		    		    	                        heading : 4.915122487467713,
 	    		    		    		    	                        pitch : -0.07063326983480422
 	    		    		    		    	                    },
+	    		    		    		    	                    duration:10,
 	    		    		    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
 	    		    		    		    	                    complete:function(){
 	    		    		    		    	                    	setTimeout(function() {
@@ -561,11 +563,12 @@ $(function () {
 	    		    		    		    		    	                    complete:function(){
 	    		    		    		    		    	                    	setTimeout(function() {
 	    		    		    		    		    		    	                camera.flyTo({
-	    		    		    		    		    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65455488058195,39.02883922096968,7.286856173232269),
+	    		    		    		    		    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65453537103939,39.028846327093355,5.292897784570426),
 	    		    		    		    		    		    	                    orientation : {
-	    		    		    		    		    		    	                        heading : 1.490582523872253,
-	    		    		    		    		    		    	                        pitch : -0.055054191404708686
+	    		    		    		    		    		    	                        heading : 1.576492909140983,
+	    		    		    		    		    		    	                        pitch : 0.038401067615655426
 	    		    		    		    		    		    	                    },
+	    		    		    		    		    		    	                    duration:10,
 	    		    		    		    		    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
 	    		    		    		    		    		    	                    complete:function(){
 	    		    		    		    		    		    	                    	
