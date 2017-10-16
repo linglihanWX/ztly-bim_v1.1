@@ -193,7 +193,11 @@
 					</div>
 					<div class="box span12" id="workFlow">
 						<div class="box-header" data-original-title>
-							<h2><i class="iconfont icon-hxzfont08"></i><span class="break"></span>数据123</h2>
+							<h2><input type="button" name="" id="" value="流程图">
+									<input type="button" name="" id="" value="审批记录">
+									<input type="button" name="" id="" value="流程评价">
+									<input type="button" name="" id="" value="使用说明"></h2>
+
 							<div class="box-icon">
 								<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 								<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -201,38 +205,47 @@
 							</div>
 						</div>
 						<div class="box-content">
-							<table class="table table-striped table-bordered bootstrap-datatable datatable">
-								<thead>
-								<tr>
-									<th>序号</th>
-									<th>任务描述</th>
-									<th>操作</th>
-								</tr>
-								</thead>
-								<tbody>
-								<tr>
-									<td>01</td>
-									<td>树的创建</td>
-									<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">完成</td>
-								</tr>
-								<tr>
-									<td>02</td>
-									<td>树的创建</td>
-									<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">完成</td>
-								</tr>
-								<tr>
-									<td>03</td>
-									<td>树的创建</td>
-									<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">完成</td>
-								</tr>
-								<tr>
-									<td>04</td>
-									<td>树的创建</td>
-									<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">完成</td>
-								</tr>
-								</tbody>
-							</table>
-						</div>
+								<table class="table table-striped table-bordered bootstrap-datatable datatable">
+									<thead>
+									<tr>
+										<th></th>
+										<th><input type="checkbox"></th>
+										<th>流程名称</th>
+										<th>流程状态</th>
+										<th>发起时间</th>
+										<th>结束时间</th>
+										<th>当前节点</th>
+										<th>当前处理人</th>
+										<th>版本</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1</td>
+										<td><input type="checkbox" name="" ></td>
+										<td>BIM流程提交流程</td>
+										<td>运行中</td>
+										<td>2017/10/16 13:15:25</td>
+										<td></td>
+										<td>已提交</td>
+										<td>程翔</td>
+										<td>3</td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td><input type="checkbox" name="" ></td>
+										<td>文档审批提交流程</td>
+										<td>办结</td>
+										<td>2017/10/16 13:15:25</td>
+										<td>2017/10/17 09:20:15</td>
+										<td>已办结</td>
+										<td></td>
+										<td>3</td>
+									</tr>
+									</tbody>
+								</table>
+							</div>
+
 					</div>
 					
 				</div>

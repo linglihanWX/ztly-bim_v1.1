@@ -298,3 +298,17 @@ td img:hover{
 #workFlow th, #workFlow td{
     text-align: center;
 }
+#workFlow .box-header{
+	height:25px;
+	margin-bottom:10px;
+}
+#workFlow .box-header input{
+    width: 70px;
+    height: 25px;
+    line-height: 25px;
+    border-radius: 5px;
+    background-color: #fff;
+    outline: none;
+    border: 1px solid #0a0c0e;
+    font-size: 14px;
+}

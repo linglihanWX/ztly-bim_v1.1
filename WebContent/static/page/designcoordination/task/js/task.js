@@ -80,8 +80,8 @@ $(function () {
         var $text = $("#newTask textarea").val();
         console.log($text);
         var num = $list.length + 1;
-        var rightHandPath = getRootPath()+"static/page/designcoordination/task/img/rightHand.svg";
-        var rightPath = getRootPath()+"static/page/designcoordination/task/img/right.svg";
+        var rightHandPath = getRootPath()+"/static/page/designcoordination/task/img/rightHand.svg";
+        var rightPath = getRootPath()+"/static/page/designcoordination/task/img/right.svg";
         if(num < 10){
             $("#workData .table tbody").append("<tr><td>0"+ num+"</td> <td>"+$text+"</td><td><img src="+rightHandPath+">指派 <img src="+rightPath+">完成</td></tr>");
         }else{
