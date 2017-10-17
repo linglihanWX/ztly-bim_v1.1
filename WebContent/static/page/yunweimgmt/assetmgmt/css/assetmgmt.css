@@ -1,0 +1,352 @@
+@charset "utf-8";
+a:hover{
+    text-decoration: none;
+}
+#left{
+    width: 100%;
+    height: 100%;
+}
+#content{
+    margin: 0;
+    padding: 0;
+    min-height: 0!important;
+    height: 100%;
+    width: 90%;
+    margin-left: 10% !important;
+}
+.breadcrumb{
+    margin: 0;
+}
+.breadcrumb>a i{
+    margin-left: 10px;
+}
+.breadcrumb li{
+    margin-left: 20px;
+}
+.breadcrumb li a{
+    margin-left: 5px;
+}
+#sidebar-left{
+    width: 10%;
+}
+.box-content{
+    padding:0;
+}
+.lists a{
+    margin-left:10px;
+}
+.breadcrumb .lists a:hover {
+    color: red;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+}
+.activeList{
+    color:red;
+    font-weight: bold;
+}
+
+.breadcrumb li:last-of-type{
+    line-height: 20px;
+}
+.breadcrumb li:last-of-type span{
+    vertical-align: top;
+}
+
+.row-fluid {
+    position: relative;
+    height: 100%;
+}
+#init{
+    float: right;
+    height: 100%;
+    width: 100%;
+}
+.box{
+    position: absolute;
+    width: 10%;
+    border:none;
+    height:100%;
+}
+
+.box-content{
+    height: 100%;
+    opacity: .8;
+    width: 15%;
+    background: #ccc !important;
+    overflow-y:auto;
+}
+.ztree{
+    position: relative;
+    width: 100%;
+height: 100%;
+    overflow-x:auto;
+    padding:5px 0 0  0;
+    box-sizing: border-box;
+}
+
+.nav li{
+    cursor:pointer;
+}
+
+.container-fluid-full{
+    height:calc(100% - 50.4px);
+}
+.container-fluid-full>.row-fluid{
+    position: relative;
+    height: 100%;
+}
+
+
+.row-fluid.sortable.ui-sortable{
+    height: 100%;
+}
+
+/*会员*/
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}
+
+a.brand span {
+    font-size: 24px!important;
+}
+
+#chart{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: #fff!important;
+}
+
+/*右击菜单*/
+#menu{
+    display: none;
+    position: absolute;
+    width: 100px;
+    border: 1px solid #e8e8e8;
+    box-sizing: border-box;
+}
+#menu li{
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+    color: #000;
+    background-color: #fff;
+    text-indent: 10px;
+}
+
+#menu li:not(:last-of-type){
+    border-bottom: 1px solid #ccc;
+}
+
+#menu li:hover{
+    background-color: cadetblue;
+}
+
+/*公共部分*/
+.keyInfo,.keyDetailInfo,.currData{
+    display:none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: #eaeaea;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+}
+/*关键信息*/
+.keyInfo{
+    width: 540px;
+    height: 440px;
+    margin:-220px 0 0 -270px;
+}
+.keyInfo p{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+}
+.keyInfo p span{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+.keyInfo li{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    margin: 5px;
+}
+.keyInfo li span{
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+    margin-right: 10px;
+    vertical-align: top;
+}
+.keyInfo li input{
+    width: 300px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+.keyInfo li:nth-of-type(4){
+    margin-bottom: 20px;
+}
+.keyInfo li span:nth-of-type(2),
+.keyInfo li span:nth-of-type(4),
+.keyInfo li:nth-of-type(10) span:nth-of-type(3){
+    width: 30px;
+    text-align: left;
+}
+.keyInfo li:nth-of-type(8) span:nth-of-type(2),
+.keyInfo li:nth-of-type(9) span:nth-of-type(2),
+.keyInfo li:nth-of-type(10) span:nth-of-type(2){
+    margin-left: 40px;
+    width: 90px;
+    text-align: right;
+}
+.keyInfo .listOne{
+    width: 100px;
+}
+
+/*详细信息*/
+.keyDetailInfo{
+    width: 440px;
+    height: 460px;
+    margin:-220px 0 0 -220px;
+}
+.keyDetailInfo p{
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+}
+.keyDetailInfo p:nth-of-type(1) span,
+.currData p:nth-of-type(1) span {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+}
+.keyDetailInfo button{
+    height: 30px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    outline: none;
+    border: 1px solid #ccc;
+}
+button.ac{
+    background-color: #169bd5;
+    color: #fff;
+}
+.attrKey p:nth-of-type(1) span,
+.attrKey p:nth-of-type(2) span,
+.attrKey p:nth-of-type(3) span{
+    position: absolute;
+    left: 55px;
+    top: 0;
+    width: 365px;
+    height: 15px;
+    border-bottom: 1px solid #000;
+}
+.keyDetailInfo ul{
+    margin-left: 30px;
+    width: 390px;
+    overflow: hidden;
+    border: 1px solid #000;
+}
+.keyDetailInfo li{
+    float: left;
+    width: 25%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    box-sizing: border-box;
+}
+.keyDetailInfo li:nth-of-type(4),
+.keyDetailInfo li:nth-of-type(8),
+.keyDetailInfo li:nth-of-type(12){
+    border-right:none;
+}
+.keyDetailInfo li:nth-of-type(9),
+.keyDetailInfo li:nth-of-type(10),
+.keyDetailInfo li:nth-of-type(11),
+.keyDetailInfo li:nth-of-type(12){
+    border-bottom:none;
+}
+.keyDetailInfo li:nth-of-type(odd){
+    background-color: #ccc;
+}
+/*设备工单*/
+#chartAttr{
+    width: 420px;
+    height: 400px;
+}
+.dKey,.pic,#chartAttr{
+    display: none;
+    margin-top: 10px;
+}
+.dKey{
+    height: 240px;
+}
+.tab{
+    width: 100%;
+    height:auto;
+}
+.pic input{
+    float: right;
+    margin: 20px;
+    width: 60px;
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    background-color: #169bd5;
+    color: #fff;
+}
+
+/*实时数据*/
+.currData{
+    width: 460px;
+    height: 440px;
+    margin:-220px 0 0 -230px;
+}
+
+.currData p:nth-of-type(1){
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000;
+}
+#currData{
+    width: 440px;
+    height: 300px;
+}
+
+.currData p:nth-of-type(2) span,
+.currData p:nth-of-type(3) span{
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    text-align: right;
+}
+.currData p:nth-of-type(2) input,
+.currData p:nth-of-type(3) input{
+    width: 100px;
+    color: green;
+    background-color: #fff;
+    border-radius: 5px;
+}

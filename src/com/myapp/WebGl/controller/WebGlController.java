@@ -202,9 +202,20 @@ public class WebGlController {
 		return "workshow";
 	}
 	/*-----------------------运维管理模块页面跳转-------------------------*/
+	//跳转到空间管理页面
 	@RequestMapping("toSpacemgmt")
 	public String toSpacemgmtPage(HttpServletRequest req) {
 		return "spacemgmt";
+	}
+	//跳转到资产管理页面
+	@RequestMapping("toAssetmgmt")
+	public String toAssetmgmtPage(HttpServletRequest req) {
+		return "assetmgmt";
+	}
+	//跳转到其它系统页面
+	@RequestMapping("toJicheng")
+	public String toJichengPage(HttpServletRequest req) {
+		return "jicheng";
 	}
 	/*----------------------------文件下载----------------------------*/
 	@RequestMapping("download")

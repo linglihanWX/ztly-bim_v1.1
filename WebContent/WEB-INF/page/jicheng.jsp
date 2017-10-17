@@ -5,9 +5,10 @@
 <html lang="en">
 
 <head>
+
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>运维管理</title>
+	<title>其他系统</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -22,16 +23,13 @@
 	<link href="${ctx}/static/page/common/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="${ctx}/static/page/common/css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="${ctx}/static/page/common/css/style-responsive.css" rel="stylesheet">
-	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext'
-	    rel='stylesheet' type='text/css'> -->
+
 	<!-- end: CSS -->
 	<link rel="stylesheet" href="${ctx}/static/page/common/css/common.css">
 	<link rel="stylesheet" href="${ctx}/static/page/common/css/reset.css">
 	<link rel="stylesheet" href="${ctx}/static/page/common/IconFont/iconfont.css">
 	<script src="${ctx}/static/page/common/js/jquery-1.9.1.min.js"></script>
-	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
-	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
-	<link rel="stylesheet" href="${ctx }/static/page/yunweimgmt/spacemgmt/css/spacemgmt.css">
+	<link rel="stylesheet" href="${ctx}/static/page/yunweimgmt/jicheng/css/jicheng.css">
 </head>
 
 <body>
@@ -85,6 +83,7 @@
 					</ul>
 				</div>
 
+
 			</div>
 		</div>
 	</div>
@@ -131,7 +130,7 @@
 				<ul class="breadcrumb">
 					<i class="iconfont icon-hxzfont08"></i>
 					<li class="lists">
-						<a href="${ctx }/toSpacemgmt" class="activeList">空间管理</a>
+						<a href="${ctx }/toSpacemgmt">空间管理</a>
 						<a href="${ctx }/toAssetmgmt">资产管理</a>
 						<a href="#" >巡检管理</a>
 						<a href="#">维护管理</a>
@@ -139,15 +138,18 @@
 						<a href="#">风险管控</a>
 						<a href="#">应急指挥</a>
 						<a href="#">知识库建设</a>
-						<a href="${ctx }/toJicheng">其他系统</a>
+						<a href="${ctx }/toJicheng"  class="activeList">其他系统</a>
 					</li>
 
 
 				</ul>
+				<img src="${ctx }/static/page/yunweimgmt/jicheng/img/jicheng.jpg" alt="">
 
 			</div>
 		</div>
 	</div>
+
+
 	<!-- start: JavaScript-->
 	<script src="${ctx}/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
 	<script src="${ctx}/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
@@ -161,9 +163,9 @@
 	<script src="${ctx}/static/page/common/js/jquery.raty.min.js"></script>
 	<script src="${ctx}/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
 	<script src="${ctx}/static/page/common/js/custom.js"></script>
-	<script src="${ctx}/static/page/yunweimgmt/spacemgmt/js/spacemgmt.js"></script>
 	<!-- end: JavaScript-->
-
+	<script src="${ctx}/static/page/yunweimgmt/jicheng/js/jicheng.js"></script>
+<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 </body>
 
 </html>
