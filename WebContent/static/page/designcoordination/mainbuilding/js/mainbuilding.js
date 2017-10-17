@@ -290,35 +290,67 @@ $(function () {
         $("#edit").hide();
     });
  // 右击菜单
-    var menu = document.getElementById("menu");
-    var rMenu = document.getElementById("rMenu");
-    document.getElementById("earth").oncontextmenu = function(event){
+//    var menu = document.getElementById("menu");
+//    var rMenu = document.getElementById("rMenu");
+//    document.getElementById("earth").oncontextmenu = function(event){
+//        var event = event || window.event;
+//        event.preventDefault();
+//        window.event.returnValue = false;
+//        rMenu.style.display = "none";
+//        menu.style.display = "block";
+//        menu.style.left = event.pageX+"px";
+//        menu.style.top = event.pageY+"px";
+//
+//        return false;
+//    };
+//
+//    document.getElementById("tree").oncontextmenu = function(event){
+//        var event = event || window.event;
+//        event.preventDefault();
+//        window.event.returnValue = false;
+//        menu.style.display = "none";
+//         rMenu.style.display = "block";
+//         rMenu.style.position = "absolute";
+//        rMenu.style.left = event.pageX+"px";
+//        rMenu.style.top = event.pageY+"px";
+//        return false;
+//    };
+//    document.onclick=function() {
+//        menu.style.display = "none";
+//        rMenu.style.display = "none";
+//    };
+    
+    $("#earth").contextmenu(function(event){
         var event = event || window.event;
         event.preventDefault();
         window.event.returnValue = false;
-        rMenu.style.display = "none";
-        menu.style.display = "block";
-        menu.style.left = event.pageX+"px";
-        menu.style.top = event.pageY+"px";
-
+        $("#rMenu").hide();
+       $("#menu").css({
+           "display":"block",
+           "left":event.pageX+"px",
+           "top":event.pageY+"px"
+       });
         return false;
-    };
+    });
 
-    document.getElementById("tree").oncontextmenu = function(event){
+   $("#tree").contextmenu(function(event){
         var event = event || window.event;
         event.preventDefault();
         window.event.returnValue = false;
-        menu.style.display = "none";
-         rMenu.style.display = "block";
-         rMenu.style.position = "absolute";
-        rMenu.style.left = event.pageX+"px";
-        rMenu.style.top = event.pageY+"px";
+       $("#menu").hide();
+       $("#rMenu").css({
+           "display":"block",
+           "position":"absolute",
+           "left":event.pageX+"px",
+           "top":event.pageY+"px"
+       });
         return false;
-    };
-    document.onclick=function() {
-        menu.style.display = "none";
-        rMenu.style.display = "none";
-    };
+    });
+    $(document).click(function() {
+        $("#menu").hide();
+        $("#rMenu").hide();
+    });
+
     $(".hideModel").click(function () {
     	var treeObj = $.fn.zTree.getZTreeObj("tree");
     	var nodes = treeObj.getNodesByParam("uId", catchModelTile, null);
