@@ -38,7 +38,8 @@
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
-	<script src="${ctx }/static/page/surveystudy/planRoute/js/CameraViewer.js"></script>
+	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
+	<script src="${ctx }/static/page/surveystudy/planRoute/js/planRouteViewer.js"></script>
 	<script src="${ctx }/static/page/surveystudy/planRoute/js/planRoute.js"></script>
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -167,7 +168,6 @@
 			</div>
 		</div>
 	</div>
-	<script src="${ctx }/static/page/surveystudy/planRoute/js/camera.js"></script>
 
 </body>
 

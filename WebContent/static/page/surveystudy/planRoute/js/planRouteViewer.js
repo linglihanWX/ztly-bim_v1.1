@@ -1,4 +1,4 @@
-var CameraViewer=CameraViewer||{};
+var planRouteViewer=planRouteViewer||{};
 var globalviewer = {};
 var camera = [];
 /**
@@ -6,7 +6,7 @@ var camera = [];
  * @param  {[type]} earthId [description]
  * @return {[type]}         [description]
  */
-CameraViewer.init=function(earthId)
+planRouteViewer.init=function(earthId)
 {
 	this.container=this.container||{};//未来保存加载的模型的容器，便于快速访问
 	this.viewer=this.viewer||{};	  //场景对象
@@ -150,7 +150,7 @@ CameraViewer.init=function(earthId)
 /**
  * 左键点击事件
  */
-CameraViewer.initLeftClick = function(viewer) {
+planRouteViewer.initLeftClick = function(viewer) {
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
 		
