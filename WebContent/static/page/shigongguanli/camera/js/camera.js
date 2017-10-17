@@ -36,5 +36,5 @@ $(function () {
     });
 
     CameraViewer.init("init"); // 加载球模型
-
+    CameraViewer.initLeftClick(globalviewer);
 });

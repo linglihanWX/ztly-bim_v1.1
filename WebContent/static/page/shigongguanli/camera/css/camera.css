@@ -114,3 +114,11 @@ height: 100%;
 a.brand span {
     font-size: 24px!important;
 }
+#detailInfo{
+	display:none;
+    position: absolute;
+    width: 456px;
+    height: 215px;
+    z-index:50;
+}
+

@@ -1,5 +1,6 @@
 var DownupViewer=DownupViewer||{};
 var downuppoints = [];
+var globalviewer = {};
 /**
  * [init 地球容器ID]
  * @param  {[type]} earthId [description]
@@ -82,4 +83,38 @@ DownupViewer.init=function(earthId)
 		});
 	}
     new Compass(this.viewer);
+    this.viewer.screenSpaceEventHandler.setInputAction(function(){},FreeDo.ScreenSpaceEventType.LEFT_DOUBLE_CLICK );
+    globalviewer = this.viewer;
+}
+DownupViewer.initLeftClick = function(viewer) {
+	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler.setInputAction(function(movement){
+		var picked = viewer.scene.pick(movement.position);
+		//console.log(picked);FreeDo.defined(picked) && picked instanceof FreeDo.FreeDoPModelFeature
+		if(picked){
+			if(picked instanceof FreeDo.FreeDoPModelFeature){
+				$("#chart").hide();
+			}else{
+				$("#chart").css({
+					"display":"block",
+					"left":movement.position.x - 300,
+					"top":movement.position.y - 300,
+					});	
+			}
+			
+		}else{
+			$("#chart").hide();
+		}
+		/*var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
+		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
+		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
+		var point=[cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];*/
+		//输出相机位置
+		//console.log(viewer.camera.position.x+","+viewer.camera.position.y+","+viewer.camera.position.z+","+viewer.camera.heading+","+viewer.camera.pitch+","+viewer.camera.roll);
+		//输出点击位置的经纬度
+		//console.log(point);
+		
+	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+	
+
 }

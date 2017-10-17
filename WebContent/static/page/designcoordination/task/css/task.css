@@ -14,10 +14,6 @@ body {
     height: 100%;
 }
 
-#treeGridThree {
-    display: none;
-}
-
 .panel-header,
 .panel-body {
     border-width: 0;
@@ -25,10 +21,6 @@ body {
 
 .datagrid-footer-inner {
     border-width: 0;
-}
-
-.allWidth {
-    width: 100%!important;
 }
 
 .datagrid-wrap,
@@ -139,15 +131,10 @@ body {
     height: 100%;
 }
 
-#content {}
-
 .row-fluid.sortable.ui-sortable {
     height: 100%;
 }
 
-td img {
-    width: 20px;
-}
 
 .box-content tbody tr td,
 .box-content thead tr td {
@@ -243,9 +230,10 @@ input.btnActive {
     margin: 0;
     width: 130px;
 }
-
-#newTask p:last-of-type {
+#newTask p:nth-of-type(4) {
     clear: both;
+}
+#newTask p:last-of-type {
     text-align: right;
     padding: 10px;
 }
@@ -257,7 +245,7 @@ input.btnActive {
     background-color: #20a0ff;
     color: #fff;
     border: 1px solid #ccc;
-    margin-right:20px; 
+    margin-right:20px;
     outline:none;
 }
 
@@ -281,14 +269,14 @@ input.btnActive {
 #newTask ul li i {
     color: grey;
 }
+
 td img{
     margin: 0 10px;
-    transition:all 0.5s;
-    cursor:pointer;
+    cursor: pointer;
+    width: 20px;
 }
-
-td img:hover{
-	transform:scale(1.2);
+td span{
+    cursor: pointer;
 }
 
 #workFlow{
@@ -299,8 +287,8 @@ td img:hover{
     text-align: center;
 }
 #workFlow .box-header{
-	height:25px;
-	margin-bottom:10px;
+    height: 25px;
+    margin-bottom: 10px;
 }
 #workFlow .box-header input{
     width: 70px;
@@ -311,4 +299,49 @@ td img:hover{
     outline: none;
     border: 1px solid #0a0c0e;
     font-size: 14px;
+}
+
+
+/*提交任务*/
+#submitTask{
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 340px;
+    margin:-170px 0 0 -300px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    z-index: 50;
+    padding: 10px;
+}
+
+div.uploader{
+    margin: 10px 0;
+    width: 303px!important;
+}
+.action{
+    width: 100px!important;
+}
+.filename{
+    width: 180px!important;
+}
+
+
+#submitTask textarea{
+    width: 500px;
+}
+
+#submitTask input[type='button']{
+    float: right;
+    margin: 20px;
+    width: 80px;
+    height: 30px;
+
+    background-color: #fff;
+    border-radius: 5px;
+    outline: none;
+    border:1px solid #8c8c8c;
 }

@@ -41,6 +41,7 @@
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/downup/css/downup.css">
+	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
 
 
 
@@ -140,7 +141,7 @@
 			<!-- start: Content -->
 			<div id="content" class="span10">
 				<ul class="breadcrumb">
-					<a href="BIMDesign.html"><i class="iconfont icon-return"></i>返回</a>
+					<a href="${ctx }/toRiskmgmt"><i class="iconfont icon-return"></i>返回</a>
 					<li>
 						<a href="${ctx }/toEbs">进度管理</a>
 						<a href="${ctx }/toPm" >场景管理</a>
@@ -160,13 +161,22 @@
 							<div id="tree" class="ztree"></div>
 						</div>
 					</div>
-					<div id="init"></div>
+					<div id="init"><div id='chart'></div></div>
 				</div>
 			</div>
 		</div>
 	</div>
+	
 	<script src="${ctx }/static/page/shigongguanli/downup/js/downup.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 </body>
+
+
+	
+<script>
+
+       
+	</script>
+
 
 </html>

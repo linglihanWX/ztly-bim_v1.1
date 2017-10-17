@@ -170,22 +170,20 @@
 									<tr>
 										<td>01</td>
 										<td>地铁扶梯工作</td>
-										<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">完成</td>
-									</tr>
+<td><span><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派</span> <span><img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">提交任务</span></td>									</tr>
 									<tr>
 										<td>02</td>
 										<td>安检设备选型</td>
-										<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">完成</td>
-									</tr>
+<td><span><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派</span> <span><img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">提交任务</span></td>									</tr>
 									<tr>
 										<td>03</td>
 										<td>闸机设备选项</td>
-										<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">完成</td>
+										<td><span><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派</span> <span><img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">提交任务</span></td>
 									</tr>
 									<tr>
 										<td>04</td>
 										<td>升降电梯设备</td>
-										<td><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派 <img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">完成</td>
+										<td><span><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派</span> <span><img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">提交任务</span></td>
 									</tr>
 								</tbody>
 							</table>
@@ -293,6 +291,13 @@
 		</p>
 
 	</div>
+<div id="submitTask">
+						  <p>任务提交</p>
+						<span>文件路径：</span><input type="file" name="" id="file" value="选择文件"><br>
+						<span>文件说明：</span><textarea name="" id="" cols="30" rows="10" onresize="false"></textarea>
+						<input type="button" value="提交" class="st">
+						<input type="button" value="取消" class="cancel">
+					</div>
 
 	<!-- start: JavaScript-->
 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>

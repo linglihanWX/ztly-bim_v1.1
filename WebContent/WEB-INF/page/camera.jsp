@@ -152,7 +152,7 @@
 			<!-- start: Content -->
 			<div id="content" class="span10">
 				<ul class="breadcrumb">
-					<a href="BIMDesign.html"><i class="iconfont icon-return"></i>返回</a>
+					<a href="${ctx }/toRiskmgmt"><i class="iconfont icon-return"></i>返回</a>
 					<li>
 						<a href="${ctx }/toEbs">进度管理</a>
 						<a href="${ctx }/toPm" >场景管理</a>
@@ -174,7 +174,7 @@
 						</div>
 					</div>
 
-					<div id="init"></div>
+					<div id="init"><img alt="" src="${ctx}/static/page/shigongguanli/camera/img/cameracontent.png" id="detailInfo"></div>
 				</div>
 			</div>
 		</div>

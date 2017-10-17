@@ -2,7 +2,7 @@ $(function () {
     var h = $(".container-fluid-full").height();
     var h1 = $("#content .breadcrumb").height();
     $("#tree").height(h - h1 - 27);
-	$.ajax({
+    $.ajax({
 		url: "static/page/designcoordination/task/task.json",
 		type: "get",
 		dataType: "json",
@@ -64,6 +64,7 @@ $(function () {
                     return time = year + "/" + month + "/" + day + " " + hour + ":" + min + ":" + second ;
                 }
             }
+
             if($(this).attr("id") == "myFlow"){
                 $("#workData").hide();
                 $("#workFlow").show();
@@ -78,36 +79,33 @@ $(function () {
     $(".sure").click(function(){
         var $list = $(".table tbody tr");
         var $text = $("#newTask textarea").val();
-        console.log($text);
         var num = $list.length + 1;
-        var rightHandPath = getRootPath()+"/static/page/designcoordination/task/img/rightHand.svg";
-        var rightPath = getRootPath()+"/static/page/designcoordination/task/img/right.svg";
         if(num < 10){
-            $("#workData .table tbody").append("<tr><td>0"+ num+"</td> <td>"+$text+"</td><td><img src="+rightHandPath+">指派 <img src="+rightPath+">完成</td></tr>");
+            $("#workData .table tbody").append("<tr><td>0"+ num+"</td> <td>"+$text+"</td><td><img src='img/doc/rightHand.svg'>指派 <img src='img/doc/right.svg'>完成</td></tr>");
         }else{
-            $("#workData .table tbody").append("<tr> <td>"+num+"</td> <td>"+$text+"</td><td><img src="+rightHandPath+">指派 <img src="+rightPath+">完成</td></tr>");
+            $("#workData .table tbody").append("<tr> <td>"+num+"</td> <td>"+$text+"</td><td><img src='img/doc/rightHand.svg'>指派 <img src='img/doc/right.svg'>完成</td></tr>");
         }
         $("#newTask").hide();
+        $("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
     });
     $(".closed").click(function(){
         $("#newTask").hide();
+        $("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
     });
+
+    $(".action").text("选择文件");
+    $(".filename").text("未选中文件");
+    $("#file").change(function () {
+        $(".filename").text($("#file").val());
+    });
+
+    $("tbody tr span:nth-of-type(2)").click(function () {
+        $("#submitTask").show();
+    });
+
+    $(".st,.cancel").click(function () {
+        $("#submitTask").hide();
+    })
 
 
 });
-/** 
- * //获取当前项目根路径 
- * @return {TypeName}  
- */  
-function getRootPath(){      
-    //获取当前网址，如： http://localhost:8083/uimcardprj/share/meun.jsp      
-    var curWwwPath=window.document.location.href;      
-    //获取主机地址之后的目录，如： uimcardprj/share/meun.jsp      
-    var pathName=window.document.location.pathname;      
-    var pos=curWwwPath.indexOf(pathName);      
-    //获取主机地址，如： http://localhost:8083      
-    var localhostPaht=curWwwPath.substring(0,pos);      
-    //获取带"/"的项目名，如：/uimcardprj      
-    var projectName=pathName.substring(0,pathName.substr(1).indexOf('/')+1);      
-    return(localhostPaht+projectName);  
-}  

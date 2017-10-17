@@ -143,12 +143,6 @@
 						<a href="#">项目信息</a>
 						<a href="${ctx }/toWorkShow">3D综合展示</a>
 					</li>
-					<li>
-						<div id="div1" class="close1">
-							<div id="div2" class="close2"></div>
-						</div>
-						<span class="twoThree">2D</span>
-					</li>
 				</ul>
 				<div class="row-fluid sortable">
 					<div id="left">
