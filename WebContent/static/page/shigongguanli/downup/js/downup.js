@@ -22,7 +22,13 @@ $(function () {
                     }
                 },
                 callback : {
-                    onRightClick : OnRightClick
+                	onClick:function(event, treeId, treeNode){
+                		
+                		if(treeNode.id>0&&treeNode.id<=10)
+							globalviewer.zoomTo(downuppoints[treeNode.id]);
+
+						
+                	}
                 }
             };
             function OnRightClick(event, treeId, treeNode) {

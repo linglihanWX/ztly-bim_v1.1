@@ -72,14 +72,20 @@ DownupViewer.init=function(earthId)
 	for ( var i in downuppoint) {
 		downuppoints[i] = this.viewer.entities.add({  
 			name : '沉降点'+i,  
-			position : FreeDo.Cartesian3.fromDegrees(downuppoint[i].lon,downuppoint[i].lat,16.0),  
+			position : FreeDo.Cartesian3.fromDegrees(downuppoint[i].lon,downuppoint[i].lat,1),  
+			 point : { //点  
+			        pixelSize : 5,  
+			        color : FreeDo.Color.RED,  
+			        outlineColor : FreeDo.Color.WHITE,  
+			        outlineWidth : 2  
+			    }/*, 
 			 ellipse : {  
 				 	semiMinorAxis : 1,  
 			        semiMajorAxis : 1,  
 			        material : FreeDo.Color.RED,  
 			        outline : true,  
 			        outlineColor : FreeDo.Color.RED  
-			    }  
+			    } */ 
 		});
 	}
     new Compass(this.viewer);

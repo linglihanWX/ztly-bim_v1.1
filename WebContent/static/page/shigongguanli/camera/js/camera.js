@@ -22,14 +22,38 @@ $(function () {
                     }
                 },
                 callback : {
-                    onRightClick : OnRightClick
-                }
-            };
-            function OnRightClick(event, treeId, treeNode) {
+                	onClick:function(event, treeId, treeNode){
+                		var key =treeNode.id
+                		switch (key) {
+						case 1:
+							globalviewer.zoomTo(camera[0]);
+							break;
+						case 2:
+							globalviewer.zoomTo(camera[1]);
+							break;
+						case 3:
+							globalviewer.zoomTo(camera[2]);
+							break;
+						case 5:
+							globalviewer.zoomTo(camera[3]);
+							break;
+						case 6:
+							globalviewer.zoomTo(camera[4]);
+							break;
+
+						default:
+							break;
+						}
+							
+                },
+                
+               OnRightClick:function OnRightClick(event, treeId, treeNode) {
                 $("#rMenu").show().css({
                     "left" :event.pageX,
                     "top":event.pageY
                 });
+            }
+            }
             }
             zTreeObj = $.fn.zTree.init( $("#tree"), setting, data);
         }

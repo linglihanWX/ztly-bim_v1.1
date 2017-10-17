@@ -1,5 +1,6 @@
 var CameraViewer=CameraViewer||{};
 var globalviewer = {};
+var camera = [];
 /**
  * [init 地球容器ID]
  * @param  {[type]} earthId [description]
@@ -139,6 +140,11 @@ CameraViewer.init=function(earthId)
 			height : 50  
 		}
 	} );
+	camera.push(camera1);
+	camera.push(camera2);
+	camera.push(camera3);
+	camera.push(camera4);
+	camera.push(camera5);
     globalviewer = this.viewer;
 }
 /**
