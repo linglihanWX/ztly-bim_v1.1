@@ -145,3 +145,11 @@ a.brand span {
 .header-nav a.btn {
     padding: 15px 10px !important;
 }
+#sidebar-left{
+    width: 10%;
+}
+#content {
+    width: 90%;
+    margin-left: 10% !important;
+    padding-left: 0;
+}
