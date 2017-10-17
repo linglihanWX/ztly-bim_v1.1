@@ -8,7 +8,7 @@
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>场景管理</title>
+	<title>摄像头</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -23,13 +23,12 @@
 	<link href="${ctx }/static/page/common/css/bootstrap-responsive.min.css" rel="stylesheet">
 	<link id="base-style" href="${ctx }/static/page/common/css/style.css" rel="stylesheet">
 	<link id="base-style-responsive" href="${ctx }/static/page/common/css/style-responsive.css" rel="stylesheet">
-	
-	<!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext'
-	    rel='stylesheet' type='text/css'> -->
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext'
+	    rel='stylesheet' type='text/css'>
 	<!-- end: CSS -->
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/common.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/reset.css">
-	<link rel="stylesheet" href="${ctx }/static/page/common//IconFont/iconfont.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/IconFont/iconfont.css">
 	<link href="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/Widgets/widgets.css" rel="stylesheet">
 	<script src="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/FreeDo.js"></script>
 	<script src="https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script>
@@ -37,8 +36,8 @@
 	<link rel="stylesheet" href="${ctx }/static/webgl/compass/css/compass.css">
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
-	<!-- <script src="jsSelf/EBSviewer.js"></script> -->
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
+	<script src="${ctx }/static/page/shigongguanli/camera/js/CameraViewer.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 
@@ -52,10 +51,8 @@
 		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
 	<![endif]-->
 
-	<!-- start: Favicon -->
-	<!-- end: Favicon -->
 
-	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/jinduguanli/css/sg.css">
+	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/camera/css/camera.css">
 
 
 
@@ -111,7 +108,6 @@
 						<!-- end: User Dropdown -->
 					</ul>
 				</div>
-				<!-- end: Header Menu -->
 
 			</div>
 		</div>
@@ -121,6 +117,7 @@
 	<div class="container-fluid-full">
 		<div class="row-fluid">
 
+			<!-- start: Main Menu -->
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
@@ -130,13 +127,13 @@
 								<span class="hidden-tablet">勘测可研</span>
 							</a>
 						</li>
-						<li>
+						<li >
 							<a href="${ctx }/toTask">
 								<i class="iconfont icon-sheji"></i>
 								<span class="hidden-tablet">设计协同</span>
 							</a>
 						</li>
-						<li class="active">
+						<li  class="active">
 							<a href="${ctx }/toEbs">
 								<i class="iconfont icon-construct"></i>
 								<span class="hidden-tablet">施工管理</span>
@@ -151,16 +148,16 @@
 					</ul>
 				</div>
 			</div>
-
+			<!-- end: Main Menu -->
 			<!-- start: Content -->
 			<div id="content" class="span10">
 				<ul class="breadcrumb">
-					<li class="lists">
-					<i class="iconfont icon-hxzfont08"></i>
+					<a href="BIMDesign.html"><i class="iconfont icon-return"></i>返回</a>
+					<li>
 						<a href="${ctx }/toEbs">进度管理</a>
-						<a href="${ctx }/toPm" class="activeList">场景管理</a>
+						<a href="${ctx }/toPm" >场景管理</a>
 						<a href="${ctx }/toSafe">安全管理</a>
-						<a href="${ctx }/toRiskmgmt">风险管理</a>
+						<a href="${ctx }/toRiskmgmt" class="activeList">风险管理</a>
 						<a href="#">质量管理</a>
 						<a href="#">成本管理</a>
 						<a href="#">合同管理</a>
@@ -168,18 +165,22 @@
 						<a href="#">项目信息</a>
 						<a href="${ctx }/toWorkShow">3D综合展示</a>
 					</li>
-					
 				</ul>
-
-
 				<div class="row-fluid sortable">
-					<iframe src="${ctx }/static/page/shigongguanli/iframe/pm/pm.html" style="width: 100%;height: 100%;border: none;"></iframe>
+					<div class="box span12 changWidth">
+						<div class="box-content">
+							<div id="tree" class="ztree"></div>
+
+						</div>
+					</div>
+
+					<div id="init"></div>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<script src="${ctx }/static/page/shigongguanli/jinduguanli/js/pModel.js"></script>
+	<script src="${ctx }/static/page/shigongguanli/camera/js/camera.js"></script>
+	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 </body>
 
 </html>

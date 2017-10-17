@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+html,
+body {
+    /*overflow-y: hidden;*/
+}
+a:hover{
+    text-decoration: none;
+}
+#left{
+    width: 100%;
+    height: 100%;
+}
+#content{
+    margin: 0;
+    padding: 0;
+    min-height: 0!important;
+    height: 100%;
+    width: 90%;
+    margin-left: 10% !important;
+}
+.breadcrumb{
+    margin: 0;
+}
+.breadcrumb>a i{
+    margin-left: 10px;
+}
+.breadcrumb li{
+    margin-left: 20px;
+}
+.breadcrumb li a{
+    margin-left: 5px;
+}
+#sidebar-left{
+    width: 10%;
+}
+.box-content{
+    padding:0;
+}
+.lists a{
+    margin-left:10px;
+}
+.breadcrumb .lists a:hover {
+    color: red;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+}
+.activeList{
+    color:red;
+    font-weight: bold;
+}
+
+.breadcrumb li:last-of-type{
+    line-height: 20px;
+}
+.breadcrumb li:last-of-type span{
+    vertical-align: top;
+}
+
+.row-fluid {
+    position: relative;
+    height: 100%;
+}
+#init{
+    float: right;
+    height: 100%;
+    width: 100%;
+}
+.box{
+    position: absolute;
+    width: 10%;
+    border:none;
+    height:100%;
+}
+
+.box-content{
+    height: 100%;
+    opacity: .8;
+    width: 15%;
+    background: #ccc !important;
+    overflow-y:auto;
+}
+.ztree{
+    position: relative;
+    width: 100%;
+height: 100%;
+    overflow-x:auto;
+    padding:5px 0 0  0;
+    box-sizing: border-box;
+}
+
+.nav li{
+    cursor:pointer;
+}
+
+.container-fluid-full{
+    height:calc(100% - 50.4px);
+}
+.container-fluid-full>.row-fluid{
+    position: relative;
+    height: 100%;
+}
+
+
+.row-fluid.sortable.ui-sortable{
+    height: 100%;
+}
+
+/*会员*/
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}
+
+a.brand span {
+    font-size: 24px!important;
+}

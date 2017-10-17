@@ -1,0 +1,114 @@
+@charset "utf-8";
+
+html,
+body {
+    /*overflow-y: hidden;*/
+}
+a:hover{
+    text-decoration: none;
+}
+a.brand span {
+    font-size: 24px!important;
+}
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}
+#sidebar-left{
+    width: 10%;
+}
+#content {
+    width: 90%;
+    margin-left: 10% !important;
+    padding-left: 0;
+}
+
+#content>.row-fluid{
+	padding:0 15px;
+}
+#left{
+    float: left;
+    width: 31%;
+    height: 100%;
+    overflow-y: auto;
+}
+#left a{
+    display: block;
+    width: 99%;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+    border: 1px solid #000;
+}
+.lists a{
+    margin-left:10px;
+}
+.breadcrumb .lists a:hover {
+    color: red;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+}
+.activeList{
+    color:red;
+    font-weight: bold;
+}
+.box-content{
+    padding: 0;
+}
+
+.breadcrumb {
+    margin: -28px -28px 0 0;
+}
+
+
+.box{
+    margin: 0 0 5px 0!important;
+}
+
+.pagination {
+    margin: 5px 0;
+}
+
+#right{
+    width: 69%;
+    height: 100%;
+    float: right;
+}
+#right .box{
+    margin-left: 10px!important;
+}
+
+/*按钮部分*/
+#div1{
+    margin-top: 3px;
+    display: inline-block;
+    width: 35px;
+    height: 15px;
+    border-radius: 20px;
+    position: relative;
+    box-sizing: border-box;
+}
+#div2{
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+    box-sizing: border-box;
+}
+.open1{
+    background: rgba(0,184,0,0.8);
+}
+.open2{
+    top: -1px;
+    right: 0;
+}
+.close1{
+    background: rgba(255,255,255,0.4);
+    border:1px solid rgba(0,0,0,0.15);
+    border-left: transparent;
+}
+.close2{
+    left: 0;
+    top: -2px;
+    border:1px solid rgba(0,0,0,0.1);
+}

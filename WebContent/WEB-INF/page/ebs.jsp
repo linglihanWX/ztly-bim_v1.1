@@ -157,16 +157,16 @@
 				<ul class="breadcrumb">
 				<i class="iconfont icon-hxzfont08"></i>
 					<li class="lists">
-						<a href="${ctx }/toEbs"class="activeList">进度管理</a>
+						<a href="${ctx }/toEbs" class="activeList">进度管理</a>
 						<a href="${ctx }/toPm" >场景管理</a>
-						<a href="#">工程管理</a>
-						<a href="#">质量管理</a>
 						<a href="${ctx }/toSafe">安全管理</a>
+						<a href="${ctx }/toRiskmgmt">风险管理</a>
+						<a href="#">质量管理</a>
 						<a href="#">成本管理</a>
 						<a href="#">合同管理</a>
 						<a href="#">施工日志</a>
 						<a href="#">项目信息</a>
-						<a href="${ctx}/toWorkShow">3D综合展示</a>
+						<a href="${ctx }/toWorkShow">3D综合展示</a>
 					</li>
 					
 				</ul>

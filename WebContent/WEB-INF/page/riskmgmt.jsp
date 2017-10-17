@@ -3,11 +3,12 @@
 <c:set var="ctx" value="<%=request.getContextPath()%>"></c:set>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>安全管理</title>
+	<title>风险管理</title>
 	<meta name="description" content="Bootstrap Metro Dashboard">
 	<meta name="author" content="Dennis Ji">
 	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
@@ -24,16 +25,18 @@
 	<link id="base-style-responsive" href="${ctx }/static/page/common/css/style-responsive.css" rel="stylesheet">
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,latin-ext'
 	    rel='stylesheet' type='text/css'>
+	<!-- end: CSS -->
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/common.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/reset.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/IconFont/iconfont.css">
-	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/safe/css/safe.css">
-	<!-- end: CSS -->
-<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
+
+
+	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/riskmgmt/css/riskmgmt.css">
+	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
+
 </head>
 
 <body>
-	<!-- start: Header -->
 	<!-- start: Header -->
 	<div class="navbar">
 		<div class="navbar-inner">
@@ -131,8 +134,8 @@
 					<li class="lists">
 						<a href="${ctx }/toEbs">进度管理</a>
 						<a href="${ctx }/toPm" >场景管理</a>
-						<a href="${ctx }/toSafe" class="activeList">安全管理</a>
-						<a href="${ctx }/toRiskmgmt">风险管理</a>
+						<a href="${ctx }/toSafe">安全管理</a>
+						<a href="${ctx }/toRiskmgmt" class="activeList">风险管理</a>
 						<a href="#">质量管理</a>
 						<a href="#">成本管理</a>
 						<a href="#">合同管理</a>
@@ -149,208 +152,15 @@
 				</ul>
 				<div class="row-fluid sortable">
 					<div id="left">
-						<div class="box span12">
-							<div class="box-header">
-								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全问题详情</h2>
-								<div class="box-icon">
-									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
-									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
-								</div>
-							</div>
-							<div class="box-content">
-								<table class="table table-bordered table-striped table-condensed">
-									<thead>
-									<tr>
-										<th>序号</th>
-										<th>WBS名称</th>
-										<th>存在隐患</th>
-										<th>隐患等级</th>
-									</tr>
-									</thead>
-									<tbody>
-									<tr>
-										<td>1</td>
-										<td class="center">7号 施工支洞</td>
-										<td class="center">易燃物品堆放</td>
-										<td class="center">一级</td>
-									</tr>
+						<a href="${ctx }/toCamera">1</a>
+						<a href="${ctx }/toDownup">2</a>
+						<a href="#">3</a>
 
-									</tbody>
-								</table>
-								<div class="pagination pagination-centered">
-									<ul>
-										<li><a href="#">上页</a></li>
-										<li class="active">
-											<a href="#">1</a>
-										</li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">下页</a></li>
-									</ul>
-								</div>
-							</div>
-						</div><!--/span-->
-
-						<div class="box span12">
-							<div class="box-header">
-								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全整改详情</h2>
-								<div class="box-icon">
-									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
-									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
-								</div>
-							</div>
-							<div class="box-content">
-								<table class="table table-bordered table-striped table-condensed">
-									<thead>
-									<tr>
-										<th>序号</th>
-										<th>整改编号</th>
-										<th>整改情况</th>
-										<th>整改日期</th>
-									</tr>
-									</thead>
-									<tbody>
-									<tr>
-										<td>1</td>
-										<td class="center">JRXM-JCHC</td>
-										<td class="center">整改中</td>
-										<td class="center">2016-09-09</td>
-									</tr>
-									</tbody>
-								</table>
-								<div class="pagination pagination-centered">
-									<ul>
-										<li><a href="#">上页</a></li>
-										<li class="active">
-											<a href="#">1</a>
-										</li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">下页</a></li>
-									</ul>
-								</div>
-							</div>
-						</div><!--/span-->
-
-						<div class="box span12">
-							<div class="box-header">
-								<h2><i class="halflings-icon white list-alt"></i><span class="break"></span>安全事故分布</h2>
-								<div class="box-icon">
-									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
-									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
-								</div>
-							</div>
-							<div class="box-content">
-								<!-- <div id="piechart" style="height:300px"></div> -->
-								<div id="main" style="width: 100%;height:250px;"></div>
-							</div>
-						</div>
 					</div>
 					<div id="right">
 						<div class="box span6">
 							<div class="box-header">
-								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全问题详情</h2>
-								<div class="box-icon">
-									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
-									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
-								</div>
-							</div>
-							<div class="box-content">
-								<table class="table table-bordered table-striped table-condensed">
-									<thead>
-									<tr>
-										<th>序号</th>
-										<th>WBS名称</th>
-										<th>存在隐患</th>
-										<th>隐患等级</th>
-									</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>1</td>
-											<td class="center">2节 闸门</td>
-											<td class="center">钢铁腐朽老旧</td>
-											<td class="center">一级</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td class="center">3节 闸门</td>
-											<td class="center">钢铁腐朽老旧</td>
-											<td class="center">一级</td>
-										</tr>
-									</tbody>
-								</table>
-								<div class="pagination pagination-centered">
-									<ul>
-										<li><a href="#">上页</a></li>
-										<li class="active">
-											<a href="#">1</a>
-										</li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">下页</a></li>
-									</ul>
-								</div>
-							</div>
-						</div><!--/span-->
-						<div class="box span6">
-							<div class="box-header">
-								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全问题详情</h2>
-								<div class="box-icon">
-									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
-									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
-									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
-								</div>
-							</div>
-							<div class="box-content">
-								<table class="table table-bordered table-striped table-condensed">
-									<thead>
-									<tr>
-										<th>序号</th>
-										<th>WBS名称</th>
-										<th>存在隐患</th>
-										<th>隐患等级</th>
-									</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>1</td>
-											<td class="center">4节 闸门</td>
-											<td class="center">钢铁腐朽老旧</td>
-											<td class="center">一级</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td class="center">5节 闸门</td>
-											<td class="center">钢铁腐朽老旧</td>
-											<td class="center">一级</td>
-										</tr>
-									</tbody>
-								</table>
-								<div class="pagination pagination-centered">
-									<ul>
-										<li><a href="#">上页</a></li>
-										<li class="active">
-											<a href="#">1</a>
-										</li>
-										<li><a href="#">2</a></li>
-										<li><a href="#">3</a></li>
-										<li><a href="#">4</a></li>
-										<li><a href="#">下页</a></li>
-									</ul>
-								</div>
-							</div>
-						</div><!--/span-->
-						<div class="box span6">
-							<div class="box-header">
-								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全问题详情</h2>
+								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全检查记录</h2>
 								<div class="box-icon">
 									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -370,15 +180,15 @@
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">固卷1</td>
-										<td class="center">变压器老旧</td>
-										<td class="center">一级</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
 									</tr>
 									<tr>
-										<td>2</td>
-										<td class="center">固卷2</td>
-										<td class="center">变压器老旧</td>
-										<td class="center">一级</td>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
 									</tr>
 									</tbody>
 								</table>
@@ -398,7 +208,7 @@
 						</div><!--/span-->
 						<div class="box span6">
 							<div class="box-header">
-								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全问题详情</h2>
+								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全检查整改情况</h2>
 								<div class="box-icon">
 									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -418,15 +228,15 @@
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">固卷3</td>
-										<td class="center">变压器老旧</td>
-										<td class="center">一级</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
 									</tr>
 									<tr>
-										<td>2</td>
-										<td class="center">固卷4</td>
-										<td class="center">变压器老旧</td>
-										<td class="center">一级</td>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
 									</tr>
 									</tbody>
 								</table>
@@ -446,7 +256,7 @@
 						</div><!--/span-->
 						<div class="box span6">
 							<div class="box-header">
-								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全问题详情</h2>
+								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>项目危险源控制计划</h2>
 								<div class="box-icon">
 									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -464,18 +274,18 @@
 									</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>1</td>
-											<td class="center">6节 闸门</td>
-											<td class="center">钢铁腐朽老旧</td>
-											<td class="center">一级</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td class="center">7节 闸门</td>
-											<td class="center">钢铁腐朽老旧</td>
-											<td class="center">一级</td>
-										</tr>
+									<tr>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+									</tr>
 									</tbody>
 								</table>
 								<div class="pagination pagination-centered">
@@ -494,7 +304,7 @@
 						</div><!--/span-->
 						<div class="box span6">
 							<div class="box-header">
-								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全问题详情</h2>
+								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>项目环境因素控制计划</h2>
 								<div class="box-icon">
 									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
 									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
@@ -512,18 +322,114 @@
 									</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>1</td>
-											<td class="center">8节 闸门</td>
-											<td class="center">钢铁腐朽老旧</td>
-											<td class="center">一级</td>
-										</tr>
-										<tr>
-											<td>2</td>
-											<td class="center">9节 闸门</td>
-											<td class="center">钢铁腐朽老旧</td>
-											<td class="center">一级</td>
-										</tr>
+									<tr>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+									</tr>
+									</tbody>
+								</table>
+								<div class="pagination pagination-centered">
+									<ul>
+										<li><a href="#">上页</a></li>
+										<li class="active">
+											<a href="#">1</a>
+										</li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+										<li><a href="#">下页</a></li>
+									</ul>
+								</div>
+							</div>
+						</div><!--/span-->
+						<div class="box span6">
+							<div class="box-header">
+								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>检查整改反馈</h2>
+								<div class="box-icon">
+									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
+								</div>
+							</div>
+							<div class="box-content">
+								<table class="table table-bordered table-striped table-condensed">
+									<thead>
+									<tr>
+										<th>序号</th>
+										<th>WBS名称</th>
+										<th>存在隐患</th>
+										<th>隐患等级</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+									</tr>
+									</tbody>
+								</table>
+								<div class="pagination pagination-centered">
+									<ul>
+										<li><a href="#">上页</a></li>
+										<li class="active">
+											<a href="#">1</a>
+										</li>
+										<li><a href="#">2</a></li>
+										<li><a href="#">3</a></li>
+										<li><a href="#">4</a></li>
+										<li><a href="#">下页</a></li>
+									</ul>
+								</div>
+							</div>
+						</div><!--/span-->
+						<div class="box span6">
+							<div class="box-header">
+								<h2><i class="halflings-icon white align-justify"></i><span class="break"></span>安全检查计划</h2>
+								<div class="box-icon">
+									<a href="#" class="btn-setting"><i class="halflings-icon white wrench"></i></a>
+									<a href="#" class="btn-minimize"><i class="halflings-icon white chevron-up"></i></a>
+									<!--<a href="#" class="btn-close"><i class="halflings-icon white remove"></i></a>-->
+								</div>
+							</div>
+							<div class="box-content">
+								<table class="table table-bordered table-striped table-condensed">
+									<thead>
+									<tr>
+										<th>序号</th>
+										<th>WBS名称</th>
+										<th>存在隐患</th>
+										<th>隐患等级</th>
+									</tr>
+									</thead>
+									<tbody>
+									<tr>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+										<td class="center">1</td>
+									</tr>
 									</tbody>
 								</table>
 								<div class="pagination pagination-centered">
@@ -541,43 +447,65 @@
 							</div>
 						</div><!--/span-->
 					</div>
+
 				</div>
 			</div>
 		</div>
 	</div>
-	
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.ui.touch-punch.js"></script>
+
 	<script src="${ctx }/static/page/common/js/modernizr.js"></script>
+
 	<script src="${ctx }/static/page/common/js/bootstrap.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.cookie.js"></script>
+
 	<script src='${ctx }/static/page/common/js/fullcalendar.min.js'></script>
+
 	<script src='${ctx }/static/page/common/js/jquery.dataTables.min.js'></script>
+
 	<script src="${ctx }/static/page/common/js/excanvas.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.flot.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.flot.pie.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.flot.stack.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.flot.resize.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.chosen.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.uniform.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.cleditor.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.noty.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.elfinder.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.raty.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.iphone.toggle.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.gritter.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.imagesloaded.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.masonry.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.knob.modified.js"></script>
+
 	<script src="${ctx }/static/page/common/js/jquery.sparkline.min.js"></script>
+
 	<script src="${ctx }/static/page/common/js/counter.js"></script>
-	<script src="${ctx }/static/page/common/js/retina.js"></script>
+
+
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
-	<script src="${ctx }/static/page/shigongguanli/safe/js/safe.js"></script>
-	<script src="${ctx }/static/page/shigongguanli/safe/js/safepie.js"></script>
+	<script src="${ctx }/static/page/shigongguanli/riskmgmt/js/riskmgmt.js"></script>
+	<script src="${ctx }/static/page/shigongguanli/riskmgmt/js/riskpie.js"></script>
 </body>
 
 </html>

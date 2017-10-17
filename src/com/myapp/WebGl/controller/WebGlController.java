@@ -172,7 +172,25 @@ public class WebGlController {
 		
 		return "safethree";
 	}
-	//跳转到综合页面
+	//跳转到风险管理页面
+	@RequestMapping("toRiskmgmt")
+	public String toRiskmgmtPage(HttpServletRequest req) {
+		
+		return "riskmgmt";
+	}
+	//跳转到监控管理页面
+	@RequestMapping("toCamera")
+	public String toCameraPage(HttpServletRequest req) {
+		
+		return "camera";
+	}
+	//跳转到沉降检测页面
+	@RequestMapping("toDownup")
+	public String toDownupPage(HttpServletRequest req) {
+		
+		return "downup";
+	}
+	//跳转到综合展示页面
 	@RequestMapping("toWorkShow")
 	public String toWorkShowPage(HttpServletRequest req) {
 		return "workshow";

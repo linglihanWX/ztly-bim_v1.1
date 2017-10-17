@@ -325,19 +325,20 @@ $(function () {
     	treeObj.checkNode(nodes[0], false, true,true);
     	treeObj.expandNode(nodes[nodes.lenght-1]);
     	treeObj.updateNode(nodes[0]);
-    	/*if(catchModelTile){
-    		catchModelTile[catchModelTile.length-1].show= false;
-    	}*/
+    	/*
+		 * if(catchModelTile){ catchModelTile[catchModelTile.length-1].show=
+		 * false; }
+		 */
         $("#menu").hide();
     });
     $(".showModel").click(function () {
     	var treeObj = $.fn.zTree.getZTreeObj("tree");
     	treeObj.checkAllNodes(true);
     	var models =[];
-		/*for(i in nodes){
-			var uid = ["${component} === \'" + nodes[i].uId + "\'", 'false'];
-			models.push(uid);
-		}*/
+		/*
+		 * for(i in nodes){ var uid = ["${component} === \'" + nodes[i].uId +
+		 * "\'", 'false']; models.push(uid); }
+		 */
 		models.push(['true', 'true']);
 		MainBuildingViewer.showHideModelsById(models);
         $("#menu").hide();
@@ -366,9 +367,9 @@ $(function () {
          if($("#attrInfo").css("display")=='none'){
              $("#attrInfo").show();
          }
-        /* else{
-             $("#attrInfo").hide();
-         }*/
+        /*
+		 * else{ $("#attrInfo").hide(); }
+		 */
          var treeObj = $.fn.zTree.getZTreeObj("tree");
      	var nodes = treeObj.getNodesByParam("uId", catchModelTile, null);
      	$("#shuxingmingcheng").text(nodes[0].name);
@@ -378,9 +379,11 @@ $(function () {
     	myviewer.camera.setView({
     	    destination : new FreeDo.Cartesian3(-2302807.2510784627,4394523.4082239475,3994793.8235483123),
     	    orientation: {
-    	        heading : 5.044992016222395, // east, default value is 0.0 (north)
+    	        heading : 5.044992016222395, // east, default value is 0.0
+												// (north)
     	        pitch : 0.3215754362635588,    // default value (looking down)
-    	        roll : 6.27991529153284                           // default value
+    	        roll : 6.27991529153284                           // default
+																	// value
     	    }
     	});
 	});
@@ -388,9 +391,12 @@ $(function () {
     	myviewer.camera.setView({
     	    destination : new FreeDo.Cartesian3(-2302753.6374329086,4394540.72511198,3994807.819974779),
     	    orientation: {
-    	        heading : 1.8806118873166024, // east, default value is 0.0 (north)
-    	        pitch : -0.0003627369162537697,    // default value (looking down)
-    	        roll : 0.0031271705413082884                          // default value
+    	        heading : 1.8806118873166024, // east, default value is 0.0
+												// (north)
+    	        pitch : -0.0003627369162537697,    // default value (looking
+													// down)
+    	        roll : 0.0031271705413082884                          // default
+																		// value
     	    }
     	});
 	});
@@ -398,9 +404,12 @@ $(function () {
 		 myviewer.camera.setView({
 	    	    destination : new FreeDo.Cartesian3(-2302763.1005514893,4394545.018772202,3994823.558034995),
 	    	    orientation: {
-	    	        heading : 2.335654016192078, // east, default value is 0.0 (north)
-	    	        pitch : -0.49131390869990543,    // default value (looking down)
-	    	        roll : 0.002683491504127389                             // default value
+	    	        heading : 2.335654016192078, // east, default value is
+													// 0.0 (north)
+	    	        pitch : -0.49131390869990543,    // default value
+														// (looking down)
+	    	        roll : 0.002683491504127389                             // default
+																			// value
 	    	    }
 	    	});
 	});
@@ -414,20 +423,15 @@ $(function () {
 				}
 	    	});
 	});
-/*//   出图点击后出现的对话框关闭
-	 $(".hClose").click(function () {
-	     $("#showDraw").hide();
-	 });
-
-	 $("#showDraw img").click(function () {
-	     $(".bgImg").show();
-	     $("#showDraw").hide();
-	 });
-
-	 $(".bgImg span").click(function () {
-	     $(".bgImg").hide();
-	     $("#showDraw").show();
-	 });*/
+/*
+ * // 出图点击后出现的对话框关闭 $(".hClose").click(function () { $("#showDraw").hide(); });
+ * 
+ * $("#showDraw img").click(function () { $(".bgImg").show();
+ * $("#showDraw").hide(); });
+ * 
+ * $(".bgImg span").click(function () { $(".bgImg").hide();
+ * $("#showDraw").show(); });
+ */
 	 $(".layer span:first-of-type").hover(function () {
 	        $(".layer ul").stop().slideDown("fast")
 	    },function () {
@@ -445,7 +449,7 @@ $(function () {
 	    $(".slList").click(function() {
 	        $("#sl").show();
 	    });
-	   //图层的显隐
+	   // 图层的显隐
 	    $("#hospital").change(function(){
 	    	if($("#hospital").attr('checked')){
 	    		tuceng[0].show = false;

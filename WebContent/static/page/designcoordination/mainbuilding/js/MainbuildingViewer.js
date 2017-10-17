@@ -16,6 +16,7 @@ var tuceng =[];
 var imageEntity1 = {};
 var imageEntity2 = {};
 var imageEntity3 = {};
+var downuppoints = [];
 window.obj = {};
 MainBuildingViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
@@ -129,7 +130,7 @@ MainBuildingViewer.init = function (earthId) {
 			destination :new FreeDo.Cartesian3(-2302923.868697135,4394881.466502352,3995119.1300424132),
 			orientation: {
 				heading : 3.4103115877496184,
-				pitch : -1.5214432671817395,
+				pitch : FreeDo.Math.toRadians( -90 ),//-1.5214432671817395,
 				roll : 3.1249876427485663
 			}
 		});
@@ -535,6 +536,33 @@ MainBuildingViewer.init = function (earthId) {
 		tuceng.push(river2);
 		tuceng.push(village1);
 		tuceng.push(village2);
+		//加载沉降点
+		var downuppoint = [
+			{"lon":"117.65493267761651","lat":"39.02886839380683"},
+			{"lon":"117.65367088333899","lat":"39.0286955440859"},
+			{"lon":"117.65369998250587","lat":"39.028783658883626"},
+			{"lon":"117.65416379870284","lat":"39.02869887327398"},
+			{"lon":"117.65386209988398","lat":"39.02888525363075"},
+			{"lon":"117.65394149842251","lat":"39.02914251332972"},
+			{"lon":"117.6543837414338","lat":"39.029044985518674"},
+			{"lon":"117.65583099288868","lat":"39.02874696864712"},
+			{"lon":"117.65601006053487","lat":"39.028716770649865"},
+			{"lon":"117.65593015314758","lat":"39.028452384354985"},
+			{"lon":"117.65524817526324","lat":"39.0286096527802"}
+			];
+		for ( var i in downuppoint) {
+			downuppoints[i] = this.viewer.entities.add({  
+				name : '沉降点'+i,  
+				position : FreeDo.Cartesian3.fromDegrees(downuppoint[i].lon,downuppoint[i].lat,16.0),  
+				 ellipse : {  
+					 	semiMinorAxis : 1,  
+				        semiMajorAxis : 1,  
+				        material : FreeDo.Color.RED,  
+				        outline : true,  
+				        outlineColor : FreeDo.Color.RED  
+				    }  
+			});
+		}
 		myviewer = this.viewer;
 		modelTile.readyPromise.then(function() {
 			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
@@ -613,14 +641,16 @@ MainBuildingViewer.showHideModelsById =function(uid){
 	  });
 	modelTile.style = showhide;
 }
+//左键点击事件
 MainBuildingViewer.initLeftClick = function(viewer) {
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
+		var picked = viewer.scene.pick(movement.position);
 		var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
 		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
 		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
-		console.log(point);
+		console.log(picked);
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 
@@ -668,111 +698,4 @@ MainBuildingViewer.initModels = function () {
         }
 
     });
-}
-MainBuildingViewer.manyou=function(arr){
-//	三维基础环境。
-	m_Viewer = null;
-	
-	//	上一帧画面对应的系统时间（毫秒）。
-	m_LastTime = 0;
-	
-	//	总的运行时间。
-	m_Time = 0;
-	
-	//	场景管理器。
-//	m_Scene = new FDPScene;
-
-	//	脚本。（匀速持续播放）。测试
-	m_Script = new FDPScript;
-
-	//	鼠标事件响应函数队列。
-	m_MouseMoveEventList = new Array();
-	
-
-		//	创建三维环境。
-		m_Viewer = this.viewer;
-		
-		//	屏蔽左下角图标。
-		m_Viewer._cesiumWidget._creditContainer.style.display="none";  
-		
-		if ( m_Viewer == null )
-			return false;   
-		
-		//	初始化项目资源。
-		
-		
-		//	注册渲染循环响应函数。
-		//	帧循环事件。
-		OnPreRender = function()
-		{
-			var myDate = new Date();
-			var time = myDate.getTime();
-			var dt = time - m_LastTime;
-			m_LastTime = time;
-			m_Time = m_Time+dt;
-			
-			//	脚本运行。
-			m_Script.Run( dt );
-		}
-		m_Viewer.scene.preRender.addEventListener( OnPreRender ); //?
-		
-		//	注册鼠标、键盘事件响应。
-		//	鼠标移动事件。测试。
-		OnMouseMove = function( movement )
-		{
-			//	按队列顺序执行时间相应函数。
-			
-			//	获取鼠标移动 距离 dx, dy
-			
-			//	循环调用鼠标移动响应函数。
-			for ( var i = 0; i < m_MouseMoveEventList.length; i++ )
-			{
-				if ( m_MouseMoveEventList[i](dx, dy) == true )
-					break;	//	返回 true 不在继续后续响应。
-			}
-		}	//	鼠标移动事件。测试。
-		OnMouseMove = function( movement )
-		{
-			//	按队列顺序执行时间相应函数。
-			
-			//	获取鼠标移动 距离 dx, dy
-			
-			//	循环调用鼠标移动响应函数。
-			for ( var i = 0; i < m_MouseMoveEventList.length; i++ )
-			{
-				if ( m_MouseMoveEventList[i](dx, dy) == true )
-					break;	//	返回 true 不在继续后续响应。
-			}
-		}
-		var handler = new FreeDo.ScreenSpaceEventHandler(m_Viewer.scene.canvas);
-		handler.setInputAction( OnMouseMove, FreeDo.ScreenSpaceEventType.MOUSE_MOVE ); //注册鼠标移动事件。		
-		//	注册其它鼠标事件。
-
-
-
-		var CameraRoute = new FDPAction_Camera_2( m_Viewer.camera, arr);
-		
-		//	事件加入到脚本。
-		m_Script.AddAction( CameraRoute );
-		m_Script.Start();
-		 
-		var myDate = new Date();
-		m_LastTime = myDate.getTime();
-		m_Time = 0;
-	
-
-	AddMouseMoveEventFuc = function( eventFunc, Type )
-	{	
-		//	添加鼠标移动响应函数接口。接口形式为  function( dx, dy ), dx, dy 分别对应该次鼠标移动事件中鼠标移动的x轴和y轴方向上的距离。
-		if ( Type == 0 )
-			m_MouseMoveEventList.unshift( eventFunc );
-		else
-			m_MouseMoveEventList( eventFunc );
-	}
-	
-	RemoveMouseMoveEventFuc = function( eventFunc )
-	{
-
-	}
-	
 }
