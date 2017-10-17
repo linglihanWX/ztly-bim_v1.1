@@ -105,6 +105,12 @@ public class WebGlController {
 		
 		return "show";
 	}
+	//跳转到综合展示页面
+	@RequestMapping("toPlanRoute")
+	public String toPlanRoutePage(HttpServletRequest req) {
+		
+		return "planRoute";
+	}
 	/*------------------------设计协同模块页面跳转-----------------------*/
 	//跳转到任务界面
 	@RequestMapping("toTask")

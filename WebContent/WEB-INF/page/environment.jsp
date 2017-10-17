@@ -162,6 +162,7 @@
 						<a href="#">项目信息</a>
 						<a href="${ctx }/toShow">3D综合展示</a>
 						<a href="#">数据导出</a>
+						<a href="${ctx }/toPlanRoute">规划选线</a>
 					</li>
 					<li>
 						<div id="div1" class="close1">
