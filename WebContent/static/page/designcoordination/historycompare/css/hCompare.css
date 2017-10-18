@@ -146,4 +146,34 @@ font-size:14px;
     border:1px solid #000;
 }
 
+#moreInfoBox{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 500px;
+    height: 120px;
+    padding: 10px;
+    background-color: #E0ECFF;
+    border-radius: 5px;
+    margin:-60px 0 0 -200px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.349019607843137);
+}
 
+#moreInfoBox ul{
+    width: 100%;
+    height: 100%;
+    border-top: 1px solid #000;
+    border-left: 1px solid #000;
+}
+#moreInfoBox ul li{
+    width: 20%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    float: left;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    box-sizing: border-box;
+    font-size: 12px;
+}

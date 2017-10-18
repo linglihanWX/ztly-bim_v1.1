@@ -61,6 +61,13 @@ $(function () {
     		 desmyviewer.camera.changed.removeEventListener(cameraSynchronization);
     	 }
     });
+    $("#moreInfo").change(function() { 
+    	if( $("#moreInfo").attr('checked')){
+    		$("#moreInfoBox").show();
+    	}else{
+    		$("#moreInfoBox").hide();
+    	}
+    });
     //regright();
     
 });
