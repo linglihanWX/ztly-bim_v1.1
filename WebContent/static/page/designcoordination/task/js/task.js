@@ -81,9 +81,9 @@ $(function () {
         var $text = $("#newTask textarea").val();
         var num = $list.length + 1;
         if(num < 10){
-            $("#workData .table tbody").append("<tr><td>0"+ num+"</td> <td>"+$text+"</td><td><img src='img/doc/rightHand.svg'>指派 <img src='img/doc/right.svg'>完成</td></tr>");
+            $("#workData .table tbody").append("<tr><td>0"+ num+"</td> <td>"+$text+"</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
         }else{
-            $("#workData .table tbody").append("<tr> <td>"+num+"</td> <td>"+$text+"</td><td><img src='img/doc/rightHand.svg'>指派 <img src='img/doc/right.svg'>完成</td></tr>");
+            $("#workData .table tbody").append("<tr> <td>"+num+"</td> <td>"+$text+"</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
         }
         $("#newTask").hide();
         $("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
