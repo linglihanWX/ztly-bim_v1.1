@@ -41,6 +41,7 @@
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 	<script src="${ctx }/static/page/surveystudy/planRoute/js/planRouteViewer.js"></script>
 	<script src="${ctx }/static/page/surveystudy/planRoute/js/planRoute.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
