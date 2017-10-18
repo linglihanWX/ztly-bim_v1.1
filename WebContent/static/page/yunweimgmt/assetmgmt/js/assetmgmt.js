@@ -4,7 +4,7 @@ $(function () {
     $("#content .row-fluid").height(h - h2);
 
     $.ajax({
-        url: "static/page/yunweimgmt/assetmgmt/assetmgmt.json",
+        url: "getTangguData",
         type: "get",
         dataType:"json",
         success: function (data) {
@@ -13,9 +13,9 @@ $(function () {
                 data: {
                     simpleData: {
                         enable: true,
-                        idKey: "id",
+                        idKey: "uId",
                         pIdKey: "pId",
-                        rootPId: "0"
+                        rootPId: "-1"
                     }
                 },
                 callback : {
