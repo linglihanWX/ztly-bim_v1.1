@@ -134,7 +134,7 @@ $(function () {
 
 
     // 右击菜单
-    $("#init").contextmenu(function(event){
+/*    $("#init").contextmenu(function(event){
         var event = event || window.event;
         event.preventDefault();
         window.event.returnValue = false;
@@ -144,7 +144,7 @@ $(function () {
             "top":event.pageY+"px"
         });
         return false;
-    });
+    });*/
     $(document).click(function() {
         $("#menu").hide();
     });
@@ -232,4 +232,6 @@ $(function () {
         $("#menu").hide();
     });
     AssetmgmtViewer.init("init"); // 加载球模型
+    AssetmgmtViewer.initRightClick(globalviewer);
+    //AssetmgmtViewer.initLeftClick(globalviewer);
 });

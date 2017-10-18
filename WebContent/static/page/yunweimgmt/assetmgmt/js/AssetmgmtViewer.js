@@ -58,37 +58,43 @@ AssetmgmtViewer.init=function(earthId)
     globalviewer = this.viewer;
 }
 /**
- * 左键点击事件
+ * 右键点击事件
  */
-/*AssetmgmtViewer.initLeftClick = function(viewer) {
+AssetmgmtViewer.initRightClick = function(viewer) {
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
 		
 		var picked = viewer.scene.pick(movement.position);
 		if(picked){
 			if(picked instanceof FreeDo.FreeDoPModelFeature){
-				$("#detailInfo").hide();
+				console.log(picked);
+				$("#menu").css({
+					left:movement.position.x+170,
+					top:movement.position.y+120
+				}).show();
 			}else{
-				$("#detailInfo").css({
-					"display":"block",
-					"left":movement.position.x - 456,
-					"top":movement.position.y - 215,
-				});	
+				$("#menu").hide();
 			}
 		}else{
-			$("#detailInfo").hide();
+			$("#menu").hide();
 		}
 		
-		var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
+		/*var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
 		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
-		var point=[cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
+		var point=[cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];*/
 		//输出相机位置
 		//console.log(viewer.camera.position.x+","+viewer.camera.position.y+","+viewer.camera.position.z+","+viewer.camera.heading+","+viewer.camera.pitch+","+viewer.camera.roll);
 		//输出点击位置的经纬度
 		//console.log(point);
 		
-	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+	}, FreeDo.ScreenSpaceEventType.RIGHT_CLICK);
 	
 
+}
+/*AssetmgmtViewer.initLeftClick = function(viewer) {
+	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler.setInputAction(function(movement){
+		$("#menu").hide();
+	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 }*/
