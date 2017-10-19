@@ -123,7 +123,7 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 		this.viewer.scene.globe.depthTestAgainstTerrain = true;
 
 		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
-			url: "http://192.168.137.1:9999/1013/tanggu_new"
+			url: "./static/model/tanggu_new"
 		}));
 		
 	/*	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
