@@ -37,7 +37,7 @@ DownupViewer.init=function(earthId)
 	    tileMatrixSetID: "tianditu",
 	    show: true
 	}));
-	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
+	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
 		url: "http://192.168.137.1:9999/1013/tanggu_new"
 	}));
 	
@@ -96,9 +96,9 @@ DownupViewer.initLeftClick = function(viewer) {
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
 		var picked = viewer.scene.pick(movement.position);
-		//console.log(picked);FreeDo.defined(picked) && picked instanceof FreeDo.FreeDoPModelFeature
+		//console.log(picked);FreeDo.defined(picked) && picked instanceof FreeDo.FreedoPModelFeature
 		if(picked){
-			if(picked instanceof FreeDo.FreeDoPModelFeature){
+			if(picked instanceof FreeDo.FreedoPModelFeature){
 				$("#chart").hide();
 			}else{
 				$("#chart").css({

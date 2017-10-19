@@ -37,7 +37,7 @@ CameraViewer.init=function(earthId)
 	    tileMatrixSetID: "tianditu",
 	    show: true
 	}));
-	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
+	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
 		url: "http://192.168.137.1:9999/1013/tanggu_new"
 	}));
 	
@@ -156,7 +156,7 @@ CameraViewer.initLeftClick = function(viewer) {
 		
 		var picked = viewer.scene.pick(movement.position);
 		if(picked){
-			if(picked instanceof FreeDo.FreeDoPModelFeature){
+			if(picked instanceof FreeDo.FreedoPModelFeature){
 				$("#detailInfo").hide();
 			}else{
 				$("#detailInfo").css({

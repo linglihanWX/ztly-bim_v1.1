@@ -110,11 +110,11 @@ SafeThreeViewer.init = function (earthId) {
 		}));
 		this.viewer.scene.globe.depthTestAgainstTerrain = true;
 
-		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
+		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
 		
-	/*	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
+	/*	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
 			url: 'http://gbim360.com:9999/chenchunmei/PModel/170905_GHP/GHP'
 		}));*/
 		jianpiaokou1 = this.viewer.entities.add( {  
@@ -280,7 +280,7 @@ SafeThreeViewer.changechoserow = function(row){
 		for(i in shuxingshuju){
 			if(shuxingshuju[i].id==row.id){
 				var componentId = shuxingshuju[i].componentId;
-				var redStyle = new FreeDo.FreeDoPModelStyle({color: {conditions: [["${component} === \'" + componentId + "\'", "color('red')"],["true", "color('white')"]]}});
+				var redStyle = new FreeDo.FreedoPModelStyle({color: {conditions: [["${component} === \'" + componentId + "\'", "color('red')"],["true", "color('white')"]]}});
 				modelTile.style=redStyle;
 				this.viewer.camera.flyTo({
 					destination : new FreeDo.Cartesian3(shuxingshuju[i].position.x, shuxingshuju[i].position.y, shuxingshuju[i].position.z),
@@ -303,7 +303,7 @@ SafeThreeViewer.right = function (callback) {
     this.screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(this.viewer.canvas);
     this.screenSpaceEventHandler.setInputAction(function (movement) {
     	 var picked = myviewer.scene.pick(movement.position);
-         if (FreeDo.defined(picked) && picked instanceof FreeDo.FreeDoPModelFeature) {
+         if (FreeDo.defined(picked) && picked instanceof FreeDo.FreedoPModelFeature) {
              var id = picked.getProperty('component');
              if (FreeDo.defined(id)) {
             	 var menu = document.getElementById("menu");
@@ -337,7 +337,7 @@ $(".showModel").click(function () {
 
 SafeThreeViewer.changeColorById =function(uid){
 
-	var showhide = new FreeDo.FreeDoPModelStyle({
+	var showhide = new FreeDo.FreedoPModelStyle({
 	    color: {
 	      conditions:uid                        		
 	    }

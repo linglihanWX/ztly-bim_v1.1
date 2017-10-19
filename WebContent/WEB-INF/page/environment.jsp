@@ -31,10 +31,10 @@
 
 	<link rel="stylesheet" href="${ctx }/static/page/common/IconFont/iconfont.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/reset.css">
-	<link href="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/Widgets/widgets.css" rel="stylesheet">
-	<script src="http://gbim360.com:9999/projects/FreedoGBIM360/1.0.0-alpha.170626/FreeDo/FreeDo.js"></script>
-	<script src="https://cdn.bootcss.com/lodash.js/4.17.4/lodash.min.js"></script>
-	<script src="http://gbim360.com:9999/projects/FreedoGBIM360/1.2.0-beta.170808/API/FreedoX.js"></script>
+	<link href="http://res.gbim360.com/lib/freedo/rel/1.4.0.171017/Freedo/Widgets/widgets.css" rel="stylesheet">
+    <script src="http://res.gbim360.com/lib/freedo/rel/1.4.0.171017/Freedo/Freedo.js"></script>
+    <script src="http://res.gbim360.com/shared/1710_lodash/lodash.min.js"></script>
+    <script src="http://res2.gbim360.com/projects/FreedoHolo3DForWeb/develop/API/FreedoX.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/webgl/compass/css/compass.css">
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>

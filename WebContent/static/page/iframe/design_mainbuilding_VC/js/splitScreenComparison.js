@@ -37,7 +37,7 @@ function initViewer (freedocontainer) {
 		    format: "image/png",
 		    tileMatrixSetID: "tianditu",
 		}));*/
-	 window.modelTile = viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
+	 window.modelTile = viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
 	 viewer.camera.setView({

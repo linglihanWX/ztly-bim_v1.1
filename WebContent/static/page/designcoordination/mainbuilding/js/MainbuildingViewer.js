@@ -119,7 +119,7 @@ MainBuildingViewer.init = function (earthId) {
 			tileMatrixSetID: "tianditu",
 			show: true
 		}));*/
-		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreeDoPModelset({
+		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
 			url: "http://192.168.137.1:9999/1013/tanggu_new"
 		}));
 		
@@ -593,7 +593,7 @@ MainBuildingViewer.changechoserow = function(row){
 		for(i in shuxingshuju){
 			if(shuxingshuju[i].id==row.id){
 				var componentId = shuxingshuju[i].componentId;
-				var redStyle = new FreeDo.FreeDoPModelStyle({color: {conditions: [["${component} === \'" + componentId + "\'", "color('red')"],["true", "color('white')"]]}});
+				var redStyle = new FreeDo.FreedoPModelStyle({color: {conditions: [["${component} === \'" + componentId + "\'", "color('red')"],["true", "color('white')"]]}});
 				modelTile.style=redStyle;
 				this.viewer.camera.flyTo({
 					destination : new FreeDo.Cartesian3(shuxingshuju[i].position.x, shuxingshuju[i].position.y, shuxingshuju[i].position.z),
@@ -616,7 +616,7 @@ MainBuildingViewer.right = function (callback) {
     this.screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(this.viewer.canvas);
     this.screenSpaceEventHandler.setInputAction(function (movement) {
     	 var picked = myviewer.scene.pick(movement.position);
-         if (FreeDo.defined(picked) && picked instanceof FreeDo.FreeDoPModelFeature) {
+         if (FreeDo.defined(picked) && picked instanceof FreeDo.FreedoPModelFeature) {
              var id = picked.getProperty('component');
              if (FreeDo.defined(id)) {
             	 var menu = document.getElementById("menu");
@@ -633,7 +633,7 @@ MainBuildingViewer.right = function (callback) {
 
 MainBuildingViewer.showHideModelsById =function(uid){
 
-	var showhide = new FreeDo.FreeDoPModelStyle({
+	var showhide = new FreeDo.FreedoPModelStyle({
 	    show: {
 	      conditions:uid                        		
 	
@@ -699,3 +699,112 @@ MainBuildingViewer.initModels = function () {
 
     });
 }
+/*MainBuildingViewer.manyou=function(arr){
+//	三维基础环境。
+	m_Viewer = null;
+	
+	//	上一帧画面对应的系统时间（毫秒）。
+	m_LastTime = 0;
+	
+	//	总的运行时间。
+	m_Time = 0;
+	
+	//	场景管理器。
+//	m_Scene = new FDPScene;
+
+	//	脚本。（匀速持续播放）。测试
+	m_Script = new FDPScript;
+
+	//	鼠标事件响应函数队列。
+	m_MouseMoveEventList = new Array();
+	
+
+		//	创建三维环境。
+		m_Viewer = this.viewer;
+		
+		//	屏蔽左下角图标。
+		m_Viewer._cesiumWidget._creditContainer.style.display="none";  
+		
+		if ( m_Viewer == null )
+			return false;   
+		
+		//	初始化项目资源。
+		
+		
+		//	注册渲染循环响应函数。
+		//	帧循环事件。
+		OnPreRender = function()
+		{
+			var myDate = new Date();
+			var time = myDate.getTime();
+			var dt = time - m_LastTime;
+			m_LastTime = time;
+			m_Time = m_Time+dt;
+			
+			//	脚本运行。
+			m_Script.Run( dt );
+		}
+		m_Viewer.scene.preRender.addEventListener( OnPreRender ); //?
+		
+		//	注册鼠标、键盘事件响应。
+		//	鼠标移动事件。测试。
+		OnMouseMove = function( movement )
+		{
+			//	按队列顺序执行时间相应函数。
+			
+			//	获取鼠标移动 距离 dx, dy
+			
+			//	循环调用鼠标移动响应函数。
+			for ( var i = 0; i < m_MouseMoveEventList.length; i++ )
+			{
+				if ( m_MouseMoveEventList[i](dx, dy) == true )
+					break;	//	返回 true 不在继续后续响应。
+			}
+		}	//	鼠标移动事件。测试。
+		OnMouseMove = function( movement )
+		{
+			//	按队列顺序执行时间相应函数。
+			
+			//	获取鼠标移动 距离 dx, dy
+			
+			//	循环调用鼠标移动响应函数。
+			for ( var i = 0; i < m_MouseMoveEventList.length; i++ )
+			{
+				if ( m_MouseMoveEventList[i](dx, dy) == true )
+					break;	//	返回 true 不在继续后续响应。
+			}
+		}
+		var handler = new FreeDo.ScreenSpaceEventHandler(m_Viewer.scene.canvas);
+		handler.setInputAction( OnMouseMove, FreeDo.ScreenSpaceEventType.MOUSE_MOVE ); //注册鼠标移动事件。		
+		//	注册其它鼠标事件。
+
+
+		//	测试脚本事件。
+		var CameraRoute = new FDPAction_Camera_2( m_Viewer.camera, arr);
+		
+		//	事件加入到脚本。
+	
+		m_Script.AddAction( CameraRoute );
+		m_Script.Start();
+		 
+		var myDate = new Date();
+		m_LastTime = myDate.getTime();
+		m_Time = 0;
+	
+
+	AddMouseMoveEventFuc = function( eventFunc, Type )
+	{	
+		//	添加鼠标移动响应函数接口。接口形式为  function( dx, dy ), dx, dy 分别对应该次鼠标移动事件中鼠标移动的x轴和y轴方向上的距离。
+		if ( Type == 0 )
+			m_MouseMoveEventList.unshift( eventFunc );
+		else
+			m_MouseMoveEventList( eventFunc );
+	}
+	
+	RemoveMouseMoveEventFuc = function( eventFunc )
+	{
+
+	}
+	
+}
+*/

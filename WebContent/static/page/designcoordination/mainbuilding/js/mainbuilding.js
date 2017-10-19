@@ -6,8 +6,7 @@ $(function () {
     var h3 = $(".breadcrumb").height();
     $("#content .row-fluid").height(h2 - h3);
     $(".dialogContent").height(h2-250);
-	MainBuildingViewer.init("earth");
-	MainBuildingViewer.initLeftClick(myviewer);
+
 	var treeObj = {};
     $.ajax({
         url: "getTangguData",
@@ -105,7 +104,8 @@ $(function () {
         }
     })
  
-
+	MainBuildingViewer.init("earth");
+	MainBuildingViewer.initLeftClick(myviewer);
     // 2D/3D切换
     $("#div1").click(function () {
         if ($("#div1").hasClass("open1")) {
@@ -632,6 +632,73 @@ $("#zhongdiangc5").click(function(){
 	    	    });
 
 	    });
+	    //漫游有问题
+/*	    $("#zhongdiangc5").click(function(){
+	
+			var arr = new Array();
+			var route1 = new FDPCameraRoute();
+			route1.m_Time = 500;
+			route1.m_Lon = 117.65405942250071; // 轨迹点对应的经度 度。
+			route1.m_Lat = 39.029023270356156; // 轨迹点对应的维度 度。
+			route1.m_Heigt = 20.494140101978815; // 轨迹点对应的高度 米。
+			route1.m_Course = 1.8185673070150337*180/Math.PI; // 轨迹点对应的相机方位角 度。
+			route1.m_Alpha = 0.053943264486221665*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
+			route1.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
+			arr[0] = route1;
+			//117.65509880838155,39.028810674298704,19.434674298037013
+			var route2 = new FDPCameraRoute();
+			route2.m_Time = 10500;
+			route2.m_Lon = 117.65509880838155; // 轨迹点对应的经度 度。
+			route2.m_Lat = 39.028810674298704; // 轨迹点对应的维度 度。
+			route2.m_Heigt = 19.434674298037013; // 轨迹点对应的高度 米。
+			route2.m_Course = 1.818577100826488*180/Math.PI; // 轨迹点对应的相机方位角 度。
+			route2.m_Alpha = 0.053955749331485725*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
+			route2.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
+			arr[1] = route2;
+			//117.65526169720657,39.028633748813,19.331618208693417
+			var route3 = new FDPCameraRoute();
+			route3.m_Time = 10500;
+			route3.m_Lon = 117.65526169720657; // 轨迹点对应的经度 度。
+			route3.m_Lat = 39.028633748813; // 轨迹点对应的维度 度。
+			route3.m_Heigt = 19.331618208693417; // 轨迹点对应的高度 米。
+			route3.m_Course = 4.7923476950288935*180/Math.PI; // 轨迹点对应的相机方位角 度。
+			route3.m_Alpha = -0.14869812836828622*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
+			route3.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
+			arr[2] = route3;
+			//117.65421983509961,39.02882783018097,20.968283549670737
+			var route4 = new FDPCameraRoute();
+			route4.m_Time = 10500;
+			route4.m_Lon = 117.65421983509961; // 轨迹点对应的经度 度。
+			route4.m_Lat = 39.02882783018097; // 轨迹点对应的维度 度。
+			route4.m_Heigt = 20.968283549670737; // 轨迹点对应的高度 米。
+			route4.m_Course = 4.915122487467713*180/Math.PI; // 轨迹点对应的相机方位角 度。
+			route4.m_Alpha = -0.07063326983480422*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
+			route4.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
+			arr[3] = route4;
+			//117.6540893864963,39.028947377694394,19.76988295801556
+			var route5 = new FDPCameraRoute();
+			route5.m_Time = 10500;
+			route5.m_Lon = 117.6540893864963; // 轨迹点对应的经度 度。
+			route5.m_Lat = 39.028947377694394; // 轨迹点对应的维度 度。
+			route5.m_Heigt = 19.76988295801556; // 轨迹点对应的高度 米。
+			route5.m_Course = 1.7697966659565516*180/Math.PI; // 轨迹点对应的相机方位角 度。
+			route5.m_Alpha = -0.32763506713608836*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
+			route5.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
+			arr[4] = route5;
+			//117.65453537103939,39.028846327093355,5.292897784570426
+			var route6 = new FDPCameraRoute();
+			route6.m_Time = 10500;
+			route6.m_Lon = 117.65453537103939; // 轨迹点对应的经度 度。
+			route6.m_Lat = 39.028846327093355; // 轨迹点对应的维度 度。
+			route6.m_Heigt = 5.292897784570426; // 轨迹点对应的高度 米。
+			route6.m_Course = 1.576492909140983*180/Math.PI; // 轨迹点对应的相机方位角 度。
+			route6.m_Alpha = 0.038401067615655426*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
+			route6.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
+			arr[5] = route6;
+			
+			MainbuildingViewer.manyou(arr);
+	    }); */
+	    
 	    $("#jilu").click(function(){
 	    	var x = myviewer.camera.position.x;
 			var y = myviewer.camera.position.y;
