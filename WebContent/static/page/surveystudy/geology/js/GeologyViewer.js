@@ -64,7 +64,7 @@ GeologyViewer.GroupObj = function (id, parentId, name, type) {
     this.children = [];
 }
 
-GeologyViewer.init = function (earthId) {
+GeologyViewer.init = function (earthId,baseImageryProvider) {
     this.modelContainer = this.modelContainer || {};//未来保存加载的模型的容器，便于快速访问
     this.ebsContainer = this.ebsContainer || {};
     this.timeArray = this.timeArray || [];//保存了按时间排序的Ebs叶子节点
@@ -72,12 +72,25 @@ GeologyViewer.init = function (earthId) {
     this.showEbsContainer = this.showEbsContainer || {};//保存了当前时间点中显示出来的Ebs节点对应的模型
     this.viewer = this.viewer || {};
     //初始化地球
-    var freedocontainer = document.getElementById(earthId);
-    var project = Freedo.FdApp.createProject(freedocontainer);
-    this.project = project;
-
-    this.viewer = this.project.getViewer();
-
+    this.viewer = new Freedo.Viewer(earthId,{
+		animation : false,
+		baseLayerPicker : false,
+		fullscreenButton : false,
+		geocoder : false,
+		homeButton : false,
+		infoBox :false,
+		sceneModePicker : false,
+		selectionIndicator : false,
+		timeline : false,
+		navigationHelpButton : false,
+		navigationInstructionsInitiallyVisible : false,
+		selectedImageryProviderViewModel : false,
+		scene3DOnly : true,
+		clock : null,
+		showRenderLoopErrors : false,
+		automaticallyTrackDataSourceClocks:false,
+		imageryProvider : baseImageryProvider || this.getTiandituGloble()
+	});
 
     // cx 添加
     this.flag = true;
@@ -86,26 +99,7 @@ GeologyViewer.init = function (earthId) {
     this.cam = [116.00013, 38.998999999999999999999999, 80.75962432438108];
     new Compass(this.viewer);
     
-    this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
-    	 url: "http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
- 	        layer: "tdtBasicLayer_yingxiang",
- 	        style: "default",
- 	        format: "image/jpeg",
- 	        tileMatrixSetID: "tianditu",
- 	        minimumLevel: 0,
- 			maximumLevel: 17,
- 	        
-
-    }));
-    this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
-    	url: "http://t0.tianditu.com/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg",
- 	    layer: "tdtAnnoLayer_biaoji",
- 	    style: "default",
- 	    format: "image/png",
- 	    tileMatrixSetID: "tianditu",
- 	    
- 	}));
-    globalviewer =this.viewer
+    globalviewer =this.viewer;
     $.ajax({
 		url:"./drillingColumnCha/getAllDrillingColumnCha2",
 		dataType:"json",
@@ -119,6 +113,18 @@ GeologyViewer.init = function (earthId) {
 		}
 			
 	})
+}
+GeologyViewer.getTiandituGloble =function() {
+	var tg = new Freedo.WebMapTileServiceImageryProvider({
+		url : "http://{s}.tianditu.com/img_c/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style={style}&format=tiles",
+		style:"default",
+		tileMatrixSetID:"c",
+		tilingScheme:new Freedo.GeographicTilingScheme(),
+		tileMatrixLabels:["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"],
+		maximumLevel:17,
+		subdomains : ["t0","t1","t2","t3","t4","t5","t6","t7"]
+	});
+	return tg;
 }
 GeologyViewer.initLeftClick = function(viewer,callback){
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
