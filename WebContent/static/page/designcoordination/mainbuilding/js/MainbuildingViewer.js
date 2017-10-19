@@ -624,7 +624,7 @@ MainBuildingViewer.right = function (callback) {
 	            menu.style.display = "block";
 	            menu.style.left = movement.position.x+140+"px";
 	            menu.style.top = movement.position.y+55+"px";
-	            //catchModelTile.push(picked);
+	            //catchModelTile.push(picked);1
 	            catchModelTile=id;
              }
          }
