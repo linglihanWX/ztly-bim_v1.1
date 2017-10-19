@@ -106,6 +106,7 @@ $(function () {
  
 	MainBuildingViewer.init("earth");
 	MainBuildingViewer.initLeftClick(myviewer);
+	MainBuildingViewer.initRightClick(myviewer);
     // 2D/3D切换
     $("#div1").click(function () {
         if ($("#div1").hasClass("open1")) {
@@ -320,7 +321,7 @@ $(function () {
 //        rMenu.style.display = "none";
 //    };
     
-    $("#earth").contextmenu(function(event){
+    /*$("#earth").contextmenu(function(event){
         var event = event || window.event;
         event.preventDefault();
         window.event.returnValue = false;
@@ -331,7 +332,7 @@ $(function () {
            "top":event.pageY+"px"
        });
         return false;
-    });
+    });*/
 
    $("#tree").contextmenu(function(event){
         var event = event || window.event;

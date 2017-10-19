@@ -640,6 +640,27 @@ MainBuildingViewer.initLeftClick = function(viewer) {
 	
 
 }
+//右键点击事件
+MainBuildingViewer.initRightClick = function(viewer) {
+	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler.setInputAction(function(movement){
+		$("#menu").hide();
+		var picked = viewer.scene.pick(movement.position);
+		if(picked){
+			if(picked instanceof FreeDo.FreedoPModelFeature){
+				console.log(picked);
+				$("#menu").css({
+					left:movement.position.x+130,
+					top:movement.position.y+110
+				}).show();
+			}else{
+				$("#menu").hide();
+			}
+		}else{
+			$("#menu").hide();
+		}
+	}, FreeDo.ScreenSpaceEventType.RIGHT_CLICK);	
+}
 /**
  * [initModels初始化场景中的模型]
  * @return {[type]} [description]
