@@ -105,7 +105,7 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		new Compass(this.viewer);
 		
 		modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
-			url: "http://192.168.137.1:9999/1013/tanggu_new"
+			url: "./static/model/tanggu_new"
 		}));
 		
 

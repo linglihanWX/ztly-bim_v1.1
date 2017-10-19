@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ModelDataOption>
+	<ModelData>
+		<Version>1.0.0</Version>
+		<ModelType>MODELTILE</ModelType>
+		<PixelRatio>1.0</PixelRatio>
+		<MetaData>
+			<Position>39.0286972222222,117.654866666667,0.00000000000000000000</Position>
+			<LocalRotate>0,0,0</LocalRotate>
+			<LocalScale>1,1,1</LocalScale>
+			<LocalBounds>
+				<Min>-8.94560408089535030000,-4.18000014168734420000,-37.65000002586202800000</Min>
+				<Max>164.99999574040157000000,26.00500137730318800000,23.89999960568206900000</Max>
+			</LocalBounds>
+		</MetaData>
+		<DataSourceList>
+			<DataSource>
+				<Key>Tile_+0_0_5</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_5</DataBasePath>
+					<FileName>Tile_+0_0_5.osgb</FileName>
+					<Center>78.0272 9.41 -2.9875</Center>
+					<Radius>22.4175</Radius>
+					<Range>0 0.560438</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_9</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_9</DataBasePath>
+					<FileName>Tile_+0_0_9.osgb</FileName>
+					<Center>147.613 8.38033 -1.9125</Center>
+					<Radius>23.2523</Radius>
+					<Range>0 0.581308</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_3</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_3</DataBasePath>
+					<FileName>Tile_+0_0_3.osgb</FileName>
+					<Center>43.2281 9.41 8.5125</Center>
+					<Radius>26.9111</Radius>
+					<Range>0 0.672778</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_7</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_7</DataBasePath>
+					<FileName>Tile_+0_0_7.osgb</FileName>
+					<Center>112.826 9.41 -1.9125</Center>
+					<Radius>22.6287</Radius>
+					<Range>0 0.565718</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_0</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_0</DataBasePath>
+					<FileName>Tile_+0_0_0.osgb</FileName>
+					<Center>12.4143 2.68033 -18.005</Center>
+					<Radius>31.2851</Radius>
+					<Range>0 0.782127</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_8</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_8</DataBasePath>
+					<FileName>Tile_+0_0_8.osgb</FileName>
+					<Center>147.613 2.68033 -11.555</Center>
+					<Radius>29.8212</Radius>
+					<Range>0 0.745531</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_4</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_4</DataBasePath>
+					<FileName>Tile_+0_0_4.osgb</FileName>
+					<Center>78.2688 5.475 -14.7375</Center>
+					<Radius>26.0798</Radius>
+					<Range>0 0.651995</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_2</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_2</DataBasePath>
+					<FileName>Tile_+0_0_2.osgb</FileName>
+					<Center>43.2281 5.475 -13.6675</Center>
+					<Radius>27.0683</Radius>
+					<Range>0 0.676707</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_1</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_1</DataBasePath>
+					<FileName>Tile_+0_0_1.osgb</FileName>
+					<Center>8.44146 9.62283 8.5125</Center>
+					<Radius>28.4158</Radius>
+					<Range>0 0.710396</Range>
+				</TopTileInfo>
+			</DataSource>
+			<DataSource>
+				<Key>Tile_+0_0_6</Key>
+				<TopTileInfo>
+					<DataBasePath>Data/Tile_+0_0_6</DataBasePath>
+					<FileName>Tile_+0_0_6.osgb</FileName>
+					<Center>112.826 5.475 -12.5925</Center>
+					<Radius>26.6462</Radius>
+					<Range>0 0.666155</Range>
+				</TopTileInfo>
+			</DataSource>
+		</DataSourceList>
+	</ModelData>
+</ModelDataOption>
