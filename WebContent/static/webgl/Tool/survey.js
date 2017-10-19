@@ -56,7 +56,7 @@ function SurveyManager(viewer, mobile) {
             var pickedObjects = scene.drillPick(windowPosition);
             if (FreeDo.defined(pickedObjects) && pickedObjects.length > 0) {
                 for (var i = 0; i < pickedObjects.length; ++i) {
-                    if (pickedObjects[i] instanceof FreeDo.FreeDoPModelFeature) {
+                    if (pickedObjects[i] instanceof FreeDo.FreedoPModelFeature) {
                         cartesian = scene.pickPosition(windowPosition);
                         if (FreeDo.defined(cartesian)) {
                             type = PositionType.ON_MODEL;
