@@ -142,7 +142,8 @@
 					</li>
 					<li style="margin-left:20px;">
 					<input id="shijiaotongbu" type="checkbox">视角同步
-					<input id="gaoliangchayi" type="checkbox">高亮差异</li>
+					<input id="gaoliangchayi" type="checkbox">高亮差异
+					<input id="moreInfo" type="checkbox">审批信息</li>
 				</ul>
 				<div id="tree" class="ztree"></div>
 				<div class="row-fluid sortable">
@@ -157,6 +158,31 @@
 					<iframe id="nowiframe" src="${ctx }/static/page/iframe/design_mainbuilding_VC/page/nowVerPage.html" frameborder="1"></iframe>
 					<iframe id="compreiframe" src="${ctx }/static/page/iframe/design_mainbuilding_VC/page/comprehensivePage.html" frameborder="1"></iframe>
 				</div>
+				<div id="moreInfoBox">
+
+								<ul>
+									<li>节点</li>
+									<li>审批人</li>
+									<li>审批时间</li>
+									<li>内容</li>
+									<li>审批意见</li>
+									<li>1</li>
+									<li>组长</li>
+									<li>2017-10-12</li>
+									<li>可以在优化一下</li>
+									<li>通过</li>
+									<li>2</li>
+									<li>部门负责人</li>
+									<li>2017-10-13</li>
+									<li>管线可以粗一些</li>
+									<li>通过</li>
+									<li>3</li>
+									<li>专业负责人</li>
+									<li>2017-10-23</li>
+									<li>电缆可以粗一些</li>
+									<li>审批中</li>
+								</ul>
+							</div>
 			</div>
 		</div>
 	</div>

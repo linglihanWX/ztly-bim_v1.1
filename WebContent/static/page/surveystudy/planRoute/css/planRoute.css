@@ -26,10 +26,10 @@ a:hover{
     margin-left: 10px;
 }
 .breadcrumb li{
-    margin-left: 20px;
+    margin-left: 10px;
 }
 .breadcrumb li a{
-    margin-left: 5px;
+    margin-left: 10px;
 }
 #sidebar-left{
     width: 10%;
@@ -66,9 +66,6 @@ a:hover{
     height: 100%;
     width: 100%;
 }
-
-
-
 .nav li{
     cursor:pointer;
 }
