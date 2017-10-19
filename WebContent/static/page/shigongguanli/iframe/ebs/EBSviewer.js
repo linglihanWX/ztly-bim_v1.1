@@ -76,25 +76,28 @@ var Init = function (earthId) {
     this.showEbsContainer = this.showEbsContainer || {};//保存了当前时间点中显示出来的Ebs节点对应的模型
     this.viewer = this.viewer || {};
     //初始化地球
-    var freedocontainer = document.getElementById(earthId);
-    var project = Freedo.FdApp.createProject(freedocontainer);
-    this.project = project;
-
-    this.viewer = this.project.getViewer();
-    this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
-		url: "http://{s}.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
-		subdomains:['t7','t6','t5','t4','t3','t2','t1','t0'],
-		maximumLevel: 18,
-		show: true
-	}));
-	this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
-		url: "http://t0.tianditu.com/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg",
-		layer: "tdtAnnoLayer_biaoji",
-		style: "default",
-		format: "image/png",
-		tileMatrixSetID: "tianditu",
-		show: true
-	}));
+    this.viewer = new FreeDo.Viewer(earthId, {
+        animation:false, //动画控制，默认true
+        baseLayerPicker:false,//地图切换控件(底图以及地形图)是否显示,默认显示true
+        fullscreenButton:false,//全屏按钮,默认显示true
+        geocoder:false,//地名查找,默认true
+        timeline:false,//时间线,默认true
+        vrButton:false,//双屏模式,默认不显示false
+        homeButton:false,//主页按钮，默认true
+        infoBox:false,//点击要素之后显示的信息,默认true
+        selectionIndicator:false,//选中元素显示,默认true
+        imageryProvider : FreeDo.createTileMapServiceImageryProvider({
+            url : FreeDo.buildModuleUrl('Assets/Textures/NaturalEarthII')
+        }),
+        imageryProvider:new FreeDo.WebMapTileServiceImageryProvider({
+	        url: "http://{s}.tianditu.com/img_c/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=c&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
+	        credit: new FreeDo.Credit("天地图全球影像服务"),
+	        subdomains: ['t0', 't1', 't2', 't3', 't4', 't5', 't6', 't7'],
+	        tilingScheme: new FreeDo.GeographicTilingScheme(),
+	        tileMatrixLabels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'],
+	    }),
+	 });
+    this.viewer._cesiumWidget._creditContainer.style.display = "none";
 
     // cx 添加
     this.flag = true;
