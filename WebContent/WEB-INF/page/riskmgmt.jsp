@@ -174,15 +174,15 @@
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td class="center">1号 检票口</td>
+										<td class="center">易燃物品堆放</td>
+										<td class="center">一级</td>
 									</tr>
 									<tr>
-										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td>2</td>
+										<td class="center">2号 检票口</td>
+										<td class="center">易燃物品堆放</td>
+										<td class="center">一级</td>
 									</tr>
 									</tbody>
 								</table>
@@ -214,23 +214,23 @@
 									<thead>
 									<tr>
 										<th>序号</th>
-										<th>WBS名称</th>
-										<th>存在隐患</th>
-										<th>隐患等级</th>
+										<th>整改编号</th>
+										<th>整改情况</th>
+										<th>整改日期</th>
 									</tr>
 									</thead>
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td class="center">JRXM-JCHC</td>
+										<td class="center">整改中</td>
+										<td class="center">2016-09-09</td>
 									</tr>
 									<tr>
-										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td>2</td>
+										<td class="center">JRKN-XCMD</td>
+										<td class="center">整改完成</td>
+										<td class="center">2018-04-09</td>
 									</tr>
 									</tbody>
 								</table>
@@ -262,23 +262,23 @@
 									<thead>
 									<tr>
 										<th>序号</th>
-										<th>WBS名称</th>
-										<th>存在隐患</th>
-										<th>隐患等级</th>
+										<th>危险源</th>
+										<th>风险等级</th>
+										<th>措施</th>
 									</tr>
 									</thead>
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td class="center">机械设备超期服役</td>
+										<td class="center">重大</td>
+										<td class="center">使用前进行例行检查</td>
 									</tr>
 									<tr>
-										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td>2</td>
+										<td class="center">高空抛物</td>
+										<td class="center">重大</td>
+										<td class="center">安全员进行日常的检查</td>
 									</tr>
 									</tbody>
 								</table>
@@ -310,23 +310,23 @@
 									<thead>
 									<tr>
 										<th>序号</th>
-										<th>WBS名称</th>
-										<th>存在隐患</th>
-										<th>隐患等级</th>
+										<th>工程活动</th>
+										<th>环境因素</th>
+										<th>控制措施</th>
 									</tr>
 									</thead>
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td class="center">钢筋工程</td>
+										<td class="center">电焊机噪音的排放</td>
+										<td class="center">合理安排施工</td>
 									</tr>
 									<tr>
-										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td>2</td>
+										<td class="center">钢筋工程</td>
+										<td class="center">钢筋切割时废渣散落</td>
+										<td class="center">加强管理定时清扫</td>
 									</tr>
 									</tbody>
 								</table>
@@ -358,23 +358,23 @@
 									<thead>
 									<tr>
 										<th>序号</th>
-										<th>WBS名称</th>
-										<th>存在隐患</th>
-										<th>隐患等级</th>
+										<th>整改编号</th>
+										<th>整改问题</th>
+										<th>整改反馈</th>
 									</tr>
 									</thead>
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td class="center">JRXM-JCHC</td>
+										<td class="center">电焊机噪音的排放</td>
+										<td class="center">问题解决</td>
 									</tr>
 									<tr>
-										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td>2</td>
+										<td class="center">JRKN-XCMD</td>
+										<td class="center">钢筋切割时废渣散落</td>
+										<td class="center">问题解决</td>
 									</tr>
 									</tbody>
 								</table>
@@ -406,23 +406,23 @@
 									<thead>
 									<tr>
 										<th>序号</th>
-										<th>WBS名称</th>
-										<th>存在隐患</th>
-										<th>隐患等级</th>
+										<th>检查形式</th>
+										<th>检查时间</th>
+										<th>检查内容</th>
 									</tr>
 									</thead>
 									<tbody>
 									<tr>
 										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td class="center">专项检查</td>
+										<td class="center">每季度一次</td>
+										<td class="center">安全性能、使用存放、维护保养</td>
 									</tr>
 									<tr>
-										<td>1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
-										<td class="center">1</td>
+										<td>2</td>
+										<td class="center">日常安全检查 </td>
+										<td class="center">每周一次</td>
+										<td class="center">作业环境、安全管理、安全作业</td>
 									</tr>
 									</tbody>
 								</table>
