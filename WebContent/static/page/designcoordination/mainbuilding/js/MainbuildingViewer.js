@@ -345,10 +345,12 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
 			},
 			polygon : {  
-		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([117.63662864704408, 39.033380118374026,  
-		        	117.6365077006233, 39.033038577053276,  
-		        	117.67849476615538, 39.02343517603854,  
-		        	117.67866509405319, 39.023752841924214]),  
+		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([
+		        	117.63658156506864, 39.03320978417418,  
+		        	117.63663657280595, 39.03337380796097,  
+		        	117.6720856828493, 39.02536903471689,  
+		        	117.6720403445534, 39.02521646994533
+		        	]),  
 		        material : 	FreeDo.Color.BLANCHEDALMOND.withAlpha(0.8)
 		    }
 			/*billboard : { //图标  
@@ -470,10 +472,11 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 				pixelOffset : new FreeDo.Cartesian2( 0, -18 )   //偏移量  
 			},  
 			polygon : {  
-		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([117.65426048471235, 39.02870213501727,
-		        	117.65387304269305, 39.02762545585438,
-		        	117.6549677160827, 39.027383805363705,
-		        	117.65550142448942, 39.02840709005166]),  
+		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([
+		        	117.65421292746433, 39.028569363412515,
+		        	117.65532530051337, 39.02833453426626,
+		        	117.65496936189291, 39.02740497284379,
+		        	117.65387741882599, 39.02763956354831]),  
 		        material : 	FreeDo.Color.DEEPSKYBLUE.withAlpha(0.8)
 		    }
 			/*billboard : { //图标  
@@ -642,7 +645,7 @@ MainBuildingViewer.initLeftClick = function(viewer) {
 		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
 		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
-		console.log(picked);
+		console.log(point);
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 
