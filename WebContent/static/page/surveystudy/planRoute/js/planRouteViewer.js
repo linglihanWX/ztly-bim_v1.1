@@ -46,10 +46,10 @@ planRouteViewer.init=function(earthId,baseImageryProvider)
 
 	//3D视角
 	this.viewer.camera.setView({
-		destination :new FreeDo.Cartesian3(-2302826.1170741096,4394667.942996659,3994924.9447827702),
+		destination :new FreeDo.Cartesian3(-2303476.178543401,4395768.068424268,3995789.5541884513),
 		orientation: {
-			heading : 0.25211600100558673,
-			pitch : -1.5707961712222063,
+			heading : 0.2521512971723556,
+			pitch : -1.57079565293941,
 			roll : 0
 		}
 	});
