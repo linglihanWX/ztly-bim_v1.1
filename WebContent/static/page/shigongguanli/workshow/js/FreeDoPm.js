@@ -103,6 +103,7 @@ FreeDoEarth.init=function(earthId)
         })
 
     );
+	this.viewer._cesiumWidget._creditContainer.style.display = "none";
     this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
     	url: "http://t0.tianditu.com/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg",
 	    layer: "tdtAnnoLayer_biaoji",

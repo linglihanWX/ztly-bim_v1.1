@@ -39,6 +39,7 @@ CameraViewer.init=function(earthId,baseImageryProvider)
 			maximumLevel:17,
 			subdomains : ["t7","t6","t5","t4","t3","t2","t1","t0"]
 		}));
+	 this.viewer._cesiumWidget._creditContainer.style.display = "none";
 	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
 		url: "./static/model/tanggu_new"
 	}));
