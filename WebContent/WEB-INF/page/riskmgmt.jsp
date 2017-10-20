@@ -146,9 +146,9 @@
 				</ul>
 				<div class="row-fluid sortable">
 					<div id="left">
-						<a href="${ctx }/toCamera">1</a>
-						<a href="${ctx }/toDownup">2</a>
-						<a href="#">3</a>
+						<a href="${ctx }/toCamera">摄像头监控</a>
+						<a href="${ctx }/toDownup">沉降检测</a>
+						<!-- <a href="#">3</a> -->
 
 					</div>
 					<div id="right">
@@ -499,7 +499,6 @@
 
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/riskmgmt/js/riskmgmt.js"></script>
-	<script src="${ctx }/static/page/shigongguanli/riskmgmt/js/riskpie.js"></script>
 </body>
 
 </html>

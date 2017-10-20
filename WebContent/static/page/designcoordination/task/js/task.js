@@ -34,7 +34,7 @@ $(function () {
             $(this).addClass("btnActive").siblings().removeClass("btnActive");
             if($(this).attr("id") == "waterOrEle"){
                 $("#newTask").show();
-                $(".btnStandard input").css("disabled","disabled");
+                $(".btnStandard input").attr("disabled",true);
                 var day = new Date();
                 var time = formatDate(day);
                 $("#newTime").text("创建时间 : "+time);
@@ -87,13 +87,13 @@ $(function () {
         }
         $("#newTask").hide();
         $("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
-        $(".btnStandard input").css("disabled","value");
+        $(".btnStandard input").attr("disabled",false);
         
     });
     $(".closed").click(function(){
         $("#newTask").hide();
         $("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
-        $(".btnStandard input").css("disabled","value");
+        $(".btnStandard input").attr("disabled",false);
         
     });
 
