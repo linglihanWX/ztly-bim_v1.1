@@ -173,7 +173,8 @@
 
 	<!-- start: JavaScript-->
 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
+	<%-- <script src="${ctx }/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script> --%>
+	<script src="${ctx }/static/page/common/js/jquery-ui.js"></script>
 	<script src="${ctx }/static/page/common/js/bootstrap.min.js"></script>
 	<script src='${ctx }/static/page/common/js/jquery.dataTables.min.js'></script>
 	<script src="${ctx }/static/page/common/js/jquery.chosen.min.js"></script>
