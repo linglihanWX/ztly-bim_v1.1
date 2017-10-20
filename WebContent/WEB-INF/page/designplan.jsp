@@ -156,7 +156,7 @@
 										</div>
 								</a>
 									<div class="history">
-										<a href="">更新模型</a> <a href="">删除模型</a> <a
+										<a href="javascript:void(0)">更新模型</a> <a href="javascript:void(0)">删除模型</a> <a
 											href="${ctx }/toHistoryCompare">版本对比</a>
 									</div></li>
 								<li><a href="${ctx }/toMainbuilding">
@@ -179,7 +179,7 @@
 										</div>
 								</a>
 									<div class="history">
-										<a href="">更新模型</a> <a href="">删除模型</a> <a
+										<a href="javascript:void(0)">更新模型</a> <a href="javascript:void(0)">删除模型</a> <a
 											href="${ctx }/toHistoryCompare">版本对比</a>
 									</div></li>
 								<li><a href="${ctx }/toMainbuilding">
@@ -202,7 +202,7 @@
 										</div>
 								</a>
 									<div class="history">
-										<a href="">更新模型</a> <a href="">删除模型</a> <a
+										<a href="javascript:void(0)">更新模型</a> <a href="javascript:void(0)">删除模型</a> <a
 											href="${ctx }/toHistoryCompare">版本对比</a>
 									</div></li>
 								<li><a href="${ctx }/toMainbuilding">
@@ -225,7 +225,7 @@
 										</div>
 								</a>
 									<div class="history">
-										<a href="">更新模型</a> <a href="">删除模型</a> <a
+										<a href="javascript:void(0)">更新模型</a> <a href="javascript:void(0)">删除模型</a> <a
 											href="${ctx }/toHistoryCompare">版本对比</a>
 									</div></li>
 							</ul>

@@ -503,6 +503,7 @@ ShowViewer.initLeftClick = function(viewer,callback) {
 		$(".msgInfo").hide();
 		var picked = viewer.scene.pick(movement.position);
 		if(picked==undefined){
+			ShowViewer.changeColor(picked);
 			callback(undefined,undefined)
 		}else{
 			if(picked.primitive.boundingSphere != undefined){

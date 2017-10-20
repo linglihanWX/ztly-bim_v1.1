@@ -241,7 +241,11 @@ FreeDoEarth.initLeftDoubleClick=function(callback){
 		callback.call(window,picked.id);	//回调 注入模型ID
 	})
 }
-
+FreeDoEarth.resetColor = function (){
+	for(var i=0;i<this.pickedModels.length;i++)
+		this.pickedModels[i].primitive.color=this.unClickedColor;
+	this.pickedModels=[];
+}
 /**
  * [flyToModel 单模型飞行]
  * @param  {[type]} nodeId [模型ID]

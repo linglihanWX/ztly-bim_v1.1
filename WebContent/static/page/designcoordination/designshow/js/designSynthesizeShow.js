@@ -42,6 +42,8 @@ $(function() {
 		$(this).addClass("active").siblings().removeClass("active");
 	});
 	$("#my").click(function() {
+		$(".msgInfo").hide();
+		FreeDoEarth.resetColor();
 		$("#tree").hide();
 		$("#js").show();
 		$(this).addClass("active").siblings().removeClass("active");

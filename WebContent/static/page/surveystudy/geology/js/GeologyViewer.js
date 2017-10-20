@@ -139,10 +139,10 @@ GeologyViewer.initLeftClick = function(viewer,callback){
 	screenSpaceEventHandler.setInputAction(function(movement){
 		$(".msgInfo").hide();
 		var picked = viewer.scene.pick(movement.position);
+		GeologyViewer.changeColor(picked);
 			if(picked==undefined||picked.primitive.boundingSphere == undefined){
 				callback(undefined);
 			}else{
-				GeologyViewer.changeColor(picked);
 				callback(picked);
 			}
 		
@@ -165,7 +165,7 @@ GeologyViewer.fly=function(viewer,lon,lat,height,callback){
 	 
 }
 GeologyViewer.changeColor=function(picked){
-	
+	console.log(picked);
 	if(picked==undefined){	//如果picked为空则表示点击无模型处，使之前点变色的模型重置颜色并清空所选模型容器
 		
 		for(var i=0;i<pickedModels.length;i++)

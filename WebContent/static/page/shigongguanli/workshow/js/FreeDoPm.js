@@ -183,6 +183,11 @@ FreeDoEarth.initModels=function(callback)
 		}
 	  });
 }
+FreeDoEarth.resetColor = function(){
+	for(var i=0;i<FreeDoEarth.pickedModels.length;i++)
+		FreeDoEarth.pickedModels[i].primitive.color=FreeDoEarth.unClickedColor;
+	FreeDoEarth.pickedModels=[];
+}
 /**
  * [initLeftDoubleClick 双击事件注册]
  * @param  {Function} callback  参数[nodeId||undefined]

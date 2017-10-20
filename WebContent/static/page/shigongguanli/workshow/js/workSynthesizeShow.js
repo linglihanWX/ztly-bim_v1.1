@@ -148,6 +148,7 @@ $(function () {
     }
     
     $("#zy,#jd,#aq,#dz").click(function() {
+    	FreeDoEarth.resetColor();
 		$("#js").hide();
 		$("#tree").show();
 		$("#tree").tree({
@@ -155,6 +156,7 @@ $(function () {
 		});
 	});
 	$("#my").click(function() {
+		FreeDoEarth.resetColor();
 		$("#tree").hide();
 		$("#js").show();
 		$("#js").tree({
