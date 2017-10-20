@@ -38,7 +38,7 @@ function initViewer (freedocontainer) {
 		    tileMatrixSetID: "tianditu",
 		}));*/
 	 window.modelTile = viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
-			url: "./static/model/tanggu_new"
+			url: "../../../../../static/model/tanggu_new"
 		}));
 	 viewer.camera.setView({
 			destination :new FreeDo.Cartesian3(-2302727.6410077475,4394555.373412278,3994829.517802942),

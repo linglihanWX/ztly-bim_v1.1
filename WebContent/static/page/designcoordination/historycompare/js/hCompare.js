@@ -56,6 +56,7 @@ $(function () {
     $("#shijiaotongbu").change(function() { 
     	var desmyviewer = $('#desiframe')[0].contentWindow.myviewer;
     	 if( $("#shijiaotongbu").attr('checked')){
+    		 desmyviewer.camera.percentageChanged = 0.1;
     		 desmyviewer.camera.changed.addEventListener(cameraSynchronization);
     	 }else{
     		 desmyviewer.camera.changed.removeEventListener(cameraSynchronization);
