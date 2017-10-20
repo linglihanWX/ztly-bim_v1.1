@@ -95,7 +95,18 @@ $(function () {
                 		}
                 		models.push(['true', 'true']);
                 		MainBuildingViewer.showHideModelsById(models);
+                	},
+                onRightClick:function(event, treeId, treeNode){
+                	console.log(treeNode);
+                	if(treeNode!=null){
+                	$("#rMenu").css({
+                        "display":"block",
+                        "position":"absolute",
+                        "left":event.pageX+"px",
+                        "top":event.pageY+"px"
+                    });
                 	}
+                }
                 }
             };
             zTreeObj = $.fn.zTree.init( $("#tree"), setting, data);
@@ -334,7 +345,7 @@ $(function () {
         return false;
     });*/
 
-   $("#tree").contextmenu(function(event){
+ /*  $("#tree").contextmenu(function(event){
         var event = event || window.event;
         event.preventDefault();
         window.event.returnValue = false;
@@ -346,7 +357,7 @@ $(function () {
            "top":event.pageY+"px"
        });
         return false;
-    });
+    });*/
     $(document).click(function() {
         $("#menu").hide();
         $("#rMenu").hide();
