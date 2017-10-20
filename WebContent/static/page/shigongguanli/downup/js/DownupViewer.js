@@ -32,6 +32,13 @@ DownupViewer.init=function(earthId,baseImageryProvider)
 			automaticallyTrackDataSourceClocks:false,
 			imageryProvider : baseImageryProvider || this.getTiandituGloble()
 		});
+	 this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
+			url : "http://{s}.tianditu.com/cia_w/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&Tilecol={TileCol}&style={style}&format=tiles",
+			style:"default",
+			tileMatrixSetID:"w",
+			maximumLevel:17,
+			subdomains : ["t7","t6","t5","t4","t3","t2","t1","t0"]
+		}));
 	modelTile = this.viewer.scene.primitives.add(new FreeDo.FreedoPModelset({
 		url: "./static/model/tanggu_new"
 	}));
