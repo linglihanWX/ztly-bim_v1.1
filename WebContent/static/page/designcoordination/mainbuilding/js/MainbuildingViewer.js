@@ -532,33 +532,6 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		tuceng.push(river2);
 		tuceng.push(village1);
 		tuceng.push(village2);
-		//加载沉降点
-		var downuppoint = [
-			{"lon":"117.65493267761651","lat":"39.02886839380683"},
-			{"lon":"117.65367088333899","lat":"39.0286955440859"},
-			{"lon":"117.65369998250587","lat":"39.028783658883626"},
-			{"lon":"117.65416379870284","lat":"39.02869887327398"},
-			{"lon":"117.65386209988398","lat":"39.02888525363075"},
-			{"lon":"117.65394149842251","lat":"39.02914251332972"},
-			{"lon":"117.6543837414338","lat":"39.029044985518674"},
-			{"lon":"117.65583099288868","lat":"39.02874696864712"},
-			{"lon":"117.65601006053487","lat":"39.028716770649865"},
-			{"lon":"117.65593015314758","lat":"39.028452384354985"},
-			{"lon":"117.65524817526324","lat":"39.0286096527802"}
-			];
-		for ( var i in downuppoint) {
-			downuppoints[i] = this.viewer.entities.add({  
-				name : '沉降点'+i,  
-				position : FreeDo.Cartesian3.fromDegrees(downuppoint[i].lon,downuppoint[i].lat,16.0),  
-				 ellipse : {  
-					 	semiMinorAxis : 1,  
-				        semiMajorAxis : 1,  
-				        material : FreeDo.Color.RED,  
-				        outline : true,  
-				        outlineColor : FreeDo.Color.RED  
-				    }  
-			});
-		}
 		myviewer = this.viewer;
 		modelTile.readyPromise.then(function() {
 			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
@@ -728,7 +701,7 @@ MainBuildingViewer.getTiandituGloble =function() {
 	});
 	return tg;
 }
-/*MainBuildingViewer.manyou=function(arr){
+MainBuildingViewer.manyou=function(arr){
 //	三维基础环境。
 	m_Viewer = null;
 	
@@ -834,6 +807,13 @@ MainBuildingViewer.getTiandituGloble =function() {
 	{
 
 	}
+	return m_Script;
 	
 }
-*/
+
+MainBuildingViewer.pause = function(script){
+	script.Pause();
+}
+MainBuildingViewer.resume = function(script){
+	script.Resume();
+}

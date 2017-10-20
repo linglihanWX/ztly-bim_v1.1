@@ -1,3 +1,4 @@
+var script={};
 $(function () {
 	var h = $(".container-fluid-full").height();
 	var h1 = $("#content .breadcrumb").height();
@@ -567,7 +568,7 @@ $("#zhongdiangc5").click(function(){
 	    	imageEntity2.show =false;
 	    	imageEntity3.show =false;
 	    	
-	    	var camera = myviewer.scene.camera;
+/*	    	var camera = myviewer.scene.camera;
 	    	    camera.flyTo({
 	    	        destination : FreeDo.Cartesian3.fromDegrees(117.65405942250071,39.029023270356156,20.494140101978815),
 	    	        orientation : {
@@ -641,11 +642,11 @@ $("#zhongdiangc5").click(function(){
 	    	                });
 	    	            }, 1000);
 	    	        }
-	    	    });
+	    	    });*/
 
 	    });
 	    //漫游有问题
-/*	    $("#zhongdiangc5").click(function(){
+	    $("#zhongdiangc5").click(function(){
 	
 			var arr = new Array();
 			var route1 = new FDPCameraRoute();
@@ -659,7 +660,7 @@ $("#zhongdiangc5").click(function(){
 			arr[0] = route1;
 			//117.65509880838155,39.028810674298704,19.434674298037013
 			var route2 = new FDPCameraRoute();
-			route2.m_Time = 10500;
+			route2.m_Time = 5500;
 			route2.m_Lon = 117.65509880838155; // 轨迹点对应的经度 度。
 			route2.m_Lat = 39.028810674298704; // 轨迹点对应的维度 度。
 			route2.m_Heigt = 19.434674298037013; // 轨迹点对应的高度 米。
@@ -669,7 +670,7 @@ $("#zhongdiangc5").click(function(){
 			arr[1] = route2;
 			//117.65526169720657,39.028633748813,19.331618208693417
 			var route3 = new FDPCameraRoute();
-			route3.m_Time = 10500;
+			route3.m_Time = 6500;
 			route3.m_Lon = 117.65526169720657; // 轨迹点对应的经度 度。
 			route3.m_Lat = 39.028633748813; // 轨迹点对应的维度 度。
 			route3.m_Heigt = 19.331618208693417; // 轨迹点对应的高度 米。
@@ -679,7 +680,7 @@ $("#zhongdiangc5").click(function(){
 			arr[2] = route3;
 			//117.65421983509961,39.02882783018097,20.968283549670737
 			var route4 = new FDPCameraRoute();
-			route4.m_Time = 10500;
+			route4.m_Time = 11500;
 			route4.m_Lon = 117.65421983509961; // 轨迹点对应的经度 度。
 			route4.m_Lat = 39.02882783018097; // 轨迹点对应的维度 度。
 			route4.m_Heigt = 20.968283549670737; // 轨迹点对应的高度 米。
@@ -687,29 +688,27 @@ $("#zhongdiangc5").click(function(){
 			route4.m_Alpha = -0.07063326983480422*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route4.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
 			arr[3] = route4;
-			//117.6540893864963,39.028947377694394,19.76988295801556
 			var route5 = new FDPCameraRoute();
-			route5.m_Time = 10500;
-			route5.m_Lon = 117.6540893864963; // 轨迹点对应的经度 度。
-			route5.m_Lat = 39.028947377694394; // 轨迹点对应的维度 度。
-			route5.m_Heigt = 19.76988295801556; // 轨迹点对应的高度 米。
-			route5.m_Course = 1.7697966659565516*180/Math.PI; // 轨迹点对应的相机方位角 度。
-			route5.m_Alpha = -0.32763506713608836*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
+			route5.m_Time = 12500;
+			route5.m_Lon = 117.65410894102295; // 轨迹点对应的经度 度。
+			route5.m_Lat = 39.02894122922237; // 轨迹点对应的维度 度。
+			route5.m_Heigt = 21.318711315603583; // 轨迹点对应的高度 米。
+			route5.m_Course = 8.049202633909317*180/Math.PI; // 轨迹点对应的相机方位角 度。
+			route5.m_Alpha = -0.5223165541779395*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route5.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
 			arr[4] = route5;
-			//117.65453537103939,39.028846327093355,5.292897784570426
 			var route6 = new FDPCameraRoute();
-			route6.m_Time = 10500;
-			route6.m_Lon = 117.65453537103939; // 轨迹点对应的经度 度。
-			route6.m_Lat = 39.028846327093355; // 轨迹点对应的维度 度。
-			route6.m_Heigt = 5.292897784570426; // 轨迹点对应的高度 米。
-			route6.m_Course = 1.576492909140983*180/Math.PI; // 轨迹点对应的相机方位角 度。
-			route6.m_Alpha = 0.038401067615655426*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
+			route6.m_Time = 17500;
+			route6.m_Lon = 117.65455984662441; // 轨迹点对应的经度 度。
+			route6.m_Lat = 39.0288487932963; // 轨迹点对应的维度 度。
+			route6.m_Heigt = 5.565085029634779; // 轨迹点对应的高度 米。
+			route6.m_Course = 7.949202633909317*180/Math.PI; // 轨迹点对应的相机方位角 度。
+			route6.m_Alpha = -0.17534636908519796*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route6.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
 			arr[5] = route6;
 			
-			MainbuildingViewer.manyou(arr);
-	    }); */
+			script = MainBuildingViewer.manyou(arr);
+	    }); 
 	    
 	    $("#jilu").click(function(){
 	    	var x = myviewer.camera.position.x;
@@ -766,5 +765,13 @@ $("#zhongdiangc5").click(function(){
 	        $(this).click(function () {
 	            $(this).addClass("vActive").siblings().removeClass("vActive");
 	        })
-	    })
+	    });
+	    //脚本的暂停
+	    $("#zanting").click(function(){
+	    	MainBuildingViewer.pause(script);
+	    });
+	    //脚本的继续
+	    $("#jixu").click(function(){
+	    	MainBuildingViewer.resume(script);
+	    });
 });
