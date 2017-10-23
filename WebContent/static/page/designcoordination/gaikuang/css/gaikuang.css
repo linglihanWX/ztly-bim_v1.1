@@ -1,0 +1,149 @@
+@charset "utf-8";
+html,
+body {
+    overflow-y: hidden;
+}
+#left {
+    width: 100%;
+    height: 100%;
+}
+.panel.datagrid {
+    width: 100%!important;
+    height: 100%;
+}
+.panel-header,
+.panel-body {
+    border-width: 0;
+}
+.datagrid-footer-inner {
+    border-width: 0;
+}
+.datagrid-wrap,
+.panel-body,
+.panel-body-noheader,
+.datagrid-view {
+    height: 100%!important;
+}
+
+#content {
+    margin: 0;
+    padding: 0;
+    min-height: 0!important;
+    height: 100%;
+    width: 90%;
+    margin-left: 10% !important;
+    overflow-y: auto;
+}
+
+.breadcrumb {
+    margin: 0;
+}
+
+#sidebar-left {
+    width: 10%;
+}
+
+#DataTables_Table_0 {
+    width: 100%;
+    margin: 0;
+}
+
+#DataTables_Table_0 thead>tr>th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+#DataTables_Table_0_wrapper>.row-fluid:first-of-type {
+    margin-top: 10px;
+}
+
+.box-content {
+    padding: 0;
+}
+
+.lists a {
+    margin-left: 10px;
+}
+
+.breadcrumb .lists a:hover {
+    color: red;
+    text-shadow: 0 1px 1px #fff;
+    text-decoration: none;
+}
+
+.activeList {
+    color: red;
+    font-weight: bold;
+}
+
+#DataTables_Table_0 tbody>tr>td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.breadcrumb li:last-of-type {
+    line-height: 20px;
+}
+
+.breadcrumb li:last-of-type span {
+    vertical-align: top;
+}
+
+#treeGridThree_wrapper .row-fluid {
+    display: none;
+}
+
+.on {
+    background: red;
+}
+
+.table td {
+    padding: 8px 0;
+    font-size: 12px;
+}
+.span6{
+    height: 50%!important;
+    margin: 0 0 0 10px!important;
+}
+.box{
+    height: 43%!important;
+}
+.chart{
+    height: 300px;
+    max-height: 60%;
+    margin-top: 5px!important;
+    border: 2px solid #578EBE;
+}
+
+.container-fluid-full {
+    height: calc(100% - 50.4px);
+}
+
+.container-fluid-full>.row-fluid {
+    position: relative;
+    height: 100%;
+}
+
+.row-fluid.sortable.ui-sortable {
+    height: 100%;
+    overflow-y: auto;
+}
+
+
+.box-content tbody tr td,
+.box-content thead tr th {
+    text-align: center;
+}
+
+#DataTables_Table_0_info {
+    display: none;
+}
+
+/*会员*/
+.header-nav a.btn {
+    padding: 15px 10px !important;
+}
+
+a.brand span {
+    font-size: 24px!important;
+}

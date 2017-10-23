@@ -103,7 +103,7 @@
 						<li><a href="${ctx }/toWater"> <i
 								class="iconfont icon-kcmanager"></i> <span class="hidden-tablet">勘测可研</span>
 						</a></li>
-						<li class="active"><a href="${ctx }/toTask"> <i
+						<li class="active"><a href="${ctx }/toGaikuang"> <i
 								class="iconfont icon-sheji"></i> <span class="hidden-tablet">设计协同</span>
 						</a></li>
 						<li><a href="${ctx }/toEbs"> <i
@@ -121,11 +121,15 @@
 			<div id="content" class="span10">
 				<ul class="breadcrumb">
 					<i class="iconfont icon-hxzfont08"></i>
-					<li class="lists"><a href="${ctx }/toTask" class="activeList">任务</a>
-						<a href="${ctx }/toDesign">BIM方案设计</a> <a
-						href="${ctx }/toDocument">文档管理</a> <a href="#">项目信息</a> <a
-						href="${ctx }/toDesignShow">3D综合展示</a> <a
-						href="${ctx }/toShuziyijiao">数字移交</a></li>
+					<li class="lists">
+					<a href="${ctx }/toGaikuang">概况</a>
+                    <a href="${ctx }/toTask" class="activeList">任务</a>
+                    <a href="${ctx }/toDesign">BIM方案设计</a>
+                    <a href="${ctx }/toDocument">文档管理</a>
+                    <a href="#">项目信息</a>
+                    <a href="${ctx }/toDesignShow">3D综合展示</a>
+                    <a href="${ctx }/toShuziyijiao">数字移交</a>
+					</li>
 
 					<li class="btnStandard"><input type="button" name="" id="gbk"
 						value="任务列表" class="btnActive"> <input type="button"

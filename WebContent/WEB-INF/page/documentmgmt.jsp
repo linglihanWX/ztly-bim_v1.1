@@ -105,7 +105,7 @@
 							</a>
 						</li>
 						<li  class="active">
-							<a href="${ctx }/toTask">
+							<a href="${ctx }/toGaikuang">
 								<i class="iconfont icon-sheji"></i>
 								<span class="hidden-tablet">设计协同</span>
 							</a>
@@ -132,12 +132,13 @@
 				<ul class="breadcrumb">
 				<i class="iconfont icon-hxzfont08"></i>
 					<li class="lists">
-							<a href="${ctx}/toTask">任务</a>
-							<a href="${ctx }/toDesign" >BIM方案设计</a>
-							<a href="${ctx }/toDocument" class="activeList">文档管理</a>
-							<a href="#">项目信息</a>
-							<a href="${ctx }/toDesignShow">3D综合展示</a>
-							<a href="${ctx}/toShuziyijiao">数字移交</a>
+					<a href="${ctx }/toGaikuang">概况</a>
+                    <a href="${ctx }/toTask">任务</a>
+                    <a href="${ctx }/toDesign">BIM方案设计</a>
+                    <a href="${ctx }/toDocument" class="activeList">文档管理</a>
+                    <a href="#">项目信息</a>
+                    <a href="${ctx }/toDesignShow">3D综合展示</a>
+                    <a href="${ctx }/toShuziyijiao">数字移交</a>
 					</li>
 					<li class="btnStandard">
 						<input type="button" value="上传" class="btnActive">

@@ -112,6 +112,12 @@ public class WebGlController {
 		return "planRoute";
 	}
 	/*------------------------设计协同模块页面跳转-----------------------*/
+	//跳转到概况界面
+	@RequestMapping("toGaikuang")
+	public String toGaikuangPage(HttpServletRequest req) {
+		
+		return "gaikuang";
+	}
 	//跳转到任务界面
 	@RequestMapping("toTask")
 	public String toTaskPage(HttpServletRequest req) {

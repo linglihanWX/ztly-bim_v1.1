@@ -101,14 +101,14 @@
 						<li><a href="${ctx }/toWater"> <i
 								class="iconfont icon-kcmanager"></i> <span class="hidden-tablet">勘测可研</span>
 						</a></li>
-						<li class="active"><a href="${ctx }/toTask"> <i
+						<li class="active"><a href="${ctx }/toGaikuang"> <i
 								class="iconfont icon-sheji"></i> <span class="hidden-tablet">设计协同</span>
 						</a></li>
 						<li><a href="${ctx }/toEbs"> <i
 								class="iconfont icon-construct"></i> <span class="hidden-tablet">施工管理</span>
 						</a></li>
-						<li><a href="${ctx }/toSpacemgmt"> <i class="iconfont icon-Refresh"></i> <span
-								class="hidden-tablet">运维管理</span>
+						<li><a href="${ctx }/toSpacemgmt"> <i
+								class="iconfont icon-Refresh"></i> <span class="hidden-tablet">运维管理</span>
 						</a></li>
 					</ul>
 				</div>
@@ -119,10 +119,10 @@
 			<div id="content" class="span10">
 				<ul class="breadcrumb">
 					<i class="iconfont icon-hxzfont08"></i>
-					<li class="lists"><a href="${ctx }/toTask">任务</a> <a
-						href="${ctx }/toDesign" class="activeList">BIM方案设计</a> <a
-						href="${ctx }/toDocument">文档管理</a> <a href="#">项目信息</a> <a
-						href="${ctx }/toDesignShow">3D综合展示</a> <a
+					<li class="lists"><a href="${ctx }/toGaikuang">概况</a> <a
+						href="${ctx }/toTask">任务</a> <a href="${ctx }/toDesign"
+						class="activeList">BIM方案设计</a> <a href="${ctx }/toDocument">文档管理</a>
+						<a href="#">项目信息</a> <a href="${ctx }/toDesignShow">3D综合展示</a> <a
 						href="${ctx }/toShuziyijiao">数字移交</a></li>
 				</ul>
 				<div id="tree" class="ztree"></div>
@@ -156,7 +156,8 @@
 										</div>
 								</a>
 									<div class="history">
-										<a href="javascript:void(0)">更新模型</a> <a href="javascript:void(0)">删除模型</a> <a
+										<a href="javascript:void(0)">更新模型</a> <a
+											href="javascript:void(0)">删除模型</a> <a
 											href="${ctx }/toHistoryCompare">版本对比</a>
 									</div></li>
 								<li><a href="${ctx }/toMainbuilding">
@@ -179,7 +180,8 @@
 										</div>
 								</a>
 									<div class="history">
-										<a href="javascript:void(0)">更新模型</a> <a href="javascript:void(0)">删除模型</a> <a
+										<a href="javascript:void(0)">更新模型</a> <a
+											href="javascript:void(0)">删除模型</a> <a
 											href="${ctx }/toHistoryCompare">版本对比</a>
 									</div></li>
 								<li><a href="${ctx }/toMainbuilding">
@@ -202,7 +204,8 @@
 										</div>
 								</a>
 									<div class="history">
-										<a href="javascript:void(0)">更新模型</a> <a href="javascript:void(0)">删除模型</a> <a
+										<a href="javascript:void(0)">更新模型</a> <a
+											href="javascript:void(0)">删除模型</a> <a
 											href="${ctx }/toHistoryCompare">版本对比</a>
 									</div></li>
 								<li><a href="${ctx }/toMainbuilding">
@@ -225,7 +228,8 @@
 										</div>
 								</a>
 									<div class="history">
-										<a href="javascript:void(0)">更新模型</a> <a href="javascript:void(0)">删除模型</a> <a
+										<a href="javascript:void(0)">更新模型</a> <a
+											href="javascript:void(0)">删除模型</a> <a
 											href="${ctx }/toHistoryCompare">版本对比</a>
 									</div></li>
 							</ul>
