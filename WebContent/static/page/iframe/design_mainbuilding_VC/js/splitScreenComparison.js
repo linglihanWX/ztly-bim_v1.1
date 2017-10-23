@@ -21,7 +21,7 @@ function initViewer (freedocontainer) {
  	    }),
 	 });
 	 viewer._cesiumWidget._creditContainer.style.display = "none";
-	 this.viewer.scene.globe.depthTestAgainstTerrain = true;
+	 viewer.scene.globe.depthTestAgainstTerrain = true;
 	/* viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
 	   	 url: "http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
 		        layer: "tdtBasicLayer_yingxiang",
