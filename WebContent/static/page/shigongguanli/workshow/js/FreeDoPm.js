@@ -72,13 +72,24 @@ FreeDoEarth.GroupObj=function(id,parentId,name,type)
 	this.type=type;
 	this.children=[];
 }
-
+FreeDoEarth.getTiandituGloble =function() {
+	var tg = new Freedo.WebMapTileServiceImageryProvider({
+		url : "http://{s}.tianditu.com/img_c/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style={style}&format=tiles",
+		style:"default",
+		tileMatrixSetID:"c",
+		tilingScheme:new Freedo.GeographicTilingScheme(),
+		tileMatrixLabels:["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18"],
+		maximumLevel:17,
+		subdomains : ["t0","t1","t2","t3","t4","t5","t6","t7"]
+	});
+	return tg;
+}
 /**
  * [init 地球容器ID]
  * @param  {[type]} earthId [description]
  * @return {[type]}         [description]
  */
-FreeDoEarth.init=function(earthId)
+FreeDoEarth.init=function(earthId,baseImageryProvider)
 {
 	this.container=this.container||{};//未来保存加载的模型的容器，便于快速访问
 	this.viewer=this.viewer||{};	  //场景对象
@@ -87,31 +98,33 @@ FreeDoEarth.init=function(earthId)
 	this.unClickedColor=unClickColor;	//取消选中颜色
 	this.viewer = this.viewer|| {};
 	//初始化地球
-	 var freedocontainer = document.getElementById(earthId);
-	 var project = Freedo.FdApp.createProject(freedocontainer);
-	 this.project = project;
-	this.viewer = this.project.getViewer();
-	this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
-		 url: "http://t0.tianditu.com/img_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
-	        layer: "tdtBasicLayer_yingxiang",
-	        style: "default",
-	        format: "image/jpeg",
-	        tileMatrixSetID: "tianditu",
-	        minimumLevel: 0,
-			maximumLevel: 17,
-	        show: true
-        })
-
-    );
-	this.viewer._cesiumWidget._creditContainer.style.display = "none";
-    this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
-    	url: "http://t0.tianditu.com/cia_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default.jpg",
-	    layer: "tdtAnnoLayer_biaoji",
-	    style: "default",
-	    format: "image/png",
-	    tileMatrixSetID: "tianditu",
-	    show: true
-	}));
+	 this.viewer = new Freedo.Viewer(earthId,{
+			animation : false,
+			baseLayerPicker : false,
+			fullscreenButton : false,
+			geocoder : false,
+			homeButton : false,
+			infoBox :false,
+			sceneModePicker : false,
+			selectionIndicator : false,
+			timeline : false,
+			navigationHelpButton : false,
+			navigationInstructionsInitiallyVisible : false,
+			selectedImageryProviderViewModel : false,
+			scene3DOnly : true,
+			clock : null,
+			showRenderLoopErrors : false,
+			automaticallyTrackDataSourceClocks:false,
+			imageryProvider : baseImageryProvider || this.getTiandituGloble()
+		});
+	    this.viewer._cesiumWidget._creditContainer.style.display = "none";
+	    this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
+			url : "http://{s}.tianditu.com/cia_w/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&Tilecol={TileCol}&style={style}&format=tiles",
+			style:"default",
+			tileMatrixSetID:"w",
+			maximumLevel:17,
+			subdomains : ["t7","t6","t5","t4","t3","t2","t1","t0"]
+		}));
     new Compass(this.viewer);
 }
 
