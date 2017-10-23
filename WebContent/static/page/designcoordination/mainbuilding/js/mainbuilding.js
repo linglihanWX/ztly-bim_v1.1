@@ -180,6 +180,9 @@ $(function () {
 
     // 场景点击
     $("#sence").click(function () {
+    	imageEntity1.show = false;
+        imageEntity2.show = false;
+        imageEntity3.show = false;
         $("#showDraw,#drawing").hide();
         $("#sence").addClass("active").siblings().removeClass("active");
         $("#addSence").siblings().hide();
