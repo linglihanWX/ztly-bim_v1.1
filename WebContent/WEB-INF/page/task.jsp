@@ -164,26 +164,26 @@
 								<tbody>
 									<tr>
 										<td>01</td>
-										<td>树的创建</td>
+										<td>地铁扶梯工作</td>
 										<td>未开始</td>
 										<td><span><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派</span> <span><img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">提交任务</span></td>
 									</tr>
 									<tr>
 										<td>02</td>
-										<td>树的创建</td>
+										<td>安检设备选型</td>
 										<td>未开始</td>
 										<td><span><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派</span> <span><img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">提交任务</span></td>
 									</tr>
 									<tr>
 										<td>03</td>
-										<td>树的创建</td>
-										<td>未开始</td>
+										<td>闸机设备选项</td>
+										<td>进行中</td>
 										<td><span><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派</span> <span><img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">提交任务</span></td>
 									</tr>
 									<tr>
 										<td>04</td>
-										<td>树的创建</td>
-										<td>未开始</td>
+										<td>升降电梯设备</td>
+										<td>已完成</td>
 										<td><span><img src="${ctx }/static/page/designcoordination/task/img/rightHand.svg" alt="">指派</span> <span><img src="${ctx }/static/page/designcoordination/task/img/right.svg" alt="">提交任务</span></td>
 									</tr>
 								</tbody>

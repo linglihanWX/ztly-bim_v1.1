@@ -2,6 +2,25 @@ $(function () {
     var h = $(".container-fluid-full").height();
     var h1 = $("#content .breadcrumb").height();
     $("#tree").height(h - h1 - 27);
+    $.ajax({
+        url: "static/page/designcoordination/task/task.json",
+        type: "get",
+        dataType:"json",
+        success: function (data) {
+            var zTreeObj;
+            var setting = {
+                data: {
+                    simpleData: {
+                        enable: true,
+                        idKey: "id",
+                        pIdKey: "pId",
+                        rootPId: "0"
+                    }
+                }
+            };
+            zTreeObj = $.fn.zTree.init($("#tree"), setting, data);
+        }
+    });
     $(".btnStandard input").each(function () {
         $(this).click(function () {
             $(this).addClass("btnActive").siblings().removeClass("btnActive");
@@ -94,24 +113,25 @@ $(function () {
     $("#importFiles .st").click(function () {
         if($("#files").val() != ""){
             $(".data1").text("1");
-            $(".data2").text("1");
-            $(".data3").text("1");
-            $(".data4").text("1");
+            $(".data2").text("地铁扶梯");
+            $(".data3").text("地铁扶梯检查");
+            $(".data4").text("未开始");
             $(".data5").text("2");
-            $(".data6").text("1");
-            $(".data7").text("1");
-            $(".data8").text("1");
+            $(".data6").text("走廊扶梯");
+            $(".data7").text("走廊扶梯检查");
+            $(".data8").text("未开始");
         }
     });
     $("#importFiles .cancel").click(function () {
         if($("#files").val() != "") {
             var $list = $("#taskList tbody tr");
             var num = $list.length + 1;
-            var text =  $(".data1").text();
+            var text =  $(".data3").text();
+            var text1 =  $(".data6").text();
             if (num < 10) {
-                $("#taskList tbody").append("<tr><td>0" + num + "</td><td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr><tr><td>0" + num + "</td><td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
+                $("#taskList tbody").append("<tr><td>0" + num + "</td><td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr><tr><td>0" +( num+1) + "</td><td>" + text1 + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
             } else {
-                $("#taskList tbody").append("<tr> <td>" + num + "</td> <td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr><tr> <td>" + num + "</td> <td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
+                $("#taskList tbody").append("<tr> <td>" + num + "</td> <td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr><tr> <td>" + ( num+1) + "</td> <td>" + text1 + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
             }
             $("#importFiles").hide();
         }
