@@ -310,11 +310,12 @@
 	</div>
 	<div id="importFiles">
 		<p>文件导入</p>
+		<span class="closeDialog">关闭</span>
 		<span>文件路径：</span><input type="file" name="" id="files"  value="选择文件"><br>
 		<table  border="1" cellspacing="0">
 			<thead>
 			<tr>
-				<th>任务序号</th>
+				<th>任务ID</th>
 				<th>任务名称</th>
 				<th>任务描述</th>
 				<th>任务状态</th>

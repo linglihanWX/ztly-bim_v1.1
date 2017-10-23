@@ -174,11 +174,11 @@
 								<ul>
 									<li>重点工程<i class="iconfont icon-delete8e"></i>
 										<ul>
-											<li id="zhongdiangc5">场景漫游 <i class="iconfont icon-planefill"></i></li>
-											<li id="zhongdiangc1">电梯设备 <i class="iconfont icon-planefill"></i></li>
-											<li id="zhongdiangc2">安检设备 <i class="iconfont icon-planefill"></i></li>
-											<li id="zhongdiangc3">闸机设备 <i class="iconfont icon-planefill"></i></li>
-											<li id="zhongdiangc4">直升电梯设备 <i class="iconfont icon-planefill"></i></li>
+											<li>场景漫游 <i class="iconfont icon-planefill"  id="zhongdiangc5"></i><i class="iconfont icon-stop" id="pause"></i></li>
+											<li>电梯设备 <i class="iconfont icon-planefill" id="zhongdiangc1"></i></li>
+											<li>安检设备 <i class="iconfont icon-planefill"  id="zhongdiangc2"></i></li>
+											<li>闸机设备 <i class="iconfont icon-planefill" id="zhongdiangc3"></i></li>
+											<li>直升电梯设备 <i class="iconfont icon-planefill"  id="zhongdiangc4"></i></li>
 											<li><button>+ 新建视点</button></li>
 										</ul>
 									</li>

@@ -147,3 +147,32 @@ body {
 a.brand span {
     font-size: 24px!important;
 }
+/*进度条*/
+.outside{
+    display: inline-block;
+    position: relative;
+    width: 70px;
+    height: 15px;
+    vertical-align: middle;
+    background-color: #f3f3f3;
+    margin-right: 5px;
+}
+.inside{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: green;
+}
+.progress1{
+    width: 10px;
+}
+.progress2{
+     width: 28px;
+ }
+.progress3{
+    width: 46px;
+}
+.progress4{
+    width: 63px;
+}

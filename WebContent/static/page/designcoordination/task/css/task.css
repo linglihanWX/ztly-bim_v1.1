@@ -354,3 +354,15 @@ div.uploader{
     height: 25px;
     text-align: center;
 }
+.closeDialog{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+}
+

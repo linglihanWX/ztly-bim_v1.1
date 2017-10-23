@@ -302,63 +302,7 @@ $(function () {
     $(".closed").click(function(){
         $("#edit").hide();
     });
- // 右击菜单
-//    var menu = document.getElementById("menu");
-//    var rMenu = document.getElementById("rMenu");
-//    document.getElementById("earth").oncontextmenu = function(event){
-//        var event = event || window.event;
-//        event.preventDefault();
-//        window.event.returnValue = false;
-//        rMenu.style.display = "none";
-//        menu.style.display = "block";
-//        menu.style.left = event.pageX+"px";
-//        menu.style.top = event.pageY+"px";
-//
-//        return false;
-//    };
-//
-//    document.getElementById("tree").oncontextmenu = function(event){
-//        var event = event || window.event;
-//        event.preventDefault();
-//        window.event.returnValue = false;
-//        menu.style.display = "none";
-//         rMenu.style.display = "block";
-//         rMenu.style.position = "absolute";
-//        rMenu.style.left = event.pageX+"px";
-//        rMenu.style.top = event.pageY+"px";
-//        return false;
-//    };
-//    document.onclick=function() {
-//        menu.style.display = "none";
-//        rMenu.style.display = "none";
-//    };
-    
-    /*$("#earth").contextmenu(function(event){
-        var event = event || window.event;
-        event.preventDefault();
-        window.event.returnValue = false;
-        $("#rMenu").hide();
-       $("#menu").css({
-           "display":"block",
-           "left":event.pageX+"px",
-           "top":event.pageY+"px"
-       });
-        return false;
-    });*/
-
- /*  $("#tree").contextmenu(function(event){
-        var event = event || window.event;
-        event.preventDefault();
-        window.event.returnValue = false;
-       $("#menu").hide();
-       $("#rMenu").css({
-           "display":"block",
-           "position":"absolute",
-           "left":event.pageX+"px",
-           "top":event.pageY+"px"
-       });
-        return false;
-    });*/
+ 
     $(document).click(function() {
         $("#menu").hide();
         $("#rMenu").hide();
@@ -468,15 +412,7 @@ $(function () {
 				}
 	    	});
 	});
-/*
- * // 出图点击后出现的对话框关闭 $(".hClose").click(function () { $("#showDraw").hide(); });
- * 
- * $("#showDraw img").click(function () { $(".bgImg").show();
- * $("#showDraw").hide(); });
- * 
- * $(".bgImg span").click(function () { $(".bgImg").hide();
- * $("#showDraw").show(); });
- */
+
 	 $(".layer span:first-of-type").hover(function () {
 	        $(".layer ul").stop().slideDown("fast")
 	    },function () {
@@ -562,92 +498,10 @@ $(function () {
 	    		$("#village").attr('checked','checked');
 	    	}
 	    });
-$("#zhongdiangc5").click(function(){
-			
-	    	imageEntity1.show =false;
-	    	imageEntity2.show =false;
-	    	imageEntity3.show =false;
-	    	
-/*	    	var camera = myviewer.scene.camera;
-	    	    camera.flyTo({
-	    	        destination : FreeDo.Cartesian3.fromDegrees(117.65405942250071,39.029023270356156,20.494140101978815),
-	    	        orientation : {
-                        heading : 1.8185673070150337,
-                        pitch : 0.053943264486221665
-                    },
-	    	        complete : function() {
-	    	            setTimeout(function() {
-	    	                camera.flyTo({
-	    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65509880838155,39.028810674298704,19.434674298037013),
-	    	                    orientation : {
-	    	                        heading : 1.818577100826488,
-	    	                        pitch : 0.053955749331485725
-	    	                    },
-	    	                    duration:10,
-	    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
-	    	                    complete:function(){
-	    	                    	setTimeout(function() {
-	    		    	                camera.flyTo({
-	    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65526169720657,39.028633748813,19.331618208693417),
-	    		    	                    orientation : {
-	    		    	                        heading : 4.7923476950288935,
-	    		    	                        pitch : -0.14869812836828622
-	    		    	                    },
-	    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
-	    		    	                    complete:function(){
-	    		    	                    
-	    		    		    	                    	setTimeout(function() {
-	    		    		    		    	                camera.flyTo({
-	    		    		    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65421983509961,39.02882783018097,20.968283549670737),
-	    		    		    		    	                    orientation : {
-	    		    		    		    	                        heading : 4.915122487467713,
-	    		    		    		    	                        pitch : -0.07063326983480422
-	    		    		    		    	                    },
-	    		    		    		    	                    duration:10,
-	    		    		    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
-	    		    		    		    	                    complete:function(){
-	    		    		    		    	                    	setTimeout(function() {
-	    		    		    		    		    	                camera.flyTo({
-	    		    		    		    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.6540893864963,39.028947377694394,19.76988295801556),
-	    		    		    		    		    	                    orientation : {
-	    		    		    		    		    	                        heading : 1.7697966659565516,
-	    		    		    		    		    	                        pitch : -0.32763506713608836
-	    		    		    		    		    	                    },
-	    		    		    		    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
-	    		    		    		    		    	                    complete:function(){
-	    		    		    		    		    	                    	setTimeout(function() {
-	    		    		    		    		    		    	                camera.flyTo({
-	    		    		    		    		    		    	                    destination : FreeDo.Cartesian3.fromDegrees(117.65453537103939,39.028846327093355,5.292897784570426),
-	    		    		    		    		    		    	                    orientation : {
-	    		    		    		    		    		    	                        heading : 1.576492909140983,
-	    		    		    		    		    		    	                        pitch : 0.038401067615655426
-	    		    		    		    		    		    	                    },
-	    		    		    		    		    		    	                    duration:10,
-	    		    		    		    		    		    	                    easingFunction : FreeDo.EasingFunction.LINEAR_NONE,
-	    		    		    		    		    		    	                    complete:function(){
-	    		    		    		    		    		    	                    	
-	    		    		    		    		    		    	                    }
-	    		    		    		    		    		    	                });
-	    		    		    		    		    		    	            }, 200);
-	    		    		    		    		    	                    }
-	    		    		    		    		    	                });
-	    		    		    		    		    	            }, 200);
-	    		    		    		    	                    }
-	    		    		    		    	                });
-	    		    		    		    	            }, 200);
-	    		    		    	                    }
-	    		    		    	                });
-	    		    	            }, 200);
-	    	                    }
-	    	                });
-	    	            }, 1000);
-	    	        }
-	    	    });*/
 
-	    });
-	    //漫游有问题
 	    $("#zhongdiangc5").click(function(){
-	
+	    	$("#pause").addClass("icon-stop").removeClass("icon-start");
+	    	$(".icon-stop").show();
 			var arr = new Array();
 			var route1 = new FDPCameraRoute();
 			route1.m_Time = 500;
@@ -766,12 +620,16 @@ $("#zhongdiangc5").click(function(){
 	            $(this).addClass("vActive").siblings().removeClass("vActive");
 	        })
 	    });
-	    //脚本的暂停
-	    $("#zanting").click(function(){
-	    	MainBuildingViewer.pause(script);
+	    //脚本的暂停与继续
+	    $(".icon-stop").click(function(){
+	    	if($(this).attr("class").indexOf("icon-stop") !=-1){
+	    		$(".icon-stop").addClass("icon-start").removeClass("icon-stop");
+		    	MainBuildingViewer.pause(script);
+	    	}else{
+	    		$(".icon-start").addClass("icon-stop").removeClass("icon-start");
+		    	MainBuildingViewer.resume(script);
+	    	}
+	    	
 	    });
-	    //脚本的继续
-	    $("#jixu").click(function(){
-	    	MainBuildingViewer.resume(script);
-	    });
+
 });

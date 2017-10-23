@@ -216,29 +216,52 @@ a:hover{
     box-sizing: border-box;
     border-bottom: 1px solid #000;
 }
-#addSence i{
+#addSence>ul>li>i{
     position: absolute;
     right: 5px;
     top: 0;
     width: 35px;
     height: 35px;
     font-size: 20px;
+    text-align:center;
     line-height: 35px;
 }
 
+#addSence .icon-start{
+	
+	right:40px;
+	font-size:12px;
+}
+#addSence .icon-stop{
+	display:none;
+	right:40px;
+	font-size:12px;
+}
 #addSence>ul>li li{
     position: relative;
     height: 35px;
     line-height: 35px;
     cursor: pointer;
-    text-indent: 30px;
+    padding-left:20px;
     border-top: 1px solid #000;
 }
 #addSence>ul>li li:nth-of-type(odd){
     background-color: #fff;
 }
 #addSence>ul>li li i{
-    right: 48px;
+	 position: absolute;
+	 right:5px;
+    top: 0;
+    display:block;
+    width: 35px;
+    height: 35px;
+    text-align:center;
+    font-size: 20px;
+    line-height: 35px;
+}
+#addSence>ul>li li i:before{
+	display:block;
+	text-align:center;
 }
 #addSence>ul>li li:last-of-type{
     text-align: center;

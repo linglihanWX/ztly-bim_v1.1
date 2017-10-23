@@ -173,7 +173,7 @@
                                 <td class="center">200</td>
                                 <td class="center">200</td>
                                 <td class="center">200</td>
-                                <td class="center">0%</td>
+                                <td class="center"><span class="outside"><span class="inside progress1"></span></span>10%</td>
                             </tr>
                             <tr>
                                 <td>机电专业</td>
@@ -182,7 +182,8 @@
                                 <td class="center">200</td>
                                 <td class="center">200</td>
                                 <td class="center">200</td>
-                                <td class="center">0%</td>
+                                  <td class="center"><span class="outside"><span class="inside progress2"></span></span>40%</td>
+
                             </tr>
                             <tr>
                                 <td>给水专业</td>
@@ -191,7 +192,7 @@
                                 <td class="center">200</td>
                                 <td class="center">200</td>
                                 <td class="center">200</td>
-                                <td class="center">0%</td>
+                                 <td class="center"><span class="outside"><span class="inside progress3"></span></span>63%</td>
                             </tr>
                             <tr>
                                 <td>通风专业</td>
@@ -200,7 +201,8 @@
                                 <td class="center">200</td>
                                 <td class="center">200</td>
                                 <td class="center">200</td>
-                                <td class="center">64.9%</td>
+                                <td class="center"><span class="outside"><span class="inside progress4"></span></span>90%</td>
+
                             </tr>
                             </tbody>
                         </table>

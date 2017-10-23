@@ -11,7 +11,6 @@ $(function () {
             $("#submitTask").hide();
             if($(this).attr("id") == "newFile"){
                 $("#newTask").show();
-                $(".btnStandard input").attr("disabled",true);
                 var day = new Date();
                 var time = formatDate(day);
                 $("#newTime").text("创建时间 : "+time);
@@ -54,7 +53,6 @@ $(function () {
 
             }
             if($(this).attr("id") == "importFile"){
-            	$(".btnStandard input").attr("disabled",true);
                 $("#importFiles").show();
 
             }
@@ -70,12 +68,10 @@ $(function () {
         }else{
             $("#taskList tbody").append("<tr> <td>"+num+"</td> <td>"+$text+"</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
         }
-        $(".btnStandard input").attr("disabled",false);
         $("#newTask").hide();
         //$("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
     });
     $(".closed").click(function(){
-        $(".btnStandard input").attr("disabled",false);
         $("#newTask").hide();
         //$("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
     });
@@ -89,29 +85,25 @@ $(function () {
         $("#importFiles .filename").text($("#files").val());
     });
     $("tbody tr span:nth-of-type(2)").click(function () {
-    	$(".btnStandard input").attr("disabled",true);
         $("#submitTask").show();
     });
 
     $("#submitTask .st,#submitTask .cancel").click(function () {
-    	$(".btnStandard input").attr("disabled",false);
         $("#submitTask").hide();
     });
     $("#importFiles .st").click(function () {
-    	$(".btnStandard input").attr("disabled",false);
         if($("#files").val() != ""){
             $(".data1").text("1");
             $(".data2").text("1");
             $(".data3").text("1");
             $(".data4").text("1");
-            $(".data5").text("1");
+            $(".data5").text("2");
             $(".data6").text("1");
             $(".data7").text("1");
             $(".data8").text("1");
         }
     });
     $("#importFiles .cancel").click(function () {
-    	$(".btnStandard input").attr("disabled",false);
         if($("#files").val() != "") {
             var $list = $("#taskList tbody tr");
             var num = $list.length + 1;
@@ -123,7 +115,9 @@ $(function () {
             }
             $("#importFiles").hide();
         }
-    })
-
+    });
+$(".closeDialog").click(function () {
+    $("#importFiles").hide();
+})
 
 });
