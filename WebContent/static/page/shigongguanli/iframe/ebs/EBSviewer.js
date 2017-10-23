@@ -92,6 +92,7 @@ var Init = function (earthId) {
         imageryProvider:new FreeDo.WebMapTileServiceImageryProvider({
 	        url: "http://{s}.tianditu.com/img_c/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=c&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
 	        credit: new FreeDo.Credit("天地图全球影像服务"),
+	        maximumLevel:17,
 	        subdomains: ['t0', 't1', 't2', 't3', 't4', 't5', 't6', 't7'],
 	        tilingScheme: new FreeDo.GeographicTilingScheme(),
 	        tileMatrixLabels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'],

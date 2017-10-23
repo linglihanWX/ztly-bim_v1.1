@@ -1,3 +1,4 @@
+
 @charset "utf-8";
 
 html,
@@ -75,7 +76,7 @@ body {
     color:red;
     font-weight: bold;
 }
-#DataTables_Table_0 tbody>tr>td{
+#DataTables_Table_0 tbody>tr>{
     text-align: center;
     vertical-align: middle;
 }
@@ -153,9 +154,8 @@ body {
     background: red;
 }
 
-.table td {
-    padding: 8px 0;
-    font-size: 12px;
+.table  {
+    font-size: 14px;
 }
 
 .box{
@@ -181,10 +181,10 @@ body {
     height: 100%;
 }
 
-td img{
+ img{
     width: 20px;
 }
-.box-content tbody tr td,#data thead tr td{
+.box-content tbody tr ,#data thead tr {
     text-align: center;
 }
 #DataTables_Table_0_info{
@@ -222,4 +222,8 @@ a.brand span {
 input.btnActive{
     background-color: #50bfff;
     color:#fff;
+}
+
+.table thead tr th,.table tbody tr td{
+	text-align:center;
 }

@@ -36,11 +36,15 @@ a.brand span {
     width: 99%;
     height: 300px;
     text-align: center;
-    line-height: 200px;
-    border: 1px solid #000;
+    line-height: 300px;
+    
 }
-.lists a{
-    margin-left:10px;
+
+#left span{
+	display:block;
+	width:100%;
+	height:10px;
+	background:transpant;
 }
 .breadcrumb .lists a:hover {
     color: red;
@@ -59,7 +63,9 @@ a.brand span {
     margin: -28px -28px 0 0;
 }
 
-
+.lists a {
+    margin-left: 10px;
+}
 .box{
     margin: 0 0 5px 0!important;
 }
@@ -111,4 +117,17 @@ a.brand span {
     left: 0;
     top: -2px;
     border:1px solid rgba(0,0,0,0.1);
+}
+#spy{
+	background-image: url(../img/spy.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	border:none;
+}
+#downup{
+	background-image: url(../img/downup.png);
+	background-repeat: no-repeat;
+	
+	background-position: center;
+	border:none;
 }

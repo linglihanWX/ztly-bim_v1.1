@@ -146,8 +146,9 @@
 				</ul>
 				<div class="row-fluid sortable">
 					<div id="left">
-						<a href="${ctx }/toCamera">摄像头监控</a>
-						<a href="${ctx }/toDownup">沉降检测</a>
+						<a href="${ctx }/toCamera" id="spy">摄像头监控</a>
+						<span></span>
+						<a href="${ctx }/toDownup" id="downup">沉降检测</a>
 						<!-- <a href="#">3</a> -->
 
 					</div>
