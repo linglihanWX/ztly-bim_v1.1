@@ -116,7 +116,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="${ctx }/toTask">
+							<a href="${ctx }/toGaikuang">
 								<i class="iconfont icon-sheji"></i>
 								<span class="hidden-tablet">设计协同</span>
 							</a>
