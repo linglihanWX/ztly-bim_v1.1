@@ -2,37 +2,14 @@ $(function () {
     var h = $(".container-fluid-full").height();
     var h1 = $("#content .breadcrumb").height();
     $("#tree").height(h - h1 - 27);
-    $.ajax({
-		url: "static/page/designcoordination/task/task.json",
-		type: "get",
-		dataType: "json",
-		success: function (data) {
-			var zTreeObj;
-
-			function treeNodeClick(event, treeId, treeNode) {
-				$(".box-content tbody").html(treeNode.doc);
-			};
-			var setting = {
-				data: {
-					simpleData: {
-						enable: true,
-						idKey: "id",
-						pIdKey: "pId",
-						rootPId: "0"
-					}
-				},
-				callback: {
-					onClick: treeNodeClick
-				}
-			};
-			zTreeObj = $.fn.zTree.init($("#tree"), setting, data);
-
-		}
-	})
     $(".btnStandard input").each(function () {
         $(this).click(function () {
             $(this).addClass("btnActive").siblings().removeClass("btnActive");
-            if($(this).attr("id") == "waterOrEle"){
+            
+            $("#newTask").hide();
+            $("#importFiles").hide();
+            $("#submitTask").hide();
+            if($(this).attr("id") == "newFile"){
                 $("#newTask").show();
                 $(".btnStandard input").attr("disabled",true);
                 var day = new Date();
@@ -67,48 +44,85 @@ $(function () {
 
             if($(this).attr("id") == "myFlow"){
                 $("#workData").hide();
+
                 $("#workFlow").show();
             }
             if($(this).attr("id") == "gbk"){
                 $("#workData").show();
                 $("#workFlow").hide();
+                $("#workFlow").hide();
+
+            }
+            if($(this).attr("id") == "importFile"){
+            	$(".btnStandard input").attr("disabled",true);
+                $("#importFiles").show();
+
             }
         })
     });
 
     $(".sure").click(function(){
-        var $list = $(".table tbody tr");
+        var $list = $("#taskList tbody tr");
         var $text = $("#newTask textarea").val();
         var num = $list.length + 1;
         if(num < 10){
-            $("#workData .table tbody").append("<tr><td>0"+ num+"</td> <td>"+$text+"</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
+            $("#taskList tbody").append("<tr><td>0"+ num+"</td> <td>"+$text+"</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
         }else{
-            $("#workData .table tbody").append("<tr> <td>"+num+"</td> <td>"+$text+"</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
+            $("#taskList tbody").append("<tr> <td>"+num+"</td> <td>"+$text+"</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
         }
-        $("#newTask").hide();
-        $("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
         $(".btnStandard input").attr("disabled",false);
-        
+        $("#newTask").hide();
+        //$("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
     });
     $(".closed").click(function(){
-        $("#newTask").hide();
-        $("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
         $(".btnStandard input").attr("disabled",false);
-        
+        $("#newTask").hide();
+        //$("#gbk").addClass("btnActive").siblings().removeClass("btnActive");
     });
 
     $(".action").text("选择文件");
     $(".filename").text("未选中文件");
     $("#file").change(function () {
-        $(".filename").text($("#file").val());
+        $("#submitTask .filename").text($("#file").val());
     });
-
+    $("#files").change(function () {
+        $("#importFiles .filename").text($("#files").val());
+    });
     $("tbody tr span:nth-of-type(2)").click(function () {
+    	$(".btnStandard input").attr("disabled",true);
         $("#submitTask").show();
     });
 
-    $(".st,.cancel").click(function () {
+    $("#submitTask .st,#submitTask .cancel").click(function () {
+    	$(".btnStandard input").attr("disabled",false);
         $("#submitTask").hide();
+    });
+    $("#importFiles .st").click(function () {
+    	$(".btnStandard input").attr("disabled",false);
+        if($("#files").val() != ""){
+            $(".data1").text("1");
+            $(".data2").text("1");
+            $(".data3").text("1");
+            $(".data4").text("1");
+            $(".data5").text("1");
+            $(".data6").text("1");
+            $(".data7").text("1");
+            $(".data8").text("1");
+        }
+    });
+    $("#importFiles .cancel").click(function () {
+    	$(".btnStandard input").attr("disabled",false);
+        if($("#files").val() != "") {
+            var $list = $("#taskList tbody tr");
+            var num = $list.length + 1;
+            var text =  $(".data1").text();
+            if (num < 10) {
+                $("#taskList tbody").append("<tr><td>0" + num + "</td><td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr><tr><td>0" + num + "</td><td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
+            } else {
+                $("#taskList tbody").append("<tr> <td>" + num + "</td> <td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr><tr> <td>" + num + "</td> <td>" + text + "</td><td>未开始</td><td><img src='static/page/designcoordination/task/img/rightHand.svg'>指派 <img src='static/page/designcoordination/task/img/right.svg'>提交任务</td></tr>");
+            }
+            $("#importFiles").hide();
+        }
     })
 
 

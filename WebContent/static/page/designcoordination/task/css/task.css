@@ -164,7 +164,7 @@ a.brand span {
 }
 
 .btnStandard input {
-    width: 60px;
+    width: 70px;
     height: 27px;
     font-size: 12px;
     border-radius: 5px;
@@ -303,7 +303,7 @@ td span{
 
 
 /*提交任务*/
-#submitTask{
+#submitTask,#importFiles{
     display: none;
     position: absolute;
     top: 50%;
@@ -328,20 +328,29 @@ div.uploader{
 .filename{
     width: 180px!important;
 }
-
-
 #submitTask textarea{
     width: 500px;
 }
-
-#submitTask input[type='button']{
+#submitTask input[type='button'],
+#importFiles input[type='button']{
     float: right;
     margin: 20px;
-    width: 80px;
+    width: 70px;
     height: 30px;
-
     background-color: #fff;
     border-radius: 5px;
     outline: none;
     border:1px solid #8c8c8c;
+}
+#importFiles table{
+    width: 100%;
+}
+#importFiles table th{
+    width: 25%;
+    text-align: center;
+    height: 25px;
+}
+#importFiles table td{
+    height: 25px;
+    text-align: center;
 }
