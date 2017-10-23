@@ -32,6 +32,7 @@ planRouteViewer.init=function(earthId,baseImageryProvider)
 		imageryProvider : baseImageryProvider || this.getTiandituGloble()
 	});
 	this.viewer._cesiumWidget._creditContainer.style.display = "none";
+	this.viewer.scene.globe.depthTestAgainstTerrain = true;
 	this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
 		url : "http://{s}.tianditu.com/cia_w/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&Tilecol={TileCol}&style={style}&format=tiles",
 		style:"default",
