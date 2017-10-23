@@ -139,7 +139,7 @@
 			<!-- start: Content -->
 			<div id="content" class="span10">
 				<ul class="breadcrumb">
-					<a href="BIMDesign.html"><i class="iconfont icon-return"></i>返回</a>
+					<a href="${ctx }/toSpacemgmt"><i class="iconfont icon-return"></i>返回</a>
 					<li>
 						<a href="${ctx }/toSpacemgmt">空间管理</a>
 						<a href="${ctx }/toAssetmgmt" class="activeList">资产管理</a>
