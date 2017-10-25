@@ -229,9 +229,11 @@ public class WebGlController {
 		ResponseEntity<byte[]> entity = null;
 		try {
 			String path = request.getServletContext().getRealPath("/static/page/designcoordination/documentmgmt/wendang/");
+			System.out.println(path);
 			File file =new File(path+File.separator+filename);
 			HttpHeaders headers = new HttpHeaders();
 			String downloadfilename = new String(filename.getBytes("UTF-8"), "iso-8859-1");
+			System.out.println(downloadfilename);
 			headers.setContentDispositionFormData("attachment", downloadfilename);
 			headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
 			entity = new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),headers,HttpStatus.CREATED);
