@@ -119,7 +119,7 @@
 			<div id="content" class="span10">
 				<ul class="breadcrumb">
 					<i class="iconfont icon-hxzfont08"></i>
-					<li class="lists"><a href="${ctx }/toGaikuang">概况</a> <a
+					<li class="lists"><a href="${ctx }/toGaikuang">项目概况</a> <a
 						href="${ctx }/toTask">任务</a> <a href="${ctx }/toDesign"
 						class="activeList">BIM方案设计</a> <a href="${ctx }/toDocument">文档管理</a>
 						<a href="#">项目信息</a> <a href="${ctx }/toDesignShow">3D综合展示</a> <a
