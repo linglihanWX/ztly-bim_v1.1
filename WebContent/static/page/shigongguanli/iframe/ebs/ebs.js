@@ -2,7 +2,10 @@ $(function () {
     let manager = {};
     let lineId = {};                                                // 选中时的对象
     let threeD = false;                                             // 是否为 3D 视图
-    let lastBtn = "project";                                        // 判断上次点击是 计划管理-->计划播放 / 进度填报-->实际播放
+    let lastBtn = "project";                                        // 判断上次点击是
+																	// 计划管理-->计划播放
+																	// /
+																	// 进度填报-->实际播放
     let oneDayMS = 24 * 60 * 60 * 1000;                             // 一天的毫秒数
     let sliderWidth = 600;                                          // 进度条的总长度
     let ebsData;                                                    // 存储请求回来的数据
@@ -61,11 +64,12 @@ $(function () {
                         content[i].car = 0;
                         content[i].men = 0;
                         content[i].unit = "个";
-                        content[i].unit_Account = 6;
-                        content[i].quantities = 3;
-                        content[i].start = 24;
-                        content[i].end = 24;
+                        
                     }
+                    content[i].unit_Account = 6;
+                    content[i].quantities = 3;
+                    content[i].start = 24;
+                    content[i].end = 24;
                     // 格式化日期
                     content[i].startDatePlan = edit.formatDate(content[i].startDatePlan);
                     content[i].startDate = edit.formatDate(content[i].startDate);
@@ -93,7 +97,8 @@ $(function () {
                 manager.relativeModel(); // 加载二维页面的对应模型数据
                 manager.twoProject(content); // 进入时，初始化的页面 工程分解的二维页面
 
-                $('#treeGrid').treegrid('select', content[0].id); // 初始化选中第一行，并赋值给 lineId
+                $('#treeGrid').treegrid('select', content[0].id); // 初始化选中第一行，并赋值给
+																	// lineId
                 lineId = content[0];
 
             },
@@ -575,7 +580,7 @@ $(function () {
         
         $("#header .toggleInfo").show();
         $("#header .toggleProgress").hide();
-        $("#header .compare，#compareModel").hide();
+        $("#header .compare").hide();
         $("#right .model .realityPlay,#right .model .planPlay").hide();
     };
 
@@ -601,31 +606,37 @@ $(function () {
         } else {
             path = row.text;
         }
+     
+        manager.sure(row);
+           };
 
-        $(".model .projectCut ul li:nth-child(1) input").val(row.text);
-        $(".model .projectCut ul li:nth-child(2) input").val(row.id);
-        $(".model .projectCut ul li:nth-child(3) input").val(row.type);
-        $(".model .projectCut ul li:nth-child(4) input").val(row.modelId);
-        $(".model .projectCut ul li:nth-child(5) input").val(row.parentId);
-        $(".projectCut  li:last-of-type input").val(path);
-        $(".sureChange").click(function () {
-            if ($(".model .projectCut ul li:nth-child(1) input").val() == "" || $(".model .projectCut ul li:nth-child(2) input").val() == "" || $(".model .projectCut ul li:nth-child(3) input").val() == "" || $(".model .projectCut ul li:nth-child(4) input").val() == "" || $(".model .projectCut ul li:nth-child(5) input").val() == "") {
-                manager.toolTip(1);
+           // 工程分解修改 3D的 确认
+           manager.sure = function(row){
+               $(".sureChange").off("click").click(function () {
+                   var text = $(".model .projectCut ul li:nth-of-type(1) input").val();
+                   var unit_Account = $(".model .projectCut ul li:nth-of-type(2) input").val();
+                   var quantities = $(".model .projectCut ul li:nth-of-type(3) input").val();
+                   var start = $(".model .projectCut ul li:nth-of-type(4) input").val();
+                   var end = $(".model .projectCut ul li:nth-of-type(5) input").val();
+                   
+                   if (text == "" || unit_Account == "" || quantities == "" || start == "" || end == "") {
+                       manager.toolTip(1);
 
-            } else if ($(".model .projectCut ul li:nth-child(1) input").val() == row.text && $(".model .projectCut ul li:nth-child(2) input").val() == row.id && $(".model .projectCut ul li:nth-child(3) input").val() == row.type && $(".model .projectCut ul li:nth-child(4) input").val() == row.modelId && $(".model .projectCut ul li:nth-child(5) input").val() == row.parentId) {
-                manager.toolTip(4);
-            } else {
-                // 保存数据
-                row.text = $(".model .projectCut ul li:nth-child(1) input").val();
-                row.id = $(".model .projectCut ul li:nth-child(2) input").val();
-                row.type = $(".model .projectCut ul li:nth-child(3) input").val();
-                row.modelId = $(".model .projectCut ul li:nth-child(4) input").val();
-                row.parentId = $(".model .projectCut ul li:nth-child(5) input").val();
-                $(".projectCut  li:last-of-type input").val(path);
-                manager.toolTip(3);
-            }
-        });
-    };
+                   } else if (text == row.text && unit_Account == row.unit_Account && quantities == row.quantities && start == row.start && end == row.end) {
+                       // manager.toolTip(4);
+                       return false;
+                   } else if(text != row.text ||  unit_Account != row.unit_Account || quantities != row.quantities || start != row.start || end != row.end){
+                       // 保存数据
+                       row.text = text;
+                       row.unit_Account = unit_Account;
+                       row.quantities =quantities;
+                       row.start = start;
+                       row.end = end;
+                       manager.toolTip(3);
+                   }
+               });
+           }
+
 
     // 计划管理 修改 3D
     manager.planEdit = function (row) {
@@ -702,28 +713,29 @@ $(function () {
 
     // 展示工程分解信息
     manager.projectInfo = function () {
-        if (lineId) {
-            $("#right .model .detailInfo").hide();
-            $("#right .model .projectCut").show();
-            $(".model .projectCut ul li:nth-child(1) input").val(lineId.text);
-            $(".model .projectCut ul li:nth-child(2) input").val(lineId.id);
-            $(".model .projectCut ul li:nth-child(3) input").val(lineId.type);
-            $(".model .projectCut ul li:nth-child(4) input").val(lineId.modelId);
-            $(".model .projectCut ul li:nth-child(5) input").val(lineId.parentId);
-            let id = lineId.id;
-            let textInp = [lineId.text];
-            for (let i = 0;; i++) {
-                let node = $('#treeGrid').treegrid("getParent", id);
-                if (node) {
-                    textInp.push(node.text);
-                    id = node.id;
-                } else {
-                    break;
-                }
-            }
-            let str = textInp.reverse().join("/");
-            $(".model .projectCut ul li:nth-child(6) input").val(str);
-        }
+    	 if (lineId) {
+	            $("#right .model .detailInfo").hide();
+	            $("#right .model .projectCut").show();
+	            $(".model .projectCut ul li:nth-of-type(1) input").val(lineId.text);
+	            $(".model .projectCut ul li:nth-of-type(2) input").val(lineId.unit_Account);
+	            $(".model .projectCut ul li:nth-of-type(3) input").val(lineId.quantities);
+	            $(".model .projectCut ul li:nth-of-type(4) input").val(lineId.start);
+	            $(".model .projectCut ul li:nth-of-type(5) input").val(lineId.end);
+	            let id = lineId.id;
+	            let textInp = [lineId.text];
+	            for (let i = 0;; i++) {
+	                let node = $('#treeGrid').treegrid("getParent", id);
+	                if (node) {
+	                    textInp.push(node.text);
+	                    id = node.id;
+	                } else {
+	                    break;
+	                }
+	            }
+	            let str = textInp.reverse().join("/");
+	            $(".model .projectCut ul li:nth-of-type(6) input").val(str);
+	        }
+
     };
 
     // 展示计划管理信息
@@ -780,14 +792,15 @@ $(function () {
     manager.showHideBtn = function () {
         $("#header .toggleInfo").show();                    // 2D/3D 和 计划/实际 的切换
         $("#header .toggleProgress").hide();                // 隐藏计划和实际按钮
-        $("#compareModel,.compareRealPlan").hide();         // 隐藏对照按钮和对照的添加的模型
+        $(".compareRealPlan").hide();         // 隐藏对照按钮和对照的添加的模型
         $("#right .model .planPlay,#right .model .realityPlay,.comparePlay").hide();  // 隐藏播放进度条等
     };
 
     // 点击切换到 工程分解
     manager.projectClick = function () {
         $("#header .showInfo .project").click(function () {
-            manager.showHideBtn();                              // 显示 2D/3D按钮，隐藏 计划/实际/对照按钮
+            manager.showHideBtn();                              // 显示 2D/3D按钮，隐藏
+																// 计划/实际/对照按钮
             manager.clearTimer("all");                          // 清空定时器
             lastBtn = $(this).attr("class");
             $(this).addClass("active").siblings().removeClass("active");
@@ -795,6 +808,7 @@ $(function () {
             if (threeD) {
                 $(".threeD").addClass("checkSpan").siblings().removeClass("checkSpan");
                 manager.showView();
+                $(".toolTip").hide();
                 manager.projectInfo();
                 manager.hideRightClick("edit");
 
@@ -837,14 +851,15 @@ $(function () {
     manager.planClick = function () {
         $("#header .showInfo .planManage").click(function () {
             
-            manager.showHideBtn();                              // 显示 2D/3D按钮，隐藏 计划/实际，对照按钮
+            manager.showHideBtn();                              // 显示 2D/3D按钮，隐藏
+																// 计划/实际，对照按钮
             manager.clearTimer("all");
             lastBtn = $(this).attr("class");
             $(this).addClass("active").siblings().removeClass("active");
             $(this).attr("disabled", true).siblings().attr("disabled", false);
             if (threeD) {
                 $(".threeD").addClass("checkSpan").siblings().removeClass("checkSpan");
-               // EbsViewer.hideOrShowModel(true,obj);                    // 显示模型
+                $(".toolTip").hide();
                 manager.showView();
                 manager.planInfo();
                 manager.hideRightClick("all"); // 右击不显示菜单
@@ -883,23 +898,21 @@ $(function () {
     // 点击切换到 进度填报
     manager.writeClick = function () {
         $("#header .showInfo .write").click(function () {
-            manager.showHideBtn();                              // 显示 2D/3D按钮，隐藏 计划/实际，对照按钮
+            manager.showHideBtn();                              // 显示 2D/3D按钮，隐藏
+																// 计划/实际，对照按钮
             manager.clearTimer("all");
             lastBtn = $(this).attr("class");
             $(this).addClass("active").siblings().removeClass("active");
             $(this).attr("disabled", true).siblings().attr("disabled", false);
             if (threeD) {
                 $(".threeD").addClass("checkSpan").siblings().removeClass("checkSpan");
-                //EbsViewer.hideOrShowModel(true,obj);                    // 显示模型
+                $(".toolTip").hide();
                 manager.showView();
                 manager.writeInfo();
                 manager.hideRightClick("all"); // 右击不显示菜单
             } else {
                 $(".twoD").addClass("checkSpan").siblings().removeClass("checkSpan");
-
-                
                 $("#left").css({width:100+"%"});
-
                 $(".panel.datagrid").width(docWidth);
                 $('#treeGrid').treegrid({
                     animate:true,
@@ -1079,7 +1092,9 @@ $(function () {
                         onSelect: function (row) {lineId = row;}
                     });
                     $("#editNode").show().siblings().show();               // 显示右击菜单对应的项
-                    manager.projectChange();                                // 工程分解 编辑 2D
+                    manager.projectChange();                                // 工程分解
+																			// 编辑
+																			// 2D
 
                 } else if (lastBtn.indexOf("planManage") != -1) {
                     $('#treeGrid').treegrid({
@@ -1098,7 +1113,9 @@ $(function () {
                     });
 
                     $("#editNode").show().siblings().hide();                                    // 显示右击菜单对应的项
-                    manager.planChange();                                                       // 计划管理 修改 3D
+                    manager.planChange();                                                       // 计划管理
+																								// 修改
+																								// 3D
 
                 } else if (lastBtn.indexOf("write") != -1) {
                     $('#treeGrid').treegrid({
@@ -1123,7 +1140,7 @@ $(function () {
         });
     };
 
-    // 计划/实际  三维页面
+    // 计划/实际 三维页面
     manager.threePage = function(){
         $("#left").width(200);
         $("#right").width(docWidth - 200);
@@ -1157,8 +1174,8 @@ $(function () {
             $(this).addClass("checkSpan").siblings().removeClass("checkSpan");
             manager.clearTimer("all");
             $("#right .model .detailInfo").hide();
-            $(".comparePlay,#compareModel,#right .model .planPlay,#right .model .realityPlay,.compareRealPlan").hide();
-            
+            $(".comparePlay,#right .model .planPlay,#right .model .realityPlay,.compareRealPlan").hide();
+            $(".toolTip").hide();
             EbsViewer.hideOrShowModel(false,obj);
             if($(".plan").attr("class").indexOf("checkSpan") != -1){
                 $(".comparePlay .playOrStop,.realityPlay .playOrStop").addClass("icon-start").removeClass("icon-stop");      // 切换图标
@@ -1166,22 +1183,19 @@ $(function () {
                 $("#right .model .planPlay").show();
                 EbsViewer.planRealFly(currDayMS, true,obj);
                 manager.plan();
+
             }else if ($(".real").attr("class").indexOf("checkSpan") != -1) {
                 $(".comparePlay .playOrStop,.planPlay .playOrStop").addClass("icon-start").removeClass("icon-stop");      // 切换图标
                 manager.threePage();
                 $("#right .model .realityPlay").show();
                 EbsViewer.planRealFly(realCurrDayMS, false,obj);
                 manager.real();
+
             }else if ($(".compare").attr("class").indexOf("checkSpan") != -1) {
                 $(".realityPlay .playOrStop,.planPlay .playOrStop").addClass("icon-start").removeClass("icon-stop");      // 切换图标
-                $("#left").css({ width: 0});
-                $("#right").css({width: 50 + "%",display:"inline-block"});
-                
-                $("#compareModel,.compareRealPlan,.comparePlay").show();
-                //$("#compareModel .compassDiv").hide();
+                $(".compareRealPlan,.comparePlay,.toolTip").show();
                 EbsViewer.hideOrShowModel(false,obj); // 隐藏模型
-                EbsViewer.hideOrShowModel(false,obj1); // 隐藏模型
-                EbsViewer.compareFlyModel(comparelCurrDayMS,obj,obj1);
+                EbsViewer.compareFly(comparelCurrDayMS,obj)
                 manager.compare();
             }
         });
@@ -1212,7 +1226,7 @@ $(function () {
         
     };
 
-    // 清空定时器 
+    // 清空定时器
     manager.clearTimer = function (timer) {
         if (timer == "plan") {
             clearTimeout(timer1); // 清空计划播放的定时器
@@ -1519,20 +1533,19 @@ $(function () {
             $(".comparePlay").mouseup(function () {
                 $(".comparePlay").off('mousedown');
                 $(".comparePlay").off('mousemove');
-                EbsViewer.dragCompare(comparelCurrDayMS,obj,obj1);
-                playFirst = false
+                 EbsViewer.dragCompare(comparelCurrDayMS,obj);
+                 playFirst = false
             });
         });
 
         // 点击暂停或者播放
         $(".comparePlay .playOrStop").off("click").click(function () {
             clearTimeout(timer3);
-            EbsViewer.compareFirstFly(comparelCurrDayMS,obj,obj1);
+            // EbsViewer.compareFirstFly(comparelCurrDayMS,obj);
             if ($(this).attr("class").indexOf("icon-start") != -1) {
                 if (playFirst) {
                     playFirst = false;                                                          // 首次加载后设置为true
-                    EbsViewer.flyPlay(undefined,obj);                                           // 相机飞到对应的位置  
-                    EbsViewer.flyPlay(undefined,obj1);                                          // 相机飞到对应的位置                                              
+                    EbsViewer.flyPlay(undefined,obj);                                           // 相机飞到对应的位置
                     setTimeout(function () {                                                    // 等到相机飞到对应位置开始播放
                         $(".comparePlay .playOrStop").toggleClass("icon-start icon-stop");      // 切换图标
                         autoPlayCompare(compareTime);
@@ -1580,7 +1593,7 @@ $(function () {
 
         // 播放函数
         function autoPlayCompare(compareTime) {
-            EbsViewer.compareFly (comparelCurrDayMS,obj,obj1);
+            EbsViewer.playFlyCompare(comparelCurrDayMS,obj);
             if (compareLeftDis >= sliderWidth) {
                 compareLeftDis = sliderWidth;
                 $(".compareSlider").css({"left": compareLeftDis});
@@ -1699,7 +1712,6 @@ $(function () {
     manager.loadDataInit();                     // 获取数据
 
     var obj = new Init("model");                // 加载球模型
-    var obj1 = new Init("compareModel");        // 加载比较的球模型
     
     manager.projectChange();                    // 工程分解 编辑 2D
 

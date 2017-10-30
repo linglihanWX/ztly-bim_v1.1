@@ -1,23 +1,23 @@
 var EbsViewer = EbsViewer || {};
+
 var index = 0;
-var indexReal = 0;
-var compareIndex = 0;
-var compareIndex1 = 0;
-var arr = [];
-var arrReal = [];
 var newObj = {};
-var newObjReal = {};
+var arr = [];
 var currArr = [];
-var currArrReal = [];
 var first = true;
+
+var indexReal = 0;
+var arrReal = [];
+var newObjReal = {};
+var currArrReal = [];
 var firstReal = true;
+
+var compareIndex = 0;
 var compareF = true;
-var newObj1 = {};
-var newObj2 = {};
 var compareArr = [];
+var newObjCompare = {};
 var compareCurrArr = [];
-var compareArr1 = [];
-var compareCurrArr1 = [];
+
 EbsViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
     this.fatherId = fatherId;
@@ -76,37 +76,45 @@ var Init = function (earthId) {
     this.showEbsContainer = this.showEbsContainer || {};//保存了当前时间点中显示出来的Ebs节点对应的模型
     this.viewer = this.viewer || {};
     //初始化地球
-    this.viewer = new FreeDo.Viewer(earthId, {
-        animation:false, //动画控制，默认true
-        baseLayerPicker:false,//地图切换控件(底图以及地形图)是否显示,默认显示true
-        fullscreenButton:false,//全屏按钮,默认显示true
-        geocoder:false,//地名查找,默认true
-        timeline:false,//时间线,默认true
-        vrButton:false,//双屏模式,默认不显示false
-        homeButton:false,//主页按钮，默认true
-        infoBox:false,//点击要素之后显示的信息,默认true
-        selectionIndicator:false,//选中元素显示,默认true
-        imageryProvider : FreeDo.createTileMapServiceImageryProvider({
-            url : FreeDo.buildModuleUrl('Assets/Textures/NaturalEarthII')
-        }),
-        imageryProvider:new FreeDo.WebMapTileServiceImageryProvider({
-	        url: "http://{s}.tianditu.com/img_c/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet=c&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles",
-	        credit: new FreeDo.Credit("天地图全球影像服务"),
-	        maximumLevel:17,
-	        subdomains: ['t0', 't1', 't2', 't3', 't4', 't5', 't6', 't7'],
-	        tilingScheme: new FreeDo.GeographicTilingScheme(),
-	        tileMatrixLabels: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19'],
-	    }),
-	 });
-    this.viewer._cesiumWidget._creditContainer.style.display = "none";
-    this.viewer.scene.globe.depthTestAgainstTerrain = true;
+  
+
+   
+    this.viewer = new Freedo.Viewer(earthId, {
+        animation: false,
+        baseLayerPicker: false,
+        fullscreenButton: false,
+        geocoder: false,
+        homeButton: false,
+        infoBox: false,
+        sceneModePicker: false,
+        selectionIndicator: false,
+        timeline: false,
+        navigationHelpButton: false,
+        navigationInstructionsInitiallyVisible: false,
+        selectedImageryProviderViewModel: false,
+        scene3DOnly: true,
+        clock: null,
+        showRenderLoopErrors: false,
+        automaticallyTrackDataSourceClocks: false,
+        imageryProvider: new Freedo.WebMapTileServiceImageryProvider({
+            url: "http://{s}.tianditu.com/img_c/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=img&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style={style}&format=tiles ",
+            style: "default",
+            tileMatrixSetID: "c",
+            tilingScheme: new Freedo.GeographicTilingScheme(),
+            tileMatrixLabels: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18"],
+            maximumLevel: 17,
+            subdomains: ["t0", "t1", "t2", "t3", "t4", "t5", "t6", "t7"]
+        })
+
+    });
     this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
-		url : "http://{s}.tianditu.com/cia_w/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&Tilecol={TileCol}&style={style}&format=tiles",
-		style:"default",
-		tileMatrixSetID:"w",
-		maximumLevel:17,
-		subdomains : ["t7","t6","t5","t4","t3","t2","t1","t0"]
-	}));
+        url: "http://{s}.tianditu.com/cia_w/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&Tilecol={TileCol}&style={style}&format=tiles",
+        style: "default",
+        tileMatrixSetID: "w",
+        maximumLevel: 17,
+        subdomains: ["t7", "t6", "t5", "t4", "t3", "t2", "t1", "t0"]
+    }));
+
     // cx 添加
     this.flag = true;
     this.selectModels = this.selectModels || [];
@@ -126,7 +134,7 @@ Init.prototype = {
     initEbs:function(){
         var that = this;
         $.ajax({
-            url: "../../../../../ebs/selectAll",
+            url: "http://182.92.7.32:9510/ProjectManage/ebs/selectAll",
             dataType: "JSON",
             success: function (content) {
                 var node = null;
@@ -198,7 +206,7 @@ Init.prototype = {
                         }
                     } else {
                         var parameter = JSON.parse(node.attributes.parameter);
-                        modelNode = new EbsViewer.ModelObj(node.id, node.parentId, node.text, node.type, "http://182.92.7.32:9510/ProjectManage/models/" + parameter.filePath, parameter.lon, parameter.lat, parameter.height-46, parameter.course, parameter.alpha, parameter.roll, parameter.scaleX, parameter.scaleY, parameter.scaleZ,that.viewer);
+                        modelNode = new EbsViewer.ModelObj(node.id, node.parentId, node.text, node.type, "http://182.92.7.32:9510/ProjectManage/models/" + parameter.filePath, parameter.lon, parameter.lat, parameter.height, parameter.course, parameter.alpha, parameter.roll, parameter.scaleX, parameter.scaleY, parameter.scaleZ,that.viewer);
                     }
     
                     container[node.id] = modelNode;
@@ -412,8 +420,8 @@ EbsViewer.flyToModels = function (nodeIds,obj) {
         node = obj.modelContainer[nodeIds[i]];
         positions.push({ lon: node.lon, lat: node.lat, height: node.height });
         //设置模型颜色
-        obj.selectModels.push({ primitive: node.primitive });
-        node.primitive.color = new FreeDo.Color(0, 238, 0, 1);
+        // obj.selectModels.push({ primitive: node.primitive });
+        // node.primitive.color = new FreeDo.Color(0, 238, 0, 1);
     }
     obj.flag = false;
     FreeDoTool.flyToModels(obj.viewer.camera, positions, function(){
@@ -437,6 +445,7 @@ EbsViewer.planRealFly = function (currDay,flag,obj) {
         for (var i in obj.ebsContainer) {
             if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDatePlan <= currDay && obj.ebsContainer[i].endDatePlan >= currDay) {
                 let id = obj.ebsContainer[i].modelId;
+                obj.modelContainer[id].primitive.color = new FreeDo.Color(255, 0, 0, 1);
                 nodeIds.push(id);
                 obj.modelContainer[id].primitive.show = true;
             } else if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].endDatePlan < currDay) {
@@ -452,6 +461,7 @@ EbsViewer.planRealFly = function (currDay,flag,obj) {
         for (var i in obj.ebsContainer) {
             if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDate <= currDay && obj.ebsContainer[i].endDate >= currDay) {
                 let id = obj.ebsContainer[i].modelId;
+                obj.modelContainer[id].primitive.color = new FreeDo.Color(0, 238, 0, 1);
                 nodeIds.push(id);
                 obj.modelContainer[id].primitive.show = true;
             } else if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].endDate < currDay) {
@@ -467,6 +477,44 @@ EbsViewer.planRealFly = function (currDay,flag,obj) {
     EbsViewer.flyToModels(nodeIds,obj);
     obj.flag = true;
 };
+
+EbsViewer.compareFly = function (currDay,obj) {
+    
+     var nodeIds = [];
+     for (var j in obj.ebsContainer) {
+         if (obj.ebsContainer[j].type == 2) {
+             obj.ebsContainer[j].startDatePlan = new Date(obj.ebsContainer[j].startDatePlan).getTime();
+             obj.ebsContainer[j].endDatePlan = new Date(obj.ebsContainer[j].endDatePlan).getTime();
+             obj.ebsContainer[j].startDate = new Date(obj.ebsContainer[j].startDate).getTime();
+             obj.ebsContainer[j].endDate = new Date(obj.ebsContainer[j].endDate).getTime();
+         }
+     }
+     
+         for (var i in obj.ebsContainer) {
+             if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDatePlan <= currDay && obj.ebsContainer[i].endDatePlan >= currDay) {
+                 let id = obj.ebsContainer[i].modelId;
+                 nodeIds.push(id);
+                 obj.modelContainer[id].primitive.show = true;
+             } else if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].endDatePlan < currDay) {
+                 let id = obj.ebsContainer[i].modelId;
+                 obj.modelContainer[id].primitive.show = true;
+                 obj.modelContainer[id].primitive.color = new FreeDo.Color(1, 1, 1, 1);
+             } else if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDatePlan > currDay) {
+                 let id = obj.ebsContainer[i].modelId;
+                 obj.modelContainer[id].primitive.show = false;
+             }
+
+             if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDate <= currDay && obj.ebsContainer[i].endDate >= currDay) {
+                let id = obj.ebsContainer[i].modelId;
+                nodeIds.push(id);
+                obj.modelContainer[id].primitive.show = true;
+                obj.modelContainer[id].primitive.color = new FreeDo.Color(255, 0, 0, 1);
+            } 
+         }
+
+     EbsViewer.flyToModels(nodeIds,obj);
+     obj.flag = true;
+ };
 
 // 是否隐藏模型
 EbsViewer.hideOrShowModel = function (show,obj) {
@@ -527,7 +575,7 @@ EbsViewer.playFlyPlan = function (currDay,obj) {
         if (currDay >= arr[m].startDatePlan && currDay <= arr[m].endDatePlan) {
             let id = arr[m].modelId;
             obj.modelContainer[id].primitive.show = true;
-            obj.modelContainer[id].primitive.color = new FreeDo.Color(0, 238, 0, 1);
+            obj.modelContainer[id].primitive.color = new FreeDo.Color(255, 0, 0, 1);
             currArr.push(obj.modelContainer[id]);
             index = arr[m].index;
         }
@@ -598,6 +646,70 @@ EbsViewer.playFlyReal = function (currDay,obj) {
     firstReal = false;
 };
 
+//比较播放
+EbsViewer.playFlyCompare = function (currDay,obj) {
+    var nodeIds = [];
+    if (compareF) {
+        for (var j in obj.ebsContainer) {
+            if (obj.ebsContainer[j].type == 2) {
+                obj.ebsContainer[j].startDatePlan = new Date(obj.ebsContainer[j].startDatePlan).getTime();
+                obj.ebsContainer[j].endDatePlan = new Date(obj.ebsContainer[j].endDatePlan).getTime();
+                obj.ebsContainer[j].startDate = new Date(obj.ebsContainer[j].startDate).getTime();
+                obj.ebsContainer[j].endDate = new Date(obj.ebsContainer[j].endDate).getTime();
+            }
+        }
+        deepCopy(newObjCompare, obj.ebsContainer);
+        for (var key in newObjCompare) {
+            if (newObjCompare.hasOwnProperty(key)) {
+                if (newObjCompare[key].type == 2) {
+                    compareArr.push(newObjCompare[key]);
+                }
+            }
+        }
+        // 按开始时间排序
+        compareArr.sort(function (a, b) {
+            return a.startDate > b.startDate ? 1 : -1;
+        });
+        // 每一项添加一个排序后的索引
+        for (var i = 0; i < compareArr.length; i++) {
+            compareArr[i].index = i;
+        }
+    } else {
+        for (let i = 0; i < compareCurrArr.length; i++) {
+            compareCurrArr[i].primitive.show = true;
+            compareCurrArr[i].primitive.color = new FreeDo.Color(1, 1, 1, 1);
+        }
+    }
+    compareCurrArr = [];                      //清空当前数组
+    // 与当前时间相同的添加到当前数组里面
+    for (let m = compareIndex; m < compareArr.length; m++) {
+
+        if (currDay >= compareArr[m].startDate && currDay <= compareArr[m].endDate) {
+            let id = compareArr[m].modelId;
+            obj.modelContainer[id].primitive.show = true;
+            obj.modelContainer[id].primitive.color = new FreeDo.Color(0, 238, 0, 1);
+            compareCurrArr.push(obj.modelContainer[id]);
+            compareIndex = compareArr[m].index;
+        }
+        if (currDay >= compareArr[m].startDatePlan && currDay <= compareArr[m].endDatePlan) {
+            let id = compareArr[m].modelId;
+            obj.modelContainer[id].primitive.show = true;
+            obj.modelContainer[id].primitive.color = new FreeDo.Color(255,0,0, 1);
+            compareCurrArr.push(obj.modelContainer[id]);
+        }
+    }
+    
+
+    // 获取 id 组
+    for (var n = 0; n < compareCurrArr.length; n++) {
+        nodeIds.push(compareCurrArr[n].id);
+    }
+    if (obj.flag == true) {
+        EbsViewer.flyToModels(nodeIds,obj)
+    }
+    compareF = false;
+};
+
 // 计划拖拽
 EbsViewer.dragPlan = function (currDay,obj) {
     obj.flag = true;
@@ -633,6 +745,7 @@ EbsViewer.dragPlan = function (currDay,obj) {
         if (currDay >= arr[m].startDatePlan && currDay <= arr[m].endDatePlan) {
             let id = arr[m].modelId;
             obj.modelContainer[id].primitive.show = true;
+            obj.modelContainer[id].primitive.color = new FreeDo.Color(255, 0, 0, 1);
             currArr.push(obj.modelContainer[id]);
             indexArr.push(arr[m]);
         } else if (currDay < arr[m].startDatePlan) {
@@ -698,6 +811,7 @@ EbsViewer.dragReal = function (currDay,obj) {
         if (currDay >= arrReal[m].startDate && currDay <= arrReal[m].endDate) {
             let id = arrReal[m].modelId;
             obj.modelContainer[id].primitive.show = true;
+            obj.modelContainer[id].primitive.color = new FreeDo.Color(0, 238, 0, 1);
             currArrReal.push(obj.modelContainer[id]);
             indexArr.push(arrReal[m]);
         } else if (currDay < arrReal[m].startDate) {
@@ -727,6 +841,85 @@ EbsViewer.dragReal = function (currDay,obj) {
     }
     firstReal = false;
 };
+
+
+// 实际拖拽
+EbsViewer.dragCompare = function (currDay,obj) {
+    obj.flag = true;
+    compareCurrArr = [];                      //清空当前数组
+    var nodeIds = [];
+    var indexArr = [];
+    if (compareF) {
+        for (var j in obj.ebsContainer) {
+            if (obj.ebsContainer[j].type == 2) {
+                obj.ebsContainer[j].startDatePlan = new Date(obj.ebsContainer[j].startDatePlan).getTime();
+                obj.ebsContainer[j].endDatePlan = new Date(obj.ebsContainer[j].endDatePlan).getTime();
+                obj.ebsContainer[j].startDate = new Date(obj.ebsContainer[j].startDate).getTime();
+                obj.ebsContainer[j].endDate = new Date(obj.ebsContainer[j].endDate).getTime();
+            }
+        }
+        deepCopy(newObjCompare, obj.ebsContainer);
+        for (var key in newObjCompare) {
+            if (newObjCompare.hasOwnProperty(key)) {
+                if (newObjCompare[key].type == 2) {
+                    compareArr.push(newObjCompare[key]);
+                }
+            }
+        }
+        // 按开始时间排序
+        compareArr.sort(function (a, b) {
+            return a.startDate > b.startDate ? 1 : -1;
+        });
+        // 每一项添加一个排序后的索引
+        for (var i = 0; i < compareArr.length; i++) {
+            compareArr[i].index = i;
+        }
+    } 
+    for (var m = 0; m < compareArr.length; m++) {
+        if (currDay >= compareArr[m].startDatePlan && currDay <= compareArr[m].endDatePlan) {
+            let id = compareArr[m].modelId;
+            obj.modelContainer[id].primitive.show = true;
+            obj.modelContainer[id].primitive.color = new FreeDo.Color(255,0,0, 1);
+            compareCurrArr.push(obj.modelContainer[id]);
+            indexArr.push(compareArr[m]);
+        }
+        if (currDay < compareArr[m].startDatePlan) {
+            let id = compareArr[m].modelId;
+            obj.modelContainer[id].primitive.show = false;
+        }
+        if (currDay > compareArr[m].endDatePlan) {
+            let id = compareArr[m].modelId;
+            obj.modelContainer[id].primitive.show = true;
+            obj.modelContainer[id].primitive.color = new FreeDo.Color(1, 1, 1, 1);
+        }
+
+        if (currDay >= compareArr[m].startDate && currDay <= compareArr[m].endDate) {
+            let id = compareArr[m].modelId;
+            obj.modelContainer[id].primitive.show = true;
+            obj.modelContainer[id].primitive.color = new FreeDo.Color(0,238,0, 1);
+           
+        }
+    }
+     // 模型的 id 组
+     for (var n = 0; n < compareCurrArr.length; n++) {
+        nodeIds.push(compareCurrArr[n].id);
+    }
+
+    // 求出最大的 index,下次遍历从 index 开始
+    for (var n = 0; n < indexArr.length; n++) {
+        compareIndex = indexArr[0].index;
+        if (indexArr[n].index > index) {
+            compareIndex = indexArr[n].index;
+        }
+    }
+
+    if (obj.flag == true) {
+        EbsViewer.flyToModels(nodeIds,obj)
+    }
+    compareF  = false;
+};
+
+
 
 //CX 第一次飞行时相机的定位
 EbsViewer.flyPlay = function (lon,obj) {
@@ -766,352 +959,3 @@ function deepCopy(newObj, oldObj) {
 }
 
 
-// 比较播放
-
-EbsViewer.compareFly = function (currDay,obj,obj1) {
-    var nodeIds = [];
-    var nodeIds1 = [];
-    if (compareF) {
-        for (let j in obj.ebsContainer) {
-            if (obj.ebsContainer[j].type == 2) {
-                obj.ebsContainer[j].startDatePlan = new Date(obj.ebsContainer[j].startDatePlan).getTime();
-                obj.ebsContainer[j].endDatePlan = new Date(obj.ebsContainer[j].endDatePlan).getTime();
-            }
-        }
-        for (let j in obj1.ebsContainer) {
-            if (obj1.ebsContainer[j].type == 2) {
-                obj1.ebsContainer[j].startDate = new Date(obj1.ebsContainer[j].startDate).getTime();
-                obj1.ebsContainer[j].endDate = new Date(obj1.ebsContainer[j].endDate).getTime();
-            }
-        }
-        deepCopy(newObj1, obj.ebsContainer);
-        deepCopy(newObj2, obj1.ebsContainer);
-        for (let key in newObj1) {
-            if (newObj1.hasOwnProperty(key)) {
-                if (newObj1[key].type == 2) {
-                    compareArr.push(newObj1[key]);
-                }
-            }
-        }
-        for (let key in newObj2) {
-            if (newObj2.hasOwnProperty(key)) {
-                if (newObj2[key].type == 2) {
-                    compareArr1.push(newObj2[key]);
-                }
-            }
-        }
-         // 按开始时间排序
-         compareArr.sort(function (a, b) {
-            return a.startDatePlan > b.startDatePlan ? 1 : -1;
-        });
-        compareArr1.sort(function (a, b) {
-            return a.startDate > b.startDate ? 1 : -1;
-        });
-
-        // 每一项添加一个排序后的索引
-        for (let i = 0; i < compareArr.length; i++) {
-            compareArr[i].index = i;
-        }
-        for (let i = 0; i < compareArr1.length; i++) {
-            compareArr1[i].index = i;
-        }
-    } else {
-        for (let i = 0; i < compareCurrArr.length; i++) {
-            compareCurrArr[i].primitive.show = true;
-            compareCurrArr[i].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        }
-        for (let i = 0; i < compareCurrArr1.length; i++) {
-            compareCurrArr1[i].primitive.show = true;
-            compareCurrArr1[i].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        }
-    }
-    compareCurrArr = [];                      //清空当前数组
-    compareCurrArr1 = [];                      //清空当前数组
-    // 与当前时间相同的添加到当前数组里面
-    for (let m = compareIndex; m < compareArr.length; m++) {
-        if (currDay >= compareArr[m].startDatePlan && currDay <= compareArr[m].endDatePlan) {
-            let id = compareArr[m].modelId;
-            obj.modelContainer[id].primitive.show = true;
-            obj.modelContainer[id].primitive.color = new FreeDo.Color(0, 238, 0, 1);
-            compareCurrArr.push(obj.modelContainer[id]);
-            compareIndex = compareArr[m].index;
-        }
-    }
-
-    for (let m = compareIndex1; m < compareArr1.length; m++) {
-        if (currDay >= compareArr1[m].startDate && currDay <= compareArr1[m].endDate) {
-            let id = compareArr1[m].modelId;
-            obj1.modelContainer[id].primitive.show = true;
-            obj1.modelContainer[id].primitive.color = new FreeDo.Color(0, 238, 0, 1);
-            compareCurrArr1.push(obj1.modelContainer[id]);
-            compareIndex1 = compareArr1[m].index;
-        }
-    }
-    for (let n = 0; n < compareCurrArr.length; n++) {
-        nodeIds.push(compareCurrArr[n].id);
-    }
-    for (let n = 0; n < compareCurrArr1.length; n++) {
-        nodeIds1.push(compareCurrArr1[n].id);
-    }
-
-    if (obj.flag == true) {
-        var nodes = nodeIds.concat(nodeIds1);
-        EbsViewer.compareFlyToModels(nodes,nodeIds,obj);
-        EbsViewer.compareFlyToModels(nodes,nodeIds1,obj1);
-    }
-    compareF = false;
-};
-
-
-// 比较拖拽
-EbsViewer.dragCompare = function (currDay,obj,obj1) {
-    obj.flag = true;
-    compareCurrArr = [];                       //清空当前数组
-    compareCurrArr1 = [];                      //清空当前数组
-    var nodeIds = [];
-    var nodeIds1 = [];
-    var indexArr = [];
-    var indexArr1 = [];
-    if (compareF) {
-        for (var j in obj.ebsContainer) {
-            if (obj.ebsContainer[j].type == 2) {
-                obj.ebsContainer[j].startDatePlan = new Date(obj.ebsContainer[j].startDatePlan).getTime();
-                obj.ebsContainer[j].endDatePlan = new Date(obj.ebsContainer[j].endDatePlan).getTime();
-            }
-        }
-        for (var j in obj1.ebsContainer) {
-            if (obj1.ebsContainer[j].type == 2) {
-                obj1.ebsContainer[j].startDate = new Date(obj1.ebsContainer[j].startDate).getTime();
-                obj1.ebsContainer[j].endDate = new Date(obj1.ebsContainer[j].endDate).getTime();
-            }
-        }
-        deepCopy(newObj1, obj.ebsContainer);
-        deepCopy(newObj2, obj1.ebsContainer);
-        for (var key in newObj1) {
-            if (newObj1.hasOwnProperty(key)) {
-                if (newObj1[key].type == 2) {
-                    compareArr.push(newObj1[key]);
-                }
-            }
-        }
-        for (var key in newObj2) {
-            if (newObj2.hasOwnProperty(key)) {
-                if (newObj2[key].type == 2) {
-                    compareArr1.push(newObj2[key]);
-                }
-            }
-        }
-         // 按开始时间排序
-         compareArr.sort(function (a, b) {
-            return a.startDatePlan > b.startDatePlan ? 1 : -1;
-        });
-        compareArr1.sort(function (a, b) {
-            return a.startDate > b.startDate ? 1 : -1;
-        });
-
-        // 每一项添加一个排序后的索引
-        for (let i = 0; i < compareArr.length; i++) {
-            compareArr[i].index = i;
-        }
-        for (let i = 0; i < compareArr1.length; i++) {
-            compareArr1[i].index = i;
-        }
-    } 
-   
-    for (let m = 0; m < compareArr.length; m++) {
-        if (currDay >= compareArr[m].startDatePlan && currDay <= compareArr[m].endDatePlan) {
-            let id = compareArr[m].modelId;
-            obj.modelContainer[id].primitive.show = true;
-            compareCurrArr.push(obj.modelContainer[id]);
-            indexArr.push(compareArr[m]);
-        } else if (currDay < compareArr[m].startDatePlan) {
-            let id = compareArr[m].modelId;
-            obj.modelContainer[id].primitive.show = false;
-        } else if (currDay > compareArr[m].endDatePlan) {
-            let id = compareArr[m].modelId;
-            obj.modelContainer[id].primitive.show = true;
-            obj.modelContainer[id].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        }
-    }
-
-    for (let m = 0; m < compareArr1.length; m++) {
-        if (currDay >= compareArr1[m].startDate && currDay <= compareArr1[m].endDate) {
-            let id = compareArr1[m].modelId;
-            obj1.modelContainer[id].primitive.show = true;
-            compareCurrArr1.push(obj1.modelContainer[id]);
-            indexArr1.push(compareArr1[m]);
-        } else if (currDay < compareArr1[m].startDate) {
-            let id = compareArr1[m].modelId;
-            obj1.modelContainer[id].primitive.show = false;
-        } else if (currDay > compareArr1[m].endDate) {
-            let id = compareArr1[m].modelId;
-            obj1.modelContainer[id].primitive.show = true;
-            obj1.modelContainer[id].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        }
-    }
-
-    // 模型的 id 组
-    for (var n = 0; n < compareCurrArr.length; n++) {
-        nodeIds.push(compareCurrArr[n].id);
-    }
-    for (var n = 0; n < compareCurrArr1.length; n++) {
-        nodeIds1.push(compareCurrArr1[n].id);
-    }
-
-    // 求出最大的 index,下次遍历从 index 开始
-    for (var n = 0; n < indexArr.length; n++) {
-        compareIndex = indexArr[0].index;
-        if (indexArr[n].index > compareIndex) {
-            compareIndex = indexArr[n].index;
-        }
-    }
-    for (var n = 0; n < indexArr1.length; n++) {
-        compareIndex1 = indexArr1[0].index;
-        if (indexArr1[n].index > compareIndex1) {
-            compareIndex1 = indexArr1[n].index;
-        }
-    }
-    if (obj.flag == true) {
-        var nodes = nodeIds.concat(nodeIds1);
-        EbsViewer.compareFlyToModels(nodes,nodeIds,obj);
-        EbsViewer.compareFlyToModels(nodes,nodeIds1,obj1);
-    }
-}
-
-
-// 点击对照飞到对应的模型上
-EbsViewer.compareFlyModel = function (currDay,obj,obj1) {
-    var nodeIds = [];
-    var nodeIds1 = [];
-    for (var j in obj.ebsContainer) {
-        if (obj.ebsContainer[j].type == 2) {
-            obj.ebsContainer[j].startDatePlan = new Date(obj.ebsContainer[j].startDatePlan).getTime();
-            obj.ebsContainer[j].endDatePlan = new Date(obj.ebsContainer[j].endDatePlan).getTime();
-        }
-    }
-    for (var j in obj1.ebsContainer) {
-        if (obj1.ebsContainer[j].type == 2) {
-            obj1.ebsContainer[j].startDate = new Date(obj1.ebsContainer[j].startDate).getTime();
-            obj1.ebsContainer[j].endDate = new Date(obj1.ebsContainer[j].endDate).getTime();
-        }
-    }
-   
-    for (var i in obj.ebsContainer) {
-        if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDatePlan <= currDay && obj.ebsContainer[i].endDatePlan >= currDay) {
-            let id = obj.ebsContainer[i].modelId;
-            nodeIds.push(id);
-            obj.modelContainer[id].primitive.show = true;
-        } else if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].endDatePlan < currDay) {
-            let id = obj.ebsContainer[i].modelId;
-            obj.modelContainer[id].primitive.show = true;
-            obj.modelContainer[id].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        } else if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDatePlan > currDay) {
-            let id = obj.ebsContainer[i].modelId;
-            obj.modelContainer[id].primitive.show = false;
-        }
-    }
-
-    for (var i in obj1.ebsContainer) {
-        if (obj1.ebsContainer[i].type == 2 && obj1.ebsContainer[i].startDate <= currDay && obj1.ebsContainer[i].endDate >= currDay) {
-            let id = obj1.ebsContainer[i].modelId;
-            nodeIds1.push(id);
-            obj1.modelContainer[id].primitive.show = true;
-        } else if (obj1.ebsContainer[i].type == 2 && obj1.ebsContainer[i].endDate < currDay) {
-            let id = obj1.ebsContainer[i].modelId;
-            obj1.modelContainer[id].primitive.show = true;
-            obj1.modelContainer[id].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        } else if (obj1.ebsContainer[i].type == 2 && obj1.ebsContainer[i].startDate > currDay) {
-            let id = obj1.ebsContainer[i].modelId;
-            obj1.modelContainer[id].primitive.show = false;
-        }
-    }
-    var nodes = nodeIds.concat(nodeIds1);
-    EbsViewer.compareFlyToModels(nodes,nodeIds,obj);
-    EbsViewer.compareFlyToModels(nodes,nodeIds1,obj1);
-    obj.flag = true;
-};
-
-// 点击计划/实际 切换 飞到对应的模型上
-EbsViewer.compareFirstFly = function (currDay,obj,obj1) {
-     var nodeIds = [];
-     var nodeIds1 = [];
-     for (var j in obj.ebsContainer) {
-         if (obj.ebsContainer[j].type == 2) {
-             obj.ebsContainer[j].startDatePlan = new Date(obj.ebsContainer[j].startDatePlan).getTime();
-             obj.ebsContainer[j].endDatePlan = new Date(obj.ebsContainer[j].endDatePlan).getTime();
-         }
-     }
-     for (var j in obj1.ebsContainer) {
-        if (obj1.ebsContainer[j].type == 2) {
-            obj1.ebsContainer[j].startDatePlan = new Date(obj1.ebsContainer[j].startDatePlan).getTime();
-            obj1.ebsContainer[j].endDatePlan = new Date(obj1.ebsContainer[j].endDatePlan).getTime();
-        }
-    }
-     
-    for (var i in obj.ebsContainer) {
-        if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDatePlan <= currDay && obj.ebsContainer[i].endDatePlan >= currDay) {
-            let id = obj.ebsContainer[i].modelId;
-            nodeIds.push(id);
-            obj.modelContainer[id].primitive.show = true;
-        } else if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].endDatePlan < currDay) {
-            let id = obj.ebsContainer[i].modelId;
-            obj.modelContainer[id].primitive.show = true;
-            obj.modelContainer[id].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        } else if (obj.ebsContainer[i].type == 2 && obj.ebsContainer[i].startDatePlan > currDay) {
-            let id = obj.ebsContainer[i].modelId;
-            obj.modelContainer[id].primitive.show = false;
-        }
-    }
-
-    for (var i in obj1.ebsContainer) {
-        if (obj1.ebsContainer[i].type == 2 && obj1.ebsContainer[i].startDate<= currDay && obj1.ebsContainer[i].endDate >= currDay) {
-            let id = obj1.ebsContainer[i].modelId;
-            nodeIds1.push(id);
-            obj1.modelContainer[id].primitive.show = true;
-        } else if (obj1.ebsContainer[i].type == 2 && obj1.ebsContainer[i].endDate < currDay) {
-            let id = obj1.ebsContainer[i].modelId;
-            obj1.modelContainer[id].primitive.show = true;
-            obj1.modelContainer[id].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        } else if (obj1.ebsContainer[i].type == 2 && obj1.ebsContainer[i].startDate > currDay) {
-            let id = obj1.ebsContainer[i].modelId;
-            obj1.modelContainer[id].primitive.show = false;
-        }
-    }
-    var nodes = nodeIds.concat(nodeIds1);
-     EbsViewer.compareFlyToModels(nodes,nodeIds,obj);
-     EbsViewer.compareFlyToModels(nodes,nodeIds1,obj1);
-     obj.flag = true;
- };
-
-
-// 多模型飞行
-EbsViewer.compareFlyToModels = function (nodeIds,arr,obj) {
-    if (obj.lastModelId != -2) {
-        obj.modelContainer[obj.lastModelId].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-    }
-    if (nodeIds.length == 0){
-        return false;
-    }
-    var positions = [];
-    var node = null;
-    if (obj.selectModels.length != 0) {	//清空存储所选模型的容器
-        for (var i = 0; i < obj.selectModels.length; i++) {
-            obj.selectModels[i].primitive.color = new FreeDo.Color(1, 1, 1, 1);
-        }
-        obj.selectModels = [];
-    }
-    for (var i = 0; i < nodeIds.length; i++) {	//设置多模型颜色
-        node = obj.modelContainer[nodeIds[i]];
-        positions.push({ lon: node.lon, lat: node.lat, height: node.height });
-    }
-    for(var i = 0; i < arr.length; i++){
-        node = obj.modelContainer[arr[i]];
-        //设置模型颜色
-        obj.selectModels.push({ primitive: node.primitive });
-        node.primitive.color = new FreeDo.Color(0, 238, 0, 1);
-    }
-    obj.flag = false;
-    FreeDoTool.flyToModels(obj.viewer.camera, positions, function(){
-        obj.flag = true;
-    });
-}

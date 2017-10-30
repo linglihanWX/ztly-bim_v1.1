@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>进度管理</title>
-    <link rel="shortcut icon" href="../../../common/img/FD_favicon.ico">
     <link rel="stylesheet" href="../../../common/css/reset.css">
-    <link rel="stylesheet" href="IconFont/iconfont.css">
+    <link rel="stylesheet" href="./IconFont/iconfont.css">
     <link rel="stylesheet" href="../../../common/css/easyui.css">
     <link rel="stylesheet" href="../../../common/css/icon.css">
-<link href="http://res.gbim360.com/lib/freedo/rel/1.4.0.171017/Freedo/Widgets/widgets.css" rel="stylesheet">
+    <link href="http://res.gbim360.com/lib/freedo/rel/1.4.0.171017/Freedo/Widgets/widgets.css" rel="stylesheet">
     <script src="http://res.gbim360.com/lib/freedo/rel/1.4.0.171017/Freedo/Freedo.js"></script>
     <script src="http://res.gbim360.com/shared/1710_lodash/lodash.min.js"></script>
     <script src="http://res2.gbim360.com/projects/FreedoHolo3DForWeb/develop/API/FreedoX.js"></script>
@@ -39,7 +38,7 @@
         </div>
 
     </div>
-</div>
+
 
 <div id="content" class="content">
     <div id="left" class="left">
@@ -59,6 +58,10 @@
     <div id="right" class="right">
            
         <div class="model" id="model">
+        <dvi class="toolTip">
+            <p><span></span>实际进度</p>
+            <p> <span></span>计划进度</p>
+        </dvi>
 
             <!-- 计划进度播放开始 -->
             <div class="planPlay">
@@ -94,6 +97,24 @@
             </div>
             <!-- 实际进度播放结束 -->
 
+            
+            <!-- 对比进度播放开始 -->
+            <div class="comparePlay">
+                <div class="control">
+                    <i class="iconfont icon-kuaitui cutSpeed"></i>
+                    <i class="iconfont icon-start playOrStop"></i>
+                    <i class="iconfont icon-kuaijin addSpeed"></i>
+                </div>
+                <div class="progress">
+                    <div class="bar">
+                        <span class="compareSlider"></span> <span class="compareTip"></span>
+                    </div>
+                    <span class="startTime compareS"></span>
+                    <span class="endTime compareE"></span>
+                </div>
+            </div>
+            <!-- 对比进度播放结束 -->
+
             <!-- 计划进度修改  3D -->
             <div class="detailInfo projectCut">
                 <ul>
@@ -125,12 +146,9 @@
                 <button class="sureRealChange" >确认</button>
             </div>
         </div>
-        <div class="compareRealPlan">计划</div>
     </div>
 
-    <div id="compareModel">
-        <div class="compareRealPlan">实际</div>
-    </div>
+    
 </div>
 
 <div id="dialog" class="dialog">
@@ -277,27 +295,11 @@
     </div>
 </div>
 
-<!-- 对比进度播放开始 -->
-<div class="comparePlay">
-        <div class="control">
-            <i class="iconfont icon-kuaitui cutSpeed"></i>
-            <i class="iconfont icon-start playOrStop"></i>
-            <i class="iconfont icon-kuaijin addSpeed"></i>
-        </div>
-        <div class="progress">
-            <div class="bar">
-                <span class="compareSlider"></span> <span class="compareTip"></span>
-            </div>
-            <span class="startTime compareS"></span>
-            <span class="endTime compareE"></span>
-        </div>
-    </div>
-    <!-- 对比进度播放结束 -->
 
 </body>
 <script src="../../../common/js/FreeDoTool.js"></script>
 <script src="EBSviewer.js"></script>
 <script src="../../../common/js/jquery.easyui.min.js"></script>
-<script src="edit.js"></script>
+<script src="../../../common/js/edit.js"></script>
 <script src="ebs.js"></script>
 </html>

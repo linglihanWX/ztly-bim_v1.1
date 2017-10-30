@@ -594,3 +594,32 @@ a {
     font-weight: bold;
     z-index: 2;
 }
+
+.toolTip{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 40px;
+    padding:0 10px;
+    font-size: 13px;
+    color: #fff;
+    z-index: 1;
+}
+.toolTip p{
+    height: 20px;
+    width: 100%;
+    line-height:20px;
+}
+.toolTip p span{
+    display: inline-block;
+    width: 30px;
+    height: 15px;
+    background: rgba(0,238,0,1);
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.toolTip p:nth-of-type(2) span{
+    background: red;
+}
