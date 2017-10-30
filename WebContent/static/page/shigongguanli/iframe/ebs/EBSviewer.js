@@ -107,6 +107,8 @@ var Init = function (earthId) {
         })
 
     });
+    this.viewer._cesiumWidget._creditContainer.style.display = "none";
+	this.viewer.scene.globe.depthTestAgainstTerrain = true;
     this.viewer.imageryLayers.addImageryProvider(new FreeDo.WebMapTileServiceImageryProvider({
         url: "http://{s}.tianditu.com/cia_w/wmts?service=WMTS&request=GetTile&version=1.0.0&LAYER=cia&tileMatrixSet={TileMatrixSet}&TileMatrix={TileMatrix}&TileRow={TileRow}&Tilecol={TileCol}&style={style}&format=tiles",
         style: "default",
@@ -206,7 +208,7 @@ Init.prototype = {
                         }
                     } else {
                         var parameter = JSON.parse(node.attributes.parameter);
-                        modelNode = new EbsViewer.ModelObj(node.id, node.parentId, node.text, node.type, "http://182.92.7.32:9510/ProjectManage/models/" + parameter.filePath, parameter.lon, parameter.lat, parameter.height, parameter.course, parameter.alpha, parameter.roll, parameter.scaleX, parameter.scaleY, parameter.scaleZ,that.viewer);
+                        modelNode = new EbsViewer.ModelObj(node.id, node.parentId, node.text, node.type, "http://182.92.7.32:9510/ProjectManage/models/" + parameter.filePath, parameter.lon, parameter.lat, parameter.height-46, parameter.course, parameter.alpha, parameter.roll, parameter.scaleX, parameter.scaleY, parameter.scaleZ,that.viewer);
                     }
     
                     container[node.id] = modelNode;
