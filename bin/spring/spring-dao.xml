@@ -24,6 +24,8 @@
 		<property name="minPoolSize"		value="${c3p0.minPoolSize}"></property>
 		<property name="initialPoolSize"	value="${c3p0.initialPoolSize}"></property>
 		<property name="acquireIncrement"	value="${c3p0.acquireIncrement}"></property>
+		<property name="idleConnectionTestPeriod"	value="${c3p0.idleConnectionTestPeriod}"></property>
+		<property name="preferredTestQuery"	value="${c3p0.preferredTestQuery}"></property>
 		
 	</bean>
 	
