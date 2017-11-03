@@ -1,0 +1,86 @@
+@charset "utf-8";
+
+.pull-left{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 20px;
+    height: 40px;
+    text-align: center;
+    line-height: 38px;
+    font-size: 24px;
+    color: #000;
+    background: rgba(255,255,255,.5);
+    margin-top: -20px;
+    font-weight: bold;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    z-index:1;
+}
+#appendTools{
+    position: absolute;
+    right: -40px;
+    top: 230px;
+    height:225px;
+    width: 40px;
+    transition:  all .5s;
+    z-index:3;
+}
+#appendTools i{
+    display: block;
+    width: 100%;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    text-align: center;
+    line-height: 38px;
+    margin-bottom: 5px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+}
+#appendTools  i:nth-of-type(4){
+    font-weight: bold;
+    font-size: 26px;
+}
+#appendTools i:nth-of-type(1){
+    font-weight: bold;
+    font-size: 18px;
+}
+i.active{
+    color: #000!important;
+    background-color: #fff;
+}
+/*图表*/
+#echartarea{
+	display:none;
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 300px;
+    height: 600px;
+    border: 1px solid #000;
+    z-index:2;
+    background-color: #fff;
+    background-color: rgba(255,255,255,0.8);
+}
+#bararea,#piearea{
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255,255,255,0.8);
+}
+
+#img{
+	display:none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    height: 240px;
+    z-index: 2;
+}
+#geologyslicing{
+	width:300px;
+	height:240px;
+}

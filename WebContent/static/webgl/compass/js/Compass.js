@@ -21,7 +21,7 @@ Compass.prototype = {
 	},
 	init : function() {
 		var vc = this.viewer.container;
-		var sceneCanvasP = vc.getElementsByTagName("canvas")[0].parentNode;
+		var sceneCanvasP = this.viewer.canvas.parentNode;
 		
 		var d1 = document.createElement("div");
 		var d2 = document.createElement("div");

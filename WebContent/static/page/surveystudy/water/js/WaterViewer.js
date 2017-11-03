@@ -11,6 +11,7 @@ var first = true;
 var firstReal = true;
 var water = [];
 var myviewer =null;
+var screenSpaceEventHandler = null;
 window.obj = {};
 WaterViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
@@ -253,9 +254,11 @@ WaterViewer.positionToWater = function(id) {
 WaterViewer.changeShowHide = function(id) {
 	this.viewer.zoomTo(water[id]);
 }
+
+//鼠标左键点击水文区域出标牌
 WaterViewer.initLeftClick = function(viewer,callback) {
-		var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
-		screenSpaceEventHandler.setInputAction(function(movement){
+	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler.setInputAction(function(movement){
 			$(".msgInfo").hide();
 			var picked = viewer.scene.pick(movement.position);
 			if(picked==undefined){
@@ -264,9 +267,13 @@ WaterViewer.initLeftClick = function(viewer,callback) {
 			callback(movement.position,picked);
 			}
 		}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
-		
-	
 }
+//移除原有的监听事件
+WaterViewer.removeListener = function(){
+	screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+}
+
+//初始化大桥
 WaterViewer.initModels = function () {
     $.ajax({
         url: "pm/selectAll",

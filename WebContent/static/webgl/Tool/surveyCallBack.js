@@ -1,10 +1,18 @@
-
+var tempcircle1 = null;
 var SurveyType = {
-    NONE: 0,
-    LINE_DISTANCE: 1,
-    SEGMENTS_DISTANCE: 2,
-    POINT_POSITION:3,
-    Azimuth_DISTANCE:4,
+	    NONE: 0,
+	    //直线测量
+	    LINE_DISTANCE: 1,
+	    //
+	    SEGMENTS_DISTANCE: 2,
+	    //
+	    POINT_POSITION:3,
+	    //方位角测量
+	    Azimuth_DISTANCE:4,
+	    //地质剖切
+	    Geology_SLICING:5,
+	    //统计查询
+	    QUERY:6,
 };
 
 function SurveyManager(viewer, callBack) {
@@ -44,6 +52,10 @@ function SurveyManager(viewer, callBack) {
             	return new SurveyToolPointDistance();
             case SurveyType.Azimuth_DISTANCE:
             	return new SurveyToolAzimuthDistance();
+            case SurveyType.Geology_SLICING:
+            	return new SurveyToolGeologySlicing();
+            case SurveyType.QUERY:
+            	return new SurveyToolQuery();
         }
     }
 
@@ -232,9 +244,13 @@ function SurveyManager(viewer, callBack) {
             clearResults();
         };
     }
-
+    /**
+     * 距离测量
+     */
     function SurveyToolLineDistance(callBack) {
-
+    	if(tempcircle1){
+        	viewer.entities.remove(tempcircle1);
+		}
         var ResultType = {
             StraightLine: 1,
             HorizontalAndVertical: 2
@@ -565,7 +581,6 @@ function SurveyManager(viewer, callBack) {
 
         function clearResults() {
             removeTmpLine();
-
             for (var i = 0; i < results.length; ++i) {
                 if (results[i].type === ResultType.StraightLine) {
                     //polylineCollection.remove(results[i].line);
@@ -739,8 +754,13 @@ d
 		};
 	}
     
-    //方位角测量
+    /**
+     * 方位角测量
+     */
     function SurveyToolAzimuthDistance() {
+    	if(tempcircle1){
+        	viewer.entities.remove(tempcircle1);
+		}
     	var AngleLableArray = [];
     	var firstLon = null;
     	var firstLat = null;
@@ -760,7 +780,7 @@ d
                             	firstlongitude, firstlatitude,  
                             	firstlongitude, firstlatitude+0.001 
                             ]),  
-                            width : 1.0,  
+                            width : 10.0,  
                             material : FreeDo.Color.RED.withAlpha(0.5),  
                             outline : true,  
                             outlineColor : FreeDo.Color.RED  
@@ -814,7 +834,7 @@ d
                             	firstlongitude, firstlatitude,  
                                 lastlongitude, lastlatitude 
                             ]),  
-                            width : 1.0,  
+                            width : 10.0,  
                             material : FreeDo.Color.RED.withAlpha(0.5),  
                             outline : true,  
                             outlineColor : FreeDo.Color.RED  
@@ -883,4 +903,514 @@ d
 			screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 		};
 	}
+    /**
+     * 地质剖切
+     */
+    function SurveyToolGeologySlicing(){
+    	if(tempcircle1){
+        	viewer.entities.remove(tempcircle1);
+		}
+        var ResultType = {
+            StraightLine: 1,
+            HorizontalAndVertical: 2
+        };
+
+        var results = [];
+        var startPoint = undefined;
+
+        var polylineCollection = new FreeDo.PolylineCollection();
+        viewer.scene.primitives.add(polylineCollection);
+
+        var tempLine;
+        var tempPointEntities = [null, null];
+
+        function updateTmpLine(windowPosition) {
+            var pickResult = pickPosition(windowPosition);
+            if (pickResult.type !== PositionType.NONE) {
+                if (tempLine) {
+                    //polylineCollection.remove(tempLine);
+                	viewer.entities.remove(tempLine);
+                    tempLine = undefined;
+                }
+                /*tempLine = polylineCollection.add({
+                    positions: [startPoint.position, pickResult.position],
+                    width: 1,
+                    show: true,
+                    loop: false,
+                    material: new FreeDo.Material({
+                        fabric : {
+                            type : 'Color',
+                            uniforms : {
+                                color: FreeDo.Color.RED
+                            }
+                        }
+                    })
+                });*/
+                tempLine = viewer.entities.add({  
+                    name : 'Red corridor on surface with rounded corners and outline',  
+                    corridor : {  
+                        positions : [startPoint.position, pickResult.position],
+                        width : 10.0,  
+                        material : FreeDo.Color.RED.withAlpha(0.5),  
+                        outline : true,  
+                        outlineColor : FreeDo.Color.RED  
+                    }  
+                });
+                if (!tempPointEntities[1]) {
+                    tempPointEntities[1] = viewer.entities.add({
+                        position: pickResult.position,
+                        point: {
+                            pixelSize: 3,
+                            color: FreeDo.Color.WHITE,
+                            outlineColor: FreeDo.Color.BLACK,
+                            outlineWidth: 1
+                        }
+                    });
+                } else {
+                    tempPointEntities[1].position = pickResult.position;                    
+                }
+            }
+        }
+        function removeTmpLine() {
+            if (tempLine) {
+                //polylineCollection.remove(tempLine);
+            	viewer.entities.remove(tempLine);
+                tempLine = undefined;
+            }
+            for (var i = 0; i < tempPointEntities.length; i++) {
+                if (!!tempPointEntities[i]) {
+                    viewer.entities.remove(tempPointEntities[i]);
+                    tempPointEntities[i] = null;
+                }
+            }
+        }
+        
+        function addResult(endPoint) {
+            var resultType = startPoint.type === PositionType.ON_MODEL ? ResultType.HorizontalAndVertical : 
+                    (endPoint.type === PositionType.ON_MODEL ? ResultType.HorizontalAndVertical : ResultType.StraightLine);
+
+            if (resultType === ResultType.StraightLine) {
+                var positions = [startPoint.position, endPoint.position];
+                /*var line = polylineCollection.add({
+                    positions: positions,
+                    width: 1,
+                    show: true,
+                    loop: false,
+                    material: new FreeDo.Material({
+                        fabric : {
+                            type : 'Color',
+                            uniforms : {
+                                color: FreeDo.Color.RED
+                            }
+                        }
+                    })
+                });*/
+                var line = viewer.entities.add({  
+                    name : 'Red corridor on surface with rounded corners and outline',  
+                    corridor : {  
+                        positions : positions,
+                        width : 10.0, 
+                        material : FreeDo.Color.RED.withAlpha(0.5),  
+                        outline : true,  
+                        outlineColor : FreeDo.Color.RED  
+                    }  
+                });
+                var labelEntity = viewer.entities.add({
+                    position: getCenter(startPoint.position, endPoint.position),
+                    /*label: {
+                        text: getLengthText(calculateLength(positions)),
+                        show: true,
+                        showBackground: true,
+                        backgroundColor: new FreeDo.Color(0.165, 0.165, 0.165, 1),
+                        font: '14px monospace',
+                        horizontalOrigin : FreeDo.HorizontalOrigin.CENTER,
+                        verticalOrigin : FreeDo.VerticalOrigin.BOTTOM,
+                        pixelOffset : new FreeDo.Cartesian2(1, 1),
+                        disableDepthTestDistance: Number.POSITIVE_INFINITY
+                    },*/
+                   /* billboard : { //图标  
+        		        image : "./static/page/common/img/poumian.png",  
+        		        width : 300,  
+        		        height : 200  
+        		    },*/
+                    	 /*wall : {
+                    	        positions : [startPoint.position,endPoint.position],
+                    	        maximumHeights : [200,200],
+                    	        minimumHeights : [0, 0],
+                    	        outline : true,
+                    	        fill:true,
+                    	        outlineColor : FreeDo.Color.LIGHTGRAY,
+                    	        outlineWidth : 4,
+                    	        material : new FreeDo.ImageMaterialProperty({
+                    	        	image:"static/page/common/img/poumian.png",
+                    	        	repeat:new FreeDo.Cartesian2(2, 1)
+                    	        })
+                    	    }*/
+                });
+                var startPointEntity = viewer.entities.add({
+                    position: startPoint.position,
+                    point: {
+                        pixelSize: 3,
+                        color: FreeDo.Color.WHITE,
+                        outlineColor: FreeDo.Color.BLACK,
+                        //disableDepthTestDistance: Number.POSITIVE_INFINITY,
+                        outlineWidth: 1
+                    }
+                });
+                var endPointEntity = viewer.entities.add({
+                    position: endPoint.position,
+                    point: {
+                        pixelSize: 3,
+                        color: FreeDo.Color.WHITE,
+                        outlineColor: FreeDo.Color.BLACK,
+                        //disableDepthTestDistance: Number.POSITIVE_INFINITY,
+                        outlineWidth: 1
+                    }
+                });
+                results.push({
+                    type: resultType,
+                    labelEntity: labelEntity,
+                    line: line,
+                    startPointEntity: startPointEntity,
+                    endPointEntity: endPointEntity
+                });
+            
+            } else if (resultType === ResultType.HorizontalAndVertical) {
+
+                var startPointCartographic = FreeDo.Cartographic.fromCartesian(startPoint.position);
+                var endPointCartographic = FreeDo.Cartographic.fromCartesian(endPoint.position);
+                var lowPoint, highPoint, verticalOffset, horizontalOffset;
+                if (startPointCartographic.height > endPointCartographic.height) {
+                    highPoint = startPoint.position;
+                    lowPoint = endPoint.position;
+                    verticalOffset = startPointCartographic.height - endPointCartographic.height;
+                } else {
+                    highPoint = endPoint.position;
+                    lowPoint = startPoint.position;
+                    verticalOffset = endPointCartographic.height - startPointCartographic.height;
+                }
+
+                var up = new FreeDo.Cartesian3();
+                FreeDo.Cartesian3.normalize(lowPoint, up);
+                FreeDo.Cartesian3.multiplyByScalar(up, verticalOffset, up);
+                var crossPoint = new FreeDo.Cartesian3();
+                FreeDo.Cartesian3.add(lowPoint, up, crossPoint);
+
+                horizontalOffset = FreeDo.Cartesian3.distance(crossPoint, highPoint);
+
+               /* var line = polylineCollection.add({
+                    positions: [highPoint, lowPoint],
+                    width: 1,
+                    show: true,
+                    loop: false,
+                    material: new FreeDo.Material({
+                        fabric : {
+                            type : 'Color',
+                            uniforms : {
+                                color: FreeDo.Color.RED
+                            }
+                        }
+                    })
+                });
+                var verticalLine = polylineCollection.add({
+                    positions: [lowPoint, crossPoint],
+                    width: 1,
+                    show: true,
+                    loop: false,
+                    material: new FreeDo.Material({
+                        fabric : {
+                            type : 'Color',
+                            uniforms : {
+                                color: FreeDo.Color.BLUE
+                            }
+                        }
+                    })
+                });
+                var horizontalLine = polylineCollection.add({
+                    positions: [highPoint, crossPoint],
+                    width: 1,
+                    show: true,
+                    loop: false,
+                    material: new FreeDo.Material({
+                        fabric : {
+                            type : 'Color',
+                            uniforms : {
+                                color: FreeDo.Color.GREEN
+                            }
+                        }
+                    })
+                });*/
+                var line = viewer.entities.add({  
+                    name : 'Red corridor on surface with rounded corners and outline',  
+                    corridor : {  
+                        positions : [highPoint, lowPoint], 
+                        width : 10.0,  
+                        material : FreeDo.Color.RED.withAlpha(0.5),  
+                        outline : true,  
+                        outlineColor : FreeDo.Color.RED  
+                    }
+                });  
+                   
+                var verticalLine = viewer.entities.add({  
+                    name : 'Green corridor at height with mitered corners',  
+                    corridor : {  
+                        positions : [lowPoint, crossPoint],
+                       // height: 100000.0,  
+                        width : 10.0,  
+                        cornerType: FreeDo.CornerType.MITERED,  
+                        material : FreeDo.Color.GREEN  
+                    }  
+                });  
+                   
+                var horizontalLine = viewer.entities.add({  
+                    name : 'Blue extruded corridor with beveled corners and outline',  
+                    corridor : {  
+                        positions : [highPoint, crossPoint],
+                        //height : 200000.0,  
+                        //extrudedHeight : 100000.0,  
+                        width : 10.0,  
+                        cornerType: FreeDo.CornerType.BEVELED,  
+                        material : FreeDo.Color.BLUE.withAlpha(0.5),  
+                        outline : true,  
+                        outlineColor : FreeDo.Color.BLUE  
+                    }  
+                });  
+
+                var lineLabelEntity = viewer.entities.add({
+                    position: getCenter(highPoint, lowPoint),
+                    label: {
+                        text: getLengthText(calculateLength([highPoint, lowPoint])),
+                        show: true,
+                        showBackground: true,
+                        backgroundColor: new FreeDo.Color(0.165, 0.165, 0.165, 1),
+                        font: '14px monospace',
+                        horizontalOrigin : FreeDo.HorizontalOrigin.CENTER,
+                        verticalOrigin : FreeDo.VerticalOrigin.BOTTOM,
+                        pixelOffset : new FreeDo.Cartesian2(0, 3),
+                        disableDepthTestDistance: Number.POSITIVE_INFINITY
+                    }
+                });
+                var verticalLineLabelEntity = viewer.entities.add({
+                    position: getCenter(lowPoint, crossPoint),
+                    label: {
+                        text: getLengthText(verticalOffset),
+                        show: true,
+                        showBackground: true,
+                        backgroundColor: new FreeDo.Color(0.165, 0.165, 0.165, 1),
+                        font: '14px monospace',
+                        horizontalOrigin : FreeDo.HorizontalOrigin.CENTER,
+                        verticalOrigin : FreeDo.VerticalOrigin.BOTTOM,
+                        pixelOffset : new FreeDo.Cartesian2(0, 3),
+                        disableDepthTestDistance: Number.POSITIVE_INFINITY
+                    }
+                });
+                var horizontalLineLabelEntity = viewer.entities.add({
+                    position: getCenter(highPoint, crossPoint),
+                    label: {
+                        text: getLengthText(horizontalOffset),
+                        show: true,
+                        showBackground: true,
+                        backgroundColor: new FreeDo.Color(0.165, 0.165, 0.165, 1),
+                        font: '14px monospace',
+                        horizontalOrigin : FreeDo.HorizontalOrigin.CENTER,
+                        verticalOrigin : FreeDo.VerticalOrigin.BOTTOM,
+                        pixelOffset : new FreeDo.Cartesian2(0, 3),
+                        disableDepthTestDistance: Number.POSITIVE_INFINITY
+                    }
+                });
+                var startPointEntity = viewer.entities.add({
+                    position: startPoint.position,
+                    point: {
+                        pixelSize: 3,
+                        color: FreeDo.Color.WHITE,
+                        outlineColor: FreeDo.Color.BLACK,
+                        //disableDepthTestDistance: Number.POSITIVE_INFINITY,
+                        outlineWidth: 1
+                    }
+                });
+                var endPointEntity = viewer.entities.add({
+                    position: endPoint.position,
+                    point: {
+                        pixelSize: 3,
+                        color: FreeDo.Color.WHITE,
+                        outlineColor: FreeDo.Color.BLACK,
+                        //disableDepthTestDistance: Number.POSITIVE_INFINITY,
+                        outlineWidth: 1
+                    }
+                });
+                results.push({
+                    type: resultType,
+                    line: line,
+                    verticalLine: verticalLine,
+                    horizontalLine: horizontalLine,
+                    lineLabelEntity: lineLabelEntity,
+                    verticalLineLabelEntity: verticalLineLabelEntity,
+                    horizontalLineLabelEntity: horizontalLineLabelEntity,
+                    startPointEntity: startPointEntity,
+                    endPointEntity: endPointEntity
+                });
+            }
+
+            startPoint = undefined;
+            endPoint = undefined;
+        }
+
+        function clearResults() {
+            removeTmpLine();
+
+            for (var i = 0; i < results.length; ++i) {
+                if (results[i].type === ResultType.StraightLine) {
+                    //polylineCollection.remove(results[i].line);
+                	viewer.entities.remove(results[i].line);
+                    viewer.entities.remove(results[i].labelEntity);
+                    viewer.entities.remove(results[i].startPointEntity);
+                    viewer.entities.remove(results[i].endPointEntity);
+                } else if (results[i].type === ResultType.HorizontalAndVertical) {
+                   /* polylineCollection.remove(results[i].line);
+                    polylineCollection.remove(results[i].verticalLine);
+                    polylineCollection.remove(results[i].horizontalLine);*/
+                	viewer.entities.remove(results[i].line);
+                	viewer.entities.remove(results[i].verticalLine);
+                	viewer.entities.remove(results[i].horizontalLine);
+                    viewer.entities.remove(results[i].lineLabelEntity);
+                    viewer.entities.remove(results[i].verticalLineLabelEntity);
+                    viewer.entities.remove(results[i].horizontalLineLabelEntity);
+                    viewer.entities.remove(results[i].startPointEntity);
+                    viewer.entities.remove(results[i].endPointEntity);
+                }
+            }
+            results = [];
+        }
+
+        function pickStartPoint(windowPosition) {
+        	clearResults();
+            var pickResult = pickPosition(windowPosition);
+            if (pickResult.type !== PositionType.NONE) {
+                startPoint = pickResult;
+                tempPointEntities[0] = viewer.entities.add({
+                    position: startPoint.position,
+                    point: {
+                        pixelSize: 3,
+                        color: FreeDo.Color.WHITE,
+                        outlineColor: FreeDo.Color.BLACK,
+                        //disableDepthTestDistance: Number.POSITIVE_INFINITY,
+                        outlineWidth: 1
+                    }
+                });
+            }
+        }
+        /**
+         * 选择结束点
+         */
+        function pickEndPoint(windowPosition) {
+        	var random = (Math.random()*3)
+        	var num = Math.ceil(random);
+            $("#geologyslicing").attr("src","static/page/common/img/poumian/poumian"+num+".png");
+			$("#img").show();
+        	var pickResult = pickPosition(windowPosition);
+            if (pickResult.type !== PositionType.NONE) {
+                removeTmpLine();
+
+                addResult(pickResult);
+            }
+        }
+
+        function handleLeftClick(movement) {
+            if (!!startPoint) {
+                pickEndPoint(movement.position);
+                // if (!!endPoint && endPoint.type !== PositionType.NONE) {
+                //     removeTmpLine();
+                //     addResult();
+                // }
+            } else {
+                pickStartPoint(movement.position);
+            }
+        };
+
+        function handleRightClick(movement) {
+            if (!!startPoint) {
+                startPoint = undefined;
+            }
+            // if (!!endPoint) {
+            //     endPoint = undefined;
+            // }
+        }
+
+        function handleMouseMove(movement) {
+            if (!!startPoint && !FreeDo.Cartesian3.equals(movement.endPosition, movement.startPosition)) {
+                updateTmpLine(movement.endPosition);
+            }
+        }
+
+        screenSpaceEventHandler.setInputAction(handleLeftClick, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+        screenSpaceEventHandler.setInputAction(handleRightClick, FreeDo.ScreenSpaceEventType.RIGHT_CLICK);
+        screenSpaceEventHandler.setInputAction(handleMouseMove, FreeDo.ScreenSpaceEventType.MOUSE_MOVE);
+
+        this.destroy = function() {
+            screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+            screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.RIGHT_CLICK);
+            screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.MOUSE_MOVE);
+            clearResults();
+            viewer.scene.primitives.remove(polylineCollection);
+        };
+    
+    }
+    /**
+     * 统计查询
+     */
+    function SurveyToolQuery(callback){
+    	var greenCircle = null;
+    	var tempcircle = null;
+    	//监听鼠标左击事件
+    	function listenLeftClick(movement){
+    		if(!greenCircle){
+    			if(tempcircle){
+    				viewer.entities.remove(tempcircle);
+    				tempcircle = null;
+    			}
+    			var scene = viewer.scene;
+    			var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
+    			var cartesian = scene.globe.pick(viewer.camera.getPickRay(pick), scene);
+    			//$("#menu").hide();
+    			greenCircle = viewer.entities.add({
+    			    position: cartesian,
+    			    name : 'Green circle at height with outline',
+    			    ellipse : {
+    			        semiMinorAxis : 30.0,
+    			        semiMajorAxis : 30.0,
+    			        height: 0.001,
+    			        material : FreeDo.Color.WHITE.withAlpha(0) ,
+    			        outline : true, // height must be set for outline to display
+    			        outlineColor :  FreeDo.Color.RED,
+    			        outlineWidth : 10.0
+    			    }
+    			});
+    			//viewer.zoomTo(greenCircle);
+    			tempcircle = greenCircle;
+    		}else{
+    			//viewer.entities.remove(greenCircle);
+    			reloadTableData();
+    			tempcircle1 = greenCircle;
+    			greenCircle = null;
+    		}
+    	}
+    	//监听鼠标移动事件
+    	function listenMouseMove(movement){
+    		if(greenCircle){
+    			var scene = viewer.scene;
+    			var pick= new FreeDo.Cartesian2(movement.endPosition.x,movement.endPosition.y);
+    			var cartesian = scene.globe.pick(viewer.camera.getPickRay(pick), scene);
+    			var length = FreeDo.Cartesian3.distance(greenCircle.position._value, cartesian);
+    			greenCircle.ellipse.semiMinorAxis = length;
+    			greenCircle.ellipse.semiMajorAxis = length;
+    		}
+    	}
+    	screenSpaceEventHandler.setInputAction(listenLeftClick,FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+    	screenSpaceEventHandler.setInputAction(listenMouseMove,FreeDo.ScreenSpaceEventType.MOUSE_MOVE);
+    	 this.destroy = function() {
+             screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+             screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.MOUSE_MOVE);
+     
+         };
+    }
 }

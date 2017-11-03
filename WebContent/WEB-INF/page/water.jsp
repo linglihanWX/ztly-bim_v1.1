@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="${ctx }/static/webgl/compass/css/compass.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<link rel="stylesheet" href="${ctx }/static/page/surveystudy/water/css/water.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
 	<!-- end: CSS -->
 	
 <link href="http://res.gbim360.com/lib/freedo/rel/1.4.0.171017/Freedo/Widgets/widgets.css" rel="stylesheet">
@@ -40,9 +41,9 @@
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
-	<script src="${ctx }/static/page/surveystudy/water/js/WaterViewer.js"></script>
-	<script src="${ctx }/static/page/surveystudy/water/js/water.js"></script>
-
+	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
+	
+	
 </head>
 
 <body>
@@ -265,6 +266,10 @@
 	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
 	<script src="${ctx }/static/page/common/js/change2D3D.js"></script>
  	<script src="${ctx }/static/page/common/js/custom.js"></script>
+	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
+	<script src="${ctx }/static/page/surveystudy/water/js/WaterViewer.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
+	<script src="${ctx }/static/page/surveystudy/water/js/water.js"></script>
 	<!-- end: JavaScript-->
 </body>
 
