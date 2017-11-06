@@ -109,7 +109,7 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li>
-							<a href="${ctx }/toWater">
+							<a href="${ctx }/toSurveystudyGK">
 								<i class="iconfont icon-kcmanager"></i>
 								<span class="hidden-tablet">勘测可研</span>
 							</a>
@@ -120,17 +120,17 @@
 								<span class="hidden-tablet">设计协同</span>
 							</a>
 						</li>
-						<li>
-							<a href="${ctx }/toEbs">
-									<i class="iconfont icon-construct"></i>
-									<span class="hidden-tablet">施工管理</span>
-								</a>
+						<li >
+							<a href="${ctx }/toShigongguanliGK">
+								<i class="iconfont icon-construct"></i>
+								<span class="hidden-tablet">施工管理</span>
+							</a>
 						</li>
-						<li   class="active">
-							<a href="${ctx }/toSpacemgmt">
-									<i class="iconfont icon-Refresh"></i>
-									<span class="hidden-tablet">运维管理</span>
-								</a>
+						<li class="active">
+							<a href="${ctx }/toYunweiGK">
+								<i class="iconfont icon-Refresh"></i>
+								<span class="hidden-tablet">运维管理</span>
+							</a>
 						</li>
 					</ul>
 				</div>
@@ -141,6 +141,7 @@
 				<ul class="breadcrumb">
 					<a href="${ctx }/toSpacemgmt"><i class="iconfont icon-return"></i>返回</a>
 					<li>
+						<a href="${ctx }/toYunweiGK">项目概况</a>
 						<a href="${ctx }/toSpacemgmt">空间管理</a>
 						<a href="${ctx }/toAssetmgmt" class="activeList">资产管理</a>
 						<a href="#" >巡检管理</a>

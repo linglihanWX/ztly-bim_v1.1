@@ -81,6 +81,12 @@ public class WebGlController {
 	}
 	
 	/*------------------------规划可研模块页面跳转-----------------------*/
+	//跳转到项目概况页面
+	@RequestMapping("toSurveystudyGK")
+	public String toSurveystudyGKPage(HttpServletRequest req) {
+		
+		return "surveystudyGK";
+	}
 	//跳转到水文数据页面
 	@RequestMapping("toWater")
 	public String toWaterPage(HttpServletRequest req) {
@@ -161,6 +167,12 @@ public class WebGlController {
 	}
 	/*------------------------施工阶段模块页面跳转-----------------------*/
 	//跳转到进度管理页面
+	@RequestMapping("toShigongguanliGK")
+	public String toShigongguanliGKPage(HttpServletRequest req) {
+		
+		return "shigongguanliGK";
+	}
+	//跳转到进度管理页面
 	@RequestMapping("toEbs")
 	public String toEbsPage(HttpServletRequest req) {
 		
@@ -208,6 +220,11 @@ public class WebGlController {
 		return "workshow";
 	}
 	/*-----------------------运维管理模块页面跳转-------------------------*/
+	//跳转到空间管理页面
+	@RequestMapping("toYunweiGK")
+	public String toYunweiGK(HttpServletRequest req) {
+		return "yunweiGK";
+	}
 	//跳转到空间管理页面
 	@RequestMapping("toSpacemgmt")
 	public String toSpacemgmtPage(HttpServletRequest req) {

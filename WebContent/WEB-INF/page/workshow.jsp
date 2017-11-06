@@ -101,7 +101,7 @@
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
 						<li>
-							<a href="${ctx }/toWater">
+							<a href="${ctx }/toSurveystudyGK">
 								<i class="iconfont icon-kcmanager"></i>
 								<span class="hidden-tablet">勘测可研</span>
 							</a>
@@ -113,13 +113,13 @@
 							</a>
 						</li>
 						<li class="active">
-							<a href="${ctx }/toEbs">
+							<a href="${ctx }/toShigongguanliGK">
 								<i class="iconfont icon-construct"></i>
 								<span class="hidden-tablet">施工管理</span>
 							</a>
 						</li>
 						<li>
-							<a href="${ctx }/toSpacemgmt">
+							<a href="${ctx }/toYunweiGK">
 								<i class="iconfont icon-Refresh"></i>
 								<span class="hidden-tablet">运维管理</span>
 							</a>
@@ -133,6 +133,7 @@
 				<ul class="breadcrumb">
 					<li class="lists">
 					<i class="iconfont icon-hxzfont08"></i>
+						<a href="${ctx }/toShigongguanliGK">项目概况</a>
 						<a href="${ctx }/toEbs">进度管理</a>
 						<a href="${ctx }/toPm" >场景管理</a>
 						<a href="${ctx }/toSafe">安全管理</a>

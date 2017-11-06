@@ -104,7 +104,7 @@
 				<!-- 图片列表 -->
 				<ul class="listProject">
 					<li>
-						<a href="${ctx }/toWater">
+						<a href="${ctx }/toSurveystudyGK">
 							<p> <i class="iconfont icon-gongcheng"></i> 塘沽地铁站</p>
 							<img src="${ctx }/static/page/index/img/tanggu.png" alt="">
 							<div class="des">
@@ -115,7 +115,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="${ctx }/toWater">
+						<a href="${ctx }/toSurveystudyGK">
 							<p> <i class="iconfont icon-gongcheng"></i> 电场项目</p>
 							<img src="${ctx }/static/page/index/img/dianchangxiangmu.png" alt="">
 							<div class="des">
@@ -126,7 +126,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="${ctx }/toWater">
+						<a href="${ctx }/toSurveystudyGK">
 							<p> <i class="iconfont icon-gongcheng"></i> 水电站</p>
 							<img src="${ctx }/static/page/index/img/shuidianzhan.png" alt="">
 							<div class="des">
@@ -137,7 +137,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="${ctx }/toWater">
+						<a href="${ctx }/toSurveystudyGK">
 							<p> <i class="iconfont icon-gongcheng"></i> 斜拉索大桥</p>
 							<img src="${ctx }/static/page/index/img/xielasuodaqiao.png" alt="">
 							<div class="des">
@@ -148,7 +148,7 @@
 						</a>
 					</li>
 					<li>
-						<a href="${ctx}/toWater">
+						<a href="${ctx }/toSurveystudyGK">
 							<p> <i class="iconfont icon-gongcheng"></i> 雄安新区特大桥</p>
 							<img src="${ctx }/static/page/index/img/xionganxinqutedaqiao.png" alt="">
 							<div class="des">

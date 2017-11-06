@@ -107,7 +107,7 @@ WaterViewer.init = function (earthId,baseImageryProvider) {
     
     var e = this.viewer.entities.add({
     	name:"baiyangdianshuiwenbaohu",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees( 115.97446053803657, 38.977833390000946 ),
     	    point : { //点
     	        pixelSize : 5,
@@ -180,7 +180,7 @@ WaterViewer.init = function (earthId,baseImageryProvider) {
     });
     var e1 = this.viewer.entities.add({
     	name:"daqingheshuiwenbaohu",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees( 116.07922070266575, 39.00214319118033 ),
     	    point : { //点
     	        pixelSize : 5,

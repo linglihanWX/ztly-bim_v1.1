@@ -4,6 +4,15 @@ $(function () {
 	$("#tree").height(h - h1 - 24);
 	 ShowViewer.init("earth"); // 加载球模型
 	 ShowViewer.initLeftClick(globalviewer,showlabel);
+	 globalviewer.camera.setView( 
+				{
+					destination : new FreeDo.Cartesian3(-2183570.5850746077,4471852.254049122,3990050.5935917823),
+				    orientation : {
+				        heading : 6.283061736872095,
+				        pitch : -0.7852936750535262,
+				        roll : 0.00010838690093617487
+				    }
+				});
     var h = $(".container-fluid-full").height();
     var h1 = $("#content .breadcrumb").height();
     $("#tree").height(h - h1 - 24);
@@ -134,6 +143,8 @@ $(function () {
 			}
 			};
 			zTreeObj = $.fn.zTree.init($("#tree"), setting, data);
+			zTreeObj.checkAllNodes(true);
+			zTreeObj.expandAll(true);
 		}
 	})
    

@@ -16,7 +16,7 @@ $(function () {
             $(".table").hide();
             $("#tree").show();
             $("#earth").show();
-            $(".row-fluid .span12").width(13 + "%");
+            $(".row-fluid .span12").width(15 + "%");
             $(".box-header").hide();
             $("#DataTables_Table_0_wrapper .row-fluid").hide();
         }

@@ -7,22 +7,26 @@
   {
     "id":2,
     "pId":1,
-    "name":"地质数据"
+    "name":"地质数据",
+    "nocheck":true
   },
   {
     "id":3,
     "pId":2,
-    "name":"钻井柱1"
+    "name":"钻井柱1",
+    "nocheck":true
   },
   {
     "id":4,
     "pId":2,
-    "name":"钻井柱2"
+    "name":"钻井柱2",
+    "nocheck":true
   },
   {
     "id":5,
     "pId":2,
-    "name":"钻井柱3"
+    "name":"钻井柱3",
+    "nocheck":true
   },
   {
     "id":6,

@@ -137,9 +137,7 @@ GeologyViewer.getTiandituGloble =function() {
 }
 GeologyViewer.initLeftClick = function(viewer,callback){
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
-
 	screenSpaceEventHandler.setInputAction(function(movement){
-		$(".msgInfo").hide();
 		var picked = viewer.scene.pick(movement.position);
 		GeologyViewer.changeColor(picked);
 			if(picked==undefined||picked.primitive.boundingSphere == undefined){
@@ -161,7 +159,7 @@ GeologyViewer.fly=function(viewer,lon,lat,height,callback){
 	        },  
 	        duration : 1,//动画持续时间
 	        complete : function(){
-	        	callback(viewer.canvas);
+	        	callback([lon,lat-0.0014]);
 	        }
 	 });
 	 

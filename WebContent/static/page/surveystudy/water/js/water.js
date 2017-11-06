@@ -4,6 +4,15 @@ $(function () {
 	WaterViewer.init("earth"); // 加载球模型
 	WaterViewer.initModels();
 	WaterViewer.initLeftClick(myviewer,showlabel);
+	myviewer.camera.setView( 
+			{
+				destination : new FreeDo.Cartesian3(-2204069.3877862454,4508542.272707851,3976537.1194422017),
+			    orientation : {
+			        heading : 0.001440818034851965,
+			        pitch : -0.7852116902406543,
+			        roll : 6.281915594067648
+			    }
+			});
 	var surveymanager = new SurveyManager(myviewer,function(){});
 	$("#tree").height(h - h1 - 24);
 			 
@@ -58,6 +67,8 @@ $(function () {
 		                }
 					};
 					zTreeObj = $.fn.zTree.init($("#tree"), setting, data);
+					zTreeObj.checkAllNodes(true);
+					zTreeObj.expandAll(true);
 					
 				}
 			})

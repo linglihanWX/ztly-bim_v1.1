@@ -82,7 +82,7 @@ body {
 
 #tree{
     float: left;
-    width: 13%;
+    width: 15%;
     height: 88%;
     overflow-x:auto;
     padding:5px 0 0  0;
@@ -93,7 +93,7 @@ body {
 
 #earth{
     float: right;
-    width: 87%;
+    width: 85%;
     height: 100%;
 }
 

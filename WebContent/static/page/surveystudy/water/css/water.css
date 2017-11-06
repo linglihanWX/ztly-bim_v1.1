@@ -138,12 +138,11 @@ body {
     padding:5px 0 0  0;
 }
 
-
 #earth{
     display: none;
     float: right;
     height: 100%;
-    width: 86%;
+    width: 85%;
 }
 .toggleText{
     display: inline-block;

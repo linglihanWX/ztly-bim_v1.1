@@ -111,7 +111,7 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
     
     var e = this.viewer.entities.add({
     	name:"baiyangdianshuiwenbaohu",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees( 115.97446053803657, 38.977833390000946 ),
     	    point : { //点
     	        pixelSize : 5,
@@ -184,7 +184,7 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
     });
     var e1 = this.viewer.entities.add({
     	name:"daqingheshuiwenbaohu",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees( 116.07922070266575, 39.00214319118033 ),
     	    point : { //点
     	        pixelSize : 5,
@@ -250,7 +250,7 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
     water.push(e1);
     var chaiqian = this.viewer.entities.add({
     	name:"gaoxiaowangcunchaiquanqu",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees( 116.03948406636098, 39.000788710438925 ),
     	    point : { //点
     	        pixelSize : 5,
@@ -285,7 +285,7 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
 
     var chaiqian1 = this.viewer.entities.add({
     	name:"zhangweizhuangtoucunchaiqianqu1",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees( 116.06858204514421, 39.00027129930735 ),
     	    point : { //点
     	        pixelSize : 5,
@@ -321,7 +321,7 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
     
     var chaiqian2 = this.viewer.entities.add({
     	name:"zhangweizhuangtoucunchaiqianqu2",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees( 116.07423862499418, 39.00019520379515 ),
     	    point : { //点
     	        pixelSize : 5,
@@ -357,7 +357,7 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
     
     var chaiqian3 = this.viewer.entities.add({
     	name:"xiaoyangcunchaiqianqu",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees(115.97102931062608, 39.00109154188958),
     	    point : { //点
     	        pixelSize : 5,
@@ -391,7 +391,7 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
     
     var chaiqian4 = this.viewer.entities.add({
     	name:"dayangcunchaiqianqu",
-    	show : false,
+    	show : true,
     	position : FreeDo.Cartesian3.fromDegrees(115.98010448982028, 39.00048211044087),
     	    point : { //点
     	        pixelSize : 5,
@@ -502,6 +502,15 @@ ShowViewer.fly=function(viewer,lon,lat,height,callback){
 ShowViewer.initLeftClick = function(viewer,callback) {
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
+		//记录相机位置
+		var x = viewer.camera.position.x;
+		var y = viewer.camera.position.y;
+		var z = viewer.camera.position.z;
+		var heading = viewer.camera.heading;
+		var pitch = viewer.camera.pitch;
+		var roll = viewer.camera.roll;
+		console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);
+		$(".msgInfo").hide();
 		$(".msgInfo").hide();
 		var picked = viewer.scene.pick(movement.position);
 		if(picked==undefined){
