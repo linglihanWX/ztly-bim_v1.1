@@ -5,6 +5,15 @@ $(function () {
 	EnvironmentViewer.init("earth");
 	EnvironmentViewer.initModels();
 	EnvironmentViewer.initLeftClick(myviewer,showlabel);
+	myviewer.camera.setView( 
+			{
+				destination : new FreeDo.Cartesian3(-2176905.1385308662,4471880.533473881,3995906.2301306115),
+			    orientation : {
+			        heading : 0.8982847035993551,
+			        pitch : -1.0446122396829853,
+			        roll : 0.005203217157572659
+			    }
+			});
     $.ajax({
         url: "./static/page/surveystudy/environment/environment.json",
         type: "get",
@@ -65,6 +74,8 @@ $(function () {
                 }
             }
             zTreeObj = $.fn.zTree.init( $("#tree"), setting, data);
+            zTreeObj.checkAllNodes(true);
+            zTreeObj.expandAll(true);
         }
     })
 })
