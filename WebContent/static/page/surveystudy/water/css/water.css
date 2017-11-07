@@ -201,3 +201,59 @@ a.brand span {
 .header-nav a.btn {
     padding: 15px 10px !important;
 }
+.detailInfo {
+	display:none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 400px;
+    border: 1px solid #000;
+}
+
+.detailInfo ul li {
+    width: 100%;
+    height: 30px;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+.detailInfo ul li:not(:last-of-type) {
+    border-bottom: 1px solid #000;
+}
+
+.detailInfo ul li span {
+    display: inline-block;
+    width: 50%; 
+    height: 100%;
+    text-align: center;
+    line-height: 29px;
+    box-sizing: border-box;
+    vertical-align: top;
+    border-right: 1px solid #000;
+    background-color: rgba(221, 221, 221, 0.67);
+}
+
+.detailInfo ul li input {
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    line-height: 29px;
+    box-sizing: border-box;
+    vertical-align: top;
+    border: none;
+    background-color: #fff;
+}
+
+.detailInfo ul li input:last-of-type {
+    font-size: 12px;
+}
+
+.detailInfo button {
+    width: 100%;
+    height: 30px;
+    background-color: cadetblue;
+    border: none;
+    outline: none;
+}

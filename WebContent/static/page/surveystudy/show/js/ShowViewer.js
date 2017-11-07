@@ -509,7 +509,7 @@ ShowViewer.initLeftClick = function(viewer,callback) {
 		var heading = viewer.camera.heading;
 		var pitch = viewer.camera.pitch;
 		var roll = viewer.camera.roll;
-		console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);
+		//console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);
 		$(".msgInfo").hide();
 		$(".msgInfo").hide();
 		var picked = viewer.scene.pick(movement.position);

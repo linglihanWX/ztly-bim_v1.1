@@ -37,6 +37,8 @@ body {
 }
 .breadcrumb{
     margin: 0;
+    z-index: 2;
+    position: relative;
 }
 
 #content {
@@ -81,6 +83,7 @@ body {
 }
 
 #tree{
+	background:#fff;
     float: left;
     width: 15%;
     height: 88%;
@@ -147,6 +150,7 @@ a.brand span {
 }
 #sidebar-left{
     width: 10%;
+    z-index:2;
 }
 #content {
     width: 90%;

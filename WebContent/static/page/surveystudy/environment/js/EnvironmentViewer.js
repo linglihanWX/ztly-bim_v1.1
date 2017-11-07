@@ -308,9 +308,9 @@ EnvironmentViewer.initLeftClick = function(viewer,callback) {
 		$(".msgInfo").hide();
 		var picked = viewer.scene.pick(movement.position);
 		if(picked==undefined){
-			callback(undefined,undefined)
+			callback(undefined)
 		}else{
-		callback(movement.position,picked);
+		callback(picked);
 		}
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	

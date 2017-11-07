@@ -39,21 +39,23 @@ $(function () {
 						},
 						callback:{
 							onClick:function(event, treeId, treeNode){
-								 $(".msgInfo").hide();
 								var id = treeNode.id;
 								switch (id) {
 								case 1:
+									setablevalue("白洋淀水文保护","白洋淀","水一场取水号","23");
+									$(".detailInfo").show();
 									myviewer.zoomTo(water[id-1]);
 									break;
 								case 2:
+									setablevalue("大清河水文保护","大清河","水二场取水号","15");
+									$(".detailInfo").show();
 									myviewer.zoomTo(water[id-1]);
 									break;
 								default:
 									break;
 								}
 							},
-						     onCheck:function(event, treeId, treeNode){
-						    	 $(".msgInfo").hide();
+						    onCheck:function(event, treeId, treeNode){
 						    	 if(treeNode){
 										checkflag =treeNode.checked;
 										myviewer.zoomTo(water[treeNode.id-1]);
@@ -129,29 +131,25 @@ $(function () {
 				});
 			});
 		});
-function showlabel(data,data2){
-	if(data2!=undefined){
-	let left = data.x+220;
-	let top = data.y-140;
-	if(top<70){
-		top=70
+function showlabel(picked){
+	if(picked!=undefined){
+		$(".detailInfo").show();
+		let	name = picked.id.name;
+		switch (name) {
+		case "baiyangdianshuiwenbaohu":
+			setablevalue("白洋淀水文保护","白洋淀","水一场取水号","23");
+			break;
+		case "daqingheshuiwenbaohu":
+			setablevalue("大清河水文保护","大清河","水二场取水号","15");
+			break;
+		default:
+			break;
+		}
+	}else{
+		$(".detailInfo").hide();
 	}
-	let	name = data2.id.name;
-	$(".msgInfo").css({
-		"left" : left,
-		"top" : top,
-		"z-index" : 1
-	}).show();
-	switch (name) {
-	case "baiyangdianshuiwenbaohu":
-		$(".msgInfo").html("水源地名称：白洋淀水文保护<br>水源所在地：白洋淀<br>取水口名称：水二场取水号<br>设计能力：23万吨/日");
-		break;
-	case "daqingheshuiwenbaohu":
-		$(".msgInfo").html("水源地名称：大清河水文保护<br>水源所在地：大清河<br>取水口名称：水二场取水号<br>设计能力：15万吨/日");
-		break;
-	default:
-		break;
-	}
-	
-	}
+
+}
+var setablevalue = function(name1,place,name2,ability){
+	$(".detailInfo ul").html("<li><span>水源地名称</span><input type='text' value='"+name1+"'/></li><li><span>水源所在地</span><input type='text' value='"+place+"'/></li><li><span>取水口名称</span><input type='text' value='"+name2+"'/></li><li><span>设计能力</span><input type='text' value='"+ability+"万吨/日'/></li>");
 }

@@ -6,6 +6,7 @@ $(function () {
             $(".table").show();
             $("#tree").hide();
             $("#earth").hide();
+            $(".detailInfo").hide();
             $(".row-fluid .span12").width(100 + "%");
             $(".box-header").show();
             $("#DataTables_Table_0_wrapper .row-fluid").show();

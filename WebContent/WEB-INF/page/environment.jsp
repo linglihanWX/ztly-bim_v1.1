@@ -256,6 +256,15 @@
         					<h1 id="information"></h1>
    					</div>
 					<div id="earth"></div>
+					<div class="detailInfo">
+					    <ul>
+					        <li><span>征地编号</span><input type="text"/></li>
+					        <li><span>结构物名称</span><input type="text"/></li>
+					        <li><span>面积</span><input type="text"/></li>
+					        <li><span>单位</span><input type="text"/></li>
+					    </ul>
+					    <button class="sureChange">确认</button>
+					</div>
 				</div>
 			</div>
 		</div>

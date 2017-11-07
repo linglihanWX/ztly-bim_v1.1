@@ -37,22 +37,27 @@ $(function () {
                 callback:{
                 	
                 	onClick:function(event, treeId, treeNode){
-						 $(".msgInfo").hide();
+                		$(".detailInfo").show();
 						var id = treeNode.id;
 						switch (id) {
 						case 1:
+							setablevalue("K5+230-K1+100","高小王村拆迁区","400002","房屋");
 							myviewer.zoomTo(environment[id-1]);
 							break;
 						case 2:
+							setablevalue("K5+235-K6+100","张巍庄头村拆迁区1","6541600","房屋");
 							myviewer.zoomTo(environment[id-1]);
 							break;
 						case 3:
+							setablevalue("K5+820-R4+120","张巍庄头村拆迁区2","6616012","房屋");
 							myviewer.zoomTo(environment[id-1]);
 							break;
 						case 4:
+							setablevalue("K5+432-K6+111","小阳村村拆迁区","3265654","房屋");
 							myviewer.zoomTo(environment[id-1]);
 							break;
 						case 5:
+							setablevalue("K5+123-K6+120","大阳村村拆迁区","6126616","房屋");
 							myviewer.zoomTo(environment[id-1]);
 							break;
 						default:
@@ -79,38 +84,33 @@ $(function () {
         }
     })
 })
-function showlabel(data,data2){
-	if(data2!=undefined){
-	let left = data.x+220;
-	let top = data.y-140;
-	if(top<70){
-		top=70
-	}
-	let	name = data2.id.name;
-	$(".msgInfo").css({
-		"left" : left,
-		"top" : top,
-		"z-index" : 1
-	}).show();
-	switch (name) {
-	case "gaoxiaowangcenchaiquanqu":
-		$(".msgInfo").html("征地编号：高小王村拆迁区<br>结构物名称：房屋<br>单位：m²");
-		break;
-	case "zhangweizhuangtoucenchaiqianqu1":
-		$(".msgInfo").html("征地编号：张巍庄头村拆迁区1<br>结构物名称：房屋<br>单位：m²");
-		break;
-	case "zhangweizhuangtoucunchaiqianqu2":
-		$(".msgInfo").html("征地编号：张巍庄头村拆迁区2<br>结构物名称：房屋<br>单位：m²");
-		break;
-	case "xiaoyangcunchaiqianqu":
-		$(".msgInfo").html("征地编号：小阳村村拆迁区<br>结构物名称：房屋<br>单位：m²");
-		break;
-	case "dayangcunchaiqianqu":
-		$(".msgInfo").html("征地编号：大阳村村拆迁区<br>结构物名称：房屋<br>单位：m²");
-		break;
-	default:
-		break;
-	}
-	
-	}
+function showlabel(picked){
+	if(picked!=undefined){
+		$(".detailInfo").show();
+		let	name = picked.id.name;
+		switch (name) {
+		case "gaoxiaowangcenchaiquanqu":
+			setablevalue("K5+230-K1+100","高小王村拆迁区","400002","房屋");
+			break;
+		case "zhangweizhuangtoucenchaiqianqu1":
+			setablevalue("K5+235-K6+100","张巍庄头村拆迁区1","6541600","房屋");
+			break;
+		case "zhangweizhuangtoucunchaiqianqu2":
+			setablevalue("K5+820-R4+120","张巍庄头村拆迁区2","6616012","房屋");
+			break;
+		case "xiaoyangcunchaiqianqu":
+			setablevalue("K5+432-K6+111","小阳村村拆迁区","3265654","房屋");
+			break;
+		case "dayangcunchaiqianqu":
+			setablevalue("K5+123-K6+120","大阳村村拆迁区","6126616","房屋");
+			break;
+		default:
+			break;
+		}
+	}else{
+		$(".detailInfo").hide();
+	}	
+}
+var setablevalue = function(num,name1,s,name2){
+	$(".detailInfo ul").html("<li><span>征地编号</span><input type='text' value='"+num+"'/></li><li><span>征地区域</span><input type='text' value='"+name1+"'/></li><li><span>面积</span><input type='text' value='"+s+"平方米'/></li><li><span>结构物名称</span><input type='text' value='"+name2+"'/></li>");
 }

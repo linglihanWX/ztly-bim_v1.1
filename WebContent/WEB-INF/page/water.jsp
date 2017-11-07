@@ -247,6 +247,15 @@
         					<h1 id="information"></h1>
    						</div>
 					<div id="earth"></div>
+					<div class="detailInfo">
+					    <ul>
+					        <li><span>水源地名称</span><input type="text"/></li>
+					        <li><span>水源所在地</span><input type="text"/></li>
+					        <li><span>取水口名称</span><input type="text"/></li>
+					        <li><span>设计能力</span><input type="text"/></li>
+					    </ul>
+					    <button class="sureChange">确认</button>
+					</div>
 				</div>
 			</div>
 		</div>

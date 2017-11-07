@@ -259,12 +259,11 @@ WaterViewer.changeShowHide = function(id) {
 WaterViewer.initLeftClick = function(viewer,callback) {
 	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
-			$(".msgInfo").hide();
 			var picked = viewer.scene.pick(movement.position);
 			if(picked==undefined){
-				callback(undefined,undefined)
+				callback(undefined)
 			}else{
-			callback(movement.position,picked);
+			callback(picked);
 			}
 		}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 }

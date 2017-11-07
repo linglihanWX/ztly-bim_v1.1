@@ -304,6 +304,15 @@
         					<h1 id="information"></h1>
    						</div>
 					<div id="earth"></div>
+					<div class="detailInfo">
+					    <ul>
+					        <li><span>钻孔编号</span><input type="text"/></li>
+					        <li><span>日期</span><input type="text"/></li>
+					        <li><span>钻孔深度</span><input type="text"/></li>
+					        <li><span>孔口高程</span><input type="text"/></li>
+					    </ul>
+					    <button class="sureChange">确认</button>
+					</div>
 				</div>
 			</div>
 		</div>

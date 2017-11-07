@@ -148,7 +148,7 @@ GeologyViewer.initLeftClick = function(viewer,callback){
 		
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 }
-GeologyViewer.fly=function(viewer,lon,lat,height,callback){
+GeologyViewer.fly=function(viewer,lon,lat,height){
 	var camera = viewer.camera;
 	 camera.flyTo({  
 	        destination : FreeDo.Cartesian3.fromDegrees( lon, lat-0.0014,height ),  
@@ -158,9 +158,6 @@ GeologyViewer.fly=function(viewer,lon,lat,height,callback){
 	            roll : FreeDo.Math.toRadians( 0 )  
 	        },  
 	        duration : 1,//动画持续时间
-	        complete : function(){
-	        	callback([lon,lat-0.0014]);
-	        }
 	 });
 	 
 }
