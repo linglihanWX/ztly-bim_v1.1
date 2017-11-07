@@ -10,6 +10,7 @@
 	top:7px;
 	box-sizing: border-box;
 	padding: 0px;
+	    z-index: 2;
 }
 .compassPicDiv{
 	width: 64px;

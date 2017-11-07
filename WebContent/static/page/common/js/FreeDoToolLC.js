@@ -236,13 +236,12 @@ FreeDoTool.flyToModel=function(canvas,camera,model,callback)
 	FreeDo.Matrix4.multiplyByPoint(model.modelMatrix, model.boundingSphere.center,center);
 
 	var boundingSphere=new FreeDo.BoundingSphere(center,model.boundingSphere.radius);
-
 	camera.flyToBoundingSphere(boundingSphere,
 	{
 		duration:1,
 		offset:new FreeDo.HeadingPitchRange(camera.heading,camera.pitch),
 		complete:function(){
-			callback(canvas);
+			callback(center);
 		}
 	});
 }

@@ -10,7 +10,7 @@ $(function() {
 				designShow.selectedNode = node;
 				if (node.type == 2) {
 					$(".msgInfo").hide();
-					FreeDoEarth.flyToModel(node.id,showlabel);
+					FreeDoEarth.flyToModel(node.id,divfollow);
 					$("#information").text(node.text);
 				} else {
 					let subNodes = $("#tree").tree("getChildren", node.target);
@@ -34,6 +34,7 @@ $(function() {
 	
 	
 	$("#cg").click(function() {
+		removeFollowLisener();
 		$("#js").hide();
 		$("#tree").show();
 		$("#tree").tree({
@@ -42,6 +43,7 @@ $(function() {
 		$(this).addClass("active").siblings().removeClass("active");
 	});
 	$("#my").click(function() {
+		removeFollowLisener();
 		$(".msgInfo").hide();
 		FreeDoEarth.resetColor();
 		$("#tree").hide();
@@ -142,7 +144,8 @@ function doubleClickModelSelectLeaf(data) {
 	}
 
 }
-function showlabel(mycanvas){
+
+/*function showlabel(mycanvas){
 	let left = mycanvas.clientWidth/2 + 190;
 	let top = mycanvas.clientHeight/2 - 120;
 	$(".msgInfo").show().css({
@@ -152,4 +155,30 @@ function showlabel(mycanvas){
 	});
 
 }
+*/
+var globalcartesian = null;
+var flag = false;
+var htmlOverlay = document.getElementById('showmsg');
+var addFollowListener=function (){
+	flag = globalviewer.scene.preRender.addEventListener(setScreenPostion);
+}
+var removeFollowLisener= function (){
+	if(flag){
+	globalviewer.scene.preRender.removeEventListener(setScreenPostion);
+	flag = false;
+	}
+}
+var setScreenPostion=function (){	
+	var canvasPosition = globalviewer.scene.cartesianToCanvasCoordinates(globalcartesian);
+	    if (FreeDo.defined(canvasPosition)) {
+	        htmlOverlay.style.top = canvasPosition.y -120+ 'px';
+	        htmlOverlay.style.left = canvasPosition.x +190+ 'px';
+	    }
+}
+var divfollow = function(center){
+	globalcartesian=center;
+	$("#showmsg").show();
+		removeFollowLisener();
+		addFollowListener();
 
+}

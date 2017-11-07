@@ -5,6 +5,7 @@
  */
 
 var FreeDoEarth=FreeDoEarth||{};
+var globalviewer = null;
 var clickColor = new FreeDo.Color(1,1,1,0.9); 
 var unClickColor = new FreeDo.Color(1,1,1,1); 
 /**
@@ -127,6 +128,7 @@ FreeDoEarth.init=function(earthId,baseImageryProvider)
 			subdomains : ["t7","t6","t5","t4","t3","t2","t1","t0"]
 		}));
     new Compass(this.viewer);
+    globalviewer = this.viewer;
 }
 
 /**

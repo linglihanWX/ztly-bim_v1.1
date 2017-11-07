@@ -34,7 +34,7 @@ $(function () {
                      }else{
                      	$(".information").html(node.text);
                      }
-                    FreeDoEarth.flyToModel(node.id,showLabel); 
+                    FreeDoEarth.flyToModel(node.id,divfollow); 
                    
                 }
                 else {
@@ -70,6 +70,7 @@ $(function () {
     $(".showInfo button").each(function (node) {
         $(this).click(function (node) {       	
             $(".msgInfo").hide();
+            removeFollowLisener();
             currBtn = $('.active').attr("class");
             if (currBtn.indexOf("zy") != -1) {
             	$(".information").html(node.text+"<br>施工许可号：13431<br>"+"施工单位：北京XX建筑有限公司");
@@ -118,35 +119,11 @@ $(function () {
     	 	     e.cancelable = true;
     	 	});
     		}else{
-    			
     				$(".msgInfo").hide();
-    			
     		}
 
     }
-    function clickTagChangeColor(){
-    	
-    }
-    function showLabel(mycanvas){
-    	
-    	let left = mycanvas.clientWidth/2 + 190;
-		let top = mycanvas.clientHeight/2 - 120;
-        
-		currBtn = $('.active').attr("class");
-		if (currBtn.indexOf("zy") != -1) {
-            $(".zy").show().css({"left": left, "top": top});
-        }
-        if (currBtn.indexOf("jd") != -1) {
-            $(".jd").show().css({"left": left, "top": top});
-        }
-        if (currBtn.indexOf("aq") != -1) {
-            $(".aq").show().css({"left": left, "top": top});
-        }
-        if (currBtn.indexOf("dz") != -1) {
-            $(".dz").show().css({"left": left, "top": top});
-        }
-    }
-    
+
     $("#zy,#jd,#aq,#dz").click(function() {
     	FreeDoEarth.resetColor();
 		$("#js").hide();
@@ -235,15 +212,38 @@ $(function () {
 		});
 	});
     
+
     FreeDoEarth.init("right");                                  // 初始化模型
 
     FreeDoEarth.initModels(workShow.InitTree);                  // 传入回调函数获得树的初始化数据
 
     //workShow.rightClick();                                      // 右侧点击
-    
-    
-    
+
    FreeDoEarth.initLeftDoubleClick(clickModelSelectLeaf);
 
 });
-
+var globalcartesian = null;
+var flag = false;
+var htmlOverlay = document.getElementById('showmsg');
+var addFollowListener=function (){
+	flag = globalviewer.scene.preRender.addEventListener(setScreenPostion);
+}
+var removeFollowLisener= function (){
+	if(flag){
+		globalviewer.scene.preRender.removeEventListener(setScreenPostion);
+		flag = false;
+		}
+}
+var setScreenPostion=function (){	
+	var canvasPosition = globalviewer.scene.cartesianToCanvasCoordinates(globalcartesian);
+	if (FreeDo.defined(canvasPosition)) {
+		htmlOverlay.style.top = canvasPosition.y -120+ 'px';
+		htmlOverlay.style.left = canvasPosition.x +190+ 'px';
+	}
+}
+var divfollow = function(center){
+		globalcartesian=center;
+		$("#showmsg").show();
+		removeFollowLisener();
+		addFollowListener();
+}
