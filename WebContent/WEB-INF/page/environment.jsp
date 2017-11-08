@@ -39,12 +39,13 @@
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
-	<script src="${ctx }/static/page/surveystudy/environment/js/EnvironmentViewer.js"></script>
-	<script src="${ctx }/static/page/surveystudy/environment/js/environment.js"></script>
+
+
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
-
+	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/surveystudy/water/css/water.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
 
 
 
@@ -301,6 +302,10 @@
 	<script src="${ctx }/static/page/common/js/counter.js"></script>
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
 	<script src="${ctx }/static/page/common/js/change2D3D.js"></script>
+	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
+	<script src="${ctx }/static/page/surveystudy/environment/js/EnvironmentViewer.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
+	<script src="${ctx }/static/page/surveystudy/environment/js/environment.js"></script>
 	<!-- end: JavaScript-->
 	
 

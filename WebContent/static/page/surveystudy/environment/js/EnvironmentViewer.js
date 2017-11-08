@@ -11,6 +11,7 @@ var first = true;
 var firstReal = true;
 var environment = [];
 var myviewer = null;
+var screenSpaceEventHandler = null;
 window.obj = {};
 EnvironmentViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
@@ -302,7 +303,7 @@ EnvironmentViewer.init = function (earthId,baseImageryProvider) {
 
 EnvironmentViewer.initLeftClick = function(viewer,callback) {
 
-	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	
 	screenSpaceEventHandler.setInputAction(function(movement){
 		$(".msgInfo").hide();
@@ -315,6 +316,10 @@ EnvironmentViewer.initLeftClick = function(viewer,callback) {
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 
+}
+//移除原有的监听事件
+EnvironmentViewer.removeListener = function(){
+	screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 }
 EnvironmentViewer.initModels = function () {
     $.ajax({

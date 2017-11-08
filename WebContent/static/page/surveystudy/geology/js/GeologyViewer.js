@@ -13,6 +13,7 @@ var globalviewer = null;
 var pickedModels = [];
 var unClickedColor = new FreeDo.Color(1,1,1,1);
 var clickedColor = new FreeDo.Color(1,3,1,0.9);
+var screenSpaceEventHandler = null;
 window.obj = {};
 GeologyViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
@@ -136,7 +137,7 @@ GeologyViewer.getTiandituGloble =function() {
 	return tg;
 }
 GeologyViewer.initLeftClick = function(viewer,callback){
-	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
 		var picked = viewer.scene.pick(movement.position);
 		GeologyViewer.changeColor(picked);
@@ -147,6 +148,10 @@ GeologyViewer.initLeftClick = function(viewer,callback){
 			}
 		
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+}
+//移除原有的监听事件
+GeologyViewer.removeListener = function(){
+	screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 }
 GeologyViewer.fly=function(viewer,lon,lat,height){
 	var camera = viewer.camera;
@@ -162,7 +167,6 @@ GeologyViewer.fly=function(viewer,lon,lat,height){
 	 
 }
 GeologyViewer.changeColor=function(picked){
-	console.log(picked);
 	if(picked==undefined){	//如果picked为空则表示点击无模型处，使之前点变色的模型重置颜色并清空所选模型容器
 		
 		for(var i=0;i<pickedModels.length;i++)

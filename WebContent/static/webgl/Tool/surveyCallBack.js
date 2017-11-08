@@ -1405,9 +1405,16 @@ d
     			greenCircle.ellipse.semiMajorAxis = length;
     		}
     	}
+    	function clearResults(){
+    		if(tempcircle){
+				viewer.entities.remove(tempcircle);
+				tempcircle = null;
+			}
+    	}
     	screenSpaceEventHandler.setInputAction(listenLeftClick,FreeDo.ScreenSpaceEventType.LEFT_CLICK);
     	screenSpaceEventHandler.setInputAction(listenMouseMove,FreeDo.ScreenSpaceEventType.MOUSE_MOVE);
     	 this.destroy = function() {
+    		 clearResults();
              screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
              screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.MOUSE_MOVE);
      

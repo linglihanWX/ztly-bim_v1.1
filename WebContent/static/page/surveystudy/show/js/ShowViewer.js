@@ -15,6 +15,7 @@ var globalviewer = null;
 var pickedModels = [];
 var unClickedColor = new FreeDo.Color(1,1,1,1);
 var clickedColor = new FreeDo.Color(1,3,1,0.9);
+var screenSpaceEventHandler = null;
 window.obj = {};
 ShowViewer.EbsObj = function (nodeId, fatherId, type, name, startDatePlan, endDatePlan, startDate, endDate, modelId, leaf) {
     this.nodeId = nodeId;
@@ -500,7 +501,7 @@ ShowViewer.fly=function(viewer,lon,lat,height,callback){
 	 
 }
 ShowViewer.initLeftClick = function(viewer,callback) {
-	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
 		//记录相机位置
 		var x = viewer.camera.position.x;
@@ -525,6 +526,10 @@ ShowViewer.initLeftClick = function(viewer,callback) {
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 
+}
+//移除原有的监听事件
+ShowViewer.removeListener = function(){
+	screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 }
 ShowViewer.changeColor=function(picked){
 	if(picked==undefined){	//如果picked为空则表示点击无模型处，使之前点变色的模型重置颜色并清空所选模型容器

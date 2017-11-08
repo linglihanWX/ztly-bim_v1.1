@@ -30,6 +30,7 @@
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/common.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/IconFont/iconfont.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/reset.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
 	<link href="http://res.gbim360.com/lib/freedo/rel/1.4.0.171017/Freedo/Widgets/widgets.css" rel="stylesheet">
     <script src="http://res.gbim360.com/lib/freedo/rel/1.4.0.171017/Freedo/Freedo.js"></script>
     <script src="http://res.gbim360.com/shared/1710_lodash/lodash.min.js"></script>
@@ -38,14 +39,13 @@
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
-	<script src="${ctx }/static/page/surveystudy/geology/js/GeologyViewer.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- end: Favicon -->
 
 	<link rel="stylesheet" href="${ctx }/static/page/surveystudy/water/css/water.css">
-
+	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
 
 
 </head>
@@ -347,8 +347,11 @@
 	<script src="${ctx }/static/page/common/js/counter.js"></script>
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
 	<script src="${ctx }/static/page/common/js/change2D3D.js"></script>
-	<script src="${ctx }/static/page/surveystudy/geology/js/geology.js"></script>
 	<script src="${ctx }/static/webgl/drillingColumn/js/FDDrillingMgr.js"></script>
+	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
+	<script src="${ctx }/static/page/surveystudy/geology/js/GeologyViewer.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
+	<script src="${ctx }/static/page/surveystudy/geology/js/geology.js"></script>
 </body>
 
 </html>

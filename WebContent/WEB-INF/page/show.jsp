@@ -37,12 +37,12 @@
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
-	<script src="${ctx }/static/page/surveystudy/show/js/ShowViewer.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
-
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<link rel="stylesheet" href="${ctx }/static/page/surveystudy/show/css/show.css">
+		<link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
+	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
 
 
 
@@ -186,9 +186,14 @@
 	<script src="${ctx }/static/page/common/js/jquery.raty.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
+	
 	<!-- end: JavaScript-->
-	<script src="${ctx }/static/page/surveystudy/show/js/show.js"></script>
 	<script src="${ctx }/static/webgl/drillingColumn/js/FDDrillingMgr.js"></script>
+	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
+	<script src="${ctx }/static/page/surveystudy/show/js/ShowViewer.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
+	<script src="${ctx }/static/page/surveystudy/show/js/show.js"></script>
+	
 
 </body>
 
