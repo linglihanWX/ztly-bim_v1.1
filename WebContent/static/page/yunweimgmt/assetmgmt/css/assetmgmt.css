@@ -56,7 +56,7 @@ a:hover{
     position: relative;
     height: 100%;
 }
-#init{
+#earth{
     float: right;
     height: 100%;
     width: 100%;
@@ -350,3 +350,6 @@ button.ac{
     background-color: #fff;
     border-radius: 5px;
 }
+#echartarea{
+    left:15%!important;
+    }

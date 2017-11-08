@@ -21,6 +21,8 @@ a:hover{
 }
 .breadcrumb{
     margin: 0;
+    position:relative;
+    z-index:2;
 }
 .breadcrumb>a i{
     margin-left: 10px;
@@ -33,6 +35,7 @@ a:hover{
 }
 #sidebar-left{
     width: 10%;
+    z-index:2;
 }
 .box-content{
     padding:0;
@@ -61,7 +64,7 @@ a:hover{
     position: relative;
     height: 100%;
 }
-#init{
+#earth{
     float: right;
     height: 100%;
     width: 100%;
@@ -119,6 +122,9 @@ a.brand span {
     position: absolute;
     width: 456px;
     height: 215px;
-    z-index:50;
+    z-index:1;
 }
 
+#echartarea{
+    left:15%!important;
+    }

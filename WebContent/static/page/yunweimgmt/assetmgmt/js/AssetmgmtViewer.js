@@ -1,6 +1,7 @@
 var AssetmgmtViewer=AssetmgmtViewer||{};
 var globalviewer = {};
 var camera = [];
+var screenSpaceEventHandler = null;
 /**
  * [init 地球容器ID]
  * @param  {[type]} earthId [description]
@@ -77,7 +78,7 @@ AssetmgmtViewer.getTiandituGloble =function() {
  * 右键点击事件
  */
 AssetmgmtViewer.initRightClick = function(viewer) {
-	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
 		
 		var picked = viewer.scene.pick(movement.position);

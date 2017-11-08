@@ -59,7 +59,7 @@ a:hover{
 
 .row-fluid {
     position: relative;
-    height: 100!important;
+    height: 100%!important;
 }
 #init{
     float: right;

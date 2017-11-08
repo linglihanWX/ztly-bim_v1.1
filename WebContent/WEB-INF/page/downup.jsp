@@ -37,12 +37,12 @@
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
-	<script src="${ctx }/static/page/shigongguanli/downup/js/DownupViewer.js"></script>
+	
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/downup/css/downup.css">
 	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
-
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
 
 
 </head>
@@ -161,22 +161,17 @@
 							<div id="tree" class="ztree"></div>
 						</div>
 					</div>
-					<div id="init"><div id='chart'></div></div>
+					<div id="earth"><div id='chart'></div></div>
 				</div>
 			</div>
 		</div>
 	</div>
 	
+		<script src="${ctx }/static/page/common/js/appendTool.js"></script>
+	<script src="${ctx }/static/page/shigongguanli/downup/js/DownupViewer.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/downup/js/downup.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 </body>
-
-
-	
-<script>
-
-       
-	</script>
-
 
 </html>

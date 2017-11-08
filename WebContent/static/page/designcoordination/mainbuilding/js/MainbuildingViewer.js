@@ -614,12 +614,19 @@ MainBuildingViewer.showHideModelsById =function(uid){
 MainBuildingViewer.initLeftClick = function(viewer) {
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
-		var picked = viewer.scene.pick(movement.position);
+		/*var picked = viewer.scene.pick(movement.position);
 		var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
 		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
 		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
-		console.log(point);
+		console.log(point);*/
+		/*var x = viewer.camera.position.x
+		var y = viewer.camera.position.y
+		var z = viewer.camera.position.z
+		var heading = viewer.camera.heading;
+		var pitch = viewer.camera.pitch;
+		var roll = viewer.camera.roll;
+		console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);*/
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 

@@ -314,8 +314,6 @@ EnvironmentViewer.initLeftClick = function(viewer,callback) {
 		callback(picked);
 		}
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
-	
-
 }
 //移除原有的监听事件
 EnvironmentViewer.removeListener = function(){

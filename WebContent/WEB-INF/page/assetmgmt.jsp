@@ -37,12 +37,13 @@
 	<script src="${ctx}/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx}/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx}/static/page/common/js/jquery-1.9.1.min.js"></script>
-	<script src="${ctx}/static/page/yunweimgmt/assetmgmt/js/AssetmgmtViewer.js"></script>
+
 	<link rel="stylesheet" href="${ctx}/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx}/static/page/common/js/zTreeStyle/ztree.js"></script>
 
 	<link rel="stylesheet" href="${ctx}/static/page/yunweimgmt/assetmgmt/css/assetmgmt.css">
 	<script src="${ctx}/static/page/common/js/echarts.common.min.js"></script>
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
 </head>
 
 <body>
@@ -160,7 +161,7 @@
 						</div>
 					</div>
 
-					<div id="init"></div>
+					<div id="earth"></div>
 				</div>
 			</div>
 		</div>
@@ -347,8 +348,11 @@
 		<div id="currData"></div>
 	</div>
 
+	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
+	<script src="${ctx}/static/page/yunweimgmt/assetmgmt/js/AssetmgmtViewer.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<script src="${ctx }/static/page/yunweimgmt/assetmgmt/js/assetmgmt.js"></script>
-<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
+	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 </body>
 
 </html>

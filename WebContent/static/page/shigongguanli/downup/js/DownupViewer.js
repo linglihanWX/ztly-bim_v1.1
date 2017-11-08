@@ -1,6 +1,8 @@
 var DownupViewer=DownupViewer||{};
 var downuppoints = [];
 var globalviewer = {};
+var leftClickHandler = null;
+var leftDownHandler = null;
 /**
  * [init 地球容器ID]
  * @param  {[type]} earthId [description]
@@ -108,8 +110,8 @@ DownupViewer.getTiandituGloble =function() {
 	return tg;
 }
 DownupViewer.initLeftClick = function(viewer) {
-	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
-	screenSpaceEventHandler.setInputAction(function(movement){
+	leftClickHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	leftClickHandler.setInputAction(function(movement){
 		var picked = viewer.scene.pick(movement.position);
 		//console.log(picked);FreeDo.defined(picked) && picked instanceof FreeDo.FreedoPModelFeature
 		if(picked){
@@ -133,9 +135,21 @@ DownupViewer.initLeftClick = function(viewer) {
 		//输出相机位置
 		//console.log(viewer.camera.position.x+","+viewer.camera.position.y+","+viewer.camera.position.z+","+viewer.camera.heading+","+viewer.camera.pitch+","+viewer.camera.roll);
 		//输出点击位置的经纬度
-		console.log(point);
+		//console.log(point);
 		
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
-	
-
+}
+DownupViewer.initLeftDown = function(viewer,callback){
+	leftDownHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	leftDownHandler.setInputAction(function(movement){
+		var picked = viewer.scene.pick(movement.position);
+		if(picked==null||picked instanceof FreeDo.FreedoPModelFeature){
+			callback();
+		}
+	}, FreeDo.ScreenSpaceEventType.LEFT_DOWN);
+}
+//移除原有的监听事件
+DownupViewer.removeListener = function(){
+	leftClickHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+	leftDownHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_DOWN);
 }

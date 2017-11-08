@@ -37,7 +37,7 @@
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
-	<script src="${ctx }/static/page/shigongguanli/camera/js/CameraViewer.js"></script>
+	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 
@@ -53,7 +53,8 @@
 
 
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/camera/css/camera.css">
-
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
+	
 
 
 </head>
@@ -174,11 +175,14 @@
 						</div>
 					</div>
 
-					<div id="init"><img alt="" src="${ctx}/static/page/shigongguanli/camera/img/cameracontent.png" id="detailInfo"></div>
+					<div id="earth"><img alt="" src="${ctx}/static/page/shigongguanli/camera/img/cameracontent.png" id="detailInfo"></div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
+	<script src="${ctx }/static/page/shigongguanli/camera/js/CameraViewer.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/camera/js/camera.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 </body>

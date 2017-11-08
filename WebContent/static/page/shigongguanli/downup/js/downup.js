@@ -41,7 +41,7 @@ $(function () {
         }
     });
 
-    DownupViewer.init("init"); // 加载球模型
+    DownupViewer.init("earth"); // 加载球模型
     //初始化
     var myChart = echarts.init(document.getElementById('chart'));
     option = {
@@ -97,7 +97,68 @@ $(function () {
     };
     myChart.setOption(option);
     DownupViewer.initLeftClick(globalviewer);
+    DownupViewer.initLeftDown(globalviewer,hideDiv);
     //DownupViewer.initDbLeftClick(globalviewer);
-    
-    
+    var surveymanager = new SurveyManager(globalviewer,function(){});
+    /**
+	 *工具栏按钮点击 
+	 */
+	$("#appendTools i").each(function(){
+		$(this).click(function(){
+			if($(this).hasClass("active")){
+			//设置方法为none
+			surveymanager.setSurveyType(SurveyType.NONE);
+			//移除原有的监听事件
+			DownupViewer.removeListener();
+			//初始化相应的监听事件
+			switch ($(this).attr("id")) {
+			//统计查询
+			case "TJCX":
+				$("#img").hide();
+				surveymanager.setSurveyType(SurveyType.QUERY)
+				break;
+			//距离测量
+			case "JLCL":
+				$("#echartarea").hide();
+				$("#img").hide();
+				surveymanager.setSurveyType(SurveyType.LINE_DISTANCE);
+				break;
+			//方位测量
+			case "FWCL":
+				$("#echartarea").hide();
+				$("#img").hide();						
+				surveymanager.setSurveyType(SurveyType.Azimuth_DISTANCE);
+				break;
+			//面积测量
+			case "MJCL":
+				$("#echartarea").hide();
+				$("#img").hide();					
+				break;
+			//地面刨切
+			case "DMPQ":
+				$("#echartarea").hide();					
+				surveymanager.setSurveyType(SurveyType.Geology_SLICING);
+				break;
+			//其他
+			default:
+				break;
+			}
+		}else{
+			//隐藏echarts和img窗口
+			$("#echartarea").hide();
+			$("#img").hide();
+			//删除三维页面所有的线、标签
+			
+			//设置方法为none
+			surveymanager.setSurveyType(SurveyType.NONE);
+			//初始化原有的监听事件
+		    DownupViewer.initLeftClick(globalviewer);
+		    DownupViewer.initLeftDown(globalviewer,hideDiv);
+		}
+		});
+		
+	});
+    function hideDiv(){
+    	$("#chart").hide();
+    }
 });

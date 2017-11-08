@@ -62,14 +62,14 @@ a.brand span {
     margin: 5px 0;
 }
 
-#right{
+#earth{
     /*width: 76%;*/
     height: 100%;
     /*float: right;*/
     overflow: hidden;
 }
 
-#right .box{
+#earth .box{
     margin-left: 9px!important;
 }
 

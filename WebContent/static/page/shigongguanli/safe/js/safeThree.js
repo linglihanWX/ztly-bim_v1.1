@@ -3,7 +3,6 @@ $(function () {
     var h1 = $(".navbar").height();
     var h2 = $("#content>.breadcrumb").height();
 
-
     $(".container-fluid-full").height(hh - h1);
     $("#content>.row-fluid").height(hh - h1 - h2 - 17);
 
@@ -27,9 +26,18 @@ $(function () {
     $("#return").click(function () {
         window.location.href = "toSafe";
     });
-    SafeThreeViewer.init("right");
-    SafeThreeViewer.initLeftDown(myviewer);
+    SafeThreeViewer.init("earth");
+    myviewer.camera.setView({
+		destination :new FreeDo.Cartesian3(-2302833.762201284,4394746.398731597,3994809.016901712),
+		orientation: {
+			heading : 0.26411536311211936,
+			pitch : -0.8723260495776195,
+			roll : 0.0013380152154160996
+		}
+	});
+    SafeThreeViewer.initLeftClick(myviewer);
     SafeThreeViewer.initWheel(myviewer);
+    var surveymanager = new SurveyManager(myviewer,function(){});
     $(".table tbody tr").each(function(){
     	$(this).click(function(){
     		 var content = $(this).children().eq(1).text();
@@ -75,6 +83,61 @@ $(function () {
 			}
     	});
     });
-
+	/**
+	 *工具栏按钮点击 
+	 */
+	$("#appendTools i").each(function(){
+		$(this).click(function(){
+			if($(this).hasClass("active")){
+			//设置方法为none
+			surveymanager.setSurveyType(SurveyType.NONE);
+			//移除原有的监听事件
+			SafeThreeViewer.removeListener();
+			//初始化相应的监听事件
+			switch ($(this).attr("id")) {
+			//统计查询
+			case "TJCX":
+				$("#img").hide();
+				surveymanager.setSurveyType(SurveyType.QUERY)
+				break;
+			//距离测量
+			case "JLCL":
+				$("#echartarea").hide();
+				$("#img").hide();
+				surveymanager.setSurveyType(SurveyType.LINE_DISTANCE);
+				break;
+			//方位测量
+			case "FWCL":
+				$("#echartarea").hide();
+				$("#img").hide();						
+				surveymanager.setSurveyType(SurveyType.Azimuth_DISTANCE);
+				break;
+			//面积测量
+			case "MJCL":
+				$("#echartarea").hide();
+				$("#img").hide();					
+				break;
+			//地面刨切
+			case "DMPQ":
+				$("#echartarea").hide();					
+				surveymanager.setSurveyType(SurveyType.Geology_SLICING);
+				break;
+			//其他
+			default:
+				break;
+			}
+		}else{
+			//隐藏echarts和img窗口
+			$("#echartarea").hide();
+			$("#img").hide();
+			//删除三维页面所有的线、标签
+			
+			//设置方法为none
+			surveymanager.setSurveyType(SurveyType.NONE);
+			//初始化原有的监听事件
+			SafeThreeViewer.initLeftClick(myviewer);
+		}
+		});
+	});
     
 });

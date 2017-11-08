@@ -37,7 +37,7 @@ a {
     vertical-align: top
 }
 /*修改3D区域的模块*/
-#right .cesium-viewer-bottom,
+.cesium-viewer-bottom,
 .cesium-viewer-toolbar {
     display: none!important;
 }

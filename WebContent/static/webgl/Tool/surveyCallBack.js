@@ -1378,10 +1378,10 @@ d
     			    ellipse : {
     			        semiMinorAxis : 30.0,
     			        semiMajorAxis : 30.0,
-    			        height: 0.001,
-    			        material : FreeDo.Color.WHITE.withAlpha(0) ,
+    			        height: 10,
+    			        material : FreeDo.Color.DEEPSKYBLUE.withAlpha(0.5) ,
     			        outline : true, // height must be set for outline to display
-    			        outlineColor :  FreeDo.Color.RED,
+    			        outlineColor :  FreeDo.Color.WHITE,
     			        outlineWidth : 10.0
     			    }
     			});

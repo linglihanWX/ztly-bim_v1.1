@@ -12,6 +12,7 @@ var firstReal = true;
 var ceshistate = false;
 var modelTile=null;
 var myviewer = null;
+var screenSpaceEventHandler = null;
 window.obj = {};
 var jianpiaokou1 = {};
 var jianpiaokou1 = {};
@@ -244,17 +245,10 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 		var lat = 39.0296251212;
 		
 		var  cartesian  =   new FreeDo.Cartesian3.fromDegrees(118.4799594564051, 24.663425907467902,500);
-		this.viewer.camera.flyTo({
-			destination :new FreeDo.Cartesian3(-2302833.762201284,4394746.398731597,3994809.016901712),
-			orientation: {
-				heading : 0.26411536311211936,
-				pitch : -0.8723260495776195,
-				roll : 0.0013380152154160996
-			}
-		});
+
 
 		ceshistate =true;
-		SafeThreeViewer.right(window.merightclick);
+		//SafeThreeViewer.right(window.merightclick);
 		var imageMaterial = new FreeDo.ImageMaterialProperty ({
 			image : "./static/page/designcoordination/mainbuilding/img/drawing1.png",
 			repeat : new FreeDo.Cartesian2(1.0, 1.0),
@@ -314,7 +308,7 @@ SafeThreeViewer.changechoserow = function(row){
 
 	}
 }
-var catchModelTile =null;
+/*var catchModelTile =null;
 SafeThreeViewer.right = function (callback) {
 	var selectComponentEventType = FreeDo.ScreenSpaceEventType.RIGHT_CLICK;
     //var selectComponentEventType = FreeDo.ScreenSpaceEventType.LEFT_DOUBLE_CLICK;
@@ -335,7 +329,7 @@ SafeThreeViewer.right = function (callback) {
              }
          }
     }, selectComponentEventType);
-}
+}*/
 
 SafeThreeViewer.showAllModelTile = function() {
 	/*for(i in catchModelTile){
@@ -381,8 +375,8 @@ SafeThreeViewer.fly = function(x,y,z,heading,pitch,roll,labelleft,labeltop){
 		}*/
 	})
 }
-SafeThreeViewer.initLeftDown = function(viewer) {
-	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+SafeThreeViewer.initLeftClick = function(viewer) {
+	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
 		/*var picked = viewer.scene.pick(movement.position);
 		var pick = new FreeDo.Cartesian2(movement.position.x,movement.position.y);
@@ -391,13 +385,17 @@ SafeThreeViewer.initLeftDown = function(viewer) {
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
 		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180,cartographic.height];
 		//var id = picked.getProperty('component');
-		console.log(point);	
+		//console.log(point);	
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 
 }
+//移除原有的监听事件
+SafeThreeViewer.removeListener = function(){
+	screenSpaceEventHandler.removeInputAction(FreeDo.ScreenSpaceEventType.LEFT_CLICK);
+}
 SafeThreeViewer.initWheel = function(viewer) {
-	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
+	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
 		
 	}, FreeDo.ScreenSpaceEventType.WHEEL);
