@@ -344,6 +344,7 @@
 	<script src="${ctx }/static/page/shigongguanli/safe/js/safeThree.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/safe/js/safethreepie.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
+	<script src="${ctx}/static/page/common/js/FreeDoUtil.js"></script>
 </body>
 
 </html>

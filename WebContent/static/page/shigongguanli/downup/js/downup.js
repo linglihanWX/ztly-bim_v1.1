@@ -42,6 +42,7 @@ $(function () {
     });
 
     DownupViewer.init("earth"); // 加载球模型
+    FreeDoUtil.digpit(globalviewer);
     //初始化
     var myChart = echarts.init(document.getElementById('chart'));
     option = {
@@ -96,7 +97,7 @@ $(function () {
         ]
     };
     myChart.setOption(option);
-    DownupViewer.initLeftClick(globalviewer);
+    DownupViewer.initLeftClick(globalviewer,showDiv);
     DownupViewer.initLeftDown(globalviewer,hideDiv);
     //DownupViewer.initDbLeftClick(globalviewer);
     var surveymanager = new SurveyManager(globalviewer,function(){});
@@ -160,5 +161,26 @@ $(function () {
 	});
     function hideDiv(){
     	$("#chart").hide();
+    }
+    function showDiv(picked,position){
+    	if(picked){
+			if(picked instanceof FreeDo.FreedoPModelFeature){
+				$("#chart").hide();
+			}else{
+				
+				if(picked.id!=undefined&&picked.id.name.indexOf("沉降点")>-1){
+					$("#chart").css({
+						"display":"block",
+						"left":position.x - 300,
+						"top":position.y - 300,
+					});	
+				}else{
+					$("#chart").hide();
+				}
+			}
+			
+		}else{
+			$("#chart").hide();
+		}
     }
 });

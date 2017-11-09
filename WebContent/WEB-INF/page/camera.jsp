@@ -185,6 +185,7 @@
 	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/camera/js/camera.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
+	<script src="${ctx}/static/page/common/js/FreeDoUtil.js"></script>
 </body>
 
 </html>

@@ -57,12 +57,12 @@ CameraViewer.init=function(earthId,baseImageryProvider)
 		}
 	});
 	modelTile.readyPromise.then(function() {
-		moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
+		moveModel(modelTile,-80,20,-23,15,0,0,1,1,1);
 	});
     new Compass(this.viewer);
 	var camera1 = this.viewer.entities.add( {  
 		name : '摄像头1',  
-		position : FreeDo.Cartesian3.fromDegrees(117.65375541701634, 39.02874722501288,27),    
+		position : FreeDo.Cartesian3.fromDegrees(117.65375541701634, 39.02874722501288,1),    
 		label : { //文字标签  
 			text : '南门1',  
 			font : '14pt monospace',  
@@ -79,7 +79,7 @@ CameraViewer.init=function(earthId,baseImageryProvider)
 	} );
 	var camera2 = this.viewer.entities.add( {  
 		name : '摄像头2',  
-		position : FreeDo.Cartesian3.fromDegrees(117.65429737156501, 39.02880876433644,25),    
+		position : FreeDo.Cartesian3.fromDegrees(117.65429737156501, 39.02880876433644,-2),    
 		label : { //文字标签  
 			text : '南门2',  
 			font : '14pt monospace',  
@@ -96,7 +96,7 @@ CameraViewer.init=function(earthId,baseImageryProvider)
 	} );
 	var camera3 = this.viewer.entities.add( {  
 		name : '摄像头3',  
-		position : FreeDo.Cartesian3.fromDegrees(117.65448391494456, 39.02897291657045,25),    
+		position : FreeDo.Cartesian3.fromDegrees(117.65447907157001, 39.028964593410294,-2),    
 		label : { //文字标签  
 			text : '三门',  
 			font : '14pt monospace',  
@@ -113,7 +113,7 @@ CameraViewer.init=function(earthId,baseImageryProvider)
 	} );
 	var camera4 = this.viewer.entities.add( {  
 		name : '摄像头4',  
-		position : FreeDo.Cartesian3.fromDegrees(117.65488504813085, 39.0288397388738,25),    
+		position : FreeDo.Cartesian3.fromDegrees(117.65491829534002, 39.02880064474932,-2),    
 		label : { //文字标签  
 			text : '站厅扶梯口',  
 			font : '14pt monospace',  
@@ -130,7 +130,7 @@ CameraViewer.init=function(earthId,baseImageryProvider)
 	} );
 	var camera5 = this.viewer.entities.add( {  
 		name : '摄像头5',  
-		position : FreeDo.Cartesian3.fromDegrees(117.65520604234463, 39.028678589254206,25),    
+		position : FreeDo.Cartesian3.fromDegrees(117.65520604234463, 39.028678589254206,-2),    
 		label : { //文字标签  
 			text : '土体口',  
 			font : '14pt monospace',  
@@ -167,31 +167,21 @@ CameraViewer.getTiandituGloble =function() {
 /**
  * 左键点击事件
  */
-CameraViewer.initLeftClick = function(viewer) {
+CameraViewer.initLeftClick = function(viewer,callback) {
 	leftClickHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	leftClickHandler.setInputAction(function(movement){
 		
 		var picked = viewer.scene.pick(movement.position);
-		if(picked){
-			if(picked instanceof FreeDo.FreedoPModelFeature){
-				$("#detailInfo").hide();
-			}else{
-				$("#detailInfo").css({
-					"display":"block",
-					"left":movement.position.x - 456,
-					"top":movement.position.y - 215,
-				});	
-			}
-		}else{
-			$("#detailInfo").hide();
-		}
+		callback(picked,movement.position);
 		
 		/*var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
 		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
 		var point=[cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];*/
 		//输出相机位置
-		//console.log(viewer.camera.position.x+","+viewer.camera.position.y+","+viewer.camera.position.z+","+viewer.camera.heading+","+viewer.camera.pitch+","+viewer.camera.roll);
+/*		var cartesian = new FreeDo.Cartesian3(viewer.camera.position.x, viewer.camera.position.y, viewer.camera.position.z)
+		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
+		console.log(cartographic.longitude +","+cartographic.latitude+","+viewer.camera.heading+","+viewer.camera.pitch+","+viewer.camera.roll);*/
 		//输出点击位置的经纬度
 		//console.log(point);
 		

@@ -33,7 +33,7 @@ myChart.on('click', function (param) {
 	switch (name) {
 	case "一级":
 		SafeThreeViewer.hideAll();
-		SafeThreeViewer.fly(-2302805.7179202065,4394550.636266597,3994807.1100653852,5.1722860874155225,-0.41903254632706655,6.279962258671201);
+		SafeThreeViewer.fly(-2302804.086141132,4394525.4574262,3994795.189148911,5.06194799048651,-0.3134454479385591,6.279941084189261);
 		jianpiaokou1.show = true;
 		jianpiaokou2.show = true;
 		jianpiaokou3.show = true;
@@ -41,14 +41,14 @@ myChart.on('click', function (param) {
 		break;
 	case "二级":
 		SafeThreeViewer.hideAll();
-		SafeThreeViewer.fly(-2302751.488420187,4394561.224820432,3994810.7027898175,1.5061458879606562,-0.08043731837410029,0.003287499144919437);
+		SafeThreeViewer.fly(-2302756.238966272,4394531.052734027,3994796.8074401384,4.62538120112283,-0.2915086482950606,6.279770932829521);
 		zhizhu.show=true;
 		//e1de51d2-afe3-11e7-46c2-5ebc1b3c3ce2
 		SafeThreeViewer.changeColorById([["${component} === \'" + "e1de51d2-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('orange')"],["true","color('white')"]]);
 		break;
 	case "三级":
 		SafeThreeViewer.hideAll();
-		SafeThreeViewer.fly(-2302771.988696689,4394547.20615652,3994814.236560558,1.8033561138995244,-0.5027766982710213,0.0036447729001718443);
+		SafeThreeViewer.fly(-2302785.7098154062,4394528.789272977,3994796.8350769104,5.411260326139786,-0.5810681311405919,6.28017386155722);
 		dianti.show=true;
 		//e1990b72-afe3-11e7-46c2-5ebc1b3c3ce2
 		SafeThreeViewer.changeColorById([["${component} === \'" + "e1990b72-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('yellow')"],["true","color('white')"]]);

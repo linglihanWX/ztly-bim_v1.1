@@ -139,7 +139,7 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 		}));*/
 		jianpiaokou1 = this.viewer.entities.add( {  
 		    name : '图标',  
-		    position : new FreeDo.Cartesian3.fromDegrees(117.6549657186326, 39.028695707158185, 18.132962020111965),  
+		    position : new FreeDo.Cartesian3.fromDegrees(117.6549657186326, 39.028695707158185, -8.132962020111965),  
 	        show : false,
 		    label : { //文字标签  
 		        text : '序号：1\nWBS名称：1号 检票口\n存在隐患：易燃物品堆放\n隐患等级：一级',  
@@ -155,7 +155,7 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 		} );  
 		jianpiaokou2 = this.viewer.entities.add( {  
 			name : '图标',  
-			position : new FreeDo.Cartesian3.fromDegrees(117.65485736335727, 39.0288385898898, 18.38655418030589),  
+			position : new FreeDo.Cartesian3.fromDegrees(117.65485736335727, 39.0288385898898, -8.38655418030589),  
 			show : false,
 			label : { //文字标签  
 				text : '序号：2\nWBS名称：2号 检票口\n存在隐患：易燃物品堆放\n隐患等级：一级',  
@@ -171,7 +171,7 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 		} );  
 		jianpiaokou3 = this.viewer.entities.add( {  
 			name : '图标',  
-			position : new FreeDo.Cartesian3.fromDegrees(117.65457686483425, 39.02889521820999, 18.618923689085566), 
+			position : new FreeDo.Cartesian3.fromDegrees(117.65457686483425, 39.02889521820999, -8.618923689085566), 
 			show : false,
 			label : { //文字标签  
 				text : '序号：3\nWBS名称：3号 检票口\n存在隐患：易燃物品堆放\n隐患等级：一级',  
@@ -187,7 +187,7 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 		} );  
 		zhizhu = this.viewer.entities.add( {  
 			name : '图标',  
-			position : new FreeDo.Cartesian3.fromDegrees(117.65469785633918, 39.02877723478264, 18.868876746473855),  
+			position : new FreeDo.Cartesian3.fromDegrees(117.65469785633918, 39.02877723478264, -8.868876746473855),  
 			show : false,
 			label : { //文字标签  
 				text : '序号：4\nWBS名称：1号 支柱\n存在隐患：支柱裂纹\n隐患等级：二级',  
@@ -203,7 +203,7 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 		} );  
 		dianti = this.viewer.entities.add( {  
 			name : '图标',  
-			position : new FreeDo.Cartesian3.fromDegrees(117.65492075292256, 39.028788237667136, 18.524780241824177), 
+			position : new FreeDo.Cartesian3.fromDegrees(117.65492075292256, 39.028788237667136, -8.524780241824177), 
 			show : false,
 			label : { //文字标签  
 				text : '序号：5\nWBS名称：1号 电梯\n存在隐患：电梯漏电\n隐患等级：三级',  
@@ -219,7 +219,7 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 		} ); 
 		anjian = this.viewer.entities.add( {  
 			name : '图标',  
-			position : new FreeDo.Cartesian3.fromDegrees(117.65502555728834, 39.02881290009245, 19.155497368460313), 
+			position : new FreeDo.Cartesian3.fromDegrees(117.65502555728834, 39.02881290009245, -7.155497368460313), 
 			show : false,
 			label : { //文字标签  
 				text : '序号：1\n整改编号：JRXM-JCHC\n整改情况：整改中\n整改日期：2016-09-09',  
@@ -270,7 +270,7 @@ SafeThreeViewer.init = function (earthId,baseImageryProvider) {
 			});*/
 		myviewer = this.viewer;
 		modelTile.readyPromise.then(function() {
-			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
+			moveModel(modelTile,-80,20,-23,15,0,0,1,1,1);
 		});
 		
 		$("#shuchuceshi").click(function() {
@@ -385,7 +385,15 @@ SafeThreeViewer.initLeftClick = function(viewer) {
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
 		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180,cartographic.height];
 		//var id = picked.getProperty('component');
-		//console.log(point);	
+		//console.log(point);
+		//记录相机位置
+		/*var x = viewer.camera.position.x
+		var y = viewer.camera.position.y
+		var z = viewer.camera.position.z
+		var heading = viewer.camera.heading;
+		var pitch = viewer.camera.pitch;
+		var roll = viewer.camera.roll;
+		console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);*/
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 

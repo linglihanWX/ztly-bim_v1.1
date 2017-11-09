@@ -27,6 +27,7 @@ $(function () {
         window.location.href = "toSafe";
     });
     SafeThreeViewer.init("earth");
+    FreeDoUtil.digpit(myviewer);
     myviewer.camera.setView({
 		destination :new FreeDo.Cartesian3(-2302833.762201284,4394746.398731597,3994809.016901712),
 		orientation: {
@@ -45,37 +46,37 @@ $(function () {
 			case "1号 检票口":
 				SafeThreeViewer.hideAll();
 				SafeThreeViewer.changeColorById([["${component} === \'" + "e1d4b546-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('red')"],["true","color('white')"]]);
-				SafeThreeViewer.fly(-2302789.5125290914,4394545.504466071,3994804.1390350373,4.948180033446017,-0.32296400433020844,6.27981803250796);
+				SafeThreeViewer.fly(-2302781.210462128,4394527.465339555,3994786.3773927097,4.9481761281998295,-0.32295882697450473,6.279817679450293);
 				jianpiaokou1.show = true;
 				break;
 			case "2号 检票口":
 				SafeThreeViewer.hideAll();
 				SafeThreeViewer.changeColorById([["${component} === \'" + "e1cff9f0-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('red')"],["true","color('white')"]]);
-				SafeThreeViewer.fly(-2302769.571507075,4394541.6335323,3994820.4549086066,2.7325935449172385,-0.44994223257041366,0.0014480323945722517);
+				SafeThreeViewer.fly(-2302761.9001590554,4394525.5047848765,3994805.2561517092,2.9085377702397195,-1.0744022576651129,0.0015829053559963668);
 				jianpiaokou2.show = true;
 				break;
 			case "3号 检票口":
 				SafeThreeViewer.hideAll();
 				SafeThreeViewer.changeColorById([["${component} === \'" + "e153ec20-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('red')"],["true","color('white')"]]);
-				SafeThreeViewer.fly(-2302746.334969072,4394555.294376735,3994816.9482023166,0.677822324281653,-0.1332029020133727,0.0020781647901007005);
+				SafeThreeViewer.fly(-2302741.4530094187,4394529.079408744,3994807.0568853244,4.154261415377306,-0.4556864318007472,6.280086267404272);
 				jianpiaokou3.show = true;
 				break;
 			case "1号 支柱":
 				SafeThreeViewer.hideAll();
 				SafeThreeViewer.changeColorById([["${component} === \'" + "e1de51d2-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('orange')"],["true","color('white')"]]);
-				SafeThreeViewer.fly(-2302754.4870578162,4394559.580377195,3994808.9178669956,1.0719633773482053,-0.2340351046514384,0.0029652499379491104);
+				SafeThreeViewer.fly(-2302744.3035816317,4394539.631661994,3994794.7172497814,1.5327119344899538,-0.2340259547101724,0.0033731774571332807);
 				zhizhu.show = true;
 				break;
 			case "1号 电梯":
 				SafeThreeViewer.hideAll();
 				SafeThreeViewer.changeColorById([["${component} === \'" + "e1990b72-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('yellow')"],["true","color('white')"]]);
-				SafeThreeViewer.fly(-2302775.4746501697,4394546.0243341895,3994812.1967581892,1.633125012044049,-0.39237765636638855,0.0035463027934925506);
+				SafeThreeViewer.fly(-2302764.0824318035,4394530.02625459,3994794.7799485787,1.4083403432488222,-0.348331131411735,0.003447906856028027);
 				dianti.show = true;
 				break;
 			case "JRXM-JCHC":
 				SafeThreeViewer.hideAll();
 				SafeThreeViewer.changeColorById([["${component} === \'" + "e1d4b4e0-afe3-11e7-46c2-5ebc1b3c3ce2" + "\'", "color('blue')"],["true","color('white')"]]);
-				SafeThreeViewer.fly(-2302779.1769825863,4394541.303830458,3994816.530717693,1.5971906583171167,-0.44188025377956475,0.0036297696296898607);
+				SafeThreeViewer.fly(-2302788.2561917696,4394521.5585276205,3994801.234994364,4.809505009659519,-0.7253428677923317,6.278816722205928);
 				anjian.show = true;
 				break;
 			default:

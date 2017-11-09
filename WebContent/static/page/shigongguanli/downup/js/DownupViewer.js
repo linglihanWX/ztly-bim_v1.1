@@ -58,7 +58,7 @@ DownupViewer.init=function(earthId,baseImageryProvider)
 		}
 	});
 	modelTile.readyPromise.then(function() {
-		moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
+		moveModel(modelTile,-80,20,-23,15,0,0,1,1,1);
 	});
 	//加载沉降点
 	var downuppoint = [
@@ -77,7 +77,7 @@ DownupViewer.init=function(earthId,baseImageryProvider)
 	for ( var i in downuppoint) {
 		downuppoints[i] = this.viewer.entities.add({  
 			name : '沉降点'+i,  
-			position : FreeDo.Cartesian3.fromDegrees(downuppoint[i].lon,downuppoint[i].lat,28),  
+			position : FreeDo.Cartesian3.fromDegrees(downuppoint[i].lon,downuppoint[i].lat,2),  
 			 point : { //点  
 			        pixelSize : 5,  
 			        color : FreeDo.Color.RED,  
@@ -109,29 +109,17 @@ DownupViewer.getTiandituGloble =function() {
 	});
 	return tg;
 }
-DownupViewer.initLeftClick = function(viewer) {
+DownupViewer.initLeftClick = function(viewer,callback) {
 	leftClickHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	leftClickHandler.setInputAction(function(movement){
 		var picked = viewer.scene.pick(movement.position);
 		//console.log(picked);FreeDo.defined(picked) && picked instanceof FreeDo.FreedoPModelFeature
-		if(picked){
-			if(picked instanceof FreeDo.FreedoPModelFeature){
-				$("#chart").hide();
-			}else{
-				$("#chart").css({
-					"display":"block",
-					"left":movement.position.x - 300,
-					"top":movement.position.y - 300,
-					});	
-			}
-			
-		}else{
-			$("#chart").hide();
-		}
-		var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
+		callback(picked,movement.position);
+		/*var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
 		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
-		var point=[cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
+		var point=[cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];*/
+
 		//输出相机位置
 		//console.log(viewer.camera.position.x+","+viewer.camera.position.y+","+viewer.camera.position.z+","+viewer.camera.heading+","+viewer.camera.pitch+","+viewer.camera.roll);
 		//输出点击位置的经纬度

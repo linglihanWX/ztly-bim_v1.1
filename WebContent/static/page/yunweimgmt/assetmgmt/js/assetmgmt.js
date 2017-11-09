@@ -234,6 +234,7 @@ $(function () {
     AssetmgmtViewer.init("earth"); // 加载球模型
     AssetmgmtViewer.initRightClick(globalviewer);
     //AssetmgmtViewer.initLeftClick(globalviewer);
+    FreeDoUtil.digpit(globalviewer);
     var surveymanager = new SurveyManager(globalviewer,function(){});
     /**
 	 *工具栏按钮点击 

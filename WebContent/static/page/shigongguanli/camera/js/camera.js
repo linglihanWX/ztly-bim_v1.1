@@ -24,21 +24,57 @@ $(function () {
                 callback : {
                 	onClick:function(event, treeId, treeNode){
                 		var key =treeNode.id
+                		$("#detailInfo").hide();
                 		switch (key) {
 						case 1:
-							globalviewer.zoomTo(camera[0]);
+							globalviewer.camera.setView({
+							    destination : globalviewer.scene.globe.ellipsoid.cartographicToCartesian(new FreeDo.Cartographic(2.053439098657361,0.6811791843221437, 10)),
+							    orientation : {
+							        heading :1.2567987776128948,
+							        pitch : -0.3319190858811829,
+							        roll : 0.003304353957359396
+							    }
+							});
 							break;
 						case 2:
-							globalviewer.zoomTo(camera[1]);
+							globalviewer.camera.setView({
+							    destination : globalviewer.scene.globe.ellipsoid.cartographicToCartesian(new FreeDo.Cartographic(2.053456086084953,0.6811843728487439, -7)),
+							    orientation : {
+							        heading :3.260955832051345,
+							        pitch : 0.16918822318419835,
+							        roll : 6.282788427829956
+							    }
+							});
 							break;
 						case 3:
-							globalviewer.zoomTo(camera[2]);
+							globalviewer.camera.setView({
+							    destination : globalviewer.scene.globe.ellipsoid.cartographicToCartesian(new FreeDo.Cartographic(2.0534524337193343, 0.6811844859656465, -8)),
+							    orientation : {
+							        heading :1.5933147377869714,
+							        pitch : 0.12883743281155224,
+							        roll : 0.003310086046881544
+							    }
+							});
 							break;
 						case 5:
-							globalviewer.zoomTo(camera[3]);
+							globalviewer.camera.setView({
+							    destination : globalviewer.scene.globe.ellipsoid.cartographicToCartesian(new FreeDo.Cartographic(2.053461477036838,0.6811808031108124, -7)),
+							    orientation : {
+							        heading :1.2958212837675998,
+							        pitch : 0.17771974998978846,
+							        roll : 0.003210361782742588
+							    }
+							});
 							break;
 						case 6:
-							globalviewer.zoomTo(camera[4]);
+							globalviewer.camera.setView({
+							    destination : globalviewer.scene.globe.ellipsoid.cartographicToCartesian(new FreeDo.Cartographic(2.0534670873600227,0.6811801630728863, -6)),
+							    orientation : {
+							        heading :1.812169405041602,
+							        pitch : 0.14355738002814977,
+							        roll : 0.0032214481282588636
+							    }
+							});
 							break;
 
 						default:
@@ -60,8 +96,9 @@ $(function () {
     });
 
     CameraViewer.init("earth"); // 加载球模型
-    CameraViewer.initLeftClick(globalviewer);
+    CameraViewer.initLeftClick(globalviewer,showDiv);
     CameraViewer.initLeftDown(globalviewer,hideDiv);
+    FreeDoUtil.digpit(globalviewer);
     var surveymanager = new SurveyManager(globalviewer,function(){});
     /**
 	 *工具栏按钮点击 
@@ -123,4 +160,24 @@ $(function () {
 	function hideDiv(){
 		$("#detailInfo").hide();
 	}
+    function showDiv(picked,position){
+    	if(picked){
+			if(picked instanceof FreeDo.FreedoPModelFeature){
+				$("#detailInfo").hide();
+			}else{
+				if(picked.id!=undefined&&picked.id.name.indexOf("摄像头")>-1){
+					$("#detailInfo").css({
+						"display":"block",
+						"left":position.x - 500,
+						"top":position.y - 200,
+					});	
+				}else{
+					$("#detailInfo").hide();
+				}
+			}
+			
+		}else{
+			$("#detailInfo").hide();
+		}
+    }
 });
