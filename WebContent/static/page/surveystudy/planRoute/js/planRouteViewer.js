@@ -55,7 +55,7 @@ planRouteViewer.init=function(earthId,baseImageryProvider)
 		}
 	});
 	modelTile.readyPromise.then(function() {
-		moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
+		moveModel(modelTile,-80,20,-23,15,0,0,1,1,1);
 	});
     new Compass(this.viewer);
     globalviewer = this.viewer;

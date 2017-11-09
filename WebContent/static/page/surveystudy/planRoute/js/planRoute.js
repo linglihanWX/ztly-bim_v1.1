@@ -5,6 +5,7 @@ $(function () {
     planRouteViewer.init("init"); // 加载球模型
     var sss = new SurveyManager(globalviewer,creatEntity);
     sss.setSurveyType(SurveyType.LINE_DISTANCE);
+    FreeDoUtil.digpit(globalviewer);
 });
 var creatEntity = function(firstPoint,lastPoint) {
 	console.log(globalviewer.camera);

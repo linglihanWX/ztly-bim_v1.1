@@ -119,6 +119,7 @@ $(function () {
 	MainBuildingViewer.init("earth");
 	MainBuildingViewer.initLeftClick(myviewer);
 	MainBuildingViewer.initRightClick(myviewer);
+	FreeDoUtil.digpit(myviewer);
     // 2D/3D切换
     $("#div1").click(function () {
         if ($("#div1").hasClass("open1")) {
@@ -369,49 +370,49 @@ $(function () {
     });
     $("#beizhu2,#zhongdiangc1").click(function() {
     	myviewer.camera.setView({
-    	    destination : new FreeDo.Cartesian3(-2302807.2510784627,4394523.4082239475,3994793.8235483123),
+    	    destination : new FreeDo.Cartesian3(-2302757.875052473,4394528.24041678,3994797.450159164),
     	    orientation: {
-    	        heading : 5.044992016222395, // east, default value is 0.0
+    	        heading : 2.007615961163631, // east, default value is 0.0
 												// (north)
-    	        pitch : 0.3215754362635588,    // default value (looking down)
-    	        roll : 6.27991529153284                           // default
+    	        pitch : -0.2183219047222542,    // default value (looking down)
+    	        roll : 0.0030465411706463996                          // default
 																	// value
     	    }
     	});
 	});
     $("#zhongdiangc4").click(function() {
     	myviewer.camera.setView({
-    	    destination : new FreeDo.Cartesian3(-2302753.6374329086,4394540.72511198,3994807.819974779),
+    	    destination : new FreeDo.Cartesian3(-2302741.565123864,4394523.662802505,3994790.3854395114),
     	    orientation: {
-    	        heading : 1.8806118873166024, // east, default value is 0.0
+    	        heading :1.59903283527371, // east, default value is 0.0
 												// (north)
-    	        pitch : -0.0003627369162537697,    // default value (looking
+    	        pitch : -0.15186334094008447,    // default value (looking
 													// down)
-    	        roll : 0.0031271705413082884                          // default
+    	        roll : 0.0033203069289129417                          // default
 																		// value
     	    }
     	});
 	});
 	 $("#beizhu3,#zhongdiangc3").click(function() {
 		 myviewer.camera.setView({
-	    	    destination : new FreeDo.Cartesian3(-2302763.1005514893,4394545.018772202,3994823.558034995),
+	    	    destination : new FreeDo.Cartesian3(-2302766.837099702,4394520.801222191,3994804.8045577058),
 	    	    orientation: {
-	    	        heading : 2.335654016192078, // east, default value is
+	    	        heading : 4.0280690296529995, // east, default value is
 													// 0.0 (north)
-	    	        pitch : -0.49131390869990543,    // default value
+	    	        pitch : -0.6310762705847752,    // default value
 														// (looking down)
-	    	        roll : 0.002683491504127389                             // default
+	    	        roll : 6.28003897153652                             // default
 																			// value
 	    	    }
 	    	});
 	});
 	 $("#zhongdiangc2,#beizhu1").click(function() {
 		 myviewer.camera.setView({
-			 	destination : new FreeDo.Cartesian3(-2302778.173648511, 4394538.465561863, 3994819.182138035),
+			 	destination : new FreeDo.Cartesian3(-2302764.939078407,4394521.6316561345,3994800.648216683),
 				orientation: {
-					heading : 2.24259938397626,
-					pitch : -0.4041352216647416,
-					roll : 0.002792796281812393
+					heading : 2.0076159609805995,
+					pitch : -0.21832190510744076,
+					roll : 0.0030465420156966516
 				}
 	    	});
 	});
@@ -510,7 +511,7 @@ $(function () {
 			route1.m_Time = 500;
 			route1.m_Lon = 117.65405942250071; // 轨迹点对应的经度 度。
 			route1.m_Lat = 39.029023270356156; // 轨迹点对应的维度 度。
-			route1.m_Heigt = 20.494140101978815; // 轨迹点对应的高度 米。
+			route1.m_Heigt = -7.494140101978815; // 轨迹点对应的高度 米。
 			route1.m_Course = 1.8185673070150337*180/Math.PI; // 轨迹点对应的相机方位角 度。
 			route1.m_Alpha = 0.053943264486221665*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route1.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
@@ -520,7 +521,7 @@ $(function () {
 			route2.m_Time = 5500;
 			route2.m_Lon = 117.65509880838155; // 轨迹点对应的经度 度。
 			route2.m_Lat = 39.028810674298704; // 轨迹点对应的维度 度。
-			route2.m_Heigt = 19.434674298037013; // 轨迹点对应的高度 米。
+			route2.m_Heigt = -8.434674298037013; // 轨迹点对应的高度 米。
 			route2.m_Course = 1.818577100826488*180/Math.PI; // 轨迹点对应的相机方位角 度。
 			route2.m_Alpha = 0.053955749331485725*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route2.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
@@ -530,7 +531,7 @@ $(function () {
 			route3.m_Time = 6500;
 			route3.m_Lon = 117.65526169720657; // 轨迹点对应的经度 度。
 			route3.m_Lat = 39.028633748813; // 轨迹点对应的维度 度。
-			route3.m_Heigt = 19.331618208693417; // 轨迹点对应的高度 米。
+			route3.m_Heigt = -8.331618208693417; // 轨迹点对应的高度 米。
 			route3.m_Course = 4.7923476950288935*180/Math.PI; // 轨迹点对应的相机方位角 度。
 			route3.m_Alpha = -0.14869812836828622*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route3.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
@@ -540,7 +541,7 @@ $(function () {
 			route4.m_Time = 11500;
 			route4.m_Lon = 117.65421983509961; // 轨迹点对应的经度 度。
 			route4.m_Lat = 39.02882783018097; // 轨迹点对应的维度 度。
-			route4.m_Heigt = 20.968283549670737; // 轨迹点对应的高度 米。
+			route4.m_Heigt = -7.968283549670737; // 轨迹点对应的高度 米。
 			route4.m_Course = 4.915122487467713*180/Math.PI; // 轨迹点对应的相机方位角 度。
 			route4.m_Alpha = -0.07063326983480422*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route4.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
@@ -549,7 +550,7 @@ $(function () {
 			route5.m_Time = 12500;
 			route5.m_Lon = 117.65410894102295; // 轨迹点对应的经度 度。
 			route5.m_Lat = 39.02894122922237; // 轨迹点对应的维度 度。
-			route5.m_Heigt = 21.318711315603583; // 轨迹点对应的高度 米。
+			route5.m_Heigt = -6.318711315603583; // 轨迹点对应的高度 米。
 			route5.m_Course = 8.049202633909317*180/Math.PI; // 轨迹点对应的相机方位角 度。
 			route5.m_Alpha = -0.5223165541779395*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route5.m_Roll = 0; // 轨迹点对应的相机滚转角 度。
@@ -558,7 +559,7 @@ $(function () {
 			route6.m_Time = 17500;
 			route6.m_Lon = 117.65455984662441; // 轨迹点对应的经度 度。
 			route6.m_Lat = 39.0288487932963; // 轨迹点对应的维度 度。
-			route6.m_Heigt = 5.565085029634779; // 轨迹点对应的高度 米。
+			route6.m_Heigt = -21.565085029634779; // 轨迹点对应的高度 米。
 			route6.m_Course = 7.949202633909317*180/Math.PI; // 轨迹点对应的相机方位角 度。
 			route6.m_Alpha = -0.17534636908519796*180/Math.PI; // 轨迹点对应的相机俯仰角 度。
 			route6.m_Roll = 0; // 轨迹点对应的相机滚转角 度。

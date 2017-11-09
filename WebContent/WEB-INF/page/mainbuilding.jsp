@@ -416,6 +416,7 @@
 	<script src="${ctx}/static/webgl/manyou/js/FDPAction_Camera.js"></script>
 	<script src="${ctx}/static/webgl/manyou/js/FDPCameraRoute.js"></script>
 	<script src="${ctx}/static/webgl/manyou/js/FDPScript.js"></script>
+	<script src="${ctx}/static/page/common/js/FreeDoUtil.js"></script>
 </body>
 
 </html>

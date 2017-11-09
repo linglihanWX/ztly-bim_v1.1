@@ -534,7 +534,7 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		tuceng.push(village2);
 		myviewer = this.viewer;
 		modelTile.readyPromise.then(function() {
-			moveModel(modelTile,-80,20,4,15,0,0,1,1,1);
+			moveModel(modelTile,-80,20,-23,15,0,0,1,1,1);
 		});
 		
 		$("#zongduanmian").click(function() {
@@ -620,13 +620,13 @@ MainBuildingViewer.initLeftClick = function(viewer) {
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
 		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
 		console.log(point);*/
-		/*var x = viewer.camera.position.x
+		var x = viewer.camera.position.x
 		var y = viewer.camera.position.y
 		var z = viewer.camera.position.z
 		var heading = viewer.camera.heading;
 		var pitch = viewer.camera.pitch;
 		var roll = viewer.camera.roll;
-		console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);*/
+		console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 
