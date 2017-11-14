@@ -117,6 +117,7 @@ public class WebGlController {
 		
 		return "planRoute";
 	}
+
 	/*------------------------设计协同模块页面跳转-----------------------*/
 	//跳转到概况界面
 	@RequestMapping("toGaikuang")
@@ -218,6 +219,12 @@ public class WebGlController {
 	@RequestMapping("toWorkShow")
 	public String toWorkShowPage(HttpServletRequest req) {
 		return "workshow";
+	}
+	//跳转到盾构页面
+	@RequestMapping("toDungou")
+	public String toDungouPage(HttpServletRequest req) {
+		
+		return "dungou";
 	}
 	/*-----------------------运维管理模块页面跳转-------------------------*/
 	//跳转到空间管理页面

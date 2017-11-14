@@ -153,6 +153,7 @@
 						<a href="#">施工日志</a>
 						<a href="#">项目信息</a>
 						<a href="${ctx }/toWorkShow">3D综合展示</a>
+						<a href="${ctx }/toDungou">盾构监测</a>
                 </li>
 
             </ul>
