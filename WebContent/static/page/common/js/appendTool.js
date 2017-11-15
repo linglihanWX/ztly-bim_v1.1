@@ -4,7 +4,7 @@ $(function () {
 	});
     var str = "<span class='pull-left'>&lt;</span><div id='appendTools'><i id='TJCX' class='iconfont icon-chaxuntongji tool' title='统计查询'></i><i id='JLCL' class='iconfont icon-celiang tool' title='距离测量'></i><i id='FWCL' class='iconfont icon-celiangfangweijiao tool' title='方位测量'></i><i id='MJCL' class='iconfont icon-tudimianji tool' title='面积测量'></i><i id='DMPQ' class='iconfont icon-pouqie tool' title='地面刨切'></i></div>";
     var echartstr ="<div id='echartarea'><div id='bararea'></div><div id='piearea'></div></div>";
-    var imgstr ="<div id='img'><img id='geologyslicing' src=''></div>";
+    var imgstr ="<div id='img'><img id='geologyslicing' src='static/page/common/img/poumian/poummian.jpg'></div>";
    $("#earth").append(str);
    $("#earth").append(echartstr);
    $("#earth").append(imgstr);

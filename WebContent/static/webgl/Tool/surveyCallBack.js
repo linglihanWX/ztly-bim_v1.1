@@ -1305,7 +1305,6 @@ d
         function pickEndPoint(windowPosition) {
         	var random = (Math.random()*3)
         	var num = Math.ceil(random);
-            $("#geologyslicing").attr("src","static/page/common/img/poumian/poumian"+num+".png");
 			$("#img").show();
         	var pickResult = pickPosition(windowPosition);
             if (pickResult.type !== PositionType.NONE) {

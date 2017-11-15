@@ -183,24 +183,24 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>5号电梯</td>
-                                <td class="center">西局D口下行电梯</td>
-                                <td class="center">程翔</td>
-                                <td class="center">2017/10/30 15:34:00</td>
+                                <td>3号电梯</td>
+                                <td class="center">南路A口电梯</td>
+                                <td class="center">彭亚光</td>
+                                <td class="center">2017/10/29 15:34:00</td>
                                 <td class="center">2017/10/30 22:00:00</td>
-                                <td class="center">1.5万</td>
-                                <td class="center">5</td>
+                                <td class="center">6万</td>
+                                <td class="center">2</td>
                                 <td class="center">维修中</td>
-                                <td class="center"><span class="outside"><span class="inside progress1"></span></span>40%</td>
+                                <td class="center"><span class="outside"><span class="inside progress1"></span></span>20%</td>
                             </tr>
                          
                             <tr>
-                                <td>5号电梯</td>
-                                <td class="center">西局D口下行电梯</td>
-                                <td class="center">程翔</td>
-                                <td class="center">2017/10/30 15:34:00</td>
-                                <td class="center">2017/10/30 22:00:00</td>
-                                <td class="center">1.5万</td>
+                                <td>5号闸机</td>
+                                <td class="center">5号进站口</td>
+                                <td class="center">谢云生</td>
+                                <td class="center">2017/05/30 15:34:00</td>
+                                <td class="center">2017/06/01 07:00:00</td>
+                                <td class="center">2.2万</td>
                                 <td class="center">5</td>
                                 <td class="center">维修中</td>
                                 <td class="center">
@@ -209,32 +209,32 @@
                                     </span>40%</td>
                             </tr>
                             <tr>
-                                <td>5号电梯</td>
-                                <td class="center">西局D口下行电梯</td>
-                                <td class="center">程翔</td>
-                                <td class="center">2017/10/30 15:34:00</td>
-                                <td class="center">2017/10/30 22:00:00</td>
-                                <td class="center">1.5万</td>
-                                <td class="center">5</td>
+                                <td>1号升降电梯</td>
+                                <td class="center">1号楼梯左侧</td>
+                                <td class="center">李亦然</td>
+                                <td class="center">2017/03/11 15:34:00</td>
+                                <td class="center">2017/03/11 15:49:00</td>
+                                <td class="center">0.5万</td>
+                                <td class="center">3</td>
                                 <td class="center">维修中</td>
                                 <td class="center">
                                     <span class="outside">
                                         <span class="inside progress3"></span>
-                                    </span>40%</td>
+                                    </span>60%</td>
                             </tr>
                             <tr>
-                                <td>5号电梯</td>
-                                <td class="center">西局D口下行电梯</td>
-                                <td class="center">程翔</td>
-                                <td class="center">2017/10/30 15:34:00</td>
-                                <td class="center">2017/10/30 22:00:00</td>
+                                <td>13号支柱</td>
+                                <td class="center">4号楼梯口</td>
+                                <td class="center">韩志保</td>
+                                <td class="center">2017/08/21 08:34:00</td>
+                                <td class="center">2017/08/21 09:09:00</td>
                                 <td class="center">1.5万</td>
-                                <td class="center">5</td>
+                                <td class="center">8</td>
                                 <td class="center">维修中</td>
                                 <td class="center">
                                     <span class="outside">
                                         <span class="inside progress4"></span>
-                                    </span>40%</td>
+                                    </span>80%</td>
                             </tr>
                             </tbody>
                         </table>

@@ -159,9 +159,9 @@
                                 <th>专业名称</th>
                                 <th>结束日期</th>
                                 <th>当前状态</th>
-                                <th>预计时间</th>
-                                <th>消耗时间</th>
-                                <th>剩余时间</th>
+                                <th>预计时间（天）</th>
+                                <th>消耗时间（天）</th>
+                                <th>剩余时间（天）</th>
                                 <th>当前进度</th>
                             </tr>
                             </thead>
@@ -170,37 +170,37 @@
                                 <td>土建专业</td>
                                 <td class="center">2019/02-13</td>
                                 <td class="center">进行中</td>
-                                <td class="center">200</td>
-                                <td class="center">200</td>
-                                <td class="center">200</td>
+                                <td class="center">400</td>
+                                <td class="center">40</td>
+                                <td class="center">360</td>
                                 <td class="center"><span class="outside"><span class="inside progress1"></span></span>10%</td>
                             </tr>
                             <tr>
                                 <td>机电专业</td>
-                                <td class="center">2019/02-13</td>
+                                <td class="center">2019/06-09</td>
                                 <td class="center">滞后</td>
+                                <td class="center">340</td>
                                 <td class="center">200</td>
-                                <td class="center">200</td>
-                                <td class="center">200</td>
+                                <td class="center">140</td>
                                   <td class="center"><span class="outside"><span class="inside progress2"></span></span>40%</td>
 
                             </tr>
                             <tr>
                                 <td>给水专业</td>
-                                <td class="center">2019/02-13</td>
+                                <td class="center">2019/03-15</td>
                                 <td class="center">延期</td>
                                 <td class="center">200</td>
-                                <td class="center">200</td>
-                                <td class="center">200</td>
+                                <td class="center">260</td>
+                                <td class="center">0</td>
                                  <td class="center"><span class="outside"><span class="inside progress3"></span></span>63%</td>
                             </tr>
                             <tr>
                                 <td>通风专业</td>
-                                <td class="center">2019/02-13</td>
+                                <td class="center">2019/04-22</td>
                                 <td class="center">稍快</td>
-                                <td class="center">200</td>
-                                <td class="center">200</td>
-                                <td class="center">200</td>
+                                <td class="center">365</td>
+                                <td class="center">100</td>
+                                <td class="center">265</td>
                                 <td class="center"><span class="outside"><span class="inside progress4"></span></span>90%</td>
 
                             </tr>

@@ -103,7 +103,7 @@ body {
 }
 .span6{
     height: 50%!important;
-    margin: 0 0 0 10px!important;
+    margin:0 0 0 10px!important;
 }
 .box{
     height: 43%!important;
@@ -125,7 +125,7 @@ body {
 }
 
 .row-fluid.sortable.ui-sortable {
-    height: 100%;
+        height: calc(100% - 50px)!important;
     overflow-y: auto;
 }
 

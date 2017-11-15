@@ -34,6 +34,7 @@
     <script src="${ctx }/static/page/shigongguanli/dungou/js/base-canvas.js"></script>
     <script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
     <link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
+    <link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
     <script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
     <!--[if lt IE 9]>
     <link id="ie-style" href="css/ie.css" rel="stylesheet">
@@ -146,6 +147,7 @@
 						<a href="${ctx }/toEbs">进度管理</a>
 						<a href="${ctx }/toPm">场景管理</a>
 						<a href="${ctx }/toSafe">安全管理</a>
+						<a href="${ctx }/toDungou"  class="activeList">盾构监测</a>
 						<a href="${ctx }/toRiskmgmt">风险管理</a>
 						<a href="#">质量管理</a>
 						<a href="#">成本管理</a>
@@ -153,7 +155,6 @@
 						<a href="#">施工日志</a>
 						<a href="#">项目信息</a>
 						<a href="${ctx }/toWorkShow">3D综合展示</a>
-						<a href="${ctx }/toDungou"  class="activeList">盾构监测</a>
                 </li>
                 <li>
                     <div id="div1" class="close1">
@@ -377,7 +378,6 @@
                             </tbody>
                         </table>
                         <canvas id="circleCanvas" width="380" height="380"></canvas>
-                        <img src="${ctx }/static/page/shigongguanli/dungou/img/line.png" alt="" class="line">
                     </div>
                 </div>
 
@@ -549,9 +549,15 @@
                 <div class="changeToThree">
                     <div id="tree" class="ztree"></div>
                     <div id="earth"></div>
-                    <div class="msgInfo" id="showmsg">
-        					<h1 id="information"></h1>
-   					</div>
+					<div class="detailInfo">
+					    <ul>
+					        <li><span>名称</span><input type="text"/></li>
+					        <li><span>水源所在地</span><input type="text"/></li>
+					        <li><span>取水口名称</span><input type="text"/></li>
+					        <li><span>设计能力</span><input type="text"/></li>
+					    </ul>
+					    <button class="sureChange">确认</button>
+					</div>
                 </div>
             </div>
         </div>
@@ -580,7 +586,9 @@
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 <script src="${ctx }/static/page/shigongguanli/dungou/js/canvasCircle.js"></script>
 <script src="${ctx }/static/page/shigongguanli/dungou/js/tbm.js"></script>
+<script src="${ctx }/static/page/common/js/appendTool.js"></script>
 <script src="${ctx }/static/page/shigongguanli/dungou/js/DungouViewer.js"></script>
+	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 <script src="${ctx }/static/page/shigongguanli/dungou/js/dungou.js"></script>
 
 </body>

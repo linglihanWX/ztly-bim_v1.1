@@ -18,13 +18,13 @@
     right: 0;
     bottom: 0;
     z-index: 2;
-    width: 400px;
+    width: 500px;
     border: 1px solid #000;
 }
 
 .detailInfo ul li {
     width: 100%;
-    height: 30px;
+    height: 40px;
     box-sizing: border-box;
     list-style: none;
 }
@@ -35,14 +35,15 @@
 
 .detailInfo ul li span {
     display: inline-block;
-    width: 50%;
+    width: 50%; 
     height: 100%;
     text-align: center;
-    line-height: 29px;
+    line-height: 39px;
     box-sizing: border-box;
     vertical-align: top;
     border-right: 1px solid #000;
     background-color: rgba(221, 221, 221, 0.67);
+    font-size: 16px;
 }
 
 .detailInfo ul li input {
@@ -58,13 +59,14 @@
 }
 
 .detailInfo ul li input:last-of-type {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 .detailInfo button {
     width: 100%;
-    height: 30px;
+    height: 40px;
     background-color: cadetblue;
     border: none;
     outline: none;
+    font-size: 16px;
 }

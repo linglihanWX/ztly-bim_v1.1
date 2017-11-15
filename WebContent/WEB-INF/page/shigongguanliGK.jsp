@@ -146,6 +146,7 @@
 						<a href="${ctx }/toEbs">进度管理</a>
 						<a href="${ctx }/toPm">场景管理</a>
 						<a href="${ctx }/toSafe">安全管理</a>
+						<a href="${ctx }/toDungou">盾构监测</a>
 						<a href="${ctx }/toRiskmgmt">风险管理</a>
 						<a href="#">质量管理</a>
 						<a href="#">成本管理</a>
@@ -153,7 +154,6 @@
 						<a href="#">施工日志</a>
 						<a href="#">项目信息</a>
 						<a href="${ctx }/toWorkShow">3D综合展示</a>
-						<a href="${ctx }/toDungou">盾构监测</a>
                 </li>
 
             </ul>
@@ -184,63 +184,63 @@
                             </thead>
                             <tbody>
                             <tr>
-                                <td>地铁1号线</td>
+                                <td>塘沽地铁站</td>
                                 <td>隧道工程</td>
-                                <td>56亿</td>
+                                <td>24亿</td>
                                 <td>达标</td>
                                 <td>达标</td>
                                 <td>地下20米的，隧道地铁。</td>
-                                <td>程翔</td>
-                                <td><span class="outside"><span class="inside progress1"></span></span>40%</td>
+                                <td>肖东菁</td>
+                                <td><span class="outside"><span class="inside progress1" style="width:20px"></span></span>29%</td>
                             </tr>
                             <tr>
-                                <td>地铁1号线</td>
-                                <td>隧道工程</td>
-                                <td>56亿</td>
+                                <td>广州高明区电场</td>
+                                <td>电力工程</td>
+                                <td>33亿</td>
                                 <td>达标</td>
                                 <td>达标</td>
-                                <td>地下20米的，隧道地铁。</td>
-                                <td>程翔</td>
-                                <td><span class="outside"><span class="inside progress1"></span></span>40%</td>
+                                <td>输电线路50公里小型发电场</td>
+                                <td>傅双育</td>
+                                <td><span class="outside"><span class="inside progress1" style="width:35px"></span></span>54%</td>
                             </tr>
                             <tr>
-                                <td>地铁1号线</td>
-                                <td>隧道工程</td>
+                                <td>岳阳奇家岭水电站</td>
+                                <td>水力工程</td>
                                 <td>56亿</td>
                                 <td>达标</td>
                                 <td>达标</td>
-                                <td>地下20米的，隧道地铁。</td>
-                                <td>程翔</td>
-                                <td><span class="outside"><span class="inside progress1"></span></span>40%</td>
+                                <td>输电线路2050公里大型水电站</td>
+                                <td>潘小旋</td>
+                                <td><span class="outside"><span class="inside progress1" style="width:53px"></span></span>70%</td>
                             </tr>
                             <tr>
-                                <td>地铁1号线</td>
-                                <td>隧道工程</td>
-                                <td>56亿</td>
+                                <td>斜拉索大桥</td>
+                                <td>桥梁工程</td>
+                                <td>19亿</td>
                                 <td>达标</td>
                                 <td>达标</td>
-                                <td>地下20米的，隧道地铁。</td>
-                                <td>程翔</td>
-                                <td><span class="outside"><span class="inside progress1"></span></span>40%</td>
+                                <td>沙岭到范垄3.5公里跳河大桥</td>
+                                <td>袁沁茹</td>
+                                <td><span class="outside"><span class="inside progress1" style="width:30px"></span></span>40%</td>
                             </tr>
                             <tr>
-                                <td>地铁1号线</td>
-                                <td>隧道工程</td>
-                                <td>56亿</td>
+                                <td>永安水电站</td>
+                                <td>水力工程</td>
+                                <td>15亿</td>
                                 <td>达标</td>
                                 <td>达标</td>
-                                <td>地下20米的，隧道地铁。</td>
-                                <td>程翔</td>
-                                <td><span class="outside"><span class="inside progress1"></span></span>40%</td>
+                                <td>输电线路919公里大型水电站</td>
+                                <td>黄鼎</td>
+                                <td><span class="outside"><span class="inside progress1" style="width:8px"></span></span>12%</td>
                             </tr> <tr>
-                                <td>地铁1号线</td>
-                                <td>隧道工程</td>
-                                <td>56亿</td>
+                                <td>张通高速</td>
+                                <td>道路工程</td>
+                                <td>0.5亿</td>
                                 <td>达标</td>
                                 <td>达标</td>
-                                <td>地下20米的，隧道地铁。</td>
-                                <td>程翔</td>
-                                <td><span class="outside"><span class="inside progress1"></span></span>40%</td>
+                                <td>张州到通古50公里高速公路</td>
+                                <td>高群</td>
+                                <td><span class="outside"><span class="inside progress1" style="width:22px"></span></span>36%</td>
                             </tr>
 
                             </tbody>

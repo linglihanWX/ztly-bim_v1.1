@@ -63,7 +63,10 @@ body {
     height: 50%!important;
     margin: 0 0 0 10px!important;
 }
-
+.span12{
+	margin: 0 10px!important;
+	width:98%!important;
+}
 .chart {
     height: 300px;
     max-height: 60%;
@@ -81,7 +84,7 @@ body {
 }
 
 .row-fluid.sortable.ui-sortable {
-    height: 100%;
+       height: calc(100% - 50px);
 }
 
 .box-content tbody tr td,
