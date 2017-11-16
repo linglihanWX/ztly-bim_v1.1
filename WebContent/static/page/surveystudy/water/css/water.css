@@ -160,7 +160,9 @@ body {
     font-size: 12px;
 }
 
-
+.box{
+    border:none;
+}
 
 
 .container-fluid-full{
@@ -256,9 +258,4 @@ a.brand span {
     border: none;
     outline: none;
     font-size: 16px;
-}
-
-.span12{
-	width:98%!important;
-	margin:0 1%!important;
 }
