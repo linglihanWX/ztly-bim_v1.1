@@ -330,7 +330,7 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		} );
 		var road1 = this.viewer.entities.add( {  
 			name : '道路1',  
-			position : FreeDo.Cartesian3.fromDegrees(117.6601106774757, 39.0278397440452,15 ),  
+			position : FreeDo.Cartesian3.fromDegrees(117.6601106774757, 39.0278397440452,1 ),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
@@ -352,7 +352,16 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		        	117.6720856828493, 39.02536903471689,  
 		        	117.6720403445534, 39.02521646994533
 		        	]),  
-		        material : 	FreeDo.Color.BLANCHEDALMOND.withAlpha(0.8)
+		        //material : 	FreeDo.Color.BLANCHEDALMOND.withAlpha(0.8)
+		            material : new FreeDo.GridMaterialProperty({
+		                color : FreeDo.Color.BLANCHEDALMOND,
+		                lineCount : new FreeDo.Cartesian2(450, 0),
+		                lineThickness : new FreeDo.Cartesian2(1, 1),
+		                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+		            }),
+		            height : 1,
+		            outline : true,
+		            outlineColor : FreeDo.Color.BLANCHEDALMOND
 		    }
 			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/road.svg",  
@@ -362,7 +371,7 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		} );
 		var road2 = this.viewer.entities.add( {  
 			name : '道路2',  
-			position : FreeDo.Cartesian3.fromDegrees(117.65717660285547, 39.029622371574646,15 ),  
+			position : FreeDo.Cartesian3.fromDegrees(117.65717660285547, 39.029622371574646,1 ),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
@@ -382,7 +391,16 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		        	117.66011027202251,39.0370471463995,  
 		        	117.65481825563658,39.022534013171935,  
 		        	117.6543818169068,39.02263156515081]),  
-		        material : 	FreeDo.Color.BLANCHEDALMOND.withAlpha(0.8)
+		        //material : 	FreeDo.Color.BLANCHEDALMOND.withAlpha(0.8)
+		            material : new FreeDo.GridMaterialProperty({
+		                color : FreeDo.Color.BLANCHEDALMOND,
+		                lineCount : new FreeDo.Cartesian2(75, 0),
+		                lineThickness : new FreeDo.Cartesian2(1, 1),
+		                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+		            }),
+		            height : 1,
+		            outline : true,
+		            outlineColor : FreeDo.Color.BLANCHEDALMOND
 		    }
 			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/road.svg",  
@@ -392,7 +410,7 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		} );
 		var village1 = this.viewer.entities.add( {  
 			name : '村庄1',  
-			position : FreeDo.Cartesian3.fromDegrees(117.67026677659791, 39.032003373898725,15 ),  
+			position : FreeDo.Cartesian3.fromDegrees(117.67026677659791, 39.032003373898725,1 ),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
@@ -413,7 +431,16 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		        	117.683610430754, 39.0348536651218,  
 		        	117.67875832785094, 39.023853904183326,
 		        	117.6572953921832, 39.02884930425908]),  
-		        material : 	FreeDo.Color.AQUAMARINE.withAlpha(0.8)
+		       // material : 	FreeDo.Color.AQUAMARINE.withAlpha(0.8)
+		            material : new FreeDo.GridMaterialProperty({
+		                color : FreeDo.Color.AQUAMARINE,
+		                lineCount : new FreeDo.Cartesian2(75, 0),
+		                lineThickness : new FreeDo.Cartesian2(1, 1),
+		                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+		            }),
+		            height : 1,
+		            outline : true,
+		            outlineColor : FreeDo.Color.AQUAMARINE
 		    }  
 			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/village.svg",  
@@ -423,7 +450,7 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		} );
 		var village2 = this.viewer.entities.add( {  
 			name : '村庄2',  
-			position : FreeDo.Cartesian3.fromDegrees(117.64511517639922, 39.037866096987834,15),  
+			position : FreeDo.Cartesian3.fromDegrees(117.64511517639922, 39.037866096987834,1),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
@@ -446,7 +473,16 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		        	117.62705854783655, 39.04096019521865,
 		        	117.62673707271034, 39.03587500050924,
 		        	117.65659980243063, 39.02900451182315]),  
-		        material : 	FreeDo.Color.AQUAMARINE.withAlpha(0.8)
+		        //material : 	FreeDo.Color.AQUAMARINE.withAlpha(0.8)
+		        	 material : new FreeDo.GridMaterialProperty({
+			                color : FreeDo.Color.AQUAMARINE,
+			                lineCount : new FreeDo.Cartesian2(75, 0),
+			                lineThickness : new FreeDo.Cartesian2(1, 1),
+			                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+			            }),
+			            height : 1,
+			            outline : true,
+			            outlineColor : FreeDo.Color.AQUAMARINE
 		    }
 			 
 			/*billboard : { //图标  
@@ -457,7 +493,7 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		} );
 		var river1 = this.viewer.entities.add( {  
 			name : '水系1',  
-			position : FreeDo.Cartesian3.fromDegrees(117.65443147101222, 39.02762212630358,15 ),  
+			position : FreeDo.Cartesian3.fromDegrees(117.65443147101222, 39.02762212630358,1 ),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
@@ -478,7 +514,16 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		        	117.65532530051337, 39.02833453426626,
 		        	117.65496936189291, 39.02740497284379,
 		        	117.65387741882599, 39.02763956354831]),  
-		        material : 	FreeDo.Color.DEEPSKYBLUE.withAlpha(0.8)
+		        //material : 	FreeDo.Color.DEEPSKYBLUE.withAlpha(0.8)
+		        	 material : new FreeDo.GridMaterialProperty({
+			                color : FreeDo.Color.DEEPSKYBLUE,
+			                lineCount : new FreeDo.Cartesian2(25, 0),
+			                lineThickness : new FreeDo.Cartesian2(1, 1),
+			                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+			            }),
+			            height : 1,
+			            outline : true,
+			            outlineColor : FreeDo.Color.DEEPSKYBLUE
 		    }
 			/*billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/river.svg",  
@@ -488,7 +533,7 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		} );
 		var river2 = this.viewer.entities.add( {  
 			name : '水系2',  
-			position : FreeDo.Cartesian3.fromDegrees(117.65066204707234, 39.02692651335879,15 ),  
+			position : FreeDo.Cartesian3.fromDegrees(117.65066204707234, 39.02692651335879,1 ),  
 			point : { //点  
 				pixelSize : 5,  
 				color : FreeDo.Color.RED,  
@@ -512,7 +557,16 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 		        	117.64809849977627, 39.02572863893886,
 		        	117.64835503758722, 39.02636789492214,
 		        	117.64976244099792, 39.025852710459255]),  
-		        material : 	FreeDo.Color.DEEPSKYBLUE.withAlpha(0.8)
+		       // material : 	FreeDo.Color.DEEPSKYBLUE.withAlpha(0.8)
+		        	 material : new FreeDo.GridMaterialProperty({
+			                color : FreeDo.Color.DEEPSKYBLUE,
+			                lineCount : new FreeDo.Cartesian2(50, 0),
+			                lineThickness : new FreeDo.Cartesian2(1, 1),
+			                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+			            }),
+			            height : 1,
+			            outline : true,
+			            outlineColor : FreeDo.Color.DEEPSKYBLUE
 		    }
 /*			billboard : { //图标  
 				image : "static/page/designcoordination/mainbuilding/img/tuceng/river.svg",  

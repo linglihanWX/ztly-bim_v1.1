@@ -38,30 +38,36 @@ $(function () {
                 callback:{
                 	
                 	onClick:function(event, treeId, treeNode){
-                		$(".detailInfo").show();
+                		
 						var id = treeNode.id;
 						switch (id) {
 						case 1:
 							setablevalue("K5+230-K1+100","高小王村拆迁区","400002","房屋");
 							myviewer.zoomTo(environment[id-1]);
+							$(".detailInfo").show();
 							break;
 						case 2:
 							setablevalue("K5+235-K6+100","张巍庄头村拆迁区1","6541600","房屋");
 							myviewer.zoomTo(environment[id-1]);
+							$(".detailInfo").show();
 							break;
 						case 3:
 							setablevalue("K5+820-R4+120","张巍庄头村拆迁区2","6616012","房屋");
 							myviewer.zoomTo(environment[id-1]);
+							$(".detailInfo").show();
 							break;
 						case 4:
 							setablevalue("K5+432-K6+111","小阳村村拆迁区","3265654","房屋");
 							myviewer.zoomTo(environment[id-1]);
+							$(".detailInfo").show();
 							break;
 						case 5:
 							setablevalue("K5+123-K6+120","大阳村村拆迁区","6126616","房屋");
 							myviewer.zoomTo(environment[id-1]);
+							$(".detailInfo").show();
 							break;
 						default:
+							$(".detailInfo").hide();
 							break;
 						}
 					},

@@ -107,10 +107,11 @@ DungouViewer.changeColor=function(pickedid){
 		}
 		attributearray = [];
 	}
-	 var attributes = guandao1.getGeometryInstanceAttributes(pickedid);//获取某个实例的属性集  
+	 var attributes = guandao2.getGeometryInstanceAttributes(pickedid);//获取某个实例的属性集  
 	 //FreeDoTool.flyToModel(globalviewer.camera,attributes)
 	 attributes.color = FreeDo.ColorGeometryInstanceAttribute.toValue(FreeDo.Color.FIREBRICK);
 	 attributearray.push(attributes);
-	 globalviewer.camera.viewBoundingSphere(attributes.boundingSphere, new Freedo.HeadingPitchRange(0, -0.5, 0));
+	 globalviewer.camera.viewBoundingSphere(attributes.boundingSphere, new Freedo.HeadingPitchRange(Freedo.Math.toRadians(23) , 0, 30))
+
 }
 

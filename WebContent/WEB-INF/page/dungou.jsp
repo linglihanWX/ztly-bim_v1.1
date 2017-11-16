@@ -378,6 +378,8 @@
                             </tbody>
                         </table>
                         <canvas id="circleCanvas" width="380" height="380"></canvas>
+                        <img src="${ctx }/static/page/shigongguanli/dungou/img/yaw.png" class="yaw">
+                        
                     </div>
                 </div>
 

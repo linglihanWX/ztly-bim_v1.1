@@ -52,6 +52,7 @@ $(function () {
 									myviewer.zoomTo(water[id-1]);
 									break;
 								default:
+									$(".detailInfo").hide();
 									break;
 								}
 							},

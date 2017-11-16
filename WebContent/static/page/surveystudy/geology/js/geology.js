@@ -31,21 +31,25 @@ $(function () {
                         },
                     	callback:{
                     		onClick:function(event, treeId, treeNode){
-                    			$(".detailInfo").show();
+                    			
                     			switch (treeNode.id) {
 								case 1:
 									GeologyViewer.fly(globalviewer,115.999,39.001,70);
 									setablevalue1("钻井柱1","2017-9-22","100","103");
+									$(".detailInfo").show();
 									break;
 								case 2:
 									GeologyViewer.fly(globalviewer,116.001,39,70);
 									setablevalue1("钻井柱2","2017-9-23","100","103");
+									$(".detailInfo").show();
 									break;
 								case 3:
 									GeologyViewer.fly(globalviewer,116.002,39.002,70);
 									setablevalue1("钻井柱3","2017-9-24","8","113");
+									$(".detailInfo").show();
 									break;
 								default:
+									$(".detailInfo").hide();
 									break;
 								}
                     		}

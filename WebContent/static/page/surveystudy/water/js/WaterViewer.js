@@ -175,7 +175,15 @@ WaterViewer.init = function (earthId,baseImageryProvider) {
                     116.03445762857247, 39.05316967838391
                 ]),
             },
-            material : FreeDo.Color.BLUE.withAlpha(0.5)
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.BLUE,
+                lineCount : new FreeDo.Cartesian2(30, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.BLUE
         }
     });
     var e1 = this.viewer.entities.add({
@@ -197,8 +205,6 @@ WaterViewer.init = function (earthId,baseImageryProvider) {
 	        pixelOffset : new FreeDo.Cartesian2( 0, -9 )   //偏移量
 	    },
         polygon : {
-            outline : true,
-            outlineColor : FreeDo.Color.BLACK,
             hierarchy : {
                 positions : FreeDo.Cartesian3.fromDegreesArray([
                     116.06108564040244, 39.01685369045914,
@@ -239,7 +245,15 @@ WaterViewer.init = function (earthId,baseImageryProvider) {
                     116.06227073088736, 39.02058269078153,                        
                 ]),
             },
-            material : FreeDo.Color.BLUE.withAlpha(0.5),                
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.BLUE,
+                lineCount : new FreeDo.Cartesian2(15, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.BLUE
         }
     });
     water.push(e);

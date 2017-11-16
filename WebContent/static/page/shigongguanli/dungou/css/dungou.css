@@ -255,3 +255,12 @@ a.brand span {
     outline: none;
      font-size: 16px;
 }
+.yaw{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -19px 0 0 -73px;
+    width: 150px;
+    height: 150px;
+    transform: rotate(-10deg);
+}

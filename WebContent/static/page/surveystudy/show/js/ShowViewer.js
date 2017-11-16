@@ -180,7 +180,15 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
                     116.03445762857247, 39.05316967838391
                 ]),
             },
-            material : FreeDo.Color.BLUE.withAlpha(0.5)
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.BLUE,
+                lineCount : new FreeDo.Cartesian2(75, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.BLUE
         }
     });
     var e1 = this.viewer.entities.add({
@@ -244,7 +252,15 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
                     116.06227073088736, 39.02058269078153,                        
                 ]),
             },
-            material : FreeDo.Color.BLUE.withAlpha(0.5),                
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.BLUE,
+                lineCount : new FreeDo.Cartesian2(40, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.BLUE               
         }
     });
     water.push(e);
@@ -280,7 +296,15 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
                     116.03278530435234, 39.00122102040003,                        
                 ]),
             },
-            material : FreeDo.Color.ORANGE.withAlpha(0.5),                
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.ORANGE,
+                lineCount : new FreeDo.Cartesian2(15, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.ORANGE             
         }
     });
 
@@ -316,7 +340,15 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
                 	116.06634852291182, 39.001497720099685
                 ]),
             },
-            material : FreeDo.Color.ORANGE.withAlpha(0.5),                
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.ORANGE,
+                lineCount : new FreeDo.Cartesian2(15, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.ORANGE               
         }
     });
     
@@ -352,7 +384,15 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
                 	116.07286882540146, 39.001300425347125
                 ]),
             },
-            material : FreeDo.Color.ORANGE.withAlpha(0.5),                
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.ORANGE,
+                lineCount : new FreeDo.Cartesian2(15, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.ORANGE                
         }
     });
     
@@ -386,7 +426,15 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
                 	115.96740306407922, 39.00292926555422,
                 ]),
             },
-            material : FreeDo.Color.ORANGE.withAlpha(0.5),                
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.ORANGE,
+                lineCount : new FreeDo.Cartesian2(15, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.ORANGE                
         }
     });
     
@@ -419,7 +467,15 @@ ShowViewer.init = function (earthId,baseImageryProvider) {
                 	115.98121389025711, 39.00364868091295,
                 ]),
             },
-            material : FreeDo.Color.ORANGE.withAlpha(0.5),                
+            material : new FreeDo.GridMaterialProperty({
+                color : FreeDo.Color.ORANGE,
+                lineCount : new FreeDo.Cartesian2(15, 0),
+                lineThickness : new FreeDo.Cartesian2(1, 1),
+                lineOffset :  new FreeDo.Cartesian2(1100.9, 1100.9)
+            }),
+            height : 10,
+            outline : true,
+            outlineColor : FreeDo.Color.ORANGE              
         }
     });
 
