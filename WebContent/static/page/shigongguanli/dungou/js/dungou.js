@@ -273,7 +273,11 @@ function initPipingPit(){
                 	 {x: -2302666.0197342983, y: 4394616.467227093, z: 3994766.1931057903},
                 	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079}
                     ],
-                 material :  "static/page/shigongguanli/dungou/img/Land001.jpg",
+                 //material :  "static/page/shigongguanli/dungou/img/Land001.jpg",
+                 material :  new Freedo.ImageMaterialProperty({
+                	 image : "static/page/shigongguanli/dungou/img/Land001.jpg",
+                	 repeat : new Freedo.Cartesian2(120.0, 9.0)
+                 }),
                  maximumHeights:[ 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
                  minimumHeights:[ -50, -50, -50, -50, -50, -50, -50],
                  outline : false
@@ -289,7 +293,10 @@ function initPipingPit(){
                 	 {x: -2302666.0197342983, y: 4394616.467227093, z: 3994766.1931057903}
                     ],
                  height:-50,
-                 material : "static/page/shigongguanli/dungou/img/Land001.jpg",
+                 material : new Freedo.ImageMaterialProperty({
+                	 image : "static/page/shigongguanli/dungou/img/Land001.jpg",
+                	 repeat : new Freedo.Cartesian2(50.0, 10.0)
+                 }),
              }
      });
        
