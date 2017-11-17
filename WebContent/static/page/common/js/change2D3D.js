@@ -11,6 +11,7 @@ $(function () {
             $(".box-header").show();
             $("#DataTables_Table_0_wrapper .row-fluid").show();
             $(".msgInfo").hide();
+            $("#tableInfo").hide();
         } else {
             $("#div1").removeClass("close1").addClass("open1");
             $(".twoThree").html("3D");

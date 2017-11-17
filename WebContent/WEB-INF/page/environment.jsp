@@ -257,20 +257,57 @@
         					<h1 id="information"></h1>
    					</div>
 					<div id="earth"></div>
-					<div class="detailInfo">
-					    <ul>
-					        <li><span>征地编号</span><input type="text"/></li>
-					        <li><span>结构物名称</span><input type="text"/></li>
-					        <li><span>面积</span><input type="text"/></li>
-					        <li><span>单位</span><input type="text"/></li>
-					    </ul>
-					    <button class="sureChange">确认</button>
-					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+<div id="tableInfo">
+		<p><span>详细</span><span>关闭</span></p>
 
+		<div class="tableContent">
+			<table border="1">
+				<tbody>
+				<tr>
+					<td>规划区名称</td>
+					<td id="T_ghqmc"></td>
+					<td>项目名称</td>
+					<td id="T_xmmc"></td>
+				</tr>
+				<tr>
+					<td>报告名称</td>
+					<td id="T_bgmc"></td>
+					<td>空间布局</td>
+					<td id="T_kjbj"></td>
+				</tr>
+				<tr>
+					<td>行政区划</td>
+					<td id="T_xzqh"></td>
+					<td>人均用地面积</td>
+					<td id="T_rjztmj"></td>
+				</tr>
+				<tr>
+					<td>规划区面积</td>
+					<td id="T_ghqmj"></td>
+					<td>规划期限</td>
+					<td id="T_gdqx"></td>
+				</tr>
+				<tr>
+					<td>职能结构</td>
+					<td id="T_znjg"></td>
+					<td>镇区规模</td>
+					<td id="T_zqgm"></td>
+				</tr><tr>
+					<td>发展方向</td>
+					<td id="T_fzfx"></td>
+					<td>城镇化发展目标</td>
+					<td id="T_czhfzmb"></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+
+
+	</div>
 	<!-- start: JavaScript-->
 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
 	<%-- <script src="${ctx }/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script> --%>
@@ -301,6 +338,8 @@
 	<script src="${ctx }/static/page/common/js/jquery.sparkline.min.js"></script>
 	<script src="${ctx }/static/page/common/js/counter.js"></script>
 	<script src="${ctx }/static/page/common/js/custom.js"></script>
+	<script src="${ctx }/static/page/common/js/tool.js"></script>
+		<script src="${ctx }/static/page/common/js/tableassign.js"></script>
 	<script src="${ctx }/static/page/common/js/change2D3D.js"></script>
 	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
 	<script src="${ctx }/static/page/surveystudy/environment/js/EnvironmentViewer.js"></script>

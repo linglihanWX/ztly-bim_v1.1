@@ -157,3 +157,62 @@ a.brand span {
     margin-left: 10% !important;
     padding-left: 0;
 }
+/*窗口*/
+#tableInfo{
+	display:none;
+    position: absolute;
+    left: 40%;
+    top: 40%;
+    z-index:51;
+    border: 2px solid #46b8da;
+    width: 604px;
+    height: 334px;
+    padding-top: 30px;
+    box-sizing: border-box;
+}
+#tableInfo table{
+    border-color: #ccc;
+}
+#tableInfo p{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background-color: #578EBE;
+    padding: 0 10px;
+    box-sizing: border-box;
+    line-height: 30px;
+    color: #fff;
+}
+#tableInfo p span:first-of-type{
+    float: left;
+}
+#tableInfo p span:last-of-type{
+    float: right;
+    cursor: pointer;
+}
+.tableContent{
+    width: 100%;
+    height:300px;
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: #fff;
+}
+.tableContent table,.tableContent table tbody{
+    width: 100%;
+    height:auto;
+}
+.tableContent tr{
+    width: 600px;
+    min-height: 30px;
+    line-height: 30px;
+}
+.tableContent tr td{
+    width: 150px;
+    height:auto;
+    text-align: center;
+}
+.tableContent tr td:nth-of-type(odd){
+    background-color: #f5f8fd;
+}

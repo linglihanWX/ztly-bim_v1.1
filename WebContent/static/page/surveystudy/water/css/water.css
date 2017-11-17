@@ -201,61 +201,63 @@ a.brand span {
 .header-nav a.btn {
     padding: 15px 10px !important;
 }
-.detailInfo {
+
+/*窗口*/
+#tableInfo{
 	display:none;
     position: absolute;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
-    width: 500px;
-    border: 1px solid #000;
+    left: 40%;
+    top: 40%;
+    z-index:51;
+    border: 2px solid #46b8da;
+    width: 604px;
+    height: 334px;
+    padding-top: 30px;
+    box-sizing: border-box;
 }
-
-.detailInfo ul li {
+#tableInfo table{
+    border-color: #ccc;
+}
+#tableInfo p{
+    position: absolute;
+    left: 0;
+    top: 0;
     width: 100%;
-    height: 40px;
+    height: 30px;
+    background-color: #578EBE;
+    padding: 0 10px;
     box-sizing: border-box;
-    list-style: none;
+    line-height: 30px;
+    color: #fff;
 }
-
-.detailInfo ul li:not(:last-of-type) {
-    border-bottom: 1px solid #000;
+#tableInfo p span:first-of-type{
+    float: left;
 }
-
-.detailInfo ul li span {
-    display: inline-block;
-    width: 50%; 
-    height: 100%;
-    text-align: center;
-    line-height: 39px;
-    box-sizing: border-box;
-    vertical-align: top;
-    border-right: 1px solid #000;
-    background-color: rgba(221, 221, 221, 0.67);
-    font-size: 16px;
+#tableInfo p span:last-of-type{
+    float: right;
+    cursor: pointer;
 }
-
-.detailInfo ul li input {
-    display: inline-block;
-    width: 50%;
-    height: 100%;
-    text-align: center;
-    line-height: 29px;
-    box-sizing: border-box;
-    vertical-align: top;
-    border: none;
+.tableContent{
+    width: 100%;
+    height:300px;
+    overflow: hidden;
+    overflow-y: auto;
     background-color: #fff;
 }
-
-.detailInfo ul li input:last-of-type {
-    font-size: 16px;
-}
-
-.detailInfo button {
+.tableContent table,.tableContent table tbody{
     width: 100%;
-    height: 40px;
-    background-color: cadetblue;
-    border: none;
-    outline: none;
-    font-size: 16px;
+    height:auto;
+}
+.tableContent tr{
+    width: 600px;
+    min-height: 30px;
+    line-height: 30px;
+}
+.tableContent tr td{
+    width: 150px;
+    height:auto;
+    text-align: center;
+}
+.tableContent tr td:nth-of-type(odd){
+    background-color: #f5f8fd;
 }

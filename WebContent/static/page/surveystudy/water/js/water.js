@@ -4,8 +4,7 @@ $(function () {
 	WaterViewer.init("earth"); // 加载球模型
 	WaterViewer.initModels();
 	WaterViewer.initLeftClick(myviewer,showlabel);
-	myviewer.camera.setView( 
-			{
+	myviewer.camera.setView({
 				destination : new FreeDo.Cartesian3(-2204069.3877862454,4508542.272707851,3976537.1194422017),
 			    orientation : {
 			        heading : 0.001440818034851965,
@@ -13,6 +12,10 @@ $(function () {
 			        roll : 6.281915594067648
 			    }
 			});
+    tool.drag("#tableInfo");
+    $("#tableInfo p span:last-of-type").click(function () {
+        $("#tableInfo").hide();
+    });
 	var surveymanager = new SurveyManager(myviewer,function(){});
 	$("#tree").height(h - h1 - 24);
 			 
@@ -39,20 +42,16 @@ $(function () {
 						},
 						callback:{
 							onClick:function(event, treeId, treeNode){
+								$("#tableInfo").hide();
 								var id = treeNode.id;
 								switch (id) {
 								case 1:
-									setablevalue("白洋淀水文保护","白洋淀","水一场取水号","23");
-									$(".detailInfo").show();
 									myviewer.zoomTo(water[id-1]);
 									break;
 								case 2:
-									setablevalue("大清河水文保护","大清河","水二场取水号","15");
-									$(".detailInfo").show();
 									myviewer.zoomTo(water[id-1]);
 									break;
 								default:
-									$(".detailInfo").hide();
 									break;
 								}
 							},
@@ -132,25 +131,49 @@ $(function () {
 				});
 			});
 		});
+var str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb =null;
 function showlabel(picked){
 	if(picked!=undefined){
-		$(".detailInfo").show();
+		$("#tableInfo").show();
 		let	name = picked.id.name;
 		switch (name) {
 		case "baiyangdianshuiwenbaohu":
-			setablevalue("白洋淀水文保护","白洋淀","水一场取水号","23");
+			str_ghqmc="白洋淀水文保护区";
+			str_xmmc="白洋淀水文保护区";
+			str_bgmc="白洋淀水文保护区控制性工程规划报告书";
+			str_kjbj="中心村以均匀布局形式带动基层村发展的空间结构形态";
+			str_xzqh="河北省保定市安新县";
+			str_rjztmj="99.24平方米";
+			str_ghqmj="993公顷";
+			str_gdqx="2008-2025年";
+			str_znjg="中心镇是全镇的政治、经济、文化及交通中心，是以发展第三产业、农副产品精深加工及蔬菜等包装业和物流业为主的综合开发区，中心村是村民行政、文化娱乐中心、初级商贸中心，基层村是村民活动中心";
+			str_zqgm="现状人口为8350，规划近期到2010年，镇区人口为8750，规划近期2015到年，镇区人口为9750，规划近期2025到年，镇区人口为10450";
+			str_fzfx="旅游用地发展方向为向东发展";
+			str_czhfzmb="2015年城镇人口为8430，城镇人口比重为33%<br>2015年城镇人口为10452，城镇人口比重为38%";
+			TableAssign.setablevalue(str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb)
+			$("#tableInfo").show();
 			break;
 		case "daqingheshuiwenbaohu":
-			setablevalue("大清河水文保护","大清河","水二场取水号","15");
+			str_ghqmc="大清河水文保护区";
+			str_xmmc="大清河水文保护区";
+			str_bgmc="大清河水文保护区控制性工程规划报告书";
+			str_kjbj="清河县地处环渤海经济区中心地带，北京、天津、济南、石家庄、郑州、太原等大城市拱卫辐射内外";
+			str_xzqh="河北省邢台市清河县";
+			str_rjztmj="120.24平方米";
+			str_ghqmj="1200公顷";
+			str_gdqx="2008-2025年";
+			str_znjg="中心镇是全镇的政治、经济、文化及交通中心，是以发展第三产业、农副产品精深加工及蔬菜等包装业和物流业为主的综合开发区，中心村是村民行政、文化娱乐中心、初级商贸中心，基层村是村民活动中心";
+			str_zqgm="现状人口为13020，规划近期到2010年，县区人口为13500，规划近期2015到年，县区人口为14031，规划近期2025到年，县区人口为16000";
+			str_fzfx="建设用地发展方向为向东发展";
+			str_czhfzmb="2015年城镇人口为6430，城镇人口比重为38%<br>2015年城镇人口为8552，城镇人口比重为44%";
+			TableAssign.setablevalue(str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb)
+			$("#tableInfo").show();
 			break;
 		default:
 			break;
 		}
 	}else{
-		$(".detailInfo").hide();
+		$("#tableInfo").hide();
 	}
 
-}
-var setablevalue = function(name1,place,name2,ability){
-	$(".detailInfo ul").html("<li><span>水源地名称</span><input type='text' value='"+name1+"'/></li><li><span>水源所在地</span><input type='text' value='"+place+"'/></li><li><span>取水口名称</span><input type='text' value='"+name2+"'/></li><li><span>设计能力</span><input type='text' value='"+ability+"万吨/日'/></li>");
 }

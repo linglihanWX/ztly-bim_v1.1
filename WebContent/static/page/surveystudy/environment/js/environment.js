@@ -5,8 +5,7 @@ $(function () {
 	EnvironmentViewer.init("earth");
 	EnvironmentViewer.initModels();
 	EnvironmentViewer.initLeftClick(myviewer,showlabel);
-	myviewer.camera.setView( 
-			{
+	myviewer.camera.setView({
 				destination : new FreeDo.Cartesian3(-2176905.1385308662,4471880.533473881,3995906.2301306115),
 			    orientation : {
 			        heading : 0.8982847035993551,
@@ -14,6 +13,10 @@ $(function () {
 			        roll : 0.005203217157572659
 			    }
 			});
+    tool.drag("#tableInfo");
+    $("#tableInfo p span:last-of-type").click(function () {
+        $("#tableInfo").hide();
+    });
 	var surveymanager = new SurveyManager(myviewer,function(){});
     $.ajax({
         url: "./static/page/surveystudy/environment/environment.json",
@@ -38,41 +41,30 @@ $(function () {
                 callback:{
                 	
                 	onClick:function(event, treeId, treeNode){
-                		
+                		$("#tableInfo").hide();
 						var id = treeNode.id;
 						switch (id) {
 						case 1:
-							setablevalue("K5+230-K1+100","高小王村拆迁区","400002","房屋");
 							myviewer.zoomTo(environment[id-1]);
-							$(".detailInfo").show();
 							break;
 						case 2:
-							setablevalue("K5+235-K6+100","张巍庄头村拆迁区1","6541600","房屋");
 							myviewer.zoomTo(environment[id-1]);
-							$(".detailInfo").show();
 							break;
 						case 3:
-							setablevalue("K5+820-R4+120","张巍庄头村拆迁区2","6616012","房屋");
 							myviewer.zoomTo(environment[id-1]);
-							$(".detailInfo").show();
 							break;
 						case 4:
-							setablevalue("K5+432-K6+111","小阳村村拆迁区","3265654","房屋");
 							myviewer.zoomTo(environment[id-1]);
-							$(".detailInfo").show();
 							break;
 						case 5:
-							setablevalue("K5+123-K6+120","大阳村村拆迁区","6126616","房屋");
 							myviewer.zoomTo(environment[id-1]);
-							$(".detailInfo").show();
 							break;
 						default:
-							$(".detailInfo").hide();
+							
 							break;
 						}
 					},
 				     onCheck:function(event, treeId, treeNode){
-				    	 $(".msgInfo").hide();
 				    	 if(treeNode){
 				    		 	checkflag =treeNode.checked;
 								myviewer.zoomTo(environment[treeNode.id-1]);
@@ -147,33 +139,95 @@ $(function () {
 		});
 	});
 })
+var str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb =null;
 function showlabel(picked){
 	if(picked!=undefined){
-		$(".detailInfo").show();
 		let	name = picked.id.name;
 		switch (name) {
 		case "gaoxiaowangcenchaiquanqu":
-			setablevalue("K5+230-K1+100","高小王村拆迁区","400002","房屋");
+			str_ghqmc="高小王村拆迁区";
+			str_xmmc="高小王村拆迁区";
+			str_bgmc="高小王村拆迁区控制性工程规划报告书";
+			str_kjbj="中心村以均匀布局形式带动基层村发展的空间结构形态";
+			str_xzqh="河北省保定市空城县";
+			str_rjztmj="99.24平方米";
+			str_ghqmj="993公顷";
+			str_gdqx="2008-2025年";
+			str_znjg="中心镇是全镇的政治、经济、文化及交通中心，是以发展第三产业、农副产品精深加工及蔬菜等包装业和物流业为主的综合开发区，中心村是村民行政、文化娱乐中心、初级商贸中心，基层村是村民活动中心";
+			str_zqgm="现状人口为8350，规划近期到2010年，镇区人口为8750，规划近期2015到年，镇区人口为9750，规划近期2025到年，镇区人口为10450";
+			str_fzfx="旅游用地发展方向为向东发展";
+			str_czhfzmb="2015年城镇人口为8430，城镇人口比重为33%<br>2015年城镇人口为10452，城镇人口比重为38%";
+			TableAssign.setablevalue(str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb)
+			$("#tableInfo").show();
 			break;
 		case "zhangweizhuangtoucenchaiqianqu1":
-			setablevalue("K5+235-K6+100","张巍庄头村拆迁区1","6541600","房屋");
+			str_ghqmc="张巍庄头村拆迁区一区";
+			str_xmmc="张巍庄头村拆迁区一区";
+			str_bgmc="张巍庄头村拆迁区一区控制性工程规划报告书";
+			str_kjbj="中心村以均匀布局形式带动基层村发展的空间结构形态";
+			str_xzqh="河北省保定市安新县";
+			str_rjztmj="97.24平方米";
+			str_ghqmj="697.3公顷";
+			str_gdqx="2008-2025年";
+			str_znjg="中心镇是全镇的政治、经济、文化及交通中心，是以发展第三产业、农副产品精深加工及蔬菜等包装业和物流业为主的综合开发区，中心村是村民行政、文化娱乐中心、初级商贸中心，基层村是村民活动中心";
+			str_zqgm="现状人口为8350，规划近期到2010年，镇区人口为8750，规划近期2015到年，镇区人口为9750，规划近期2025到年，镇区人口为10450";
+			str_fzfx="旅游用地发展方向为向东发展";
+			str_czhfzmb="2015年城镇人口为8430，城镇人口比重为33%<br>2015年城镇人口为10452，城镇人口比重为38%";
+			TableAssign.setablevalue(str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb)
+			$("#tableInfo").show();
 			break;
 		case "zhangweizhuangtoucunchaiqianqu2":
-			setablevalue("K5+820-R4+120","张巍庄头村拆迁区2","6616012","房屋");
+			str_ghqmc="张巍庄头村拆迁区二区";
+			str_xmmc="张巍庄头村拆迁区二区";
+			str_bgmc="张巍庄头村拆迁区二区控制性工程规划报告书";
+			str_kjbj="中心村以均匀布局形式带动基层村发展的空间结构形态";
+			str_xzqh="河北省保定市安新县";
+			str_rjztmj="88.26平方米";
+			str_ghqmj="785公顷";
+			str_gdqx="2008-2025年";
+			str_znjg="中心镇是全镇的政治、经济、文化及交通中心，是以发展第三产业、农副产品精深加工及蔬菜等包装业和物流业为主的综合开发区，中心村是村民行政、文化娱乐中心、初级商贸中心，基层村是村民活动中心";
+			str_zqgm="现状人口为8350，规划近期到2010年，镇区人口为8750，规划近期2015到年，镇区人口为9750，规划近期2025到年，镇区人口为10450";
+			str_fzfx="旅游用地发展方向为向东发展";
+			str_czhfzmb="2015年城镇人口为8430，城镇人口比重为33%<br>2015年城镇人口为10452，城镇人口比重为38%";
+			TableAssign.setablevalue(str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb)
+			$("#tableInfo").show();
 			break;
 		case "xiaoyangcunchaiqianqu":
-			setablevalue("K5+432-K6+111","小阳村村拆迁区","3265654","房屋");
+			str_ghqmc="小阳村拆迁区";
+			str_xmmc="小阳村拆迁区";
+			str_bgmc="小阳村拆迁区控制性工程规划报告书";
+			str_kjbj="中心村以均匀布局形式带动基层村发展的空间结构形态";
+			str_xzqh="河南郑州市新密市小阳村";
+			str_rjztmj="98.24平方米";
+			str_ghqmj="853公顷";
+			str_gdqx="2008-2025年";
+			str_znjg="中心镇是全镇的政治、经济、文化及交通中心，是以发展第三产业、农副产品精深加工及蔬菜等包装业和物流业为主的综合开发区，中心村是村民行政、文化娱乐中心、初级商贸中心，基层村是村民活动中心";
+			str_zqgm="现状人口为8350，规划近期到2010年，镇区人口为8750，规划近期2015到年，镇区人口为9750，规划近期2025到年，镇区人口为10450";
+			str_fzfx="旅游用地发展方向为向东发展";
+			str_czhfzmb="2015年城镇人口为8430，城镇人口比重为33%<br>2015年城镇人口为10452，城镇人口比重为38%";
+			TableAssign.setablevalue(str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb)
+			$("#tableInfo").show();
 			break;
 		case "dayangcunchaiqianqu":
-			setablevalue("K5+123-K6+120","大阳村村拆迁区","6126616","房屋");
+			str_ghqmc="大阳村拆迁区";
+			str_xmmc="大阳村拆迁区";
+			str_bgmc="大阳村拆迁区控制性工程规划报告书";
+			str_kjbj="中心村以均匀布局形式带动基层村发展的空间结构形态";
+			str_xzqh="山东省日照市五莲县大阳村";
+			str_rjztmj="78.24平方米";
+			str_ghqmj="600公顷";
+			str_gdqx="2008-2025年";
+			str_znjg="中心镇是全镇的政治、经济、文化及交通中心，是以发展第三产业、农副产品精深加工及蔬菜等包装业和物流业为主的综合开发区，中心村是村民行政、文化娱乐中心、初级商贸中心，基层村是村民活动中心";
+			str_zqgm="现状人口为8350，规划近期到2010年，镇区人口为8750，规划近期2015到年，镇区人口为9750，规划近期2025到年，镇区人口为10450";
+			str_fzfx="旅游用地发展方向为向东发展";
+			str_czhfzmb="2015年城镇人口为8430，城镇人口比重为33%<br>2015年城镇人口为10452，城镇人口比重为38%";
+			TableAssign.setablevalue(str_ghqmc,str_xmmc,str_bgmc,str_kjbj,str_xzqh,str_rjztmj,str_ghqmj,str_gdqx,str_znjg,str_zqgm,str_fzfx,str_czhfzmb)
+			$("#tableInfo").show();
 			break;
 		default:
 			break;
 		}
 	}else{
-		$(".detailInfo").hide();
+		$("#tableInfo").hide();
 	}	
-}
-var setablevalue = function(num,name1,s,name2){
-	$(".detailInfo ul").html("<li><span>征地编号</span><input type='text' value='"+num+"'/></li><li><span>征地区域</span><input type='text' value='"+name1+"'/></li><li><span>面积</span><input type='text' value='"+s+"平方米'/></li><li><span>结构物名称</span><input type='text' value='"+name2+"'/></li>");
 }

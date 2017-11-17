@@ -346,7 +346,6 @@ EnvironmentViewer.initLeftClick = function(viewer,callback) {
 	screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	
 	screenSpaceEventHandler.setInputAction(function(movement){
-		$(".msgInfo").hide();
 		var picked = viewer.scene.pick(movement.position);
 		if(picked==undefined){
 			callback(undefined)
