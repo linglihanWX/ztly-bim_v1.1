@@ -36,6 +36,7 @@
     <script src="http://res.gbim360.com/shared/1710_lodash/lodash.min.js"></script>
     <script src="http://res2.gbim360.com/projects/FreedoHolo3DForWeb/develop/API/FreedoX.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/webgl/compass/css/compass.css">
+	<link rel="stylesheet" href="${ctx }/static/page/surveystudy/geology/css/geology.css">
 	<script src="${ctx }/static/webgl/compass/js/Compass.js"></script>
 	<script src="${ctx }/static/page/common/js/FreeDoTool.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
