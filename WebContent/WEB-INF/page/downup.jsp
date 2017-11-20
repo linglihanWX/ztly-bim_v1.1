@@ -147,6 +147,7 @@
 						<a href="${ctx }/toEbs">进度管理</a>
 						<a href="${ctx }/toPm" >场景管理</a>
 						<a href="${ctx }/toSafe">安全管理</a>
+						<a href="${ctx }/toDungou">盾构监测</a>
 						<a href="${ctx }/toRiskmgmt" class="activeList">风险管理</a>
 						<a href="#">质量管理</a>
 						<a href="#">成本管理</a>
@@ -154,7 +155,6 @@
 						<a href="#">施工日志</a>
 						<a href="#">项目信息</a>
 						<a href="${ctx }/toWorkShow">3D综合展示</a>
-						<a href="${ctx }/toDungou">盾构监测</a>
 					</li>
 				</ul>
 				<div class="row-fluid sortable">
@@ -169,12 +169,24 @@
 		</div>
 	</div>
 	
+</body>
 		<script src="${ctx }/static/page/common/js/appendTool.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/downup/js/DownupViewer.js"></script>
 	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<script src="${ctx }/static/page/shigongguanli/downup/js/downup.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 	<script src="${ctx}/static/page/common/js/FreeDoUtil.js"></script>
-</body>
+	<script src="${ctx}/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
+	<script src="${ctx}/static/page/common/js/bootstrap.min.js"></script>
+	<script src='${ctx}/static/page/common/js/jquery.dataTables.min.js'></script>
+	<script src="${ctx}/static/page/common/js/jquery.chosen.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.uniform.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.cleditor.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.noty.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.elfinder.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.raty.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
+	<script src="${ctx}/static/page/common/js/custom.js"></script>
 
 </html>

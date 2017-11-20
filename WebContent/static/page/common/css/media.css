@@ -23,7 +23,7 @@
 	#sidebar-left {
 		width: 100%;
 		min-height: 0;
-		height: 0 !important;
+	height:auto!important;
 	}
 	.breadcrumb {
 		margin: -5px -5px 5px -5px;

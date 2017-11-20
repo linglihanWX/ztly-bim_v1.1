@@ -350,12 +350,23 @@
 		<div id="currData"></div>
 	</div>
 
+</body>
 	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
 	<script src="${ctx}/static/page/yunweimgmt/assetmgmt/js/AssetmgmtViewer.js"></script>
 	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<script src="${ctx }/static/page/yunweimgmt/assetmgmt/js/assetmgmt.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 		<script src="${ctx}/static/page/common/js/FreeDoUtil.js"></script>
-</body>
-
+<script src="${ctx}/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
+	<script src="${ctx}/static/page/common/js/bootstrap.min.js"></script>
+	<script src='${ctx}/static/page/common/js/jquery.dataTables.min.js'></script>
+	<script src="${ctx}/static/page/common/js/jquery.chosen.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.uniform.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.cleditor.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.noty.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.elfinder.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.raty.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
+	<script src="${ctx}/static/page/common/js/custom.js"></script>
 </html>

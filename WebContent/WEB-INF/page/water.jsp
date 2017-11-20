@@ -307,7 +307,7 @@
 	<script src="${ctx }/static/page/common/js/jquery.noty.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.elfinder.min.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery.raty.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
+	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>	
 	<script src="${ctx }/static/page/common/js/change2D3D.js"></script>
  	<script src="${ctx }/static/page/common/js/custom.js"></script>
  	<script src="${ctx }/static/page/common/js/tool.js"></script>
@@ -316,6 +316,10 @@
 	<script src="${ctx }/static/page/surveystudy/water/js/WaterViewer.js"></script>
 	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<script src="${ctx }/static/page/surveystudy/water/js/water.js"></script>
+	
+	
+
+
 	<!-- end: JavaScript-->
 </body>
 

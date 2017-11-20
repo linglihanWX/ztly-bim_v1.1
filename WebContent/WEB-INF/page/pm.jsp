@@ -181,7 +181,19 @@
 		</div>
 	</div>
 
-	<script src="${ctx }/static/page/shigongguanli/jinduguanli/js/pModel.js"></script>
 </body>
 
+	<script src="${ctx }/static/page/shigongguanli/jinduguanli/js/pModel.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
+	<script src="${ctx}/static/page/common/js/bootstrap.min.js"></script>
+	<script src='${ctx}/static/page/common/js/jquery.dataTables.min.js'></script>
+	<script src="${ctx}/static/page/common/js/jquery.chosen.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.uniform.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.cleditor.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.noty.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.elfinder.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.raty.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
+	<script src="${ctx}/static/page/common/js/custom.js"></script>
 </html>
