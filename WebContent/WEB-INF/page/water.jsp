@@ -42,7 +42,7 @@
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
-	
+	 <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 	
 </head>
 

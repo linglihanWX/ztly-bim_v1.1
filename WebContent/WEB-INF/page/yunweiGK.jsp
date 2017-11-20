@@ -32,6 +32,7 @@
     <script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
     <link rel="stylesheet" href="${ctx }/static/page/yunweimgmt/yunweiGK/css/yunweiGK.css">
 
+    <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
     <!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

@@ -57,7 +57,7 @@
 
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/jinduguanli/css/sg.css">
 
-
+<link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 
 </head>
 

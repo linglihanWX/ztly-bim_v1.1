@@ -52,6 +52,7 @@
 		<link id="ie9style" href="css/ie9.css" rel="stylesheet">
 	<![endif]-->
 	<link rel="stylesheet" href="${ctx }/static/page/surveystudy/planRoute/css/planRoute.css">
+	 <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 		<script src="${ctx}/static/page/common/js/FreeDoUtil.js"></script>
 </head>
 

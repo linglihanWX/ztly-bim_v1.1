@@ -30,6 +30,8 @@
 	<link rel="stylesheet" href="${ctx}/static/page/common/IconFont/iconfont.css">
 	<script src="${ctx}/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<link rel="stylesheet" href="${ctx}/static/page/yunweimgmt/jicheng/css/jicheng.css">
+	
+    <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 </head>
 
 <body>

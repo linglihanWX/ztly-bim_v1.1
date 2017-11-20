@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
     <script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
     <link rel="stylesheet" href="${ctx }/static/page/surveystudy/surveystudyGK/css/surveystudyGK.css">
+     <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
     <!--[if lt IE 9]>
     <link id="ie-style" href="css/ie.css" rel="stylesheet">
     <![endif]-->

@@ -55,6 +55,7 @@
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/camera/css/camera.css">
 	<link rel="stylesheet" href="${ctx }/static/page/common/css/appendTools.css">
 	
+    <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 
 
 </head>

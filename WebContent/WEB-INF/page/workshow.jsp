@@ -35,6 +35,8 @@
     <script src="http://res2.gbim360.com/projects/FreedoHolo3DForWeb/develop/API/FreedoX.js"></script>
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/jinduguanli/css/sg.css">
+	
+    <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 </head>
 
 <body>

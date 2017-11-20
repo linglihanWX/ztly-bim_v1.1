@@ -43,6 +43,7 @@
     <link id="ie9style" href="css/ie9.css" rel="stylesheet">
     <![endif]-->
     <link rel="stylesheet" href="${ctx }/static/page/shigongguanli/dungou/css/dungou.css">
+    <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 </head>
 
 <body>

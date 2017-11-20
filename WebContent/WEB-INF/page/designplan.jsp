@@ -40,6 +40,7 @@
 <script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 <link rel="stylesheet"
 	href="${ctx }/static/page/designcoordination/designplan/css/design.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 </head>
 
 <body>

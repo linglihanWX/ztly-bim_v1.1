@@ -40,6 +40,7 @@
 	<!-- <script src="jsSelf/EBSviewer.js"></script> -->
 	<script src="${ctx }/static/page/common/js/jquery-1.9.1.min.js"></script>
 	<link rel="stylesheet" href="${ctx }/static/page/common/js/zTreeStyle/zTreeStyle.css">
+	
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 
 	<!-- The HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -57,7 +58,7 @@
 
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/jinduguanli/css/sg.css">
 
-
+<link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 
 </head>
 

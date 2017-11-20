@@ -42,6 +42,7 @@
 
 <link rel="stylesheet"
 	href="${ctx }/static/page/designcoordination/task/css/task.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 </head>
 
 <body>

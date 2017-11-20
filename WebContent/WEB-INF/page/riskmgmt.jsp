@@ -33,6 +33,8 @@
 
 	<link rel="stylesheet" href="${ctx }/static/page/shigongguanli/riskmgmt/css/riskmgmt.css">
 	<script src="${ctx }/static/page/common/js/echarts.common.min.js"></script>
+	
+    <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 
 </head>
 

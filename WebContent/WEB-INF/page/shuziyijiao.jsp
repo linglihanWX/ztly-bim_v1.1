@@ -32,6 +32,7 @@
 	<script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 
 	<link rel="stylesheet" href="${ctx }/static/page/designcoordination/shuziyijiao/css/shuziyijiao.css">
+	<link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 </head>
 
 <body>
