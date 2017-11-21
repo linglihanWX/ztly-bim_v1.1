@@ -9,31 +9,15 @@ body {
     height: 100%;
 }
 
-#content {
-    margin: 0;
-    padding: 0;
-    min-height: 0!important;
-    height: 100%;
-    width: 90%;
-    margin-left: 10% !important;
-    overflow-y: auto;
-}
-
 .breadcrumb {
     margin: 0;
-}
-
-#sidebar-left {
-    width: 10%;
 }
 
 .box-content {
     padding: 0;
 }
 
-.lists a {
-    margin-left: 10px;
-}
+
 
 .breadcrumb .lists a:hover {
     color: red;

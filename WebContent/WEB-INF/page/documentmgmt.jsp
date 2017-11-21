@@ -138,8 +138,9 @@
                     <a href="${ctx }/toDesign">BIM方案设计</a>
                     <a href="${ctx }/toDocument" class="activeList">文档管理</a>
                     <a href="#">项目信息</a>
-                    <a href="${ctx }/toDesignShow">3D综合展示</a>
+                    
                     <a href="${ctx }/toShuziyijiao">数字移交</a>
+                    <a href="${ctx }/toDesignShow">3D综合展示</a>
 					</li>
 					<li class="btnStandard">
 						<input type="button" value="上传" class="btnActive">

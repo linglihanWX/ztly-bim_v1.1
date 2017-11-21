@@ -140,8 +140,8 @@
 						<a href="#">调度管理</a>
 						<a href="#">风险管控</a>
 						<a href="#">应急指挥</a>
-						<a href="#">知识库建设</a>
 						<a href="${ctx }/toJicheng"  class="activeList">其他系统</a>
+						<a href="#">知识库建设</a>
 					</li>
 
 

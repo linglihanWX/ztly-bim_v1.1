@@ -158,9 +158,9 @@
 						<a href="#">环评报告</a>
 						<a href="#">政府批文</a>
 						<a href="#">项目信息</a>
-						<a href="${ctx }/toShow">3D综合展示</a>
 						<a href="#">数据导出</a>
 						<a href="${ctx }/toPlanRoute">规划选线</a>
+						<a href="${ctx }/toShow">3D综合展示</a>
 					</li>
 					<li>
 						<div id="div1" class="close1">
@@ -309,36 +309,19 @@
 
 
 	</div>
-	<!-- start: JavaScript-->
-	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
-	<%-- <script src="${ctx }/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script> --%>
-	<script src="${ctx }/static/page/common/js/jquery-ui.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.ui.touch-punch.js"></script>
-	<script src="${ctx }/static/page/common/js/modernizr.js"></script>
-	<script src="${ctx }/static/page/common/js/bootstrap.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.cookie.js"></script>
-	<script src='${ctx }/static/page/common/js/fullcalendar.min.js'></script>
-	<script src='${ctx }/static/page/common/js/jquery.dataTables.min.js'></script>
-	<script src="${ctx }/static/page/common/js/excanvas.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.flot.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.flot.pie.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.flot.stack.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.flot.resize.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.chosen.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.uniform.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.cleditor.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.noty.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.elfinder.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.raty.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.iphone.toggle.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.gritter.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.imagesloaded.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.masonry.min.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.knob.modified.js"></script>
-	<script src="${ctx }/static/page/common/js/jquery.sparkline.min.js"></script>
-	<script src="${ctx }/static/page/common/js/counter.js"></script>
-	<script src="${ctx }/static/page/common/js/custom.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
+	<script src="${ctx}/static/page/common/js/bootstrap.min.js"></script>
+	<script src='${ctx}/static/page/common/js/jquery.dataTables.min.js'></script>
+	<script src="${ctx}/static/page/common/js/jquery.chosen.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.uniform.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.cleditor.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.noty.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.elfinder.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.raty.min.js"></script>
+	<script src="${ctx}/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
+	<script src="${ctx}/static/page/common/js/custom.js"></script>
+
 	<script src="${ctx }/static/page/common/js/tool.js"></script>
 		<script src="${ctx }/static/page/common/js/tableassign.js"></script>
 	<script src="${ctx }/static/page/common/js/change2D3D.js"></script>

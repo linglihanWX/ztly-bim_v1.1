@@ -62,9 +62,6 @@ body {
     padding:0;
 }
 
-.lists a{
-    margin-left:10px;
-}
 .breadcrumb .lists a:hover {
     color: red;
     text-shadow: 0 1px 1px #fff;

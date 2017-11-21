@@ -1,5 +1,4 @@
-@charset 'utf-8';
-
+@charset "UTF-8";
 @media screen and (min-width: 767px) {
 	#content {
 		padding: 0;
@@ -12,6 +11,9 @@
 	.breadcrumb {
 		margin: 0;
 	}
+	.lists a {
+		margin-left: 10px;
+	}
 }
 
 @media screen and (max-width: 767px) {
@@ -19,6 +21,7 @@
 		padding: 0;
 		width: 100%;
 		margin-left: 0 !important;
+		overflow: auto;
 	}
 	#sidebar-left {
 		width: 100%;
@@ -26,7 +29,8 @@
 	height:auto!important;
 	}
 	.breadcrumb {
-		margin: -5px -5px 5px -5px;
+		/*margin: -5px -5px 5px -5px;*/
+		margin:0;
 	}
 	.navbar .nav>li {
 		float: right;
@@ -44,5 +48,11 @@
 	.box {
 		margin: 0 !important;
 		min-height: 0 !important;
+	}
+	.icon-hxzfont08{
+		display: none!important;
+	}
+	.lists a {
+		margin-right: 25px;
 	}
 }

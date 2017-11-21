@@ -40,7 +40,7 @@
 <script src="${ctx }/static/page/common/js/zTreeStyle/ztree.js"></script>
 <link rel="stylesheet"
 	href="${ctx }/static/page/designcoordination/designplan/css/design.css">
-	<link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
+<link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 </head>
 
 <body>
@@ -99,30 +99,18 @@
 			<div id="sidebar-left" class="span2">
 				<div class="nav-collapse sidebar-nav">
 					<ul class="nav nav-tabs nav-stacked main-menu">
-						<li>
-							<a href="${ctx }/toSurveystudyGK">
-								<i class="iconfont icon-kcmanager"></i>
-								<span class="hidden-tablet">勘测可研</span>
-							</a>
-						</li>
-						<li class="active">
-							<a href="${ctx }/toGaikuang">
-								<i class="iconfont icon-sheji"></i>
-								<span class="hidden-tablet">设计协同</span>
-							</a>
-						</li>
-						<li >
-							<a href="${ctx }/toShigongguanliGK">
-								<i class="iconfont icon-construct"></i>
-								<span class="hidden-tablet">施工管理</span>
-							</a>
-						</li>
-						<li>
-							<a href="${ctx }/toYunweiGK">
-								<i class="iconfont icon-Refresh"></i>
-								<span class="hidden-tablet">运维管理</span>
-							</a>
-						</li>
+						<li><a href="${ctx }/toSurveystudyGK"> <i
+								class="iconfont icon-kcmanager"></i> <span class="hidden-tablet">勘测可研</span>
+						</a></li>
+						<li class="active"><a href="${ctx }/toGaikuang"> <i
+								class="iconfont icon-sheji"></i> <span class="hidden-tablet">设计协同</span>
+						</a></li>
+						<li><a href="${ctx }/toShigongguanliGK"> <i
+								class="iconfont icon-construct"></i> <span class="hidden-tablet">施工管理</span>
+						</a></li>
+						<li><a href="${ctx }/toYunweiGK"> <i
+								class="iconfont icon-Refresh"></i> <span class="hidden-tablet">运维管理</span>
+						</a></li>
 					</ul>
 				</div>
 			</div>
@@ -135,8 +123,8 @@
 					<li class="lists"><a href="${ctx }/toGaikuang">项目概况</a> <a
 						href="${ctx }/toTask">任务</a> <a href="${ctx }/toDesign"
 						class="activeList">BIM方案设计</a> <a href="${ctx }/toDocument">文档管理</a>
-						<a href="#">项目信息</a> <a href="${ctx }/toDesignShow">3D综合展示</a> <a
-						href="${ctx }/toShuziyijiao">数字移交</a></li>
+						<a href="#">项目信息</a> <a href="${ctx }/toShuziyijiao">数字移交</a><a
+						href="${ctx }/toDesignShow">3D综合展示</a></li>
 				</ul>
 				<div id="tree" class="ztree"></div>
 				<div class="row-fluid sortable">
