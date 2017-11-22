@@ -309,28 +309,32 @@
 
 
 	</div>
-	<script src="${ctx}/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
-	<script src="${ctx}/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script>
-	<script src="${ctx}/static/page/common/js/bootstrap.min.js"></script>
-	<script src='${ctx}/static/page/common/js/jquery.dataTables.min.js'></script>
-	<script src="${ctx}/static/page/common/js/jquery.chosen.min.js"></script>
-	<script src="${ctx}/static/page/common/js/jquery.uniform.min.js"></script>
-	<script src="${ctx}/static/page/common/js/jquery.cleditor.min.js"></script>
-	<script src="${ctx}/static/page/common/js/jquery.noty.js"></script>
-	<script src="${ctx}/static/page/common/js/jquery.elfinder.min.js"></script>
-	<script src="${ctx}/static/page/common/js/jquery.raty.min.js"></script>
-	<script src="${ctx}/static/page/common/js/jquery.uploadify-3.1.min.js"></script>
-	<script src="${ctx}/static/page/common/js/custom.js"></script>
-
-	<script src="${ctx }/static/page/common/js/tool.js"></script>
-		<script src="${ctx }/static/page/common/js/tableassign.js"></script>
+	<!-- start: JavaScript-->
+ 	<script src="${ctx }/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
+	<%-- <script src="${ctx }/static/page/common/js/jquery-ui-1.10.0.custom.min.js"></script> --%>
+	<script src="${ctx }/static/page/common/js/jquery-ui.js"></script> 
+	<script src="${ctx }/static/page/common/js/bootstrap.min.js"></script>
+	<script src='${ctx }/static/page/common/js/jquery.dataTables.min.js'></script>
+	<script src="${ctx }/static/page/common/js/jquery.chosen.min.js"></script>
+	<script src="${ctx }/static/page/common/js/jquery.uniform.min.js"></script>
+	<script src="${ctx }/static/page/common/js/jquery.cleditor.min.js"></script>
+	<script src="${ctx }/static/page/common/js/jquery.noty.js"></script>
+	<script src="${ctx }/static/page/common/js/jquery.elfinder.min.js"></script>
+	<script src="${ctx }/static/page/common/js/jquery.raty.min.js"></script>
+	<script src="${ctx }/static/page/common/js/jquery.uploadify-3.1.min.js"></script>	
 	<script src="${ctx }/static/page/common/js/change2D3D.js"></script>
+ 	<script src="${ctx }/static/page/common/js/custom.js"></script>
+ 	<script src="${ctx }/static/page/common/js/tool.js"></script>
+ 	<script src="${ctx }/static/page/common/js/tableassign.js"></script>
 	<script src="${ctx }/static/page/common/js/appendTool.js"></script>
 	<script src="${ctx }/static/page/surveystudy/environment/js/EnvironmentViewer.js"></script>
 	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 	<script src="${ctx }/static/page/surveystudy/environment/js/environment.js"></script>
-	<!-- end: JavaScript-->
 	
+	
+
+
+	<!-- end: JavaScript-->
 
 </body>
 
