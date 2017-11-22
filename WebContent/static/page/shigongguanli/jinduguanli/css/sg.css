@@ -34,6 +34,7 @@ body {
 #content{
     margin: 0;
     padding: 0;
+    height:100%!important;
 }
 .breadcrumb{
     margin: 0;
