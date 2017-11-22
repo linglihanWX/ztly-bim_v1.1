@@ -417,9 +417,7 @@
 	<script src="${ctx}/static/webgl/manyou/js/FDPCameraRoute.js"></script>
 	<script src="${ctx}/static/webgl/manyou/js/FDPScript.js"></script>
 	<script src="${ctx}/static/page/common/js/FreeDoUtil.js"></script>
-	<script src="${ctx }/static/page/shigongguanli/downup/js/DownupViewer.js"></script>
 	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
-	<script src="${ctx }/static/page/shigongguanli/downup/js/downup.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
 	<script src="${ctx}/static/page/common/js/FreeDoUtil.js"></script>
 	<script src="${ctx}/static/page/common/js/jquery-migrate-1.0.0.min.js"></script>
