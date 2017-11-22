@@ -12,6 +12,10 @@ body {
     border-width: 0;
 }
 
+.breadcrumb .lists a{
+	margin-left: 10px;
+}
+
 .datagrid-footer-inner {
  border-width: 0;
 }
