@@ -33,6 +33,7 @@ body {
     width: 90%;
     margin-left: 10% !important;
     overflow-y: auto;
+    height:100%!important;
 }
 
 .breadcrumb {
