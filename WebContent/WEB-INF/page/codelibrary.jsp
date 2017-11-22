@@ -36,7 +36,6 @@
 
 	<link rel="stylesheet" href="${ctx }/static/page/set/css/codeLibrary.css">
 
-    <link rel="stylesheet" href="${ctx }/static/page/common/css/media.css">
 
 
 </head>

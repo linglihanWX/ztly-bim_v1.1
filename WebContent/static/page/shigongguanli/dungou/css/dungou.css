@@ -13,7 +13,7 @@ body {
     width: 90%;
     margin:0 0 0 10% !important;
     min-height: 0!important;
-    height: 100%
+    height:100%!important;
 }
 .breadcrumb{
     margin: 0;

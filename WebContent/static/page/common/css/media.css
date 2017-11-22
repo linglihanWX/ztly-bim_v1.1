@@ -3,6 +3,7 @@
 	#content {
 		padding: 0;
 		width: 90%;
+		height:calc(100% - 50px);
 		margin-left: 10% !important;
 	}
 	#sidebar-left {
@@ -20,6 +21,7 @@
 	#content {
 		padding: 0;
 		width: 100%;
+		
 		margin-left: 0 !important;
 		overflow: auto;
 	}
