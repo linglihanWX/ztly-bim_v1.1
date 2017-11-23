@@ -82,7 +82,9 @@ DungouViewer.initLeftClick = function(viewer,callback) {
 	screenSpaceEventHandler.setInputAction(function(movement){
 /*		var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
 		var cartesian = globalviewer.scene.globe.pick(globalviewer.camera.getPickRay(pick), globalviewer.scene);
-		console.log(cartesian);*/
+        var cartographic = FreeDo.Cartographic.fromCartesian(cartesian);
+        var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
+        console.log(point);*/
 		var picked = viewer.scene.pick(movement.position);
 		if(picked!==undefined&&picked.id!==undefined&&typeof picked.id == "string"){
 			var pickedid = picked.id;

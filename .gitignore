@@ -12,3 +12,4 @@ gen
 /.classpath
 /.project
 /WebContent/META-INF/
+classes/

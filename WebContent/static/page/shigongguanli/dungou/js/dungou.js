@@ -299,28 +299,7 @@ function initPipingPit(){
                  }),
              }
      });
-       /*globalviewer.entities.add({
-    	   //坑壁
-             wall : {
-                 positions : [
-                	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079},
-                	 {x: -2302867.795074012, y: 4394478.949238563, z: 3994800.926556034},
-                	 {x: -2302869.3896283163, y: 4394503.739662395, z: 3994772.925199331},
-                	 {x: -2303230.229982306, y: 4394389.406098158, z: 3994691.216139945},
-                	 {x: -2303230.6601225995, y: 4394439.445492321, z: 3994636.2911779615},
-                	 {x: -2302666.0197342983, y: 4394616.467227093, z: 3994766.1931057903},
-                	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079}
-                    ],
-                 //material :  "static/page/shigongguanli/dungou/img/Land001.jpg",
-                 material :  new Freedo.ImageMaterialProperty({
-                	 image : "static/page/shigongguanli/dungou/img/Land002.jpg",
-                	 repeat : new Freedo.Cartesian2(120.0, 9.0)
-                 }),
-                 maximumHeights:[ -20, -20, -20, -20, -20, -20, -20],
-                 minimumHeights:[ -50, -50, -50, -50, -50, -50, -50],
-                 outline : false
-             }
-     });*/
+
        var offsetwenli = new Freedo.Cartesian2(100, 1);
        
        
@@ -368,8 +347,3 @@ function getModelMatrix(lon,lat,height,heading,pitch,roll,scaleX,scaleY,scaleZ)
 		FreeDo.Matrix4.multiply(transform,scaleMatrix,matrix4);
 		return matrix4;
 }
-/*function zbMoveDown(array){
-	for (var i = 0; i < array.length; i++) {
-		var 
-	}
-}*/
