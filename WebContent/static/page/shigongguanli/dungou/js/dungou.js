@@ -117,7 +117,7 @@ function calculateZB1(longitude,latitude,height,gdlength,num){
 	       });
 	     tempZB1.longitude=tempZB2.longitude;
 	     tempZB1.latitude=tempZB2.latitude;
-	     console.log(tempZB1.longitude+","+tempZB1.latitude);
+	     //console.log(tempZB1.longitude+","+tempZB1.latitude);
 	     DTWL.push(obj);
 	}
 	return DTWL;
@@ -220,27 +220,48 @@ var setScreenPostion=function (){
 //加载坑和管道
 var guandao2 = null;
 function initPipingPit(){
-    globalviewer.scene.groundPrimitives.add(new Freedo.GroundErasePrimitive({
-        geometryInstances: new Freedo.GeometryInstance({
-            geometry: new Freedo.PolygonGeometry.fromPositions({
-                positions : [
-               	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079},
-            	 {x: -2302867.795074012, y: 4394478.949238563, z: 3994800.926556034},
-            	 {x: -2302869.3896283163, y: 4394503.739662395, z: 3994772.925199331},
-            	 {x: -2303230.229982306, y: 4394389.406098158, z: 3994691.216139945},
-            	 {x: -2303230.6601225995, y: 4394439.445492321, z: 3994636.2911779615},
-            	 {x: -2302666.0197342983, y: 4394616.467227093, z: 3994766.1931057903}
-                ]
-              }),
-            extrudedHeight:0,
-            height:-100,
-           attributes: {
-              color: Freedo.ColorGeometryInstanceAttribute.fromColor(new Freedo.Color(0.0, 0.0, 0.0, 1.0)) // 洞的颜色 (0, 0, 0)表示黑色
-            } 
-          }),
-          classificationType: 0,
-          debugShowShadowVolume: false
-       }));
+	var userdata2 =[
+		[				
+			{lon:117.65370310938958,lat: 39.02934846731648,height:0},
+			{lon:117.65616588189279,lat: 39.02878641322159,height:0},
+			{lon:117.65606451946124,lat: 39.028480607240965,height:0},
+			{lon:117.66036385771528,lat: 39.02753995829354,height:0},
+			{lon:117.66010911739728,lat: 39.02689057245006,height:0},
+			{lon:117.6533791730346,lat:  39.02839160339337,height:0}
+		],
+
+		[
+			{lon:117.65370310938958,lat: 39.02934846731648,height:-15},
+			{lon:117.65616588189279,lat: 39.02878641322159,height:-13},
+			{lon:117.65606451946124,lat: 39.028480607240965,height:-20},
+			{lon:117.66036385771528,lat: 39.02753995829354,height:-15},
+			{lon:117.66010911739728,lat: 39.02689057245006,height:-22},
+			{lon:117.6533791730346,lat:  39.02839160339337,height:-11}
+		],
+
+		[
+			{lon:117.65370310938958,lat: 39.02934846731648,height:-27},
+			{lon:117.65616588189279,lat: 39.02878641322159,height:-33},
+			{lon:117.65606451946124,lat: 39.028480607240965,height:-26},
+			{lon:117.66036385771528,lat: 39.02753995829354,height:-22},
+			{lon:117.66010911739728,lat: 39.02689057245006,height:-32},
+			{lon:117.6533791730346,lat:  39.02839160339337,height:-24}
+		],
+		[
+			{lon:117.65370310938958,lat: 39.02934846731648,height:-50},
+			{lon:117.65616588189279,lat: 39.02878641322159,height:-50},
+			{lon:117.65606451946124,lat: 39.028480607240965,height:-50},
+			{lon:117.66036385771528,lat: 39.02753995829354,height:-50},
+			{lon:117.66010911739728,lat: 39.02689057245006,height:-50},
+			{lon:117.6533791730346,lat:  39.02839160339337,height:-50}
+		]
+]
+	var imgarray = [
+		"static/page/shigongguanli/dungou/img/Land001.jpg",
+		"static/page/shigongguanli/dungou/img/Land002.jpg",
+		"static/page/shigongguanli/dungou/img/Land004.jpg"
+	];
+	FreeDoUtil.dig(globalviewer,userdata2,imgarray);
     var pitch = 0;
     var matrix = null;
     //盾构机旋转
@@ -261,66 +282,7 @@ function initPipingPit(){
             debugWireframe: false
         }));
     	console.log(primitive);
-       globalviewer.entities.add({
-    	   //坑壁
-             wall : {
-                 positions : [
-                	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079},
-                	 {x: -2302867.795074012, y: 4394478.949238563, z: 3994800.926556034},
-                	 {x: -2302869.3896283163, y: 4394503.739662395, z: 3994772.925199331},
-                	 {x: -2303230.229982306, y: 4394389.406098158, z: 3994691.216139945},
-                	 {x: -2303230.6601225995, y: 4394439.445492321, z: 3994636.2911779615},
-                	 {x: -2302666.0197342983, y: 4394616.467227093, z: 3994766.1931057903},
-                	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079}
-                    ],
-                 //material :  "static/page/shigongguanli/dungou/img/Land001.jpg",
-                 material :  new Freedo.ImageMaterialProperty({
-                	 image : "static/page/shigongguanli/dungou/img/Land001.jpg",
-                	 repeat : new Freedo.Cartesian2(120.0, 9.0)
-                 }),
-                 maximumHeights:[ 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01],
-                 minimumHeights:[ -50, -50, -50, -50, -50, -50, -50],
-                 outline : false
-             },
-           //坑底
-             polygon : {
-                 hierarchy : [
-                	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079},
-                	 {x: -2302867.795074012, y: 4394478.949238563, z: 3994800.926556034},
-                	 {x: -2302869.3896283163, y: 4394503.739662395, z: 3994772.925199331},
-                	 {x: -2303230.229982306, y: 4394389.406098158, z: 3994691.216139945},
-                	 {x: -2303230.6601225995, y: 4394439.445492321, z: 3994636.2911779615},
-                	 {x: -2302666.0197342983, y: 4394616.467227093, z: 3994766.1931057903}
-                    ],
-                 height:-50,
-                 material : new Freedo.ImageMaterialProperty({
-                	 image : "static/page/shigongguanli/dungou/img/Land001.jpg",
-                	 repeat : new Freedo.Cartesian2(50.0, 10.0)
-                 }),
-             }
-     });
-       /*globalviewer.entities.add({
-    	   //坑壁
-             wall : {
-                 positions : [
-                	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079},
-                	 {x: -2302867.795074012, y: 4394478.949238563, z: 3994800.926556034},
-                	 {x: -2302869.3896283163, y: 4394503.739662395, z: 3994772.925199331},
-                	 {x: -2303230.229982306, y: 4394389.406098158, z: 3994691.216139945},
-                	 {x: -2303230.6601225995, y: 4394439.445492321, z: 3994636.2911779615},
-                	 {x: -2302666.0197342983, y: 4394616.467227093, z: 3994766.1931057903},
-                	 {x: -2302659.8102922034, y: 4394544.256245262, z: 3994848.653839079}
-                    ],
-                 //material :  "static/page/shigongguanli/dungou/img/Land001.jpg",
-                 material :  new Freedo.ImageMaterialProperty({
-                	 image : "static/page/shigongguanli/dungou/img/Land002.jpg",
-                	 repeat : new Freedo.Cartesian2(120.0, 9.0)
-                 }),
-                 maximumHeights:[ -20, -20, -20, -20, -20, -20, -20],
-                 minimumHeights:[ -50, -50, -50, -50, -50, -50, -50],
-                 outline : false
-             }
-     });*/
+       
        var offsetwenli = new Freedo.Cartesian2(100, 1);
        
        
@@ -368,8 +330,3 @@ function getModelMatrix(lon,lat,height,heading,pitch,roll,scaleX,scaleY,scaleZ)
 		FreeDo.Matrix4.multiply(transform,scaleMatrix,matrix4);
 		return matrix4;
 }
-/*function zbMoveDown(array){
-	for (var i = 0; i < array.length; i++) {
-		var 
-	}
-}*/

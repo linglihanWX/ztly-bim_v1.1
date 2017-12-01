@@ -587,11 +587,12 @@
 <!-- end: JavaScript-->
 <script src="${ctx }/static/page/common/js/echarts.min.js"></script>
 	<script src="${ctx }/static/webgl/pModel/js/move.js"></script>
+<script src="${ctx }/static/page/common/js/FreeDoUtil.js"></script>
 <script src="${ctx }/static/page/shigongguanli/dungou/js/canvasCircle.js"></script>
 <script src="${ctx }/static/page/shigongguanli/dungou/js/tbm.js"></script>
 <script src="${ctx }/static/page/common/js/appendTool.js"></script>
 <script src="${ctx }/static/page/shigongguanli/dungou/js/DungouViewer.js"></script>
-	<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
+<script src="${ctx }/static/webgl/Tool/surveyCallBack.js"></script>
 <script src="${ctx }/static/page/shigongguanli/dungou/js/dungou.js"></script>
 
 </body>

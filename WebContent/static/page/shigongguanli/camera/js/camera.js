@@ -98,7 +98,42 @@ $(function () {
     CameraViewer.init("earth"); // 加载球模型
     CameraViewer.initLeftClick(globalviewer,showDiv);
     CameraViewer.initLeftDown(globalviewer,hideDiv);
-    FreeDoUtil.digpit(globalviewer);
+  //挖坑
+	var userdata2 =[
+		[				
+			{lon:117.65370327140586,lat: 39.029343874668385,height:0},
+			{lon:117.6566555867564,lat: 39.02867680988919,height:0},
+			{lon:117.65629167680271,lat: 39.027734051441556,height:0},
+			{lon:117.65337309822137,lat: 39.028390137191195,height:0}
+		],
+
+		[
+			{lon:117.65370327140586,lat: 39.029343874668385,height:-15},
+			{lon:117.6566555867564,lat: 39.02867680988919,height:-13},
+			{lon:117.65629167680271,lat: 39.027734051441556,height:-20},
+			{lon:117.65337309822137,lat: 39.028390137191195,height:-15}
+		],
+
+		[
+			{lon:117.65370327140586,lat: 39.029343874668385,height:-27},
+			{lon:117.6566555867564,lat: 39.02867680988919,height:-33},
+			{lon:117.65629167680271,lat: 39.027734051441556,height:-26},
+			{lon:117.65337309822137,lat: 39.028390137191195,height:-22}
+		],
+		[
+			{lon:117.65370327140586,lat: 39.029343874668385,height:-50},
+			{lon:117.6566555867564,lat: 39.02867680988919,height:-50},
+			{lon:117.65629167680271,lat: 39.027734051441556,height:-50},
+			{lon:117.65337309822137,lat: 39.028390137191195,height:-50}
+		]
+]
+	var imgarray = [
+		"static/page/shigongguanli/dungou/img/Land001.jpg",
+		"static/page/shigongguanli/dungou/img/Land002.jpg",
+		"static/page/shigongguanli/dungou/img/Land004.jpg"
+	];
+	FreeDoUtil.dig(globalviewer,userdata2,imgarray);
+
     var surveymanager = new SurveyManager(globalviewer,function(){});
     /**
 	 *工具栏按钮点击 

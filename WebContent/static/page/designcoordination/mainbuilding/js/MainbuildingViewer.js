@@ -510,10 +510,10 @@ MainBuildingViewer.init = function (earthId,baseImageryProvider) {
 			},  
 			polygon : {  
 		        hierarchy : FreeDo.Cartesian3.fromDegreesArray([
-		        	117.65421292746433, 39.028569363412515,
-		        	117.65532530051337, 39.02833453426626,
-		        	117.65496936189291, 39.02740497284379,
-		        	117.65387741882599, 39.02763956354831]),  
+		        	117.653982677402, 39.028091097756,
+		        	117.65503969067898, 39.02781802125717,
+		        	117.6548674943786, 39.027403095513776,
+		        	117.65381412585376, 39.02761683748278]),  
 		        //material : 	FreeDo.Color.DEEPSKYBLUE.withAlpha(0.8)
 		        	 material : new FreeDo.GridMaterialProperty({
 			                color : FreeDo.Color.DEEPSKYBLUE,
@@ -668,19 +668,19 @@ MainBuildingViewer.showHideModelsById =function(uid){
 MainBuildingViewer.initLeftClick = function(viewer) {
 	var screenSpaceEventHandler = new FreeDo.ScreenSpaceEventHandler(viewer.canvas);
 	screenSpaceEventHandler.setInputAction(function(movement){
-		/*var picked = viewer.scene.pick(movement.position);
+		var picked = viewer.scene.pick(movement.position);
 		var pick= new FreeDo.Cartesian2(movement.position.x,movement.position.y);
 		var cartesian = viewer.camera.pickEllipsoid(pick, viewer.scene.globe.ellipsoid);
 		var cartographic = viewer.scene.globe.ellipsoid.cartesianToCartographic(cartesian);
 		var point=[ cartographic.longitude / Math.PI * 180, cartographic.latitude / Math.PI * 180];
-		console.log(point);*/
+		console.log(point);
 		var x = viewer.camera.position.x
 		var y = viewer.camera.position.y
 		var z = viewer.camera.position.z
 		var heading = viewer.camera.heading;
 		var pitch = viewer.camera.pitch;
 		var roll = viewer.camera.roll;
-		console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);
+		//console.log(x+","+y+","+z+","+heading+","+pitch+","+roll);
 	}, FreeDo.ScreenSpaceEventType.LEFT_CLICK);
 	
 
