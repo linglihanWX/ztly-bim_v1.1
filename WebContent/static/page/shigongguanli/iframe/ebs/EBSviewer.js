@@ -136,7 +136,7 @@ Init.prototype = {
     initEbs:function(){
         var that = this;
         $.ajax({
-            url: "http://182.92.7.32:9510/ProjectManage/ebs/selectAll",
+            url: "../../../../../ebs/selectAll",
             dataType: "JSON",
             success: function (content) {
                 var node = null;
@@ -183,7 +183,7 @@ Init.prototype = {
     initModels:function () {
         var that = this;
         $.ajax({
-            url: "http://182.92.7.32:9510/ProjectManage/pm/selectAll",
+            url: "../../../../../pm/selectAll",
             dataType: "JSON",
             success: function (content) {
                 var node = null;
@@ -208,7 +208,7 @@ Init.prototype = {
                         }
                     } else {
                         var parameter = JSON.parse(node.attributes.parameter);
-                        modelNode = new EbsViewer.ModelObj(node.id, node.parentId, node.text, node.type, "http://182.92.7.32:9510/ProjectManage/models/" + parameter.filePath, parameter.lon, parameter.lat, parameter.height-46, parameter.course, parameter.alpha, parameter.roll, parameter.scaleX, parameter.scaleY, parameter.scaleZ,that.viewer);
+                        modelNode = new EbsViewer.ModelObj(node.id, node.parentId, node.text, node.type, "../../../../../static/model/" + parameter.filePath, parameter.lon, parameter.lat, parameter.height-46, parameter.course, parameter.alpha, parameter.roll, parameter.scaleX, parameter.scaleY, parameter.scaleZ,that.viewer);
                     }
     
                     container[node.id] = modelNode;

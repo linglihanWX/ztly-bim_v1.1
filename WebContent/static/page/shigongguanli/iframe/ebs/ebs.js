@@ -51,7 +51,7 @@ $(function () {
     // 获取数据并初始化
     manager.loadDataInit = function () {
         $.ajax({
-            url: "http://182.92.7.32:9510/ProjectManage/ebs/selectAll",
+            url: "../../../../../ebs/selectAll",
             dataType: "json",
             success: function (content) {
                 let bufferData = {}; // 缓存数据

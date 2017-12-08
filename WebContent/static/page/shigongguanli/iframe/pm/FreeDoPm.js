@@ -173,7 +173,7 @@ FreeDoEarth.initModels=function(callback)
 					
 				}else{
 					var parameter=JSON.parse(treeNode.attributes.parameter);
-					modelNode=new FreeDoEarth.ModelObj(treeNode.id,treeNode.parentId,treeNode.text,treeNode.type,"http://182.92.7.32:9510/ProjectManage/models/"+parameter.filePath,parameter.lon,parameter.lat,parameter.height-46,parameter.course,parameter.alpha,parameter.roll,parameter.scaleX,parameter.scaleY,parameter.scaleZ);
+					modelNode=new FreeDoEarth.ModelObj(treeNode.id,treeNode.parentId,treeNode.text,treeNode.type,"../../../../../static/model/"+parameter.filePath,parameter.lon,parameter.lat,parameter.height-46,parameter.course,parameter.alpha,parameter.roll,parameter.scaleX,parameter.scaleY,parameter.scaleZ);
 				}
 				
 				container[treeNode.id]=modelNode;
@@ -406,7 +406,7 @@ FreeDoEarth.deletePmNodes=function(queue){
  */
 FreeDoEarth.updatePmModelToDB=function(nodeId,name,parameter){
 	$.ajax({
-		url:'http://182.92.7.32:9510/ProjectManage/pm/updatePmModel',
+		url:'../../../../pm/updatePmModel',
 		type:'POST',
 		data:{'nodeId':nodeId,'name':name,'parameter':parameter},
 		success:function(content){
@@ -430,7 +430,7 @@ FreeDoEarth.updatePmModelToDB=function(nodeId,name,parameter){
  */
 FreeDoEarth.updatePmModelsToDB=function(nodes){
 	$.ajax({
-		url:"http://182.92.7.32:9510/ProjectManage/pm/updatePmModels",
+		url:"../../../../pm/updatePmModels",
 		type:"POST",
 		data:{'nodes':JSON.stringify(nodes)},
 		beforeSend:function(){
@@ -455,7 +455,7 @@ FreeDoEarth.updatePmModelsToDB=function(nodes){
  */
 FreeDoEarth.deleteNodesFromDB=function(nodeIds){
 	$.ajax({
-		url:'http://182.92.7.32:9510/ProjectManage/pm/deletePms',
+		url:'../../../../pm/deletePms',
 		type:'POST',
 		data:{'nodeIds':nodeIds},
 		success:function(content){
@@ -480,7 +480,7 @@ FreeDoEarth.deleteNodesFromDB=function(nodeIds){
 FreeDoEarth.addPm=function(node,callBack){
 	console.log(111);
 	$.ajax({
-		url:"http://182.92.7.32:9510/ProjectManage/pm/addPm",
+		url:"../../../../pm/addPm",
 		type:"post",
 		data:{
 			'fatherNodeId':node.parentId,
@@ -523,7 +523,7 @@ FreeDoEarth.addPm=function(node,callBack){
  */
 FreeDoEarth.pastPmsToDB=function(targetId,nodes,callback){
 	$.ajax({
-		url:"http://182.92.7.32:9510/ProjectManage/pm/pastPms",
+		url:"../../../../pm/pastPms",
 		type:"post",
 		data:{"nodes":JSON.stringify(nodes),"targetId":targetId},
 		dataType:"JSON",
@@ -564,7 +564,7 @@ FreeDoEarth.pastPmsToDB=function(targetId,nodes,callback){
 					
 				}else{
 					var parameter=JSON.parse(treeNode.attributes.parameter);
-					modelNode=new FreeDoEarth.ModelObj(treeNode.id,treeNode.parentId,treeNode.text,treeNode.type,"models/"+parameter.filePath,parameter.lon,parameter.lat,parameter.height,parameter.course,parameter.alpha,parameter.roll,parameter.scaleX,parameter.scaleY,parameter.scaleZ);
+					modelNode=new FreeDoEarth.ModelObj(treeNode.id,treeNode.parentId,treeNode.text,treeNode.type,"../../../../../static/model/"+parameter.filePath,parameter.lon,parameter.lat,parameter.height,parameter.course,parameter.alpha,parameter.roll,parameter.scaleX,parameter.scaleY,parameter.scaleZ);
 				}
 				
 				container[treeNode.id]=modelNode;
